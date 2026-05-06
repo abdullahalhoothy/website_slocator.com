@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Maximize2, X } from 'lucide-react'
+import { 
+  Maximize2, 
+  X, 
+  Database, 
+  Map, 
+  FileText, 
+  MapPin, 
+  Route as RouteIcon, 
+  TrendingUp, 
+  Network
+} from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-
-// --- Interfaces for strict TypeScript checking ---
-interface TypewriterProps {
-  words: string[]
-  isAr: boolean
-}
 
 interface AnimatedCounterProps {
   end: number
@@ -18,42 +22,6 @@ interface FadeInSectionProps {
   delay?: number
 }
 
-// --- Helper Components ---
-// 1. Typewriter Animation Component
-const Typewriter: React.FC<TypewriterProps> = ({ words, isAr }) => {
-  const [text, setText] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
-  const [loopNum, setLoopNum] = useState(0)
-  const [typingSpeed, setTypingSpeed] = useState(100)
-
-  useEffect(() => {
-    const handleType = () => {
-      const currentWord = words[loopNum % words.length]
-      if (isDeleting) {
-        setText(currentWord.substring(0, text.length - 1))
-        setTypingSpeed(40)
-      } else {
-        setText(currentWord.substring(0, text.length + 1))
-        setTypingSpeed(100)
-      }
-      if (!isDeleting && text === currentWord) {
-        setTimeout(() => setIsDeleting(true), 2000)
-      } else if (isDeleting && text === '') {
-        setIsDeleting(false)
-        setLoopNum(loopNum + 1)
-        setTypingSpeed(500)
-      }
-    }
-
-    const timer = setTimeout(handleType, typingSpeed)
-    return () => clearTimeout(timer)
-  }, [text, isDeleting, loopNum, typingSpeed, words])
-
-  const borderClass = isAr ? 'border-l-2 pl-1' : 'border-r-2 pr-1'
-  return <span className={`text-[#38e54d] border-[#38e54d] ${borderClass}`}>{text}</span>
-}
-
-// 2. Smart Animated Counter
 const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0)
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -84,7 +52,6 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ end, duration = 2000 
   return <span ref={ref}>{count.toLocaleString()}</span>
 }
 
-// 3. Scroll Reveal Animation Wrapper
 const FadeInSection: React.FC<FadeInSectionProps> = ({ children, delay = 0 }) => {
   const [isVisible, setVisible] = useState(false)
   const domRef = useRef<HTMLDivElement>(null)
@@ -106,7 +73,9 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({ children, delay = 0 }) =>
   return (
     <div
       ref={domRef}
-      className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+      className={`transition-all duration-1000 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+      }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -121,28 +90,8 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
-
-  // --- Data Definitions ---
-  // Note: For full compliance, 'heroWords', 'services', and 'industries' 
-  // text should eventually move to locales.json, but they are localized here dynamically for now.
-  const heroWords = isAr
-    ? [
-        'الدفاع والأمن',
-        'العقارات',
-        'الخدمات اللوجستية',
-        'الرعاية الصحية',
-        'التسويق',
-        'الأغذية والمشروبات',
-      ]
-    : [
-        'Defense & Security',
-        'Real Estate',
-        'Logistics',
-        'Health Care',
-        'Marketing',
-        'Food & Beverages',
-      ]
+    document.title = isAr ? 'الرئيسية | S-Locator' : 'Home | S-Locator'
+  }, [isAr])
 
   const englishProjectImages = [
     '/assets/images/S-lOC-USAGES-R3-08.jpg',
@@ -217,7 +166,7 @@ export default function Home() {
       link: '/solutions/road-traffic-data-intelligence',
     },
     {
-      img: '/assets/images/icon-10.png',
+      img: '/assets/images/S-lOC_USAGES_FF-14.png',
       title: isAr ? 'الذكاء البيئي' : 'Environment Intelligence',
       desc: isAr
         ? 'فهم العوامل البيئية مثل جودة الهواء، الظروف المناخية، والتأثير البيئي لدعم القرارات المستدامة.'
@@ -225,7 +174,7 @@ export default function Home() {
       link: '/solutions/environment-intelligence',
     },
     {
-      img: '/assets/images/icon-02.png',
+      img: '/assets/images/S-lOC_USAGES_FF-24.png',
       title: isAr ? 'ذكاء مستوى الدخل' : 'Area Income Intelligence',
       desc: isAr
         ? 'اكتشف توزيع الدخل والاتجاهات الاقتصادية لتوجيه الاستهداف السوقي والاستثمار. اتصل بنا للمزيد.'
@@ -233,7 +182,7 @@ export default function Home() {
       link: '/solutions/area-income-intelligence',
     },
     {
-      img: '/assets/images/icon-16.png',
+      img: '/assets/images/S-lOC_USAGES_FF-17.png',
       title: isAr ? 'ذكاء البنية التحتية' : 'Infrastructure Location Intelligence',
       desc: isAr
         ? 'تحليل توفر وتوزيع البنية التحتية والمرافق الأساسية لتعزيز استراتيجيات التخطيط والتنمية.'
@@ -241,7 +190,7 @@ export default function Home() {
       link: '/solutions/infrastructure-location-intelligence',
     },
     {
-      img: '/assets/images/icon-07.png',
+      img: '/assets/images/S-lOC_USAGES_FF-13.png',
       title: isAr ? 'ذكاء استخدام الإنترنت' : 'Area Internet Usage Intelligence',
       desc: isAr
         ? 'الحصول على رؤى حول إمكانية الوصول للإنترنت وأنماط الاستخدام لتوجيه الاستراتيجيات الرقمية.'
@@ -307,12 +256,6 @@ export default function Home() {
       dir={isAr ? 'rtl' : 'ltr'}
     >
       <style>{`
-        @keyframes float-slow {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
-        }
-        .animate-float { animation: float-slow 4s ease-in-out infinite; }
-
         @keyframes scroll-marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(${isAr ? '50%' : '-50%'}); }
@@ -327,70 +270,241 @@ export default function Home() {
         }
       `}</style>
 
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-24 pb-16 bg-gradient-to-b from-[#100324] via-[#100324] to-[#0a2e16] text-white flex flex-col justify-center">
-        <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 flex justify-center items-center gap-2 flex-wrap">
-            {t('heroPre')} <Typewriter words={heroWords} isAr={isAr} /> {t('heroPost')}
-          </h2>
-          <h1 className="text-4xl md:text-[56px] font-extrabold leading-tight mb-6">
-            {t('heroTitle')}
-          </h1>
-          <p className="text-sm md:text-base text-gray-300 mb-6 max-w-3xl mx-auto">{t('heroDesc')}</p>
-          <p className="text-[#38e54d] text-sm italic font-medium mb-12">{t('heroPowered')}</p>
+      <section className="relative -mt-[100px] pt-[120px] pb-24 lg:-mt-[120px] lg:pt-[160px] lg:pb-32 lg:min-h-screen flex items-center bg-[#f8fafc] overflow-hidden border-b border-gray-100">
+        
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-br from-[#e0f2fe] to-[#eff6ff] blur-[100px] opacity-80 pointer-events-none"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-tr from-[#dcfce7] to-[#f0fdf4] blur-[100px] opacity-80 pointer-events-none"></div>
 
-          <div className="flex justify-center mb-10">
-            <img
-              src="/assets/images/icons-22-1024x1024.png"
-              alt="Data Intelligence"
-              className="w-full max-w-[400px] h-auto animate-float"
-            />
-          </div>
+        <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div className={`flex flex-col justify-center ${isAr ? 'lg:pl-10' : 'lg:pr-10'}`}>
+              
+              <div className="flex justify-start mb-8 mt-4">
+                <div className={`bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-2.5 flex items-center justify-center gap-5 shadow-sm ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <span className="text-[#475569] font-black tracking-[0.15em] text-[13px] uppercase">
+                    {isAr ? 'بدعم من' : 'POWERED BY'}
+                  </span>
+                  <div className="w-[2px] h-6 bg-gray-200"></div>
+                  <img 
+                    src="/assets/images/cropd_V1.png" 
+                    alt="Northern Analytics" 
+                    className="h-10 md:h-12 w-auto max-w-[180px] object-contain" 
+                  />
+                </div>
+              </div>
 
-          <a
-            href="/contact"
-            className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-3 px-10 rounded-full transition-transform hover:scale-105 shadow-lg shadow-purple-500/30 mb-20 inline-block"
-          >
-            {t('clickHere')}
-          </a>
-
-          <h2 className="text-3xl font-bold mb-10">{t('whatLook')}</h2>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-4xl mx-auto pb-10">
-            <div className="flex flex-col items-center w-full">
-              <p className="font-semibold mb-4 text-lg">{t('findLoc')}</p>
-              <a
-                href="https://s-locator.northernacs.com/landing?"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-gradient-to-r from-[#8eea9e] to-[#45c960] text-[#110222] font-bold py-3.5 px-8 rounded-full shadow-lg hover:scale-105 transition-all w-full md:w-auto text-center inline-block"
-              >
-                {t('exploreLoc')}
-              </a>
+              <h1 className="text-[#0f172a] text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 flex items-center gap-3 drop-shadow-sm">
+                {t('heroNewTitle')}
+              </h1>
+              <h2 className="text-[#334155] text-xl md:text-2xl font-semibold mb-6 leading-snug">
+                {t('heroNewSub')}
+              </h2>
+              <p className="text-[#475569] text-base md:text-lg leading-relaxed mb-10 max-w-xl font-medium">
+                {t('heroNewDesc')}
+              </p>
+              <div>
+                <a
+                  href="http://localhost:5174"
+                  className="inline-flex items-center justify-center bg-[#9b51e0] hover:bg-[#8645c4] text-white font-semibold py-4 px-10 rounded-full shadow-[0_8px_20px_rgba(155,81,224,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(155,81,224,0.35)] w-full sm:w-auto"
+                >
+                  {t('btnGetStartedNow')}
+                </a>
+              </div>
             </div>
-            <div className="flex flex-col items-center w-full">
-              <p className="font-semibold mb-4 text-lg">{t('planTerr')}</p>
-              <a
-                href="/territory-planning"
-                className="bg-gradient-to-r from-[#8eea9e] to-[#45c960] text-[#110222] font-bold py-3.5 px-8 rounded-full shadow-lg hover:scale-105 transition-all w-full md:w-auto text-center inline-block"
-              >
-                {t('startTerr')}
-              </a>
+
+            <div className="relative w-full h-full min-h-[500px] flex items-center justify-center bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-8">
+              
+              <div className="hidden lg:block absolute top-[100px] left-1/2 w-px h-[30px] bg-gray-300 -translate-x-1/2 z-0"></div>
+              
+              <div className="w-full flex flex-col items-center relative z-10">
+                
+                <div className="bg-white border-2 border-[#2b1055] text-[#2b1055] font-extrabold py-3 px-8 rounded-full shadow-md flex items-center gap-2 mb-10 relative z-20">
+                  <Network size={20} />
+                  {t('nodeSlocator')}
+                </div>
+
+                <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-4 w-full relative">
+                  
+                  <div className="hidden lg:block absolute top-[-40px] left-[16%] right-[16%] h-px bg-gray-300 z-0"></div>
+
+                  <div className="flex flex-col items-center w-full lg:w-1/3 relative">
+                    <div className="hidden lg:block absolute top-[-40px] left-1/2 w-px h-[40px] bg-gray-300 -translate-x-1/2 z-0"></div>
+                    
+                    <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm w-full max-w-[220px] mb-6 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#00628e]">
+                      <div className="bg-blue-50 text-[#00628e] p-2 rounded-full mb-3">
+                        <Database size={24} />
+                      </div>
+                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">{t('nodeData')}</h3>
+                    </div>
+
+                    <div className="relative flex flex-col items-center w-full">
+                      <div className="absolute top-[-24px] left-1/2 w-px h-[24px] bg-gray-200 -translate-x-1/2 z-0"></div>
+                      <div className="bg-white border border-gray-100 p-4 rounded-lg w-full max-w-[236px] shadow-sm z-10 hover:shadow-md transition-shadow">
+                         <div className="grid grid-cols-3 gap-y-4 gap-x-2 items-center justify-items-center">
+                             <img src="/assets/images/general_authority_logo.svg" alt="GASTAT" className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="General Authority for Statistics"/>
+                             <img src="/assets/images/REGA_LOGO.svg" alt="REGA" className="max-h-4 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Real Estate General Authority"/>
+                             <img src="/assets/images/hrdf_logo.svg" alt="HRDF" className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="HRDF"/>
+                             <img src="/assets/images/housing_ministry_logo.webp" alt="Housing" className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Ministry of Housing"/>
+                             <img src="/assets/images/sakany_logo.svg" alt="Sakany" className="max-h-3.5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Sakany"/>
+                             <img src="/assets/images/Ministry_of_Justice_Logo.svg" alt="MOJ" className="max-h-6 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Ministry of Justice"/>
+                             <img src="/assets/images/amana_logo.webp" alt="Amana" className="col-span-3 max-h-7 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mt-1" title="Riyadh Municipality"/>
+                             <img src="/assets/images/google.png" alt="google" className="col-span-3 max-h-7 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mt-1" title="Riyadh Municipality"/>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-center w-full lg:w-1/3 relative">
+                    <div className="hidden lg:block absolute top-[-40px] left-1/2 w-px h-[40px] bg-gray-300 -translate-x-1/2 z-0"></div>
+                    
+                    <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm w-full max-w-[220px] mb-6 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#38e54d]">
+                      <div className="bg-green-50 text-green-600 p-2 rounded-full mb-3">
+                        <Map size={24} />
+                      </div>
+                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">{t('nodeTerritory')}</h3>
+                    </div>
+
+                    <div className="flex gap-4 w-full justify-center relative">
+                      <div className="absolute top-[-24px] left-[25%] right-[25%] h-px bg-gray-200 z-0"></div>
+                      <div className="absolute top-[-24px] left-[25%] w-px h-[24px] bg-gray-200 z-0"></div>
+                      <div className="absolute top-[-24px] right-[25%] w-px h-[24px] bg-gray-200 z-0"></div>
+
+                      <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
+                         <MapPin size={18} className="text-[#2b1055]" />
+                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeTerrOpt')}</span>
+                      </div>
+
+                      <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
+                         <RouteIcon size={18} className="text-[#38e54d]" />
+                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeRoute')}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-center w-full lg:w-1/3 relative">
+                    <div className="hidden lg:block absolute top-[-40px] left-1/2 w-px h-[40px] bg-gray-300 -translate-x-1/2 z-0"></div>
+                    
+                    <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm w-full max-w-[220px] mb-6 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#9b51e0]">
+                      <div className="bg-purple-50 text-purple-600 p-2 rounded-full mb-3">
+                        <FileText size={24} />
+                      </div>
+                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">{t('nodeReport')}</h3>
+                    </div>
+
+                    <div className="flex gap-4 w-full justify-center relative">
+                      <div className="absolute top-[-24px] left-[25%] right-[25%] h-px bg-gray-200 z-0"></div>
+                      <div className="absolute top-[-24px] left-[25%] w-px h-[24px] bg-gray-200 z-0"></div>
+                      <div className="absolute top-[-24px] right-[25%] w-px h-[24px] bg-gray-200 z-0"></div>
+
+                      <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
+                         <TrendingUp size={18} className="text-purple-600" />
+                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeEval')}</span>
+                      </div>
+
+                      <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
+                         <Map size={18} className="text-purple-600" />
+                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeCity')}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* 2. SERVICES SECTION */}
-      <section className="relative py-20 bg-[#061d10]">
+      <section className="relative py-24 bg-[#f8f9fa]">
+        <div className="max-w-6xl mx-auto px-4">
+          <FadeInSection>
+            <h2 className="text-[#38e54d] font-bold tracking-widest text-2xl md:text-3xl uppercase mb-16 text-center">
+              {t('whatWeOffer')}
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+              
+              <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1">
+                <div className="flex items-center gap-4 mb-10">
+                  <img src="/assets/images/icon-10.png" alt="Report" className="w-9 h-9 object-contain drop-shadow-sm" />
+                  <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold">
+                    {isAr ? 'تقرير أفضل 10 مواقع' : 'Top 10 Locations Report'}
+                  </h3>
+                </div>
+
+                <div className="relative mx-auto w-full max-w-[320px] mb-10">
+                  <div className="relative z-10 border-[5px] border-[#2c3e50] rounded-t-xl bg-[#2c3e50] h-[190px] overflow-hidden shadow-xl">
+                     <img src="/assets/images/s-locator-app.png" className="w-full h-full object-cover object-left-top" alt="App Desktop" />
+                  </div>
+                  <div className="relative z-20 w-[114%] -ml-[7%] h-3.5 bg-[#cbd5e1] rounded-b-xl shadow-md border-t border-[#94a3b8] flex justify-center">
+                     <div className="w-20 h-1 bg-[#94a3b8] rounded-b-md"></div>
+                  </div>
+                </div>
+
+                <p className="text-gray-500 font-medium text-[15px] leading-relaxed mb-10 text-center flex-grow">
+                  {t('findLoc')}
+                </p>
+
+                <a
+                  href="https://s-locator.northernacs.com/landing?"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-3.5 px-10 rounded-full shadow-md transition-colors w-full sm:w-auto text-center"
+                >
+                  {isAr ? 'احصل على التقرير' : 'Top 10 Locations Report'}
+                </a>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1">
+                <div className="flex items-center gap-4 mb-10">
+                  <img src="/assets/images/icon-02.png" alt="Planning" className="w-9 h-9 object-contain drop-shadow-sm" />
+                  <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold">
+                    {isAr ? 'تخطيط المناطق' : 'Territory Planning'}
+                  </h3>
+                </div>
+
+                <div className="relative mx-auto w-full max-w-[320px] h-[204px] mb-10 flex items-end justify-center">
+                  <div className="absolute right-0 bottom-2 w-[260px]">
+                    <div className="relative z-10 border-[5px] border-[#2c3e50] rounded-t-xl bg-[#2c3e50] h-[155px] overflow-hidden shadow-xl">
+                      <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-left-top" alt="App Desktop" />
+                    </div>
+                    <div className="relative z-20 w-[114%] -ml-[7%] h-3 bg-[#cbd5e1] rounded-b-xl shadow-md border-t border-[#94a3b8] flex justify-center">
+                       <div className="w-16 h-1 bg-[#94a3b8] rounded-b-md"></div>
+                    </div>
+                  </div>
+                  <div className="absolute left-2 bottom-0 z-30 w-[75px] h-[150px] border-[4px] border-[#2c3e50] rounded-[1.2rem] bg-[#2c3e50] overflow-hidden shadow-2xl">
+                    <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-4 h-[3px] bg-[#0f172a] rounded-full z-40"></div>
+                    <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-center" alt="App Mobile" />
+                  </div>
+                </div>
+
+                <p className="text-gray-500 font-medium text-[15px] leading-relaxed mb-10 text-center flex-grow">
+                  {t('planTerr')}
+                </p>
+
+                <a
+                  href="http://localhost:5174"
+                  className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-3.5 px-10 rounded-full shadow-md transition-colors w-full sm:w-auto text-center"
+                >
+                  {isAr ? 'ابدأ التخطيط' : 'Start Planning'}
+                </a>
+              </div>
+
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      <section className="relative py-24 bg-[#061d10]">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInSection>
-            <h6 className="text-[#38e54d] font-semibold tracking-widest mb-2 text-sm uppercase">
-              {t('whatWeOffer')}
-            </h6>
-            <h2 className="text-white text-4xl font-bold mb-6">{t('whyChoose')}</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto mb-16 text-base leading-relaxed">
-              {t('chooseDesc')}
-            </p>
+            <h2 className="text-white text-3xl md:text-4xl font-bold mb-16 uppercase">
+              {t('ourSolutionsTitle')}
+            </h2>
           </FadeInSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -423,7 +537,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. ACHIEVEMENTS */}
       <section className="py-24 bg-[#fafbfc] overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16 relative z-10">
           <FadeInSection>
@@ -432,19 +545,7 @@ export default function Home() {
                 {t('achievements')}
               </h6>
               <h2 className="text-[#2b1055] text-4xl lg:text-[52px] font-extrabold mb-6 leading-[1.1]">
-                {isAr ? (
-                  <>{t('achievementsTitle')}</>
-                ) : (
-                  <>
-                    Automate geospatial
-                    <br />
-                    insights for
-                    <br />
-                    businesses and
-                    <br />
-                    governments
-                  </>
-                )}
+                {t('achievementsTitle')}
               </h2>
               <p className="text-gray-600 mb-10 text-lg max-w-md">{t('achievementsDesc')}</p>
               <a
@@ -544,16 +645,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. COMPETITIVE EDGE */}
       <section className="bg-gradient-to-b from-[#061d10] to-[#13072e] py-20 overflow-hidden">
         <FadeInSection>
           <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="lg:w-1/2 relative w-full flex justify-center">
               <div
-                className={`bg-[#56a8fb] w-[90%] md:w-[80%] rounded-[40px] ${isAr ? 'rounded-tr-[80px]' : 'rounded-tl-[80px]'} p-8 md:p-12 relative shadow-2xl`}
+                className={`bg-[#56a8fb] w-[90%] md:w-[80%] rounded-[40px] ${
+                  isAr ? 'rounded-tr-[80px]' : 'rounded-tl-[80px]'
+                } p-8 md:p-12 relative shadow-2xl`}
               >
                 <div
-                  className={`absolute -top-6 ${isAr ? '-left-6 md:-left-10' : '-right-6 md:-right-10'} md:top-8 bg-[#e0fbc9] text-[#110222] w-[110px] h-[110px] rounded-full flex flex-col justify-center items-center shadow-xl border-[6px] border-white z-20 hover:scale-105 transition-transform`}
+                  className={`absolute -top-6 ${
+                    isAr ? '-left-6 md:-left-10' : '-right-6 md:-right-10'
+                  } md:top-8 bg-[#e0fbc9] text-[#110222] w-[110px] h-[110px] rounded-full flex flex-col justify-center items-center shadow-xl border-[6px] border-white z-20 hover:scale-105 transition-transform`}
                 >
                   <span className="text-3xl font-extrabold">
                     <AnimatedCounter end={30} />+
@@ -596,7 +700,6 @@ export default function Home() {
         </FadeInSection>
       </section>
 
-      {/* 5. TAILORED SOLUTIONS */}
       <section className="py-24 bg-[#110222]">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInSection>
@@ -627,57 +730,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. RECENT PROJECTS */}
-      <section className="bg-white">
-        <FadeInSection>
-          <div className="pt-24 pb-12 text-center max-w-4xl mx-auto px-4">
-            <h6 className="text-[#38e54d] font-bold tracking-widest text-[15px] mb-4 uppercase">
-              {t('recentProjects')}
-            </h6>
-            <p className="text-[#2b1055] mb-8 font-medium text-lg">{t('recentDesc1')}</p>
-            <h2 className="text-[#2b1055] text-4xl md:text-[46px] font-extrabold">
-              {t('recentTitle')}
-            </h2>
-          </div>
-        </FadeInSection>
-
-        <div className="bg-gradient-to-b from-white to-[#1a0535] pt-10 pb-24 overflow-hidden">
-          <FadeInSection>
-            <div className="text-center max-w-4xl mx-auto px-4 mb-16">
-              <h2 className="text-[#2b1055] text-[40px] font-extrabold mb-4">{t('transformTitle')}</h2>
-              <p className="text-gray-600 font-medium">{t('transformDesc')}</p>
-            </div>
-          </FadeInSection>
-
-          {/* Infinite Marquee Slider with Popup Hover */}
-          <div className="w-full relative py-4">
-            <div className="animate-marquee hover:[animation-play-state:paused] flex gap-2">
-              {[...projectImages, ...projectImages].map((img, i) => (
+      <section className="bg-[#110222] py-16 overflow-hidden border-t border-white/10">
+        <div className="w-full relative">
+          <div className="animate-marquee hover:[animation-play-state:paused] flex gap-4 items-center">
+            {[...projectImages, ...projectImages].map((img, i) => (
+              <div
+                key={i}
+                className="w-[320px] md:w-[400px] shrink-0 mx-2 rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.4)] border border-white/5 cursor-pointer relative group bg-[#1a0535]"
+              >
+                <img
+                  src={img}
+                  alt={`Project ${i}`}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                />
                 <div
-                  key={i}
-                  className="w-[320px] md:w-[400px] shrink-0 mx-3 rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/10 cursor-pointer relative group bg-[#110222]"
+                  onClick={() => setPopupImage(img)}
+                  className="absolute inset-0 bg-[#2b1055]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10"
                 >
-                  <img
-                    src={img}
-                    alt={`Project ${i}`}
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div
-                    onClick={() => setPopupImage(img)}
-                    className="absolute inset-0 bg-[#2b1055]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10"
-                  >
-                    <div className="bg-[#38e54d] p-4 rounded-full text-[#110222] shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                      <Maximize2 size={30} strokeWidth={2.5} />
-                    </div>
+                  <div className="bg-[#38e54d] p-4 rounded-full text-[#110222] shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <Maximize2 size={30} strokeWidth={2.5} />
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 7. TESTIMONIAL & CONTACT */}
       <section className="py-24 bg-[#fafbfc] border-t border-gray-100">
         <FadeInSection>
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-16 items-center mb-32">
@@ -709,7 +788,9 @@ export default function Home() {
         <FadeInSection>
           <div className="max-w-5xl mx-auto px-4 flex flex-col lg:flex-row gap-12">
             <div
-              className={`w-full lg:w-[40%] flex flex-col justify-center ${isAr ? 'text-right' : 'text-left'}`}
+              className={`w-full lg:w-[40%] flex flex-col justify-center ${
+                isAr ? 'text-right' : 'text-left'
+              }`}
             >
               <h6 className="text-[13px] font-extrabold text-[#38e54d] mb-1 uppercase tracking-[0.2em]">
                 {t('contactInfo')}
@@ -721,7 +802,9 @@ export default function Home() {
               <div className="space-y-4 w-full">
                 <div className="bg-[#44e460] p-6 rounded-lg flex items-center gap-5 shadow-[0_4px_15px_rgba(68,228,96,0.3)] hover:-translate-y-1 transition-transform cursor-pointer">
                   <div
-                    className={`w-[54px] h-[54px] rounded-full border border-[#2b1055]/30 flex items-center justify-center shrink-0 bg-transparent ${isAr ? 'ml-4' : 'mr-4'}`}
+                    className={`w-[54px] h-[54px] rounded-full border border-[#2b1055]/30 flex items-center justify-center shrink-0 bg-transparent ${
+                      isAr ? 'ml-4' : 'mr-4'
+                    }`}
                   >
                     <img
                       src="/assets/images/location-icon.png"
@@ -739,7 +822,9 @@ export default function Home() {
 
                 <div className="bg-[#44e460] p-6 rounded-lg flex items-center gap-5 shadow-[0_4px_15px_rgba(68,228,96,0.3)] hover:-translate-y-1 transition-transform cursor-pointer">
                   <div
-                    className={`w-[54px] h-[54px] rounded-full border border-[#2b1055]/30 flex items-center justify-center shrink-0 bg-transparent ${isAr ? 'ml-4' : 'mr-4'}`}
+                    className={`w-[54px] h-[54px] rounded-full border border-[#2b1055]/30 flex items-center justify-center shrink-0 bg-transparent ${
+                      isAr ? 'ml-4' : 'mr-4'
+                    }`}
                   >
                     <img
                       src="/assets/images/email-icon.png"
@@ -757,7 +842,9 @@ export default function Home() {
 
                 <div className="bg-[#44e460] p-6 rounded-lg flex items-center gap-5 shadow-[0_4px_15px_rgba(68,228,96,0.3)] hover:-translate-y-1 transition-transform cursor-pointer">
                   <div
-                    className={`w-[54px] h-[54px] rounded-full border border-[#2b1055]/30 flex items-center justify-center shrink-0 bg-transparent ${isAr ? 'ml-4' : 'mr-4'}`}
+                    className={`w-[54px] h-[54px] rounded-full border border-[#2b1055]/30 flex items-center justify-center shrink-0 bg-transparent ${
+                      isAr ? 'ml-4' : 'mr-4'
+                    }`}
                   >
                     <img
                       src="/assets/images/phone-icon.png"
@@ -776,8 +863,8 @@ export default function Home() {
             </div>
 
             <div className="w-full lg:w-[60%]">
-              <div className="bg-gradient-to-br from-[#44e460] to-[#8d42e0] p-10 md:p-12 rounded-xl shadow-2xl flex flex-col justify-center w-full min-h-[500px]">
-                <h6 className="text-[#110222]/40 text-[13px] font-extrabold mb-1 uppercase tracking-[0.15em]">
+              <div className="bg-gradient-to-br from-[#9b51e0] to-[#2b1055] p-10 md:p-12 rounded-xl shadow-2xl flex flex-col justify-center w-full min-h-[500px]">
+                <h6 className="text-[#ffffff]/60 text-[13px] font-extrabold mb-1 uppercase tracking-[0.15em]">
                   {t('writeToUs')}
                 </h6>
                 <h3 className="text-[#38e54d] text-[38px] font-black mb-8 uppercase tracking-wide drop-shadow-md leading-none">
@@ -790,26 +877,32 @@ export default function Home() {
                     name="name"
                     required
                     placeholder={t('placeholderName')}
-                    className={`w-full p-4 rounded bg-white text-gray-800 text-[15px] font-medium focus:outline-none shadow-sm ${isAr ? 'text-right' : 'text-left'}`}
+                    className={`w-full p-4 rounded bg-white text-gray-800 text-[15px] font-medium focus:outline-none shadow-sm ${
+                      isAr ? 'text-right' : 'text-left'
+                    }`}
                   />
                   <input
                     type="email"
                     name="email"
                     required
                     placeholder={t('placeholderEmail')}
-                    className={`w-full p-4 rounded bg-white text-gray-800 text-[15px] font-medium focus:outline-none shadow-sm ${isAr ? 'text-right' : 'text-left'}`}
+                    className={`w-full p-4 rounded bg-white text-gray-800 text-[15px] font-medium focus:outline-none shadow-sm ${
+                      isAr ? 'text-right' : 'text-left'
+                    }`}
                   />
                   <textarea
                     name="message"
                     rows={6}
                     required
                     placeholder={t('placeholderMsg')}
-                    className={`w-full p-4 rounded bg-white text-gray-800 text-[15px] font-medium focus:outline-none resize-none shadow-sm mb-2 ${isAr ? 'text-right' : 'text-left'}`}
+                    className={`w-full p-4 rounded bg-white text-gray-800 text-[15px] font-medium focus:outline-none resize-none shadow-sm mb-2 ${
+                      isAr ? 'text-right' : 'text-left'
+                    }`}
                   ></textarea>
 
                   <button
                     type="submit"
-                    className="bg-[#f06e28] hover:bg-[#d55e1f] text-[#110222] font-bold py-3.5 px-8 rounded-md text-[16px] transition-colors shadow-lg"
+                    className="bg-[#38e54d] hover:bg-[#2eaa3f] text-[#2b1055] font-bold py-3.5 px-8 rounded-md text-[16px] transition-colors shadow-lg"
                   >
                     {t('sendNow')}
                   </button>
@@ -820,7 +913,6 @@ export default function Home() {
         </FadeInSection>
       </section>
 
-      {/* Popup Modal */}
       {popupImage && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/90 backdrop-blur-md"

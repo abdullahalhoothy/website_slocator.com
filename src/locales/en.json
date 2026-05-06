@@ -116,5 +116,22 @@
   "recentDesc1": "Discover our latest projects that showcase innovation, expertise, and a commitment to delivering exceptional results.",
   "recentTitle": "Consumer Services, Retail, and Hospitality",
   "transformTitle": "Transform Possibilities into Practical Solutions",
-  "transformDesc": "Explore how our cutting-edge solutions can be applied across various industries to solve challenges, optimize operations, and drive sustainable growth."
+  "transformDesc": "Explore how our cutting-edge solutions can be applied across various industries to solve challenges, optimize operations, and drive sustainable growth.",
+  "whyChoose": "About Us",
+  "homeAboutDesc": "Discover who we are, what drives us, and how we empower businesses to make smarter decisions with precision data intelligence.",
+  "ourSolutionsTitle": "Our Data Intelligence Solutions",
+  "heroNewTitle": "S-Locator®",
+  "heroNewSub": "The intelligent platform for location validation and territory expansion.",
+  "heroNewDesc": "Empower your physical expansion with AI-driven location intelligence, verified data sources, and automated territory optimization.",
+  "btnGetStartedNow": "Get started now",
+  
+  "nodeSlocator": "S-Locator Core",
+  "nodeData": "Trust Data & Intelligence Service",
+  "nodeReport": "Physical Expansion Report",
+  "nodeTerritory": "Territory Optimization & Routing",
+  "nodeTerrOpt": "Territory Optimization",
+  "nodeRoute": "Route Planning",
+  "nodeReport": "Physical expansion report",
+  "nodeEval": "Evaluate Current Location",
+  "nodeCity": "Full City Expansion Report"
 }
