@@ -82,7 +82,10 @@ export default function Solution() {
   const images = solutionData
 
   return (
-    <div className="w-full font-sans text-gray-800 bg-white overflow-hidden" dir={isAr ? 'rtl' : 'ltr'}>
+    <div
+      className="w-full font-sans text-gray-800 bg-white overflow-hidden"
+      dir={isAr ? 'rtl' : 'ltr'}
+    >
       {/* 1. HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-b from-[#100324] via-[#1a0535] to-[#100324] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">

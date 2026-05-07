@@ -59,7 +59,7 @@ export default function Contact() {
 
     const subject = encodeURIComponent(`${t('newContactMsg')} ${name}`)
     const body = encodeURIComponent(
-      `${t('namePrefix')} ${name}\n${t('emailPrefix')} ${email}\n\n${t('msgPrefix')}\n${message}`
+      `${t('namePrefix')} ${name}\n${t('emailPrefix')} ${email}\n\n${t('msgPrefix')}\n${message}`,
     )
 
     window.location.href = `mailto:admin@s-locator.com?subject=${subject}&body=${body}`
@@ -122,8 +122,12 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-1">{t('location')}</h4>
-                    <p className="text-[#110222]/80 text-[15px] font-semibold">{t('locationVal')}</p>
+                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-1">
+                      {t('location')}
+                    </h4>
+                    <p className="text-[#110222]/80 text-[15px] font-semibold">
+                      {t('locationVal')}
+                    </p>
                   </div>
                 </div>
 

@@ -4,15 +4,15 @@ import { initReactI18next } from 'react-i18next'
 import enTranslations from './locales/en.json'
 import arTranslations from './locales/ar.json'
 
-const savedLanguage = localStorage.getItem('site_lang') || 'en'
+const savedLanguage = localStorage.getItem('site_lang') || 'ar'
 
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: enTranslations },
     ar: { translation: arTranslations },
   },
-  lng: savedLanguage, 
-  fallbackLng: 'en',
+  lng: savedLanguage,
+  fallbackLng: 'ar',
   interpolation: {
     escapeValue: false,
   },

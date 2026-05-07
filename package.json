@@ -14,7 +14,8 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,mjs,cjs}": "node scripts/eslint-files.mjs"
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "node scripts/eslint-files.mjs",
+    "*.{json,css}": "prettier --config .prettierrc.cjs --write"
   },
   "dependencies": {
     "i18next": "^26.0.8",

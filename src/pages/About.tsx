@@ -99,7 +99,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, children, isAr }) 
         <div className="flex items-center gap-5">
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
-              isOpen ? 'bg-[#38e54d] text-[#110222]' : 'bg-white/5 text-[#38e54d] group-hover:bg-[#38e54d]/20'
+              isOpen
+                ? 'bg-[#38e54d] text-[#110222]'
+                : 'bg-white/5 text-[#38e54d] group-hover:bg-[#38e54d]/20'
             }`}
           >
             <span className="text-2xl font-black leading-none pb-1">{isOpen ? '-' : '+'}</span>
