@@ -86,7 +86,6 @@ export default function Blog() {
       : ['S-LOC', 'Riyadh', 'Jeddah', 'Pharmacies', 'Demographics', 'Expansion', 'SaaS', 'ROI'],
   }
 
-  
   const featuredPost = {
     title: isAr
       ? 'أفضل طريقة لإجراء دراسة جدوى في الرياض (الدليل الشامل 2026)'
@@ -98,7 +97,7 @@ export default function Blog() {
     date: isAr ? '17 فبراير 2026' : 'Feb 17, 2026',
     author: isAr ? 'فريق البحث' : 'Research Team',
     image: '/assets/images/Feasibility-Study-in-Riyadh-768x419.jpg',
-    link: '/article/feasibility-study-riyadh-guide', 
+    link: '/article/feasibility-study-riyadh-guide',
   }
 
   const regularPosts = [
@@ -114,7 +113,7 @@ export default function Blog() {
       date: isAr ? '16 فبراير 2026' : 'Feb 16, 2026',
       author: isAr ? 'فريق البحث' : 'Research Team',
       image: '/assets/images/Cloud-kitchen-feasibility-Saudi-Arabia-768x429.jpg',
-      link: '/article/golden-zones-riyadh', 
+      link: '/article/golden-zones-riyadh',
     },
     {
       id: 3,
@@ -128,7 +127,7 @@ export default function Blog() {
       date: isAr ? '15 فبراير 2026' : 'Feb 15, 2026',
       author: isAr ? 'فريق البحث' : 'Research Team',
       image: '/assets/images/Feasibility-study-company-Jeddah-768x429.jpg',
-      link: '/article/feasibility-study-jeddah', 
+      link: '/article/feasibility-study-jeddah',
     },
     {
       id: 4,
@@ -142,7 +141,7 @@ export default function Blog() {
       date: isAr ? '15 فبراير 2026' : 'Feb 15, 2026',
       author: isAr ? 'فريق البحث' : 'Research Team',
       image: '/assets/images/Site-analysis-for-pharmacy-in-Riyadh-768x429.jpg',
-      link: '/article/pharmacy-site-analysis-riyadh', 
+      link: '/article/pharmacy-site-analysis-riyadh',
     },
   ]
 

@@ -49,8 +49,8 @@ export const articlesData: Record<string, ArticleData> = {
         <>
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">Introduction</h2>
           <p className="mb-6">
-            If you are planning to start a business in Riyadh, the most important step before signing
-            a lease is not branding or interior design.
+            If you are planning to start a business in Riyadh, the most important step before
+            signing a lease is not branding or interior design.
           </p>
           <p className="mb-6">
             It is conducting a{' '}
@@ -67,7 +67,9 @@ export const articlesData: Record<string, ArticleData> = {
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
             What Is the Best Way to Do a Feasibility Study in Riyadh?
           </h2>
-          <p className="mb-4">The best way to conduct a feasibility study in Riyadh is by combining:</p>
+          <p className="mb-4">
+            The best way to conduct a feasibility study in Riyadh is by combining:
+          </p>
           <ul className="list-disc mb-8 space-y-2 font-medium text-gray-600 marker:text-[#38e54d] pl-6">
             <li>Financial analysis</li>
             <li>Market research</li>
@@ -82,8 +84,8 @@ export const articlesData: Record<string, ArticleData> = {
             Why Do Businesses Fail Because of Location?
           </h2>
           <p className="mb-4">
-            Riyadh is one of the fastest-growing cities in the region. However, many businesses close
-            within their first two years. Common reasons include:
+            Riyadh is one of the fastest-growing cities in the region. However, many businesses
+            close within their first two years. Common reasons include:
           </p>
           <ul className="list-disc mb-8 space-y-2 font-medium text-gray-600 marker:text-[#38e54d] pl-6">
             <li>Choosing a location that does not match the target audience</li>
@@ -108,8 +110,8 @@ export const articlesData: Record<string, ArticleData> = {
           </ul>
           <h3 className="text-xl font-bold text-[#046bd2] mt-8 mb-4">2. Income Level Analysis</h3>
           <p className="mb-6">
-            A specialty coffee shop requires a different income segment than a discount grocery store.
-            Understanding neighborhood income levels is essential before investing.
+            A specialty coffee shop requires a different income segment than a discount grocery
+            store. Understanding neighborhood income levels is essential before investing.
           </p>
           <h3 className="text-xl font-bold text-[#046bd2] mt-8 mb-4">3. Competitor Analysis</h3>
           <ul className="list-disc mb-6 space-y-2 font-medium text-gray-600 marker:text-[#38e54d] pl-6">
@@ -147,7 +149,9 @@ export const articlesData: Record<string, ArticleData> = {
                   <td className="p-5 font-bold text-[#110222]">Based on real numbers</td>
                 </tr>
                 <tr className="border-b border-gray-100 bg-gray-50">
-                  <td className="p-5 text-gray-500 border-r border-gray-100">General assumptions</td>
+                  <td className="p-5 text-gray-500 border-r border-gray-100">
+                    General assumptions
+                  </td>
                   <td className="p-5 font-bold text-[#110222]">Neighborhood-level insights</td>
                 </tr>
                 <tr className="border-b border-gray-100">
@@ -172,8 +176,8 @@ export const articlesData: Record<string, ArticleData> = {
             Why Location Intelligence Is Now Essential
           </h2>
           <p className="mb-4">
-            With rising commercial rents and increasing competition in Riyadh, investors can no longer
-            afford guesswork.
+            With rising commercial rents and increasing competition in Riyadh, investors can no
+            longer afford guesswork.
           </p>
           <p className="mb-4">
             Location intelligence platforms such as{' '}
@@ -223,16 +227,19 @@ export const articlesData: Record<string, ArticleData> = {
         <>
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">المقدمة</h2>
           <p className="mb-6">
-            إذا كنت تخطط لبدء عمل تجاري في الرياض، فإن الخطوة الأهم قبل توقيع عقد الإيجار ليست العلامة
-            التجارية أو التصميم الداخلي.
+            إذا كنت تخطط لبدء عمل تجاري في الرياض، فإن الخطوة الأهم قبل توقيع عقد الإيجار ليست
+            العلامة التجارية أو التصميم الداخلي.
           </p>
           <p className="mb-6">
-            بل هي إجراء <strong className="text-[#2b1055] font-black">دراسة جدوى صحيحة — وتحديداً تحليل الموقع.</strong>
+            بل هي إجراء{' '}
+            <strong className="text-[#2b1055] font-black">
+              دراسة جدوى صحيحة — وتحديداً تحليل الموقع.
+            </strong>
           </p>
           <p className="mb-6">
-            في عام 2026، لم يعد اختيار "شارع مزدحم" كافياً. السوق أكثر تنافسية، والإيجارات أعلى، والقرارات
-            الخاطئة باهظة الثمن. يشرح هذا الدليل الطريقة الحديثة لإجراء دراسة جدوى في الرياض باستخدام
-            بيانات حقيقية بدلاً من الافتراضات.
+            في عام 2026، لم يعد اختيار "شارع مزدحم" كافياً. السوق أكثر تنافسية، والإيجارات أعلى،
+            والقرارات الخاطئة باهظة الثمن. يشرح هذا الدليل الطريقة الحديثة لإجراء دراسة جدوى في
+            الرياض باستخدام بيانات حقيقية بدلاً من الافتراضات.
           </p>
           <hr className="my-10 border-gray-200" />
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
@@ -245,15 +252,16 @@ export const articlesData: Record<string, ArticleData> = {
             <li>ذكاء المواقع المدعوم بالبيانات</li>
           </ul>
           <p className="mb-6">
-            أكبر خطأ يرتكبه المستثمرون هو الاعتماد على الحدس أو رأي الوسيط العقاري دون التحقق من البيانات.
+            أكبر خطأ يرتكبه المستثمرون هو الاعتماد على الحدس أو رأي الوسيط العقاري دون التحقق من
+            البيانات.
           </p>
           <hr className="my-10 border-gray-200" />
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
             لماذا تفشل الأعمال بسبب الموقع؟
           </h2>
           <p className="mb-4">
-            الرياض هي إحدى أسرع المدن نمواً في المنطقة. ومع ذلك، تغلق العديد من الشركات أبوابها خلال أول
-            عامين. تشمل الأسباب الشائعة:
+            الرياض هي إحدى أسرع المدن نمواً في المنطقة. ومع ذلك، تغلق العديد من الشركات أبوابها خلال
+            أول عامين. تشمل الأسباب الشائعة:
           </p>
           <ul className="list-disc mb-8 space-y-2 font-medium text-gray-600 marker:text-[#38e54d] pr-6">
             <li>اختيار موقع لا يتناسب مع الجمهور المستهدف</li>
@@ -274,8 +282,8 @@ export const articlesData: Record<string, ArticleData> = {
           </ul>
           <h3 className="text-xl font-bold text-[#046bd2] mt-8 mb-4">2. تحليل مستوى الدخل</h3>
           <p className="mb-6">
-            يتطلب المقهى المتخصص شريحة دخل تختلف عن متجر البقالة المخفض. فهم مستويات الدخل في الحي أمر ضروري
-            قبل الاستثمار.
+            يتطلب المقهى المتخصص شريحة دخل تختلف عن متجر البقالة المخفض. فهم مستويات الدخل في الحي
+            أمر ضروري قبل الاستثمار.
           </p>
           <h3 className="text-xl font-bold text-[#046bd2] mt-8 mb-4">3. تحليل المنافسين</h3>
           <ul className="list-disc mb-6 space-y-2 font-medium text-gray-600 marker:text-[#38e54d] pr-6">
@@ -309,7 +317,9 @@ export const articlesData: Record<string, ArticleData> = {
               </thead>
               <tbody className="bg-white">
                 <tr className="border-b border-gray-100">
-                  <td className="p-5 text-gray-500 border-l border-gray-100">تعتمد على التقديرات</td>
+                  <td className="p-5 text-gray-500 border-l border-gray-100">
+                    تعتمد على التقديرات
+                  </td>
                   <td className="p-5 font-bold text-[#110222]">تعتمد على أرقام حقيقية</td>
                 </tr>
                 <tr className="border-b border-gray-100 bg-gray-50">
@@ -321,7 +331,9 @@ export const articlesData: Record<string, ArticleData> = {
                   <td className="p-5 font-bold text-[#110222]">قرار مدروس ومحسوب</td>
                 </tr>
                 <tr className="border-b border-gray-100 bg-gray-50">
-                  <td className="p-5 text-gray-500 border-l border-gray-100">رسم محدود للمنافسين</td>
+                  <td className="p-5 text-gray-500 border-l border-gray-100">
+                    رسم محدود للمنافسين
+                  </td>
                   <td className="p-5 font-bold text-[#110222]">رؤية شاملة للمنافسين</td>
                 </tr>
               </tbody>
@@ -335,8 +347,8 @@ export const articlesData: Record<string, ArticleData> = {
             لماذا أصبح ذكاء المواقع أمراً أساسياً الآن
           </h2>
           <p className="mb-4">
-            مع ارتفاع الإيجارات التجارية وزيادة المنافسة في الرياض، لم يعد بإمكان المستثمرين تحمل تكلفة
-            التخمين.
+            مع ارتفاع الإيجارات التجارية وزيادة المنافسة في الرياض، لم يعد بإمكان المستثمرين تحمل
+            تكلفة التخمين.
           </p>
           <p className="mb-4">
             تتيح منصات ذكاء المواقع مثل{' '}
@@ -359,8 +371,8 @@ export const articlesData: Record<string, ArticleData> = {
             المدعوم بالبيانات.
           </p>
           <p className="mb-4">
-            الموقع الصحيح — المدعوم بأرقام حقيقية — يمكن أن يحدد ما إذا كان مشروعك سيزدهر أو يغلق أبوابه
-            في غضون عامين.
+            الموقع الصحيح — المدعوم بأرقام حقيقية — يمكن أن يحدد ما إذا كان مشروعك سيزدهر أو يغلق
+            أبوابه في غضون عامين.
           </p>
           <p className="mb-10">
             قبل الاستثمار بكثافة في الإيجار وتكاليف التجهيز، تأكد من أن قرارك مدعوم بالبيانات، وليس
@@ -388,47 +400,94 @@ export const articlesData: Record<string, ArticleData> = {
       tags: ['#GoldenZones', '#CloudKitchen'],
       content: (
         <>
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Statement (Direct Answer)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Statement (Direct Answer)
+          </h2>
           <p className="mb-6">
-            In the 2026 Saudi real estate market, a “busy street” does not guarantee profit. With the influx of foreign investors and the new rent regulations, the smartest business owners are hunting for{' '}
-            <strong className="text-[#2b1055] font-black">“Golden Zones”</strong> — hidden pockets in Riyadh and Jeddah where purchasing power is high, but service supply is critically low. You cannot find these zones by driving around; you find them using <strong>S-LOC’s</strong> algorithmic heatmaps.
+            In the 2026 Saudi real estate market, a “busy street” does not guarantee profit. With
+            the influx of foreign investors and the new rent regulations, the smartest business
+            owners are hunting for{' '}
+            <strong className="text-[#2b1055] font-black">“Golden Zones”</strong> — hidden pockets
+            in Riyadh and Jeddah where purchasing power is high, but service supply is critically
+            low. You cannot find these zones by driving around; you find them using{' '}
+            <strong>S-LOC’s</strong> algorithmic heatmaps.
           </p>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Explanation (The Technical Solution)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Explanation (The Technical Solution)
+          </h2>
           <p className="mb-4">
-            What defines a “Golden Zone”? It is a mathematical ratio: <strong className="text-[#046bd2]">High Demand ÷ Low Competition.</strong>
+            What defines a “Golden Zone”? It is a mathematical ratio:{' '}
+            <strong className="text-[#046bd2]">High Demand ÷ Low Competition.</strong>
           </p>
           <p className="mb-4">
-            Traditional “Prime Locations” (like Tahlia St. or Olaya) are often <strong>“Red Zones”</strong>: High traffic, but oversaturated with 50+ competitors and inflated rents.
+            Traditional “Prime Locations” (like Tahlia St. or Olaya) are often{' '}
+            <strong>“Red Zones”</strong>: High traffic, but oversaturated with 50+ competitors and
+            inflated rents.
           </p>
           <p className="mb-4">
-            <strong>S-LOC (S-Locator)</strong> identifies the alternative. Our algorithms scan the city grid to perform “Gap Analysis.” We highlight specific districts where:
+            <strong>S-LOC (S-Locator)</strong> identifies the alternative. Our algorithms scan the
+            city grid to perform “Gap Analysis.” We highlight specific districts where:
           </p>
 
           <ol className="list-decimal mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] marker:font-bold pl-6">
-            <li><strong>Population Density is Rising (GASTAT):</strong> New residential compounds are filling up.</li>
-            <li><strong>Commercial Licenses are Low (MOC):</strong> There are very few existing permits for your specific sector (e.g., “Specialty Coffee” or “Family Dining”).</li>
-            <li><strong>Rent is Undervalued:</strong> The current rental price is lower than the predicted revenue.</li>
+            <li>
+              <strong>Population Density is Rising (GASTAT):</strong> New residential compounds are
+              filling up.
+            </li>
+            <li>
+              <strong>Commercial Licenses are Low (MOC):</strong> There are very few existing
+              permits for your specific sector (e.g., “Specialty Coffee” or “Family Dining”).
+            </li>
+            <li>
+              <strong>Rent is Undervalued:</strong> The current rental price is lower than the
+              predicted revenue.
+            </li>
           </ol>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Evidence (Authority & Trust)</h2>
-          <p className="mb-4">To confirm a zone is truly “Golden,” S-LOC cross-references three official datasets to validate the investment:</p>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Evidence (Authority & Trust)
+          </h2>
+          <p className="mb-4">
+            To confirm a zone is truly “Golden,” S-LOC cross-references three official datasets to
+            validate the investment:
+          </p>
 
           <ul className="list-disc mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] pl-6">
-            <li><strong className="text-[#110222]">Spending Power Validation:</strong> We use GASTAT income bracket data to confirm the neighborhood can afford your product (e.g., distinguishing between “Luxury” vs. “Economy” zones).</li>
-            <li><strong className="text-[#110222]">Rent Freeze Impact:</strong> With the Riyadh rent stabilization measures in effect, securing a long-term lease in a “Golden Zone” now locks in your operational costs while your revenue grows. S-LOC checks MOJ transaction records to ensure you aren't entering a district with artificially spiked prices.</li>
-            <li><strong className="text-[#110222]">Future Growth Trajectory:</strong> We overlay Riyadh Metro and Bus Network maps to predict future footfall spikes before they happen.</li>
+            <li>
+              <strong className="text-[#110222]">Spending Power Validation:</strong> We use GASTAT
+              income bracket data to confirm the neighborhood can afford your product (e.g.,
+              distinguishing between “Luxury” vs. “Economy” zones).
+            </li>
+            <li>
+              <strong className="text-[#110222]">Rent Freeze Impact:</strong> With the Riyadh rent
+              stabilization measures in effect, securing a long-term lease in a “Golden Zone” now
+              locks in your operational costs while your revenue grows. S-LOC checks MOJ transaction
+              records to ensure you aren't entering a district with artificially spiked prices.
+            </li>
+            <li>
+              <strong className="text-[#110222]">Future Growth Trajectory:</strong> We overlay
+              Riyadh Metro and Bus Network maps to predict future footfall spikes before they
+              happen.
+            </li>
           </ul>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Action (Execute with S-LOC)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Action (Execute with S-LOC)
+          </h2>
           <p className="mb-10">
-            Don't follow the herd to expensive, saturated streets. <a href="/" className="text-[#046bd2] font-bold hover:underline">[Find Your Golden Zone on S-LOC]</a> Open the heatmap, filter by your industry, and instantly see where the market gaps are in Riyadh.
+            Don't follow the herd to expensive, saturated streets.{' '}
+            <a href="/" className="text-[#046bd2] font-bold hover:underline">
+              [Find Your Golden Zone on S-LOC]
+            </a>{' '}
+            Open the heatmap, filter by your industry, and instantly see where the market gaps are
+            in Riyadh.
           </p>
 
           <img
@@ -451,44 +510,83 @@ export const articlesData: Record<string, ArticleData> = {
         <>
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">البيان (إجابة مباشرة)</h2>
           <p className="mb-6">
-            في سوق العقارات السعودي لعام 2026، "الشارع المزدحم" لا يضمن الربح. مع تدفق المستثمرين الأجانب ولوائح الإيجار الجديدة، يبحث أذكى أصحاب الأعمال عن <strong className="text-[#2b1055] font-black">"المناطق الذهبية"</strong> — جيوب مخفية في الرياض وجدة حيث القوة الشرائية عالية، لكن عرض الخدمات منخفض بشكل حرج. لا يمكنك العثور على هذه المناطق بالتجول بالسيارة؛ بل تجدها باستخدام <strong>S-LOC</strong> والخرائط الحرارية الخوارزمية الخاصة بها.
+            في سوق العقارات السعودي لعام 2026، "الشارع المزدحم" لا يضمن الربح. مع تدفق المستثمرين
+            الأجانب ولوائح الإيجار الجديدة، يبحث أذكى أصحاب الأعمال عن{' '}
+            <strong className="text-[#2b1055] font-black">"المناطق الذهبية"</strong> — جيوب مخفية في
+            الرياض وجدة حيث القوة الشرائية عالية، لكن عرض الخدمات منخفض بشكل حرج. لا يمكنك العثور
+            على هذه المناطق بالتجول بالسيارة؛ بل تجدها باستخدام <strong>S-LOC</strong> والخرائط
+            الحرارية الخوارزمية الخاصة بها.
           </p>
 
           <hr className="my-10 border-gray-200" />
 
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الشرح (الحل التقني)</h2>
           <p className="mb-4">
-            ما الذي يحدد "المنطقة الذهبية"؟ إنها نسبة رياضية: <strong className="text-[#046bd2]">طلب مرتفع ÷ منافسة منخفضة.</strong>
+            ما الذي يحدد "المنطقة الذهبية"؟ إنها نسبة رياضية:{' '}
+            <strong className="text-[#046bd2]">طلب مرتفع ÷ منافسة منخفضة.</strong>
           </p>
           <p className="mb-4">
-            "المواقع الرئيسية" التقليدية (مثل شارع التحلية أو العليا) غالباً ما تكون <strong>"مناطق حمراء"</strong>: حركة مرور عالية، لكنها مشبعة بأكثر من 50 منافساً وإيجارات متضخمة.
+            "المواقع الرئيسية" التقليدية (مثل شارع التحلية أو العليا) غالباً ما تكون{' '}
+            <strong>"مناطق حمراء"</strong>: حركة مرور عالية، لكنها مشبعة بأكثر من 50 منافساً
+            وإيجارات متضخمة.
           </p>
           <p className="mb-4">
-            <strong>S-LOC</strong> تحدد البديل الأمثل. تقوم خوارزمياتنا بمسح شبكة المدينة لإجراء "تحليل الفجوات". نحن نسلط الضوء على مناطق محددة حيث:
+            <strong>S-LOC</strong> تحدد البديل الأمثل. تقوم خوارزمياتنا بمسح شبكة المدينة لإجراء
+            "تحليل الفجوات". نحن نسلط الضوء على مناطق محددة حيث:
           </p>
 
           <ol className="list-decimal mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] marker:font-bold pr-6">
-            <li><strong>الكثافة السكانية في ازدياد (هيئة الإحصاء):</strong> المجمعات السكنية الجديدة تمتلئ.</li>
-            <li><strong>الرخص التجارية منخفضة (وزارة التجارة):</strong> يوجد عدد قليل جداً من التصاريح الحالية لقطاعك المحدد (مثل "القهوة المختصة" أو "مطاعم العائلات").</li>
-            <li><strong>الإيجار مقوم بأقل من قيمته:</strong> سعر الإيجار الحالي أقل من الإيرادات المتوقعة.</li>
+            <li>
+              <strong>الكثافة السكانية في ازدياد (هيئة الإحصاء):</strong> المجمعات السكنية الجديدة
+              تمتلئ.
+            </li>
+            <li>
+              <strong>الرخص التجارية منخفضة (وزارة التجارة):</strong> يوجد عدد قليل جداً من التصاريح
+              الحالية لقطاعك المحدد (مثل "القهوة المختصة" أو "مطاعم العائلات").
+            </li>
+            <li>
+              <strong>الإيجار مقوم بأقل من قيمته:</strong> سعر الإيجار الحالي أقل من الإيرادات
+              المتوقعة.
+            </li>
           </ol>
 
           <hr className="my-10 border-gray-200" />
 
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الدليل (السلطة والثقة)</h2>
-          <p className="mb-4">لتأكيد أن المنطقة "ذهبية" حقاً، تقوم S-LOC بمقاطعة ثلاث مجموعات بيانات رسمية للتحقق من صحة الاستثمار:</p>
+          <p className="mb-4">
+            لتأكيد أن المنطقة "ذهبية" حقاً، تقوم S-LOC بمقاطعة ثلاث مجموعات بيانات رسمية للتحقق من
+            صحة الاستثمار:
+          </p>
 
           <ul className="list-disc mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] pr-6">
-            <li><strong className="text-[#110222]">التحقق من القوة الشرائية:</strong> نستخدم بيانات فئات الدخل من هيئة الإحصاء لتأكيد قدرة الحي على شراء منتجك (مثل التمييز بين المناطق "الفاخرة" و"الاقتصادية").</li>
-            <li><strong className="text-[#110222]">تأثير استقرار الإيجارات:</strong> مع تطبيق تدابير استقرار الإيجارات في الرياض، فإن تأمين عقد إيجار طويل الأجل في "منطقة ذهبية" يثبت الآن تكاليفك التشغيلية بينما تنمو إيراداتك. تتحقق S-LOC من سجلات معاملات وزارة العدل للتأكد من أنك لا تدخل منطقة بأسعار مرتفعة بشكل مصطنع.</li>
-            <li><strong className="text-[#110222]">مسار النمو المستقبلي:</strong> نقوم بتركيب خرائط مترو وحافلات الرياض للتنبؤ بزيادات حركة المشاة المستقبلية قبل حدوثها.</li>
+            <li>
+              <strong className="text-[#110222]">التحقق من القوة الشرائية:</strong> نستخدم بيانات
+              فئات الدخل من هيئة الإحصاء لتأكيد قدرة الحي على شراء منتجك (مثل التمييز بين المناطق
+              "الفاخرة" و"الاقتصادية").
+            </li>
+            <li>
+              <strong className="text-[#110222]">تأثير استقرار الإيجارات:</strong> مع تطبيق تدابير
+              استقرار الإيجارات في الرياض، فإن تأمين عقد إيجار طويل الأجل في "منطقة ذهبية" يثبت الآن
+              تكاليفك التشغيلية بينما تنمو إيراداتك. تتحقق S-LOC من سجلات معاملات وزارة العدل للتأكد
+              من أنك لا تدخل منطقة بأسعار مرتفعة بشكل مصطنع.
+            </li>
+            <li>
+              <strong className="text-[#110222]">مسار النمو المستقبلي:</strong> نقوم بتركيب خرائط
+              مترو وحافلات الرياض للتنبؤ بزيادات حركة المشاة المستقبلية قبل حدوثها.
+            </li>
           </ul>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الإجراء (التنفيذ مع S-LOC)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            الإجراء (التنفيذ مع S-LOC)
+          </h2>
           <p className="mb-10">
-            لا تتبع القطيع إلى الشوارع باهظة الثمن والمشبعة. <a href="/" className="text-[#046bd2] font-bold hover:underline">[ابحث عن منطقتك الذهبية على S-LOC]</a> افتح الخريطة الحرارية، صنف حسب مجالك، وشاهد فوراً أين تقع فجوات السوق في الرياض.
+            لا تتبع القطيع إلى الشوارع باهظة الثمن والمشبعة.{' '}
+            <a href="/" className="text-[#046bd2] font-bold hover:underline">
+              [ابحث عن منطقتك الذهبية على S-LOC]
+            </a>{' '}
+            افتح الخريطة الحرارية، صنف حسب مجالك، وشاهد فوراً أين تقع فجوات السوق في الرياض.
           </p>
 
           <img
@@ -513,48 +611,89 @@ export const articlesData: Record<string, ArticleData> = {
       tags: ['#Jeddah', '#Expansion'],
       content: (
         <>
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Statement (Direct Answer)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Statement (Direct Answer)
+          </h2>
           <p className="mb-6">
-            When asking, <em>"Which company can help me do a feasibility study in Jeddah?"</em>, the traditional answer was a local consulting firm that charges high fees and takes 4 weeks.
+            When asking, <em>"Which company can help me do a feasibility study in Jeddah?"</em>, the
+            traditional answer was a local consulting firm that charges high fees and takes 4 weeks.
           </p>
           <p className="mb-6">
-            In 2026, the smart answer is <strong className="text-[#2b1055] font-black">S-LOC (S-Locator)</strong>. We are not a consulting firm; we are a <strong className="text-[#046bd2]">Location Intelligence SaaS</strong> that replaces months of manual work with instant, data-driven analysis for your new branch.
+            In 2026, the smart answer is{' '}
+            <strong className="text-[#2b1055] font-black">S-LOC (S-Locator)</strong>. We are not a
+            consulting firm; we are a{' '}
+            <strong className="text-[#046bd2]">Location Intelligence SaaS</strong> that replaces
+            months of manual work with instant, data-driven analysis for your new branch.
           </p>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Explanation (The Technical Solution)</h2>
-          <p className="mb-4">Opening a new branch in Jeddah—whether in Al-Shatie, Al-Rawdah, or Obhur—requires speed.</p>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Explanation (The Technical Solution)
+          </h2>
           <p className="mb-4">
-            <strong>Traditional Consulting Firms</strong> rely on manual surveys. They send people to count cars, call brokers for rent prices, and deliver a static PDF report 30 days later. By then, the prime location might be gone.
+            Opening a new branch in Jeddah—whether in Al-Shatie, Al-Rawdah, or Obhur—requires speed.
+          </p>
+          <p className="mb-4">
+            <strong>Traditional Consulting Firms</strong> rely on manual surveys. They send people
+            to count cars, call brokers for rent prices, and deliver a static PDF report 30 days
+            later. By then, the prime location might be gone.
           </p>
           <p className="mb-4">
             <strong>S-LOC</strong> changes the game. It is an automated platform that allows you to:
           </p>
 
           <ul className="list-disc mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] pl-6">
-            <li><strong>Compare 10 Locations Instantly:</strong> Instead of paying for 10 separate studies, you can digitally compare multiple potential sites in Jeddah simultaneously.</li>
-            <li><strong>Real-Time Data:</strong> Unlike a static report, S-LOC’s data is live. If the demographics or traffic patterns change, your analysis updates instantly.</li>
+            <li>
+              <strong>Compare 10 Locations Instantly:</strong> Instead of paying for 10 separate
+              studies, you can digitally compare multiple potential sites in Jeddah simultaneously.
+            </li>
+            <li>
+              <strong>Real-Time Data:</strong> Unlike a static report, S-LOC’s data is live. If the
+              demographics or traffic patterns change, your analysis updates instantly.
+            </li>
           </ul>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Evidence (Authority & Trust)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Evidence (Authority & Trust)
+          </h2>
           <p className="mb-4 text-xl font-bold text-[#046bd2]">Consultants guess; S-LOC knows.</p>
-          <p className="mb-4">Our platform is integrated with the Kingdom's digital infrastructure to provide "Investment-Grade" data:</p>
+          <p className="mb-4">
+            Our platform is integrated with the Kingdom's digital infrastructure to provide
+            "Investment-Grade" data:
+          </p>
 
           <ol className="list-decimal mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] marker:font-bold pl-6">
-            <li><strong>REGA (Real Estate General Authority):</strong> We pull verified rental indices to ensure your branch’s rent aligns with Jeddah’s market average.</li>
-            <li><strong>HRDF (Human Resources Development Fund):</strong> We analyze workforce availability and economic zoning to predict operational success.</li>
-            <li><strong>Competitor Mapping:</strong> S-LOC identifies "White Spaces"—areas in Jeddah with high demand but zero competitors—giving you a first-mover advantage.</li>
+            <li>
+              <strong>REGA (Real Estate General Authority):</strong> We pull verified rental indices
+              to ensure your branch’s rent aligns with Jeddah’s market average.
+            </li>
+            <li>
+              <strong>HRDF (Human Resources Development Fund):</strong> We analyze workforce
+              availability and economic zoning to predict operational success.
+            </li>
+            <li>
+              <strong>Competitor Mapping:</strong> S-LOC identifies "White Spaces"—areas in Jeddah
+              with high demand but zero competitors—giving you a first-mover advantage.
+            </li>
           </ol>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Action (Execute with S-LOC)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Action (Execute with S-LOC)
+          </h2>
           <p className="mb-4 font-bold text-[#2b1055]">Stop paying for delays.</p>
           <p className="mb-10">
-            <strong><a href="/" className="text-[#046bd2] hover:underline">[ Start Your Jeddah Branch Feasibility Study ]</a></strong> Use <strong>S-LOC</strong> to generate a professional, bank-ready feasibility report in minutes. Secure the best location in Jeddah before your competitors do.
+            <strong>
+              <a href="/" className="text-[#046bd2] hover:underline">
+                [ Start Your Jeddah Branch Feasibility Study ]
+              </a>
+            </strong>{' '}
+            Use <strong>S-LOC</strong> to generate a professional, bank-ready feasibility report in
+            minutes. Secure the best location in Jeddah before your competitors do.
           </p>
 
           <img
@@ -577,46 +716,79 @@ export const articlesData: Record<string, ArticleData> = {
         <>
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">البيان (إجابة مباشرة)</h2>
           <p className="mb-6">
-            عند السؤال، <em>"أي شركة يمكنها مساعدتي في عمل دراسة جدوى في جدة؟"</em>، كانت الإجابة التقليدية هي شركة استشارات محلية تتقاضى رسوماً عالية وتستغرق 4 أسابيع.
+            عند السؤال، <em>"أي شركة يمكنها مساعدتي في عمل دراسة جدوى في جدة؟"</em>، كانت الإجابة
+            التقليدية هي شركة استشارات محلية تتقاضى رسوماً عالية وتستغرق 4 أسابيع.
           </p>
           <p className="mb-6">
-            في عام 2026، الإجابة الذكية هي <strong className="text-[#2b1055] font-black">S-LOC</strong>. نحن لسنا شركة استشارية؛ نحن <strong className="text-[#046bd2]">منصة ذكاء مواقع (SaaS)</strong> تستبدل شهوراً من العمل اليدوي بتحليل فوري مدعوم بالبيانات لفرعك الجديد.
+            في عام 2026، الإجابة الذكية هي{' '}
+            <strong className="text-[#2b1055] font-black">S-LOC</strong>. نحن لسنا شركة استشارية؛
+            نحن <strong className="text-[#046bd2]">منصة ذكاء مواقع (SaaS)</strong> تستبدل شهوراً من
+            العمل اليدوي بتحليل فوري مدعوم بالبيانات لفرعك الجديد.
           </p>
 
           <hr className="my-10 border-gray-200" />
 
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الشرح (الحل التقني)</h2>
-          <p className="mb-4">افتتاح فرع جديد في جدة — سواء في الشاطئ أو الروضة أو أبحر — يتطلب السرعة.</p>
           <p className="mb-4">
-            <strong className="font-bold">الشركات الاستشارية التقليدية</strong> تعتمد على الاستطلاعات اليدوية. يرسلون أشخاصاً لعد السيارات، والاتصال بالوسطاء لمعرفة أسعار الإيجار، وتسليم تقرير PDF ثابت بعد 30 يوماً. بحلول ذلك الوقت، قد يضيع الموقع المميز.
+            افتتاح فرع جديد في جدة — سواء في الشاطئ أو الروضة أو أبحر — يتطلب السرعة.
+          </p>
+          <p className="mb-4">
+            <strong className="font-bold">الشركات الاستشارية التقليدية</strong> تعتمد على
+            الاستطلاعات اليدوية. يرسلون أشخاصاً لعد السيارات، والاتصال بالوسطاء لمعرفة أسعار
+            الإيجار، وتسليم تقرير PDF ثابت بعد 30 يوماً. بحلول ذلك الوقت، قد يضيع الموقع المميز.
           </p>
           <p className="mb-4">
             تغير <strong className="font-bold">S-LOC</strong> قواعد اللعبة. إنها منصة آلية تتيح لك:
           </p>
 
           <ul className="list-disc mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] pr-6">
-            <li><strong>مقارنة 10 مواقع فوراً:</strong> بدلاً من الدفع مقابل 10 دراسات منفصلة، يمكنك مقارنة مواقع محتملة متعددة في جدة رقمياً في نفس الوقت.</li>
-            <li><strong>بيانات في الوقت الفعلي:</strong> على عكس التقرير الثابت، بيانات S-LOC حية. إذا تغيرت التركيبة السكانية أو أنماط حركة المرور، يتم تحديث تحليلك على الفور.</li>
+            <li>
+              <strong>مقارنة 10 مواقع فوراً:</strong> بدلاً من الدفع مقابل 10 دراسات منفصلة، يمكنك
+              مقارنة مواقع محتملة متعددة في جدة رقمياً في نفس الوقت.
+            </li>
+            <li>
+              <strong>بيانات في الوقت الفعلي:</strong> على عكس التقرير الثابت، بيانات S-LOC حية. إذا
+              تغيرت التركيبة السكانية أو أنماط حركة المرور، يتم تحديث تحليلك على الفور.
+            </li>
           </ul>
 
           <hr className="my-10 border-gray-200" />
 
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الدليل (السلطة والثقة)</h2>
           <p className="mb-4 text-xl font-bold text-[#046bd2]">المستشارون يخمنون؛ S-LOC تعرف.</p>
-          <p className="mb-4">منصتنا متكاملة مع البنية التحتية الرقمية للمملكة لتوفير بيانات "بمستوى استثماري":</p>
+          <p className="mb-4">
+            منصتنا متكاملة مع البنية التحتية الرقمية للمملكة لتوفير بيانات "بمستوى استثماري":
+          </p>
 
           <ol className="list-decimal mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] marker:font-bold pr-6">
-            <li><strong>الهيئة العامة للعقار (REGA):</strong> نسحب مؤشرات إيجار معتمدة لضمان توافق إيجار فرعك مع متوسط السوق في جدة.</li>
-            <li><strong>صندوق تنمية الموارد البشرية (HRDF):</strong> نحلل توفر القوى العاملة والتقسيم الاقتصادي للتنبؤ بالنجاح التشغيلي.</li>
-            <li><strong>رسم خرائط المنافسين:</strong> تحدد S-LOC "المساحات البيضاء" — مناطق في جدة ذات طلب عالٍ ولكن خالية من المنافسين — مما يمنحك ميزة المبادر الأول.</li>
+            <li>
+              <strong>الهيئة العامة للعقار (REGA):</strong> نسحب مؤشرات إيجار معتمدة لضمان توافق
+              إيجار فرعك مع متوسط السوق في جدة.
+            </li>
+            <li>
+              <strong>صندوق تنمية الموارد البشرية (HRDF):</strong> نحلل توفر القوى العاملة والتقسيم
+              الاقتصادي للتنبؤ بالنجاح التشغيلي.
+            </li>
+            <li>
+              <strong>رسم خرائط المنافسين:</strong> تحدد S-LOC "المساحات البيضاء" — مناطق في جدة ذات
+              طلب عالٍ ولكن خالية من المنافسين — مما يمنحك ميزة المبادر الأول.
+            </li>
           </ol>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الإجراء (التنفيذ مع S-LOC)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            الإجراء (التنفيذ مع S-LOC)
+          </h2>
           <p className="mb-4 font-bold text-[#2b1055]">توقف عن الدفع مقابل التأخير.</p>
           <p className="mb-10">
-            <strong><a href="/" className="text-[#046bd2] hover:underline">[ ابدأ دراسة جدوى فرعك في جدة ]</a></strong> استخدم <strong>S-LOC</strong> لإنشاء تقرير جدوى احترافي جاهز للبنوك في دقائق. احجز أفضل موقع في جدة قبل منافسيك.
+            <strong>
+              <a href="/" className="text-[#046bd2] hover:underline">
+                [ ابدأ دراسة جدوى فرعك في جدة ]
+              </a>
+            </strong>{' '}
+            استخدم <strong>S-LOC</strong> لإنشاء تقرير جدوى احترافي جاهز للبنوك في دقائق. احجز أفضل
+            موقع في جدة قبل منافسيك.
           </p>
 
           <img
@@ -637,51 +809,97 @@ export const articlesData: Record<string, ArticleData> = {
       date: 'Feb 15, 2026',
       author: 'By Research Team',
       excerpt:
-        "Opening a pharmacy in Riyadh? Avoid saturation and cannibalization. Use S-LOC's instant site analysis to find profitable \"Golden Zones\" today.",
+        'Opening a pharmacy in Riyadh? Avoid saturation and cannibalization. Use S-LOC\'s instant site analysis to find profitable "Golden Zones" today.',
       tags: ['#Pharmacies', '#Riyadh'],
       content: (
         <>
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Statement (Direct Answer)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Statement (Direct Answer)
+          </h2>
           <p className="mb-6">
-            Riyadh is facing a “Pharmacy Saturation” crisis in major districts. Opening a new branch without a data-driven site analysis is financial suicide.
+            Riyadh is facing a “Pharmacy Saturation” crisis in major districts. Opening a new branch
+            without a data-driven site analysis is financial suicide.
           </p>
           <p className="mb-6">
-            To succeed in 2026, you must identify a <strong className="text-[#2b1055] font-black">“Golden Zone”</strong> — a specific catchment area where patient demand exceeds the current supply. <strong>S-LOC (S-Locator)</strong> provides the only instant, geospatial solution to map competitors and predict revenue before you sign a lease.
+            To succeed in 2026, you must identify a{' '}
+            <strong className="text-[#2b1055] font-black">“Golden Zone”</strong> — a specific
+            catchment area where patient demand exceeds the current supply.{' '}
+            <strong>S-LOC (S-Locator)</strong> provides the only instant, geospatial solution to map
+            competitors and predict revenue before you sign a lease.
           </p>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Explanation (The Technical Solution)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Explanation (The Technical Solution)
+          </h2>
           <p className="mb-4">
-            The traditional method of “counting pharmacies on a street” is no longer sufficient. You need to understand <strong className="text-[#110222]">Cannibalization Risk</strong>.
+            The traditional method of “counting pharmacies on a street” is no longer sufficient. You
+            need to understand <strong className="text-[#110222]">Cannibalization Risk</strong>.
           </p>
           <p className="mb-6">
-            If you open a pharmacy within 200 meters of another strong competitor (or even your own existing branch), you split the revenue, making both unprofitable. <strong>S-LOC</strong> digitizes this analysis. It uses satellite mapping to visualize the exact “Catchment Area” of your proposed site. It answers:
+            If you open a pharmacy within 200 meters of another strong competitor (or even your own
+            existing branch), you split the revenue, making both unprofitable.{' '}
+            <strong>S-LOC</strong> digitizes this analysis. It uses satellite mapping to visualize
+            the exact “Catchment Area” of your proposed site. It answers:
           </p>
 
           <ul className="list-disc mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] pl-6">
-            <li><strong>Patient Density:</strong> How many residents live within a 5-minute walk?</li>
-            <li><strong>Competitor Strength:</strong> Are the nearby pharmacies major chains or small independents?</li>
-            <li><strong>Prescription Potential:</strong> Is the site near hospitals or clinics (Polyclinics)?</li>
+            <li>
+              <strong>Patient Density:</strong> How many residents live within a 5-minute walk?
+            </li>
+            <li>
+              <strong>Competitor Strength:</strong> Are the nearby pharmacies major chains or small
+              independents?
+            </li>
+            <li>
+              <strong>Prescription Potential:</strong> Is the site near hospitals or clinics
+              (Polyclinics)?
+            </li>
           </ul>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Evidence (Authority & Trust)</h2>
-          <p className="mb-4">A site analysis is only as good as its data. S-LOC eliminates guesswork by syncing with official government streams:</p>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Evidence (Authority & Trust)
+          </h2>
+          <p className="mb-4">
+            A site analysis is only as good as its data. S-LOC eliminates guesswork by syncing with
+            official government streams:
+          </p>
 
           <ol className="list-decimal mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] marker:font-bold pl-6">
-            <li><strong>GASTAT (Demographics):</strong> We analyze neighborhood density to ensure there is enough “Spending Power” to support high-margin cosmetic and supplement sales, not just low-margin prescriptions.</li>
-            <li><strong>MOJ (Rental Index):</strong> We cross-reference the site’s rental price with the Ministry of Justice’s transaction history. If the rent is too high for the predicted revenue, S-LOC flags the location as “High Risk.”</li>
-            <li><strong>Heat Maps:</strong> Visualizing “Red Zones” (Saturated) vs. “Green Zones” (Underserved) allows for instant decision-making.</li>
+            <li>
+              <strong>GASTAT (Demographics):</strong> We analyze neighborhood density to ensure
+              there is enough “Spending Power” to support high-margin cosmetic and supplement sales,
+              not just low-margin prescriptions.
+            </li>
+            <li>
+              <strong>MOJ (Rental Index):</strong> We cross-reference the site’s rental price with
+              the Ministry of Justice’s transaction history. If the rent is too high for the
+              predicted revenue, S-LOC flags the location as “High Risk.”
+            </li>
+            <li>
+              <strong>Heat Maps:</strong> Visualizing “Red Zones” (Saturated) vs. “Green Zones”
+              (Underserved) allows for instant decision-making.
+            </li>
           </ol>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">The Action (Execute with S-LOC)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            The Action (Execute with S-LOC)
+          </h2>
           <p className="mb-4 font-bold text-[#2b1055]">Do not guess. Validate.</p>
           <p className="mb-10">
-            <strong><a href="/" className="text-[#046bd2] hover:underline">[ Run Your Pharmacy Site Analysis Now ]</a></strong> Input your potential location into S-LOC and get an immediate “Saturation Score.” See exactly who your competitors are and predict your daily sales volume in under 60 seconds.
+            <strong>
+              <a href="/" className="text-[#046bd2] hover:underline">
+                [ Run Your Pharmacy Site Analysis Now ]
+              </a>
+            </strong>{' '}
+            Input your potential location into S-LOC and get an immediate “Saturation Score.” See
+            exactly who your competitors are and predict your daily sales volume in under 60
+            seconds.
           </p>
 
           <img
@@ -704,45 +922,83 @@ export const articlesData: Record<string, ArticleData> = {
         <>
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">البيان (إجابة مباشرة)</h2>
           <p className="mb-6">
-            تواجه الرياض أزمة "تشبع صيدليات" في الأحياء الكبرى. إن افتتاح فرع جديد دون تحليل موقع مدعوم بالبيانات هو انتحار مالي.
+            تواجه الرياض أزمة "تشبع صيدليات" في الأحياء الكبرى. إن افتتاح فرع جديد دون تحليل موقع
+            مدعوم بالبيانات هو انتحار مالي.
           </p>
           <p className="mb-6">
-            للنجاح في عام 2026، يجب عليك تحديد <strong className="text-[#2b1055] font-black">"المنطقة الذهبية"</strong> — وهي منطقة استقطاب محددة يتجاوز فيها طلب المرضى العرض الحالي. توفر <strong>S-LOC</strong> الحل الجغرافي المكاني الفوري الوحيد لرسم خرائط المنافسين وتوقع الإيرادات قبل توقيع عقد الإيجار.
+            للنجاح في عام 2026، يجب عليك تحديد{' '}
+            <strong className="text-[#2b1055] font-black">"المنطقة الذهبية"</strong> — وهي منطقة
+            استقطاب محددة يتجاوز فيها طلب المرضى العرض الحالي. توفر <strong>S-LOC</strong> الحل
+            الجغرافي المكاني الفوري الوحيد لرسم خرائط المنافسين وتوقع الإيرادات قبل توقيع عقد
+            الإيجار.
           </p>
 
           <hr className="my-10 border-gray-200" />
 
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الشرح (الحل التقني)</h2>
           <p className="mb-4">
-            لم تعد الطريقة التقليدية المتمثلة في "عد الصيدليات في الشارع" كافية. تحتاج إلى فهم <strong className="text-[#110222]">خطر تآكل المبيعات (Cannibalization)</strong>.
+            لم تعد الطريقة التقليدية المتمثلة في "عد الصيدليات في الشارع" كافية. تحتاج إلى فهم{' '}
+            <strong className="text-[#110222]">خطر تآكل المبيعات (Cannibalization)</strong>.
           </p>
           <p className="mb-6">
-            إذا فتحت صيدلية على بعد 200 متر من منافس قوي آخر (أو حتى فرعك الحالي)، فإنك تقسم الإيرادات، مما يجعل كلا الفرعين غير مربحين. تقوم <strong>S-LOC</strong> برقمنة هذا التحليل. فهي تستخدم خرائط الأقمار الصناعية لتصور "منطقة الاستقطاب" الدقيقة لموقعك المقترح. وهي تجيب على:
+            إذا فتحت صيدلية على بعد 200 متر من منافس قوي آخر (أو حتى فرعك الحالي)، فإنك تقسم
+            الإيرادات، مما يجعل كلا الفرعين غير مربحين. تقوم <strong>S-LOC</strong> برقمنة هذا
+            التحليل. فهي تستخدم خرائط الأقمار الصناعية لتصور "منطقة الاستقطاب" الدقيقة لموقعك
+            المقترح. وهي تجيب على:
           </p>
 
           <ul className="list-disc mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] pr-6">
-            <li><strong>كثافة المرضى:</strong> كم عدد السكان الذين يعيشون على بعد 5 دقائق مشياً؟</li>
-            <li><strong>قوة المنافسين:</strong> هل الصيدليات القريبة تابعة لسلاسل كبرى أم مستقلة صغيرة؟</li>
-            <li><strong>إمكانات الوصفات الطبية:</strong> هل الموقع قريب من المستشفيات أو المستوصفات؟</li>
+            <li>
+              <strong>كثافة المرضى:</strong> كم عدد السكان الذين يعيشون على بعد 5 دقائق مشياً؟
+            </li>
+            <li>
+              <strong>قوة المنافسين:</strong> هل الصيدليات القريبة تابعة لسلاسل كبرى أم مستقلة
+              صغيرة؟
+            </li>
+            <li>
+              <strong>إمكانات الوصفات الطبية:</strong> هل الموقع قريب من المستشفيات أو المستوصفات؟
+            </li>
           </ul>
 
           <hr className="my-10 border-gray-200" />
 
           <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الدليل (السلطة والثقة)</h2>
-          <p className="mb-4">لا يكون تحليل الموقع جيداً إلا بجودة بياناته. تقضي S-LOC على التخمين من خلال المزامنة مع تدفقات البيانات الحكومية الرسمية:</p>
+          <p className="mb-4">
+            لا يكون تحليل الموقع جيداً إلا بجودة بياناته. تقضي S-LOC على التخمين من خلال المزامنة مع
+            تدفقات البيانات الحكومية الرسمية:
+          </p>
 
           <ol className="list-decimal mb-8 space-y-4 font-medium text-gray-600 marker:text-[#38e54d] marker:font-bold pr-6">
-            <li><strong>هيئة الإحصاء (التركيبة السكانية):</strong> نحلل كثافة الحي للتأكد من وجود "قوة شرائية" كافية لدعم مبيعات التجميل والمكملات الغذائية ذات الهامش الربحي المرتفع، وليس فقط الوصفات الطبية ذات الهامش المنخفض.</li>
-            <li><strong>وزارة العدل (المؤشر الإيجاري):</strong> نقوم بمقاطعة سعر إيجار الموقع مع السجل التاريخي لمعاملات وزارة العدل. إذا كان الإيجار مرتفعاً جداً بالنسبة للإيرادات المتوقعة، فإن S-LOC تصنف الموقع على أنه "عالي المخاطر".</li>
-            <li><strong>الخرائط الحرارية:</strong> تتيح لك رؤية "المناطق الحمراء" (المشبعة) مقابل "المناطق الخضراء" (غير المخدومة) اتخاذ قرارات فورية.</li>
+            <li>
+              <strong>هيئة الإحصاء (التركيبة السكانية):</strong> نحلل كثافة الحي للتأكد من وجود "قوة
+              شرائية" كافية لدعم مبيعات التجميل والمكملات الغذائية ذات الهامش الربحي المرتفع، وليس
+              فقط الوصفات الطبية ذات الهامش المنخفض.
+            </li>
+            <li>
+              <strong>وزارة العدل (المؤشر الإيجاري):</strong> نقوم بمقاطعة سعر إيجار الموقع مع السجل
+              التاريخي لمعاملات وزارة العدل. إذا كان الإيجار مرتفعاً جداً بالنسبة للإيرادات
+              المتوقعة، فإن S-LOC تصنف الموقع على أنه "عالي المخاطر".
+            </li>
+            <li>
+              <strong>الخرائط الحرارية:</strong> تتيح لك رؤية "المناطق الحمراء" (المشبعة) مقابل
+              "المناطق الخضراء" (غير المخدومة) اتخاذ قرارات فورية.
+            </li>
           </ol>
 
           <hr className="my-10 border-gray-200" />
 
-          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">الإجراء (التنفيذ مع S-LOC)</h2>
+          <h2 className="text-3xl font-black text-[#110222] mt-12 mb-6">
+            الإجراء (التنفيذ مع S-LOC)
+          </h2>
           <p className="mb-4 font-bold text-[#2b1055]">لا تخمن. تحقق من صحة قرارك.</p>
           <p className="mb-10">
-            <strong><a href="/" className="text-[#046bd2] hover:underline">[ قم بتشغيل تحليل موقع صيدليتك الآن ]</a></strong> أدخل موقعك المحتمل في S-LOC واحصل على "درجة التشبع" الفورية. شاهد بدقة من هم منافسوك وتوقع حجم مبيعاتك اليومية في أقل من 60 ثانية.
+            <strong>
+              <a href="/" className="text-[#046bd2] hover:underline">
+                [ قم بتشغيل تحليل موقع صيدليتك الآن ]
+              </a>
+            </strong>{' '}
+            أدخل موقعك المحتمل في S-LOC واحصل على "درجة التشبع" الفورية. شاهد بدقة من هم منافسوك
+            وتوقع حجم مبيعاتك اليومية في أقل من 60 ثانية.
           </p>
 
           <img

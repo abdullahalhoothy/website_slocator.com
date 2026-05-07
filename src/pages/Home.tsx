@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { 
-  Maximize2, 
-  X, 
-  Database, 
-  Map, 
-  FileText, 
-  MapPin, 
-  Route as RouteIcon, 
-  TrendingUp, 
-  Network
+import {
+  Maximize2,
+  X,
+  Database,
+  Map,
+  FileText,
+  MapPin,
+  Route as RouteIcon,
+  TrendingUp,
+  Network,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -90,8 +90,8 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = isAr ? 'الرئيسية | S-Locator' : 'Home | S-Locator'
-  }, [isAr])
+    document.title = t('pageTitleHome')
+  }, [t])
 
   const englishProjectImages = [
     '/assets/images/S-lOC-USAGES-R3-08.jpg',
@@ -135,66 +135,50 @@ export default function Home() {
   const services = [
     {
       img: '/assets/images/icon-10.png',
-      title: isAr ? 'محدد نقاط الاهتمام (POI)' : 'Point of Interest (POI) Locator',
-      desc: isAr
-        ? 'حدد المواقع الرئيسية مثل المعالم، والشركات، والخدمات في منطقة معينة بدقة، لتمكين اتخاذ قرارات تخطيط أذكى.'
-        : 'Identify key locations such as landmarks, businesses, and services in a specific area with precision, enabling smarter decision-making and planning.',
+      title: t('srv1Title'),
+      desc: t('srv1Desc'),
       link: '/solutions/point-of-interest-locator',
     },
     {
       img: '/assets/images/icon-02.png',
-      title: isAr ? 'ذكاء الكثافة السكانية' : 'Area Population Density Intelligence',
-      desc: isAr
-        ? 'احصل على رؤى حول التوزيع السكاني لدعم التخطيط الاستراتيجي، وتخصيص الموارد، والقرارات المستهدفة.'
-        : 'Gain insights into population distribution within a specific area to support strategic planning, resource allocation, and targeted decision-making.',
+      title: t('srv2Title'),
+      desc: t('srv2Desc'),
       link: '/solutions/area-population-density-intelligence',
     },
     {
       img: '/assets/images/icon-16.png',
-      title: isAr ? 'ذكاء تسعير العقارات' : 'Real Estate Area Pricing Intelligence',
-      desc: isAr
-        ? 'الوصول إلى بيانات تفصيلية حول قيم العقارات واتجاهات السوق في مواقع محددة لاتخاذ قرارات استثمارية مدروسة.'
-        : 'Access detailed data on property values and market trends in specific locations to make informed investment and pricing decisions.',
+      title: t('srv3Title'),
+      desc: t('srv3Desc'),
       link: '/solutions/real-estate-area-pricing-intelligence',
     },
     {
       img: '/assets/images/icon-07.png',
-      title: isAr ? 'ذكاء الحركة المرورية' : 'Road Traffic Data Intelligence',
-      desc: isAr
-        ? 'تحليل أنماط حركة المرور والازدحام لتحسين الخدمات اللوجستية، تطوير التخطيط، وتعزيز كفاءة النقل.'
-        : 'Analyze traffic patterns and congestion levels to optimize logistics, improve planning, and enhance transportation efficiency.',
+      title: t('srv4Title'),
+      desc: t('srv4Desc'),
       link: '/solutions/road-traffic-data-intelligence',
     },
     {
       img: '/assets/images/S-lOC_USAGES_FF-14.png',
-      title: isAr ? 'الذكاء البيئي' : 'Environment Intelligence',
-      desc: isAr
-        ? 'فهم العوامل البيئية مثل جودة الهواء، الظروف المناخية، والتأثير البيئي لدعم القرارات المستدامة.'
-        : 'Understand environmental factors like air quality, climate conditions, and ecological impact to support sustainable decision-making and planning.',
+      title: t('srv5Title'),
+      desc: t('srv5Desc'),
       link: '/solutions/environment-intelligence',
     },
     {
       img: '/assets/images/S-lOC_USAGES_FF-24.png',
-      title: isAr ? 'ذكاء مستوى الدخل' : 'Area Income Intelligence',
-      desc: isAr
-        ? 'اكتشف توزيع الدخل والاتجاهات الاقتصادية لتوجيه الاستهداف السوقي والاستثمار. اتصل بنا للمزيد.'
-        : 'Discover income distribution and economic trends in specific regions to guide market targeting, investment, and resource planning. Contact us Now for more info.',
+      title: t('srv6Title'),
+      desc: t('srv6Desc'),
       link: '/solutions/area-income-intelligence',
     },
     {
       img: '/assets/images/S-lOC_USAGES_FF-17.png',
-      title: isAr ? 'ذكاء البنية التحتية' : 'Infrastructure Location Intelligence',
-      desc: isAr
-        ? 'تحليل توفر وتوزيع البنية التحتية والمرافق الأساسية لتعزيز استراتيجيات التخطيط والتنمية.'
-        : 'Analyze the availability and distribution of essential infrastructure, transportation & facilities, to enhance planning and development strategies.',
+      title: t('srv7Title'),
+      desc: t('srv7Desc'),
       link: '/solutions/infrastructure-location-intelligence',
     },
     {
       img: '/assets/images/S-lOC_USAGES_FF-13.png',
-      title: isAr ? 'ذكاء استخدام الإنترنت' : 'Area Internet Usage Intelligence',
-      desc: isAr
-        ? 'الحصول على رؤى حول إمكانية الوصول للإنترنت وأنماط الاستخدام لتوجيه الاستراتيجيات الرقمية.'
-        : 'Gain insights into internet accessibility, usage patterns, and connectivity trends in specific regions to inform digital strategies and infrastructure planning.',
+      title: t('srv8Title'),
+      desc: t('srv8Desc'),
       link: '/solutions/area-internet-usage-intelligence',
     },
   ]
@@ -202,38 +186,28 @@ export default function Home() {
   const industries = [
     {
       img: '/assets/images/icon-small-1-1.png',
-      title: isAr ? 'القطاعات الحكومية' : 'Governmental Sectors',
-      desc: isAr
-        ? 'تمكين القطاعات الحكومية بحلول مبتكرة لتعزيز اتخاذ القرار...'
-        : 'Empowering governmental sectors with innovative solutions to enhance decision-making...',
+      title: t('ind1Title'),
+      desc: t('ind1Desc'),
     },
     {
       img: '/assets/images/icon-small-1-3.png',
-      title: isAr ? 'الأعمال والخدمات المالية' : 'Business and Financial Services',
-      desc: isAr
-        ? 'تزويد المؤسسات بحلول ذكية لتبسيط العمليات...'
-        : 'Empowering businesses and financial institutions with intelligent solutions to streamline operations...',
+      title: t('ind2Title'),
+      desc: t('ind2Desc'),
     },
     {
       img: '/assets/images/icon-small-1-2.png',
-      title: isAr ? 'الرعاية الصحية والتعليم' : 'Healthcare and Education',
-      desc: isAr
-        ? 'الارتقاء بالخدمات من خلال حلول ذكية لتحسين الوصول...'
-        : 'Enhancing healthcare and education with innovative solutions to improve accessibility...',
+      title: t('ind3Title'),
+      desc: t('ind3Desc'),
     },
     {
       img: '/assets/images/icon-small-1-5.png',
-      title: isAr ? 'السلامة العامة والطوارئ' : 'Public Safety and Emergency',
-      desc: isAr
-        ? 'تعزيز السلامة والاستجابة للطوارئ بأدوات تعزز الجاهزية...'
-        : 'Strengthening public safety and emergency response with intelligent tools to enhance preparedness...',
+      title: t('ind4Title'),
+      desc: t('ind4Desc'),
     },
     {
       img: '/assets/images/icon-small-1-7.png',
-      title: isAr ? 'الشركات الاستشارية' : 'Consulting Firms',
-      desc: isAr
-        ? 'دعم الشركات بأدوات متقدمة لتقديم رؤى دقيقة...'
-        : 'Supporting consulting firms with advanced tools to deliver data-driven insights, optimize strategies...',
+      title: t('ind5Title'),
+      desc: t('ind5Desc'),
     },
   ]
 
@@ -271,27 +245,26 @@ export default function Home() {
       `}</style>
 
       <section className="relative -mt-[100px] pt-[120px] pb-24 lg:-mt-[120px] lg:pt-[160px] lg:pb-32 lg:min-h-screen flex items-center bg-[#f8fafc] overflow-hidden border-b border-gray-100">
-        
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        
+
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-br from-[#e0f2fe] to-[#eff6ff] blur-[100px] opacity-80 pointer-events-none"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-tr from-[#dcfce7] to-[#f0fdf4] blur-[100px] opacity-80 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
             <div className={`flex flex-col justify-center ${isAr ? 'lg:pl-10' : 'lg:pr-10'}`}>
-              
               <div className="flex justify-start mb-8 mt-4">
-                <div className={`bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-2.5 flex items-center justify-center gap-5 shadow-sm ${isAr ? 'flex-row-reverse' : ''}`}>
+                <div
+                  className={`bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-2.5 flex items-center justify-center gap-5 shadow-sm ${isAr ? 'flex-row-reverse' : ''}`}
+                >
                   <span className="text-[#475569] font-black tracking-[0.15em] text-[13px] uppercase">
-                    {isAr ? 'بدعم من' : 'POWERED BY'}
+                    {t('poweredBy')}
                   </span>
                   <div className="w-[2px] h-6 bg-gray-200"></div>
-                  <img 
-                    src="/assets/images/cropd_V1.png" 
-                    alt="Northern Analytics" 
-                    className="h-10 md:h-12 w-auto max-w-[180px] object-contain" 
+                  <img
+                    src="/assets/images/cropd_V1.png"
+                    alt="Northern Analytics"
+                    className="h-10 md:h-12 w-auto max-w-[180px] object-contain"
                   />
                 </div>
               </div>
@@ -316,55 +289,96 @@ export default function Home() {
             </div>
 
             <div className="relative w-full h-full min-h-[500px] flex items-center justify-center bg-white/70 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-8">
-              
               <div className="hidden lg:block absolute top-[100px] left-1/2 w-px h-[30px] bg-gray-300 -translate-x-1/2 z-0"></div>
-              
+
               <div className="w-full flex flex-col items-center relative z-10">
-                
                 <div className="bg-white border-2 border-[#2b1055] text-[#2b1055] font-extrabold py-3 px-8 rounded-full shadow-md flex items-center gap-2 mb-10 relative z-20">
                   <Network size={20} />
                   {t('nodeSlocator')}
                 </div>
 
                 <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-4 w-full relative">
-                  
                   <div className="hidden lg:block absolute top-[-40px] left-[16%] right-[16%] h-px bg-gray-300 z-0"></div>
 
                   <div className="flex flex-col items-center w-full lg:w-1/3 relative">
                     <div className="hidden lg:block absolute top-[-40px] left-1/2 w-px h-[40px] bg-gray-300 -translate-x-1/2 z-0"></div>
-                    
+
                     <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm w-full max-w-[220px] mb-6 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#00628e]">
                       <div className="bg-blue-50 text-[#00628e] p-2 rounded-full mb-3">
                         <Database size={24} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">{t('nodeData')}</h3>
+                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">
+                        {t('nodeData')}
+                      </h3>
                     </div>
 
                     <div className="relative flex flex-col items-center w-full">
                       <div className="absolute top-[-24px] left-1/2 w-px h-[24px] bg-gray-200 -translate-x-1/2 z-0"></div>
                       <div className="bg-white border border-gray-100 p-4 rounded-lg w-full max-w-[236px] shadow-sm z-10 hover:shadow-md transition-shadow">
-                         <div className="grid grid-cols-3 gap-y-4 gap-x-2 items-center justify-items-center">
-                             <img src="/assets/images/general_authority_logo.svg" alt="GASTAT" className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="General Authority for Statistics"/>
-                             <img src="/assets/images/REGA_LOGO.svg" alt="REGA" className="max-h-4 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Real Estate General Authority"/>
-                             <img src="/assets/images/hrdf_logo.svg" alt="HRDF" className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="HRDF"/>
-                             <img src="/assets/images/housing_ministry_logo.webp" alt="Housing" className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Ministry of Housing"/>
-                             <img src="/assets/images/sakany_logo.svg" alt="Sakany" className="max-h-3.5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Sakany"/>
-                             <img src="/assets/images/Ministry_of_Justice_Logo.svg" alt="MOJ" className="max-h-6 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="Ministry of Justice"/>
-                             <img src="/assets/images/amana_logo.webp" alt="Amana" className="col-span-3 max-h-7 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mt-1" title="Riyadh Municipality"/>
-                             <img src="/assets/images/google.png" alt="google" className="col-span-3 max-h-7 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mt-1" title="Riyadh Municipality"/>
-                         </div>
+                        <div className="grid grid-cols-3 gap-y-4 gap-x-2 items-center justify-items-center">
+                          <img
+                            src="/assets/images/general_authority_logo.svg"
+                            alt="GASTAT"
+                            className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            title="General Authority for Statistics"
+                          />
+                          <img
+                            src="/assets/images/REGA_LOGO.svg"
+                            alt="REGA"
+                            className="max-h-4 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            title="Real Estate General Authority"
+                          />
+                          <img
+                            src="/assets/images/hrdf_logo.svg"
+                            alt="HRDF"
+                            className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            title="HRDF"
+                          />
+                          <img
+                            src="/assets/images/housing_ministry_logo.webp"
+                            alt="Housing"
+                            className="max-h-5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            title="Ministry of Housing"
+                          />
+                          <img
+                            src="/assets/images/sakany_logo.svg"
+                            alt="Sakany"
+                            className="max-h-3.5 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            title="Sakany"
+                          />
+                          <img
+                            src="/assets/images/Ministry_of_Justice_Logo.svg"
+                            alt="MOJ"
+                            className="max-h-6 w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                            title="Ministry of Justice"
+                          />
+                          <img
+                            src="/assets/images/amana_logo.webp"
+                            alt="Amana"
+                            className="col-span-3 max-h-7 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mt-1"
+                            title="Riyadh Municipality"
+                          />
+                          <img
+                            src="/assets/images/google.png"
+                            alt="google"
+                            className="col-span-3 max-h-7 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mt-1"
+                            title="Google Data"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="flex flex-col items-center w-full lg:w-1/3 relative">
                     <div className="hidden lg:block absolute top-[-40px] left-1/2 w-px h-[40px] bg-gray-300 -translate-x-1/2 z-0"></div>
-                    
+
                     <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm w-full max-w-[220px] mb-6 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#38e54d]">
                       <div className="bg-green-50 text-green-600 p-2 rounded-full mb-3">
                         <Map size={24} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">{t('nodeTerritory')}</h3>
+                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">
+                        {t('nodeTerritory')}
+                      </h3>
                     </div>
 
                     <div className="flex gap-4 w-full justify-center relative">
@@ -373,25 +387,31 @@ export default function Home() {
                       <div className="absolute top-[-24px] right-[25%] w-px h-[24px] bg-gray-200 z-0"></div>
 
                       <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
-                         <MapPin size={18} className="text-[#2b1055]" />
-                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeTerrOpt')}</span>
+                        <MapPin size={18} className="text-[#2b1055]" />
+                        <span className="text-[11px] text-gray-700 font-bold leading-tight">
+                          {t('nodeTerrOpt')}
+                        </span>
                       </div>
 
                       <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
-                         <RouteIcon size={18} className="text-[#38e54d]" />
-                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeRoute')}</span>
+                        <RouteIcon size={18} className="text-[#38e54d]" />
+                        <span className="text-[11px] text-gray-700 font-bold leading-tight">
+                          {t('nodeRoute')}
+                        </span>
                       </div>
                     </div>
                   </div>
 
                   <div className="flex flex-col items-center w-full lg:w-1/3 relative">
                     <div className="hidden lg:block absolute top-[-40px] left-1/2 w-px h-[40px] bg-gray-300 -translate-x-1/2 z-0"></div>
-                    
+
                     <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm w-full max-w-[220px] mb-6 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#9b51e0]">
                       <div className="bg-purple-50 text-purple-600 p-2 rounded-full mb-3">
                         <FileText size={24} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">{t('nodeReport')}</h3>
+                      <h3 className="font-bold text-gray-800 text-sm mb-2 leading-tight px-1">
+                        {t('nodeReport')}
+                      </h3>
                     </div>
 
                     <div className="flex gap-4 w-full justify-center relative">
@@ -400,21 +420,23 @@ export default function Home() {
                       <div className="absolute top-[-24px] right-[25%] w-px h-[24px] bg-gray-200 z-0"></div>
 
                       <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
-                         <TrendingUp size={18} className="text-purple-600" />
-                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeEval')}</span>
+                        <TrendingUp size={18} className="text-purple-600" />
+                        <span className="text-[11px] text-gray-700 font-bold leading-tight">
+                          {t('nodeEval')}
+                        </span>
                       </div>
 
                       <div className="bg-white border border-gray-100 p-3 rounded-lg w-[110px] text-center shadow-sm flex flex-col items-center gap-2 hover:bg-gray-50 transition-colors z-10">
-                         <Map size={18} className="text-purple-600" />
-                         <span className="text-[11px] text-gray-700 font-bold leading-tight">{t('nodeCity')}</span>
+                        <Map size={18} className="text-purple-600" />
+                        <span className="text-[11px] text-gray-700 font-bold leading-tight">
+                          {t('nodeCity')}
+                        </span>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -427,21 +449,28 @@ export default function Home() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-              
               <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1">
                 <div className="flex items-center gap-4 mb-10">
-                  <img src="/assets/images/icon-10.png" alt="Report" className="w-9 h-9 object-contain drop-shadow-sm" />
+                  <img
+                    src="/assets/images/icon-10.png"
+                    alt="Report"
+                    className="w-9 h-9 object-contain drop-shadow-sm"
+                  />
                   <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold">
-                    {isAr ? 'تقرير أفضل 10 مواقع' : 'Top 10 Locations Report'}
+                    {t('offerTop10Title')}
                   </h3>
                 </div>
 
                 <div className="relative mx-auto w-full max-w-[320px] mb-10">
                   <div className="relative z-10 border-[5px] border-[#2c3e50] rounded-t-xl bg-[#2c3e50] h-[190px] overflow-hidden shadow-xl">
-                     <img src="/assets/images/s-locator-app.png" className="w-full h-full object-cover object-left-top" alt="App Desktop" />
+                    <img
+                      src="/assets/images/s-locator-app.png"
+                      className="w-full h-full object-cover object-left-top"
+                      alt="App Desktop"
+                    />
                   </div>
                   <div className="relative z-20 w-[114%] -ml-[7%] h-3.5 bg-[#cbd5e1] rounded-b-xl shadow-md border-t border-[#94a3b8] flex justify-center">
-                     <div className="w-20 h-1 bg-[#94a3b8] rounded-b-md"></div>
+                    <div className="w-20 h-1 bg-[#94a3b8] rounded-b-md"></div>
                   </div>
                 </div>
 
@@ -455,30 +484,42 @@ export default function Home() {
                   rel="noreferrer"
                   className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-3.5 px-10 rounded-full shadow-md transition-colors w-full sm:w-auto text-center"
                 >
-                  {isAr ? 'احصل على التقرير' : 'Top 10 Locations Report'}
+                  {t('offerTop10Btn')}
                 </a>
               </div>
 
               <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1">
                 <div className="flex items-center gap-4 mb-10">
-                  <img src="/assets/images/icon-02.png" alt="Planning" className="w-9 h-9 object-contain drop-shadow-sm" />
+                  <img
+                    src="/assets/images/icon-02.png"
+                    alt="Planning"
+                    className="w-9 h-9 object-contain drop-shadow-sm"
+                  />
                   <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold">
-                    {isAr ? 'تخطيط المناطق' : 'Territory Planning'}
+                    {t('offerTerrTitle')}
                   </h3>
                 </div>
 
                 <div className="relative mx-auto w-full max-w-[320px] h-[204px] mb-10 flex items-end justify-center">
                   <div className="absolute right-0 bottom-2 w-[260px]">
                     <div className="relative z-10 border-[5px] border-[#2c3e50] rounded-t-xl bg-[#2c3e50] h-[155px] overflow-hidden shadow-xl">
-                      <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-left-top" alt="App Desktop" />
+                      <img
+                        src="/assets/images/s-locator-app2.png"
+                        className="w-full h-full object-cover object-left-top"
+                        alt="App Desktop"
+                      />
                     </div>
                     <div className="relative z-20 w-[114%] -ml-[7%] h-3 bg-[#cbd5e1] rounded-b-xl shadow-md border-t border-[#94a3b8] flex justify-center">
-                       <div className="w-16 h-1 bg-[#94a3b8] rounded-b-md"></div>
+                      <div className="w-16 h-1 bg-[#94a3b8] rounded-b-md"></div>
                     </div>
                   </div>
                   <div className="absolute left-2 bottom-0 z-30 w-[75px] h-[150px] border-[4px] border-[#2c3e50] rounded-[1.2rem] bg-[#2c3e50] overflow-hidden shadow-2xl">
                     <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-4 h-[3px] bg-[#0f172a] rounded-full z-40"></div>
-                    <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-center" alt="App Mobile" />
+                    <img
+                      src="/assets/images/s-locator-app2.png"
+                      className="w-full h-full object-cover object-center"
+                      alt="App Mobile"
+                    />
                   </div>
                 </div>
 
@@ -490,10 +531,9 @@ export default function Home() {
                   href="http://localhost:5174"
                   className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-3.5 px-10 rounded-full shadow-md transition-colors w-full sm:w-auto text-center"
                 >
-                  {isAr ? 'ابدأ التخطيط' : 'Start Planning'}
+                  {t('offerTerrBtn')}
                 </a>
               </div>
-
             </div>
           </FadeInSection>
         </div>
@@ -552,7 +592,8 @@ export default function Home() {
                 href="/contact"
                 className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-4 px-10 rounded-full flex items-center justify-center w-max gap-2 transition-transform hover:scale-105 shadow-xl shadow-purple-500/20"
               >
-                {t('getStarted')} <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
+                {t('getStarted')}{' '}
+                <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
               </a>
             </div>
           </FadeInSection>
@@ -565,17 +606,10 @@ export default function Home() {
               <h3 className="text-2xl font-extrabold">
                 <AnimatedCounter end={8550} />
               </h3>
-              <p className="text-[10px] font-bold text-[#110222]/80 text-center uppercase mt-1">
-                {isAr ? (
-                  <>{t('projectsCompleted')}</>
-                ) : (
-                  <>
-                    Projects
-                    <br />
-                    Completed
-                  </>
-                )}
-              </p>
+              <p
+                className="text-[10px] font-bold text-[#110222]/80 text-center uppercase mt-1"
+                dangerouslySetInnerHTML={{ __html: t('projectsCompletedHtml') }}
+              />
             </div>
 
             <div
@@ -585,17 +619,10 @@ export default function Home() {
               <h3 className="text-xl font-extrabold">
                 <AnimatedCounter end={90} />+
               </h3>
-              <p className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1">
-                {isAr ? (
-                  <>{t('teamMembers')}</>
-                ) : (
-                  <>
-                    Team
-                    <br />
-                    Members
-                  </>
-                )}
-              </p>
+              <p
+                className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1"
+                dangerouslySetInnerHTML={{ __html: t('teamMembersHtml') }}
+              />
             </div>
 
             <div
@@ -609,17 +636,10 @@ export default function Home() {
               <h3 className="text-[30px] font-extrabold">
                 <AnimatedCounter end={3860} />
               </h3>
-              <p className="text-[11px] font-bold text-[#110222]/80 text-center uppercase mt-1">
-                {isAr ? (
-                  <>{t('satisfiedClients')}</>
-                ) : (
-                  <>
-                    Satisfied
-                    <br />
-                    Clients
-                  </>
-                )}
-              </p>
+              <p
+                className="text-[11px] font-bold text-[#110222]/80 text-center uppercase mt-1"
+                dangerouslySetInnerHTML={{ __html: t('satisfiedClientsHtml') }}
+              />
             </div>
 
             <div
@@ -629,17 +649,10 @@ export default function Home() {
               <h3 className="text-2xl font-extrabold">
                 <AnimatedCounter end={180} />+
               </h3>
-              <p className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1">
-                {isAr ? (
-                  <>{t('awardsWin')}</>
-                ) : (
-                  <>
-                    Awards
-                    <br />
-                    Win
-                  </>
-                )}
-              </p>
+              <p
+                className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1"
+                dangerouslySetInnerHTML={{ __html: t('awardsWinHtml') }}
+              />
             </div>
           </div>
         </div>
@@ -662,17 +675,10 @@ export default function Home() {
                   <span className="text-3xl font-extrabold">
                     <AnimatedCounter end={30} />+
                   </span>
-                  <span className="text-[10px] text-center leading-tight font-bold mt-1">
-                    {isAr ? (
-                      <>{t('yearsExp')}</>
-                    ) : (
-                      <>
-                        Years of
-                        <br />
-                        Experience
-                      </>
-                    )}
-                  </span>
+                  <span
+                    className="text-[10px] text-center leading-tight font-bold mt-1"
+                    dangerouslySetInnerHTML={{ __html: t('yearsExpHtml') }}
+                  />
                 </div>
                 <img
                   src="/assets/images/exhibition-stand-isometric-composition_1284-23588.jpg"
@@ -685,7 +691,9 @@ export default function Home() {
               <h2 className="text-[#38e54d] text-4xl md:text-[54px] font-bold mb-6 leading-[1.1]">
                 {t('compEdgeTitle')}
               </h2>
-              <p className="text-white mb-6 font-semibold text-lg leading-snug">{t('compEdgeSub')}</p>
+              <p className="text-white mb-6 font-semibold text-lg leading-snug">
+                {t('compEdgeSub')}
+              </p>
               <p className="text-gray-300 text-[15px] leading-relaxed mb-10 max-w-lg">
                 {t('compEdgeDesc')}
               </p>
@@ -833,7 +841,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">{t('email')}</h4>
+                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">
+                      {t('email')}
+                    </h4>
                     <p className="text-[#110222]/80 text-[15px] font-medium break-all" dir="ltr">
                       marketing@northernacs.com
                     </p>
@@ -853,7 +863,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">{t('phone')}</h4>
+                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">
+                      {t('phone')}
+                    </h4>
                     <p className="text-[#110222]/80 text-[15px] font-medium" dir="ltr">
                       +966 56738077
                     </p>
