@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react'
-import {
-  Maximize2,
-  X,
-  Database,
-  Map,
-  FileText,
-  MapPin,
-  Route as RouteIcon,
-  TrendingUp,
-  Network,
+import { 
+  Maximize2, 
+  X, 
+  Database, 
+  Map, 
+  FileText, 
+  MapPin, 
+  Route as RouteIcon, 
+  TrendingUp, 
+  Network
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -225,7 +225,11 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full overflow-hidden bg-white" dir={isAr ? 'rtl' : 'ltr'}>
+    <div
+      className="w-full overflow-hidden bg-white"
+      dir={isAr ? 'rtl' : 'ltr'}
+      style={{ zoom: '0.9' }} /* هنا طلب عبدالله: تصغير الموقع 10% */
+    >
       <style>{`
         @keyframes scroll-marquee {
           0% { transform: translateX(0); }
@@ -255,34 +259,39 @@ export default function Home() {
 
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className={`flex flex-col justify-center ${isAr ? 'lg:pl-10' : 'lg:pr-10'}`}>
-              <div className="flex justify-start mb-8 mt-4">
-                <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 flex items-center justify-center gap-3 shadow-sm w-max">
-                  <span className="text-[#475569] font-black tracking-wide text-[11px] uppercase mt-0.5">
+            
+            <div className={`flex flex-col justify-center items-start text-start ${isAr ? 'lg:pl-10' : 'lg:pr-10'}`}>
+              
+              {/* شريط Powered By بتعديلات عبدالله */}
+              <div className="mb-8 mt-4">
+                <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-2.5 md:px-10 md:py-4 flex items-center justify-center gap-4 md:gap-8 shadow-lg w-max">
+                  <span className="text-[#475569] font-black tracking-widest text-[9px] md:text-[11px] uppercase mt-0.5">
                     {t('poweredBy')}
                   </span>
-                  <div className="w-[1px] h-4 bg-gray-300"></div>
-                  <img
-                    src="/assets/images/cropd_V1.png"
-                    alt="Northern Analytics"
-                    className="h-5 md:h-7 w-auto object-contain"
+                  <div className="w-[2px] h-6 md:h-10 bg-gray-300"></div>
+                  <img 
+                    src="/assets/images/cropd_V1.png" 
+                    alt="Northern Analytics" 
+                    className="h-10 md:h-14 lg:h-16 w-auto object-contain" 
                   />
                 </div>
               </div>
 
-              <h1 className="text-[#0f172a] text-[50px] md:text-[60px] lg:text-[75px] font-black tracking-tight mb-4 flex items-center drop-shadow-sm">
-                S-Locator
-                <sup className="text-2xl md:text-3xl lg:text-4xl text-[#38e54d] ml-1 mt-4">
-                  &reg;
-                </sup>
+              <h1 className="text-[#0f172a] text-[50px] md:text-[60px] lg:text-[75px] font-black tracking-tight mb-4 drop-shadow-sm">
+                <span dir="ltr" className="inline-flex items-start">
+                  S-Locator
+                  <sup className="text-2xl md:text-3xl lg:text-4xl text-[#38e54d] ml-1 mt-4">&reg;</sup>
+                </span>
               </h1>
-
+              
               <h2 className="text-[#334155] text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-snug">
                 {t('heroNewSub')}
               </h2>
+
               <p className="text-[#475569] text-lg md:text-xl leading-relaxed mb-10 max-w-2xl font-medium">
                 {t('heroNewDesc')}
               </p>
+              
               <div>
                 <a
                   href="https://s-locator.northernacs.com/landing?"
@@ -293,155 +302,106 @@ export default function Home() {
               </div>
             </div>
 
-            {/* تم تحديث حاوية المخطط التوضيحي بالكامل لتكون عمودية على الموبايل وستكون واضحة 100% */}
             <div className="relative w-full bg-white/80 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-6 lg:p-10 overflow-x-auto hide-scroll">
               <div className="min-w-[900px] lg:min-w-full w-full flex flex-col items-center relative z-10 py-4">
+                
                 <div className="bg-white border-2 border-[#2b1055] text-[#2b1055] text-lg font-extrabold py-3.5 px-10 rounded-full shadow-md flex items-center gap-2 mb-12 relative z-20">
                   <Network size={24} />
                   {t('nodeSlocator')}
                 </div>
 
-                <div className="flex items-start justify-center gap-6 w-full relative">
-                  <div className="absolute top-[-48px] left-[16%] right-[16%] h-px bg-gray-300 z-0"></div>
+                {/* إصلاح تقطيع الخطوط بجعل السمك 2px وحذف الـ gap */}
+                <div className="flex items-start justify-center w-full relative">
+                  
+                  {/* الخط الأفقي الرئيسي */}
+                  <div className="absolute top-[-48px] left-[16.66%] right-[16.66%] h-[2px] bg-[#cbd5e1] z-0"></div>
 
-                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative">
-                    <div className="absolute top-[-48px] left-1/2 w-px h-[48px] bg-gray-300 -translate-x-1/2 z-0"></div>
-
+                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative px-2 md:px-4">
+                    <div className="absolute top-[-48px] left-1/2 w-[2px] h-[48px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
+                    
                     <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm w-full max-w-[260px] mb-8 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#00628e]">
                       <div className="bg-blue-50 text-[#00628e] p-3 rounded-full mb-4">
                         <Database size={28} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">
-                        {t('nodeData')}
-                      </h3>
+                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">{t('nodeData')}</h3>
                     </div>
 
                     <div className="relative flex flex-col items-center w-full">
-                      <div className="absolute top-[-32px] left-1/2 w-px h-[32px] bg-gray-200 -translate-x-1/2 z-0"></div>
-
+                      <div className="absolute top-[-32px] left-1/2 w-[2px] h-[32px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
+                      
                       <div className="bg-white border border-gray-100 p-5 rounded-xl w-full max-w-[280px] shadow-sm z-10 hover:shadow-md transition-shadow">
-                        <div className="grid grid-cols-3 gap-y-6 gap-x-4 items-center justify-items-center">
-                          <img
-                            src="/assets/images/general_authority_logo.svg"
-                            alt="GASTAT"
-                            className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300"
-                            title="General Authority for Statistics"
-                          />
-                          <img
-                            src="/assets/images/REGA_LOGO.svg"
-                            alt="REGA"
-                            className="max-h-6 w-full object-contain hover:scale-110 transition-transform duration-300"
-                            title="Real Estate General Authority"
-                          />
-                          <img
-                            src="/assets/images/hrdf_logo.svg"
-                            alt="HRDF"
-                            className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300"
-                            title="HRDF"
-                          />
-                          <img
-                            src="/assets/images/housing_ministry_logo.webp"
-                            alt="Housing"
-                            className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300"
-                            title="Ministry of Housing"
-                          />
-                          <img
-                            src="/assets/images/sakany_logo.svg"
-                            alt="Sakany"
-                            className="max-h-5 w-full object-contain hover:scale-110 transition-transform duration-300"
-                            title="Sakany"
-                          />
-                          <img
-                            src="/assets/images/Ministry_of_Justice_Logo.svg"
-                            alt="MOJ"
-                            className="max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300"
-                            title="Ministry of Justice"
-                          />
-                          <img
-                            src="/assets/images/amana_logo.webp"
-                            alt="Amana"
-                            className="col-span-1 max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300 mt-1"
-                            title="Riyadh Municipality"
-                          />
-                          <img
-                            src="/assets/images/google.png"
-                            alt="google"
-                            className="col-span-2 max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300 mt-1"
-                            title="Google Data"
-                          />
-                        </div>
+                         <div className="grid grid-cols-3 gap-y-6 gap-x-4 items-center justify-items-center">
+                             <img src="/assets/images/general_authority_logo.svg" alt="GASTAT" className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300" title="General Authority for Statistics"/>
+                             <img src="/assets/images/REGA_LOGO.svg" alt="REGA" className="max-h-6 w-full object-contain hover:scale-110 transition-transform duration-300" title="Real Estate General Authority"/>
+                             <img src="/assets/images/hrdf_logo.svg" alt="HRDF" className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300" title="HRDF"/>
+                             <img src="/assets/images/housing_ministry_logo.webp" alt="Housing" className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300" title="Ministry of Housing"/>
+                             <img src="/assets/images/sakany_logo.svg" alt="Sakany" className="max-h-5 w-full object-contain hover:scale-110 transition-transform duration-300" title="Sakany"/>
+                             <img src="/assets/images/Ministry_of_Justice_Logo.svg" alt="MOJ" className="max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300" title="Ministry of Justice"/>
+                             <img src="/assets/images/amana_logo.webp" alt="Amana" className="col-span-1 max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300 mt-1" title="Riyadh Municipality"/>
+                             <img src="/assets/images/google.png" alt="google" className="col-span-2 max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300 mt-1" title="Google Data"/>
+                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative">
-                    <div className="absolute top-[-48px] left-1/2 w-px h-[48px] bg-gray-300 -translate-x-1/2 z-0"></div>
-
+                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative px-2 md:px-4">
+                    <div className="absolute top-[-48px] left-1/2 w-[2px] h-[48px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
+                    
                     <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm w-full max-w-[260px] mb-8 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#38e54d]">
                       <div className="bg-green-50 text-green-600 p-3 rounded-full mb-4">
                         <Map size={28} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">
-                        {t('nodeTerritory')}
-                      </h3>
+                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">{t('nodeTerritory')}</h3>
                     </div>
 
                     <div className="flex gap-4 w-full justify-center relative">
-                      <div className="absolute top-[-32px] left-[25%] right-[25%] h-px bg-gray-200 z-0"></div>
-                      <div className="absolute top-[-32px] left-[25%] w-px h-[32px] bg-gray-200 z-0"></div>
-                      <div className="absolute top-[-32px] right-[25%] w-px h-[32px] bg-gray-200 z-0"></div>
+                      <div className="absolute top-[-32px] left-[25%] right-[25%] h-[2px] bg-[#cbd5e1] z-0"></div>
+                      <div className="absolute top-[-32px] left-[25%] w-[2px] h-[32px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
+                      <div className="absolute top-[-32px] right-[25%] w-[2px] h-[32px] bg-[#cbd5e1] translate-x-1/2 z-0"></div>
 
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10">
-                        <MapPin size={22} className="text-[#2b1055]" />
-                        <span className="text-xs text-gray-700 font-bold leading-tight">
-                          {t('nodeTerrOpt')}
-                        </span>
+                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
+                         <MapPin size={22} className="text-[#2b1055]" />
+                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeTerrOpt')}</span>
                       </div>
 
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10">
-                        <RouteIcon size={22} className="text-[#38e54d]" />
-                        <span className="text-xs text-gray-700 font-bold leading-tight">
-                          {t('nodeRoute')}
-                        </span>
+                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
+                         <RouteIcon size={22} className="text-[#38e54d]" />
+                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeRoute')}</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative">
-                    <div className="absolute top-[-48px] left-1/2 w-px h-[48px] bg-gray-300 -translate-x-1/2 z-0"></div>
-
+                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative px-2 md:px-4">
+                    <div className="absolute top-[-48px] left-1/2 w-[2px] h-[48px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
+                    
                     <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm w-full max-w-[260px] mb-8 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#9b51e0]">
                       <div className="bg-purple-50 text-purple-600 p-3 rounded-full mb-4">
                         <FileText size={28} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">
-                        {t('nodeReport')}
-                      </h3>
+                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">{t('nodeReport')}</h3>
                     </div>
 
                     <div className="flex gap-4 w-full justify-center relative">
-                      <div className="absolute top-[-32px] left-[25%] right-[25%] h-px bg-gray-200 z-0"></div>
-                      <div className="absolute top-[-32px] left-[25%] w-px h-[32px] bg-gray-200 z-0"></div>
-                      <div className="absolute top-[-32px] right-[25%] w-px h-[32px] bg-gray-200 z-0"></div>
+                      <div className="absolute top-[-32px] left-[25%] right-[25%] h-[2px] bg-[#cbd5e1] z-0"></div>
+                      <div className="absolute top-[-32px] left-[25%] w-[2px] h-[32px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
+                      <div className="absolute top-[-32px] right-[25%] w-[2px] h-[32px] bg-[#cbd5e1] translate-x-1/2 z-0"></div>
 
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10">
-                        <TrendingUp size={22} className="text-purple-600" />
-                        <span className="text-xs text-gray-700 font-bold leading-tight">
-                          {t('nodeEval')}
-                        </span>
+                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
+                         <TrendingUp size={22} className="text-purple-600" />
+                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeEval')}</span>
                       </div>
 
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10">
-                        <Map size={22} className="text-purple-600" />
-                        <span className="text-xs text-gray-700 font-bold leading-tight">
-                          {t('nodeCity')}
-                        </span>
+                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
+                         <Map size={22} className="text-purple-600" />
+                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeCity')}</span>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -456,22 +416,14 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
               <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1 h-full">
                 <div className="flex items-center gap-4 mb-10 w-full justify-center">
-                  <img
-                    src="/assets/images/icon-10.png"
-                    alt="Report"
-                    className="w-9 h-9 object-contain drop-shadow-sm"
-                  />
+                  <img src="/assets/images/icon-10.png" alt="Report" className="w-9 h-9 object-contain drop-shadow-sm" />
                   <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold text-center">
                     {t('offerTop10Title')}
                   </h3>
                 </div>
 
                 <div className="relative mx-auto w-full max-w-[320px] mb-10 flex-grow flex items-center justify-center">
-                  <img
-                    src="/assets/images/s-locator-app.png"
-                    className="w-full h-auto object-contain drop-shadow-xl"
-                    alt="App Desktop"
-                  />
+                  <img src="/assets/images/s-locator-app.png" className="w-full h-auto object-contain drop-shadow-xl" alt="App Desktop" />
                 </div>
 
                 <p className="text-gray-500 font-medium text-[15px] leading-relaxed mb-10 text-center">
@@ -490,11 +442,7 @@ export default function Home() {
 
               <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1 h-full">
                 <div className="flex items-center gap-4 mb-10 w-full justify-center">
-                  <img
-                    src="/assets/images/icon-02.png"
-                    alt="Planning"
-                    className="w-9 h-9 object-contain drop-shadow-sm"
-                  />
+                  <img src="/assets/images/icon-02.png" alt="Planning" className="w-9 h-9 object-contain drop-shadow-sm" />
                   <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold text-center">
                     {t('offerTerrTitle')}
                   </h3>
@@ -503,23 +451,15 @@ export default function Home() {
                 <div className="relative mx-auto w-full max-w-[320px] h-[204px] mb-10 flex items-end justify-center">
                   <div className="absolute right-0 bottom-2 w-[260px]">
                     <div className="relative z-10 border-[5px] border-[#2c3e50] rounded-t-xl bg-[#2c3e50] h-[155px] overflow-hidden shadow-xl">
-                      <img
-                        src="/assets/images/s-locator-app2.png"
-                        className="w-full h-full object-cover object-left-top"
-                        alt="App Desktop"
-                      />
+                      <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-left-top" alt="App Desktop" />
                     </div>
                     <div className="relative z-20 w-[114%] -ml-[7%] h-3 bg-[#cbd5e1] rounded-b-xl shadow-md border-t border-[#94a3b8] flex justify-center">
-                      <div className="w-16 h-1 bg-[#94a3b8] rounded-b-md"></div>
+                       <div className="w-16 h-1 bg-[#94a3b8] rounded-b-md"></div>
                     </div>
                   </div>
                   <div className="absolute left-2 bottom-0 z-30 w-[75px] h-[150px] border-[4px] border-[#2c3e50] rounded-[1.2rem] bg-[#2c3e50] overflow-hidden shadow-2xl">
                     <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-4 h-[3px] bg-[#0f172a] rounded-full z-40"></div>
-                    <img
-                      src="/assets/images/s-locator-app2.png"
-                      className="w-full h-full object-cover object-center"
-                      alt="App Mobile"
-                    />
+                    <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-center" alt="App Mobile" />
                   </div>
                 </div>
 
@@ -592,8 +532,7 @@ export default function Home() {
                 href="/contact"
                 className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-4 px-10 rounded-full flex items-center justify-center w-max gap-2 transition-transform hover:scale-105 shadow-xl shadow-purple-500/20"
               >
-                {t('getStarted')}{' '}
-                <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
+                {t('getStarted')} <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
               </a>
             </div>
           </FadeInSection>
@@ -606,7 +545,7 @@ export default function Home() {
               <h3 className="text-2xl font-extrabold">
                 <AnimatedCounter end={8550} />
               </h3>
-              <p
+              <p 
                 className="text-[10px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('projectsCompletedHtml') }}
               />
@@ -619,7 +558,7 @@ export default function Home() {
               <h3 className="text-xl font-extrabold">
                 <AnimatedCounter end={90} />+
               </h3>
-              <p
+              <p 
                 className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('teamMembersHtml') }}
               />
@@ -636,7 +575,7 @@ export default function Home() {
               <h3 className="text-[30px] font-extrabold">
                 <AnimatedCounter end={3860} />
               </h3>
-              <p
+              <p 
                 className="text-[11px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('satisfiedClientsHtml') }}
               />
@@ -649,7 +588,7 @@ export default function Home() {
               <h3 className="text-2xl font-extrabold">
                 <AnimatedCounter end={180} />+
               </h3>
-              <p
+              <p 
                 className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('awardsWinHtml') }}
               />
@@ -675,7 +614,7 @@ export default function Home() {
                   <span className="text-3xl font-extrabold">
                     <AnimatedCounter end={30} />+
                   </span>
-                  <span
+                  <span 
                     className="text-[10px] text-center leading-tight font-bold mt-1"
                     dangerouslySetInnerHTML={{ __html: t('yearsExpHtml') }}
                   />
@@ -691,9 +630,7 @@ export default function Home() {
               <h2 className="text-[#38e54d] text-4xl md:text-[54px] font-bold mb-6 leading-[1.1]">
                 {t('compEdgeTitle')}
               </h2>
-              <p className="text-white mb-6 font-semibold text-lg leading-snug">
-                {t('compEdgeSub')}
-              </p>
+              <p className="text-white mb-6 font-semibold text-lg leading-snug">{t('compEdgeSub')}</p>
               <p className="text-gray-300 text-[15px] leading-relaxed mb-10 max-w-lg">
                 {t('compEdgeDesc')}
               </p>
@@ -767,22 +704,22 @@ export default function Home() {
 
       <section className="py-24 bg-[#fafbfc] border-t border-gray-100">
         <FadeInSection>
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-16 items-center mb-32">
+          <div className={`max-w-7xl mx-auto px-4 flex flex-col gap-16 items-center mb-32 ${isAr ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
             <div className="hidden md:flex flex-col gap-6 relative w-1/3 items-center justify-center">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-[#fff8f5] rounded-full -z-10"></div>
               <img
                 src="/assets/images/City-baby-90×50-1-e1741524807594-300x154.png"
                 alt="City Baby"
-                className="w-44 bg-white shadow-xl rounded-full p-6 hover:-translate-y-2 transition-transform"
+                className="w-44 h-44 object-contain bg-white shadow-xl rounded-full p-4 hover:-translate-y-2 transition-transform"
               />
               <div className="w-32 h-32 bg-white shadow-xl rounded-full flex items-center justify-center font-serif text-3xl text-[#2b1055] italic hover:-translate-y-2 transition-transform">
                 Touch
               </div>
             </div>
 
-            <div className={`md:w-2/3 pt-4 ${isAr ? 'text-right' : 'text-left'}`}>
-              <h2 className="text-[36px] font-bold text-[#2b1055] mb-6">{t('testTitle')}</h2>
-              <p className="text-gray-700 mb-8 text-[16px] leading-relaxed font-medium">
+            <div className="md:w-2/3 pt-4 text-center">
+              <h2 className="text-[32px] md:text-[36px] font-bold text-[#2b1055] mb-6 leading-tight">{t('testTitle')}</h2>
+              <p className="text-gray-700 mb-8 text-[15px] md:text-[16px] leading-relaxed font-medium max-w-2xl mx-auto">
                 {t('testDesc')}
               </p>
               <div>
@@ -841,9 +778,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">
-                      {t('email')}
-                    </h4>
+                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">{t('email')}</h4>
                     <p className="text-[#110222]/80 text-[15px] font-medium break-all" dir="ltr">
                       marketing@northernacs.com
                     </p>
@@ -863,9 +798,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">
-                      {t('phone')}
-                    </h4>
+                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">{t('phone')}</h4>
                     <p className="text-[#110222]/80 text-[15px] font-medium" dir="ltr">
                       +966 56738077
                     </p>

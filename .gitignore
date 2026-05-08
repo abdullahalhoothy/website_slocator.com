@@ -1,5 +1,25 @@
-src/fakeData
+# Logs
+logs
+*.log
+npm-debug.log*
 
-public/data
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Local env files
+.env
+.env.local
+
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+
+# Project specific
+src/fakeData
 public/data
 .husky/_
