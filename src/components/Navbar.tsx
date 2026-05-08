@@ -1,64 +1,41 @@
 import { useState } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false)
   const [isLangOpen, setIsLangOpen] = useState(false)
 
-  // جلب اللغة الحالية عند تحميل الصفحة بشكل مباشر ونظيف
-  const lang = localStorage.getItem('site_lang') || 'en'
-  const isAr = lang === 'ar'
+  // ربط القائمة بمكتبة الترجمة لإرضاء عمر 😉
+  const { t, i18n } = useTranslation()
+  const isAr = i18n.language === 'ar'
 
-  // دالة تغيير اللغة
   const changeLanguage = (newLang: string) => {
     localStorage.setItem('site_lang', newLang)
-    window.location.reload() // تحديث الصفحة لتطبيق اللغة الجديدة
+    i18n.changeLanguage(newLang)
+    window.location.reload()
   }
 
   const navLinks = [
     {
-      name: isAr ? 'احصل على التقرير' : 'Get Report',
+      name: t('Get Report'),
       href: 'https://s-locator.northernacs.com/landing?',
     },
-    { name: isAr ? 'تسجيل' : 'Signup', href: 'https://s-locator.northernacs.com/sign-up' },
-    { name: isAr ? 'الرئيسية' : 'Home', href: '/', active: true },
-    { name: isAr ? 'من نحن' : 'About', href: '/about' },
+    { name: t('Signup'), href: 'https://s-locator.northernacs.com/sign-up' },
+    { name: t('Home'), href: '/', active: true },
+    { name: t('About'), href: '/about' },
   ]
 
   const solutionsLinks = [
-    {
-      name: isAr ? 'محدد نقاط الاهتمام (POI)' : 'Point of Interest (POI) Locator',
-      href: '/solutions/point-of-interest-locator',
-    },
-    {
-      name: isAr ? 'ذكاء الكثافة السكانية' : 'Area Population Density',
-      href: '/solutions/area-population-density-intelligence',
-    },
-    {
-      name: isAr ? 'ذكاء تسعير العقارات' : 'Real Estate Pricing Intelligence',
-      href: '/solutions/real-estate-area-pricing-intelligence',
-    },
-    {
-      name: isAr ? 'ذكاء بيانات الحركة المرورية' : 'Road Traffic Data Intelligence',
-      href: '/solutions/road-traffic-data-intelligence',
-    },
-    {
-      name: isAr ? 'الذكاء البيئي' : 'Environment Intelligence',
-      href: '/solutions/environment-intelligence',
-    },
-    {
-      name: isAr ? 'ذكاء مستوى الدخل' : 'Area Income Intelligence',
-      href: '/solutions/area-income-intelligence',
-    },
-    {
-      name: isAr ? 'ذكاء مواقع البنية التحتية' : 'Infrastructure Location Intelligence',
-      href: '/solutions/infrastructure-location-intelligence',
-    },
-    {
-      name: isAr ? 'ذكاء استخدام الإنترنت' : 'Area Internet Usage Intelligence',
-      href: '/solutions/area-internet-usage-intelligence',
-    },
+    { name: t('srv1Title'), href: '/solutions/point-of-interest-locator' },
+    { name: t('srv2Title'), href: '/solutions/area-population-density-intelligence' },
+    { name: t('srv3Title'), href: '/solutions/real-estate-area-pricing-intelligence' },
+    { name: t('srv4Title'), href: '/solutions/road-traffic-data-intelligence' },
+    { name: t('srv5Title'), href: '/solutions/environment-intelligence' },
+    { name: t('srv6Title'), href: '/solutions/area-income-intelligence' },
+    { name: t('srv7Title'), href: '/solutions/infrastructure-location-intelligence' },
+    { name: t('srv8Title'), href: '/solutions/area-internet-usage-intelligence' },
   ]
 
   return (
@@ -68,13 +45,12 @@ export default function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <a href="/" className="hover:opacity-80 transition-opacity">
+          <div className="flex-shrink-0 flex items-center h-full">
+            <a href="/" className="hover:opacity-80 transition-opacity flex items-center h-full">
               <img
-                src="https://www.s-locator.com/wp-content/uploads/2024/10/cropped-S-LOC-FF-02-2-scaled-208x74.png"
-                alt="S-LOC Logo"
-                className="h-10 w-auto object-contain"
+                src="/assets/images/logo.png"
+                alt="S-Locator"
+                className="w-[130px] sm:w-[160px] md:w-[190px] lg:w-[220px] h-auto max-h-[70px] object-contain"
               />
             </a>
           </div>
@@ -98,7 +74,7 @@ export default function Navbar() {
                 onMouseEnter={() => setIsSolutionsOpen(true)}
                 onMouseLeave={() => setIsSolutionsOpen(false)}
               >
-                {isAr ? 'الحلول' : 'Solutions'}{' '}
+                {t('Solutions')}
                 <ChevronDown size={16} className={isAr ? 'mr-1' : 'ml-1'} />
               </button>
 
@@ -123,13 +99,13 @@ export default function Navbar() {
               href="/contact"
               className="text-[15px] font-medium text-white hover:text-[#9b51e0] transition-colors"
             >
-              {isAr ? 'تواصل معنا' : 'Contact'}
+              {t('Contact')}
             </a>
             <a
               href="/blog"
               className="text-[15px] font-medium text-white hover:text-[#9b51e0] transition-colors"
             >
-              {isAr ? 'المدونة' : 'Blog'}
+              {t('Blog')}
             </a>
 
             {/* Language Switcher */}
@@ -222,7 +198,7 @@ export default function Navbar() {
           ))}
 
           <div className="px-3 py-3 text-base font-medium text-gray-300">
-            {isAr ? 'الحلول' : 'Solutions'}
+            {t('Solutions')}
             <div className={`mt-2 space-y-2 px-4 py-2 bg-white/5 rounded-md`}>
               {solutionsLinks.map((subLink, idx) => (
                 <a
@@ -240,13 +216,13 @@ export default function Navbar() {
             href="/contact"
             className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
           >
-            {isAr ? 'تواصل معنا' : 'Contact'}
+            {t('Contact')}
           </a>
           <a
             href="/blog"
             className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5"
           >
-            {isAr ? 'المدونة' : 'Blog'}
+            {t('Blog')}
           </a>
 
           <div className="pt-4 mt-2 border-t border-white/10 flex gap-2">
