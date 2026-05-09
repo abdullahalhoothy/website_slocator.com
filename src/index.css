@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
+<<<<<<< HEAD
 @tailwind utilities;
+=======
+@tailwind utilities;
+
+/* لدعم اللغة العربية والإنجليزية */
+html[dir='rtl'] {
+  text-align: right;
+  direction: rtl;
+}
+html[dir='ltr'] {
+  text-align: left;
+  direction: ltr;
+}
+>>>>>>> upstream/main

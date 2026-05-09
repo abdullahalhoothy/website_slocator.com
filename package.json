@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "territory-planner",
+=======
+  "name": "clean-react-site",
+>>>>>>> upstream/main
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,6 +11,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+<<<<<<< HEAD
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +21,26 @@
     "react-dom": "^19.2.5",
     "react-i18next": "^17.0.6",
     "react-router-dom": "^7.14.2"
+=======
+    "lint:files": "node scripts/eslint-files.mjs",
+    "format": "prettier --config .prettierrc.cjs --write \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
+    "format:check": "prettier --config .prettierrc.cjs --check \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
+    "preview": "vite preview",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "node scripts/eslint-files.mjs",
+    "*.{json,css}": "prettier --config .prettierrc.cjs --write"
+  },
+  "dependencies": {
+    "i18next": "^26.0.8",
+    "lucide-react": "^1.11.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-i18next": "^17.0.6",
+    "react-router-dom": "^7.14.2",
+    "react-type-animation": "^3.2.0"
+>>>>>>> upstream/main
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -28,7 +53,14 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
+<<<<<<< HEAD
     "postcss": "^8.5.13",
+=======
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "postcss": "^8.5.12",
+    "prettier": "^3.8.3",
+>>>>>>> upstream/main
     "tailwindcss": "^3.4.19",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
