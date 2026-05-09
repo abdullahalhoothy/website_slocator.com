@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="352" height="241" viewBox="0 0 352 241">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_1177" data-name="Rechteck 1177" width="352" height="241" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-img-download">
+      <rect width="352" height="241"/>
+    </clipPath>
+  </defs>
+  <g id="img-download" clip-path="url(#clip-img-download)">
+    <g id="img-download-2" data-name="img-download" clip-path="url(#clip-path)">
+      <g id="Gruppe_1850" data-name="Gruppe 1850" transform="translate(4 -2.242)">
+        <g id="laptop" transform="translate(72 50.281)">
+          <path id="Pfad_1680" data-name="Pfad 1680" d="M259.925,183.95H128V96H259.925Z" transform="translate(-93.963 -40.537)" fill="#00628f"/>
+          <path id="Pfad_1681" data-name="Pfad 1681" d="M214.379,141.629H5.5a5.535,5.535,0,0,0-5.5,5.5v5.5A22.03,22.03,0,0,0,21.988,174.61h175.9a22.03,22.03,0,0,0,21.988-21.988v-5.5A5.724,5.724,0,0,0,214.379,141.629ZM43.975,53.988H175.9v87.95h21.988V48.491A16.548,16.548,0,0,0,181.4,32H38.478A16.548,16.548,0,0,0,21.988,48.491v93.447H43.975Z" transform="translate(-9.938 1.476)" fill="#a5cee0"/>
+        </g>
+        <g id="file-arrow-down" transform="translate(118.959 19.117)">
+          <path id="Pfad_1682" data-name="Pfad 1682" d="M134.41,0V35.36h35.36Zm-.276,90.335-10.774,10.8V68.511a6.63,6.63,0,0,0-13.26,0v32.625L99.317,90.354A6.492,6.492,0,0,0,94.629,88.4a6.63,6.63,0,0,0-4.688,11.318l22.1,22.1a6.628,6.628,0,0,0,9.376,0l22.1-22.1a6.636,6.636,0,0,0-9.384-9.385Z" transform="translate(-63.689)" fill="#f7e7bc"/>
+          <path id="Pfad_1683" data-name="Pfad 1683" d="M70.721,35.36V0H13.26A13.26,13.26,0,0,0,0,13.26V128.181a13.262,13.262,0,0,0,13.26,13.26H92.821a13.26,13.26,0,0,0,13.26-13.26V35.36Zm8.868,64.118-22.1,22.1a6.628,6.628,0,0,1-9.376,0l-22.1-22.1a6.628,6.628,0,0,1,0-9.376,8.7,8.7,0,0,1,4.928-1.7,6.583,6.583,0,0,1,4.688,1.942L46.41,101.136V68.511a6.63,6.63,0,0,1,13.26,0v32.625L70.453,90.354a6.628,6.628,0,0,1,9.376,0A6.145,6.145,0,0,1,79.588,99.479Z" fill="#e5af21"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="352" height="241" viewBox="0 0 352 241">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_1179" data-name="Rechteck 1179" width="352" height="241" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-img-ideal-user">
+      <rect width="352" height="241"/>
+    </clipPath>
+  </defs>
+  <g id="img-ideal-user" clip-path="url(#clip-img-ideal-user)">
+    <g id="img-ideal-user-2" data-name="img-ideal-user" clip-path="url(#clip-path)">
+      <g id="Gruppe_1858" data-name="Gruppe 1858" transform="translate(-3)">
+        <rect id="Rechteck_1180" data-name="Rechteck 1180" width="115" height="151" rx="8" transform="translate(37 32)" fill="#ccedf0"/>
+        <rect id="Rechteck_1181" data-name="Rechteck 1181" width="50" height="11" rx="5.5" transform="translate(84 143)" fill="#fff"/>
+        <rect id="Rechteck_1183" data-name="Rechteck 1183" width="49.248" height="11" rx="5.5" transform="translate(84.346 102.052)" fill="#fff"/>
+        <rect id="Rechteck_1182" data-name="Rechteck 1182" width="50" height="11" rx="5.5" transform="translate(84 63)" fill="#fff"/>
+        <path id="check_-_Kontur" data-name="check - Kontur" d="M23.776,93.51a3.852,3.852,0,0,1,2.723,6.577L11.552,115.034a3.85,3.85,0,0,1-5.447,0l-7.475-7.474a3.857,3.857,0,0,1,0-5.447,3.829,3.829,0,0,1,2.725-1.129,3.829,3.829,0,0,1,2.725,1.129l.006.006,4.7,4.736L21.053,94.639A3.825,3.825,0,0,1,23.776,93.51Z" transform="translate(52.751 41.788)" fill="#59c5ce"/>
+        <path id="check_-_Kontur-2" data-name="check - Kontur" d="M23.776,93.51a3.852,3.852,0,0,1,2.723,6.577L11.552,115.034a3.85,3.85,0,0,1-5.447,0l-7.475-7.474a3.857,3.857,0,0,1,0-5.447,3.829,3.829,0,0,1,2.725-1.129,3.829,3.829,0,0,1,2.725,1.129l.006.006,4.7,4.736L21.053,94.639A3.825,3.825,0,0,1,23.776,93.51Z" transform="translate(52.751 2.663)" fill="#59c5ce"/>
+        <path id="check_-_Kontur-3" data-name="check - Kontur" d="M23.776,93.51a3.852,3.852,0,0,1,2.723,6.577L11.552,115.034a3.85,3.85,0,0,1-5.447,0l-7.475-7.474a3.857,3.857,0,0,1,0-5.447,3.829,3.829,0,0,1,2.725-1.129,3.829,3.829,0,0,1,2.725,1.129l.006.006,4.7,4.736L21.053,94.639A3.825,3.825,0,0,1,23.776,93.51Z" transform="translate(52.751 -36.461)" fill="#59c5ce"/>
+      </g>
+      <g id="user" transform="translate(85.5 -18.907)">
+        <path id="Pfad_1692" data-name="Pfad 1692" d="M132.627,304H83.67A83.68,83.68,0,0,0,0,387.67a16.74,16.74,0,0,0,16.734,16.739H199.573A16.7,16.7,0,0,0,216.3,387.67,83.677,83.677,0,0,0,132.627,304Z" transform="translate(0 -162.142)" fill="#00628f"/>
+        <path id="Pfad_1693" data-name="Pfad 1693" d="M219.6,61.8A61.8,61.8,0,1,1,157.8,0,61.8,61.8,0,0,1,219.6,61.8Z" transform="translate(-49.651 29)" fill="#a5cee0"/>
+      </g>
+      <g id="circle-star" transform="translate(242 120.5)">
+        <path id="Pfad_1694" data-name="Pfad 1694" d="M142.438,117.366l13.139,1.9a2.59,2.59,0,0,1,1.444,4.428l-9.505,9.278,2.238,13.09a2.268,2.268,0,0,1-1.038,2.4,2.343,2.343,0,0,1-2.725.341l-11.76-6.18-11.76,6.18a2.343,2.343,0,0,1-2.725-.341,2.268,2.268,0,0,1-1.038-2.4l2.238-13.09-9.505-9.278a2.59,2.59,0,0,1,1.444-4.428l13.139-1.9,5.888-11.922a2.585,2.585,0,0,1,4.639,0Z" transform="translate(-92.707 -87.131)" fill="#e5af21"/>
+        <path id="Pfad_1695" data-name="Pfad 1695" d="M83.049,41.524A41.524,41.524,0,1,1,41.524,0,41.521,41.521,0,0,1,83.049,41.524ZM39.2,18.313,33.317,30.235l-13.139,1.9a2.59,2.59,0,0,0-1.444,4.428l9.505,9.278L26,58.929a2.268,2.268,0,0,0,1.038,2.4,2.343,2.343,0,0,0,2.725.341l11.614-6.18,11.906,6.18a2.343,2.343,0,0,0,2.725-.341,2.268,2.268,0,0,0,1.038-2.4l-2.238-13.09,9.505-9.278a2.59,2.59,0,0,0-1.444-4.428l-13.139-1.9L43.844,18.313a2.642,2.642,0,0,0-2.466-1.444A2.534,2.534,0,0,0,39.2,18.313Z" fill="#f7e7bc"/>
+      </g>
+    </g>
+  </g>
+</svg>

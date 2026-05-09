@@ -1,0 +1,25 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Local env files
+.env
+.env.local
+
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+
+# Project specific
+src/fakeData
+public/data
+.husky/_
