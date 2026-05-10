@@ -5,9 +5,6 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-<<<<<<< HEAD
-    extend: {},
-=======
     extend: {
       colors: {
         brand: {
@@ -22,7 +19,6 @@ export default {
         sans: ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       }
     },
->>>>>>> upstream/main
   },
   plugins: [],
 }

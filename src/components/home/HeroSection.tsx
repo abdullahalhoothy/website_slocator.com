@@ -32,11 +32,11 @@ export const HeroSection: React.FC = () => {
           <div className={`w-full lg:w-7/12 flex flex-col gap-6 order-1 lg:order-2 ${isRTL ? 'text-right' : 'text-left'}`}>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 w-fit">
               <span className="flex h-2 w-2 rounded-full bg-[#44E559]"></span>
-              <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Powered by Northern Analytics</span>
+              <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">{t('hero.poweredBy', 'Powered by Northern Analytics')}</span>
             </div>
             
             <h1 className="text-4xl lg:text-[54px] font-extrabold text-slate-900 leading-[1.1] mb-2">
-              Maximize Field Efficiency. <br/><span className="text-purple-600">Minimize Travel.</span>
+              {t('hero.title1', 'Maximize Field Efficiency.')} <br/><span className="text-purple-600">{t('hero.title2', 'Minimize Travel.')}</span>
             </h1>
             
             <p className="text-lg text-slate-500 leading-relaxed max-w-2xl font-light">
@@ -44,12 +44,9 @@ export const HeroSection: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <a href="/get-started" className="bg-[#44E559] hover:bg-[#3bc24d] text-slate-900 px-10 py-4 rounded-md font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-[#44E559]/30">
+              <a href="https://s-locator.northernacs.com/" className="bg-[#44E559] hover:bg-[#3bc24d] text-slate-900 px-10 py-4 rounded-md font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-[#44E559]/30 w-fit">
                 {t('hero.getStarted')}
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a href="#" className="bg-white border-2 border-slate-200 text-slate-700 px-10 py-4 rounded-md font-bold hover:border-slate-400 transition-all text-center">
-                View how it works
+                <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
               </a>
             </div>
           </div>

@@ -3,8 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, User } from 'lucide-react';
 import { MAIN_NAVIGATION } from '../../config/navigation';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
-const SubMenuItem = ({ subItem, t }: { subItem: any; t: any }) => (
+// Define a proper interface for subItem instead of using 'any'
+interface SubMenuItemProps {
+  id: string;
+  translationKey: string;
+  path: string;
+  isHeading?: boolean;
+  icon?: string;
+}
+
+// Ensure the component accepts the defined interface
+const SubMenuItem = ({ subItem, t }: { subItem: SubMenuItemProps; t: (k: string, d?: string) => string }) => (
   <li className={subItem.isHeading ? "mb-2 mt-1 first:mt-0" : ""}>
     {subItem.isHeading ? (
       <div className="flex items-center gap-2 pb-3 mb-1 border-b border-slate-100">
@@ -23,7 +34,7 @@ const SubMenuItem = ({ subItem, t }: { subItem: any; t: any }) => (
 );
 
 export const Header: React.FC = () => {
-  const { t, i18n } = useTranslation('landing');
+  const { t, i18n } = useTranslation(); // Note: Changed to use default namespace or ensure 'landing' is correct in your setup
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const isRTL = i18n.dir() === 'rtl';
 
@@ -49,6 +60,9 @@ export const Header: React.FC = () => {
               
 
               <div className={`flex items-center gap-3 border-slate-200 ${isRTL ? 'mr-2 pr-4 border-r' : 'ml-2 pl-4 border-l'}`}>
+                {/* Language Switcher added here */}
+                <LanguageSwitcher />
+
                 <a href="https://s-locator.northernacs.com/" className="flex items-center gap-1.5 text-slate-600 border border-slate-300 px-3 py-1 rounded hover:border-[#00609c] hover:text-[#00609c] transition-all">
                   <User className="w-3.5 h-3.5" /> {t('header.login', 'Login')}
                 </a>
@@ -76,19 +90,19 @@ export const Header: React.FC = () => {
                           {item.id === 'products' ? (
                             <div className="flex gap-8">
                               <ul className="flex flex-col w-[260px]">
-                                {item.submenu.slice(0, 4).map((subItem: any) => (
+                                {item.submenu.slice(0, 4).map((subItem: SubMenuItemProps) => (
                                   <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
                                 ))}
                               </ul>
                               <ul className={`flex flex-col w-[260px] border-slate-100 ${isRTL ? 'border-r pr-8' : 'border-l pl-8'}`}>
-                                {item.submenu.slice(4).map((subItem: any) => (
+                                {item.submenu.slice(4).map((subItem: SubMenuItemProps) => (
                                   <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
                                 ))}
                               </ul>
                             </div>
                           ) : (
                             <ul className="flex flex-col w-[240px]">
-                              {item.submenu.map((subItem: any) => (
+                              {item.submenu.map((subItem: SubMenuItemProps) => (
                                 <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
                               ))}
                             </ul>

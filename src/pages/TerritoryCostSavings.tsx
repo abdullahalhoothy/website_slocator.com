@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronRight, Phone, Mail, MonitorSmartphone, DollarSign, FileText, Car, Users, Droplet, Building, GraduationCap, Laptop, Search, TrendingUp, PiggyBank, Map } from 'lucide-react';
+import { ChevronRight, Phone, Mail, MonitorSmartphone, DollarSign, FileText, Car, Users, Droplet, Building, GraduationCap, Laptop, Search, TrendingUp, PiggyBank, Map as MapIcon, Zap } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
-
-// =========================================
-// 1. المكونات الفرعية (Sub-components)
-// =========================================
 
 const CostItem: React.FC<{ icon: React.ReactNode; amount: string; label: string }> = ({ icon, amount, label }) => (
   <div className="flex flex-col items-center text-center p-4">
@@ -17,7 +13,6 @@ const CostItem: React.FC<{ icon: React.ReactNode; amount: string; label: string 
   </div>
 );
 
-// سلايدر العملاء
 const TestimonialSlider: React.FC<{ t: any; isRTL: boolean }> = ({ t, isRTL }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [
@@ -49,7 +44,7 @@ const TestimonialSlider: React.FC<{ t: any; isRTL: boolean }> = ({ t, isRTL }) =
               </div>
               <span className="text-[#8A2BE2] text-6xl leading-none font-serif font-bold">“</span>
             </div>
-            <div className="w-full md:w-2/3 flex flex-col border-l border-slate-200 pl-8 text-left">
+            <div className={`w-full md:w-2/3 flex flex-col border-l border-slate-200 ${isRTL ? 'text-right pr-8' : 'text-left pl-8'}`}>
               <img src={testim.logo} alt="Company Logo" className="h-6 object-contain self-start mb-6 opacity-80 grayscale" onError={(e) => e.currentTarget.style.display = 'none'} />
               <p className="text-slate-600 font-light text-[16px] leading-relaxed mb-8">{testim.quote}</p>
               <div className="mt-auto flex justify-between items-end">
@@ -91,24 +86,23 @@ export const TerritoryCostSavings: React.FC = () => {
   }, []);
 
   const teamMembers = [
-    { name: "اسم الموظف 1", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 2", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 3", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 4", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 5", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 6", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 7", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 8", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 9", lang: "AR | EN", li: "", img: "" },
-    { name: "اسم الموظف 10", lang: "AR | EN", li: "", img: "" }
+    { name: "Severin Bolliger", lang: "DE | EN", li: "https://linkedin.com/in/severin-bolliger", img: "https://unavatar.io/linkedin/severin-bolliger" },
+    { name: "Pieter Niemand", lang: "EN | NL", li: "https://linkedin.com/in/pieterniemand", img: "https://unavatar.io/linkedin/pieterniemand" },
+    { name: "Mitchell Glindemann", lang: "DE | EN", li: "https://linkedin.com/in/mitchellglindemann", img: "https://unavatar.io/linkedin/mitchellglindemann" },
+    { name: "Marvin Darmstädter", lang: "DE", li: "https://linkedin.com/in/marvindarmstaedter", img: "https://unavatar.io/linkedin/marvindarmstaedter" },
+    { name: "Bastian Rittgen", lang: "DE | EN", li: "https://linkedin.com/in/bastianrittgen", img: "https://unavatar.io/linkedin/bastianrittgen" },
+    { name: "Alexej Nowototschin", lang: "DE | EN | RU", li: "https://linkedin.com/in/alexejnowototschin", img: "https://unavatar.io/linkedin/alexejnowototschin" },
+    { name: "Magdalena Jovanovic", lang: "DE | EN", li: "https://linkedin.com/in/magdalenajovanovic", img: "https://unavatar.io/linkedin/magdalenajovanovic" },
+    { name: "Thomas Müller", lang: "DE", li: "https://linkedin.com/in/thomasmueller", img: "https://unavatar.io/linkedin/thomasmueller" },
+    { name: "Sarah Schmidt", lang: "EN | FR", li: "https://linkedin.com/in/sarahschmidt", img: "https://unavatar.io/linkedin/sarahschmidt" },
+    { name: "David Smith", lang: "EN", li: "https://linkedin.com/in/davidsmith", img: "https://unavatar.io/linkedin/davidsmith" }
   ];
 
   return (
     <div className={`min-h-screen bg-white font-sans text-slate-900 selection:bg-[#f5f3ff] selection:text-[#8A2BE2] ${isRTL ? 'text-right' : 'text-left'}`}>
       
-      {/* 1. Hero Section */}
+      {/* Hero Section */}
       <section className="bg-white pt-24 pb-16 border-b border-slate-200 relative overflow-hidden min-h-[550px] flex items-center">
-        
         <div 
           className="absolute left-0 bottom-0 w-[35%] h-[85%] hidden lg:block z-0 pointer-events-none bg-no-repeat"
           style={{
@@ -117,7 +111,6 @@ export const TerritoryCostSavings: React.FC = () => {
             backgroundPosition: "left bottom"
           }}
         />
-        
         <div 
           className="absolute right-0 bottom-0 w-[35%] h-[85%] hidden lg:block z-0 pointer-events-none bg-no-repeat"
           style={{
@@ -130,7 +123,7 @@ export const TerritoryCostSavings: React.FC = () => {
         <div className="container mx-auto px-4 max-w-6xl text-center relative z-10">
           <FadeIn direction="up">
             <h1 className="text-4xl lg:text-[46px] font-bold text-[#8A2BE2] leading-[1.2] mb-12 drop-shadow-sm">
-              {t('costSavings.hero.title', 'Save money with S-Locator Territory Optimization')}
+              {t('costSavings.hero.title')}
             </h1>
             
             <div className="max-w-2xl mx-auto flex flex-col gap-6 text-slate-700 font-light text-[17px] leading-relaxed text-center bg-white/70 backdrop-blur-md p-8 rounded-3xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
@@ -142,7 +135,7 @@ export const TerritoryCostSavings: React.FC = () => {
                   {t('costSavings.hero.scenarioText')} <span className="font-bold text-[#489E46]">{t('costSavings.hero.reps')}</span>
                 </p>
                 <p className="text-xl text-slate-500 mb-3">{t('costSavings.hero.achieveText')}</p>
-                <p className="text-5xl font-extrabold text-[#8A2BE2] tracking-tight drop-shadow-sm">
+                <p className="text-5xl font-extrabold text-[#8A2BE2] tracking-tight drop-shadow-sm" dir="ltr">
                   €88,600
                 </p>
                 <p className="text-[#489E46] font-bold mt-2 uppercase tracking-wide text-sm">
@@ -156,7 +149,7 @@ export const TerritoryCostSavings: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. Breakdown Section */}
+      {/* Breakdown Section */}
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-6xl">
           <FadeIn direction="up">
@@ -182,7 +175,7 @@ export const TerritoryCostSavings: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Comparison Table */}
+      {/* Comparison Table */}
       <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn direction="up">
@@ -194,43 +187,43 @@ export const TerritoryCostSavings: React.FC = () => {
 
             <div className="flex flex-col md:flex-row w-full mb-4">
               <div className="w-full md:w-[40%] bg-slate-200/50 p-6 rounded-l-lg border border-slate-200 flex flex-col items-center justify-center text-center mb-2 md:mb-0">
-                <span className="text-3xl font-light text-slate-700 mb-1">€3,000,000</span>
+                <span className="text-3xl font-light text-slate-700 mb-1" dir="ltr">€3,000,000</span>
                 <span className="text-sm font-light text-slate-500">{t('costSavings.comparison.convTotal')}</span>
               </div>
               <div className="w-full md:w-[20%] bg-[#8A2BE2] text-white p-6 border-y md:border-y-0 md:border-x border-white flex flex-col items-center justify-center text-center shadow-lg z-10 relative md:-mx-2">
-                <span className="text-2xl font-bold mb-1">€100,000</span>
+                <span className="text-2xl font-bold mb-1" dir="ltr">€100,000</span>
                 <span className="text-sm font-light text-purple-200">{t('costSavings.comparison.savingsBox')}</span>
               </div>
               <div className="w-full md:w-[40%] bg-white p-6 rounded-r-lg border border-[#8A2BE2]/20 flex flex-col items-center justify-center text-center shadow-sm">
-                <span className="text-3xl font-light text-[#8A2BE2] mb-1">€2,900,000</span>
+                <span className="text-3xl font-light text-[#8A2BE2] mb-1" dir="ltr">€2,900,000</span>
                 <span className="text-sm font-light text-[#489E46]">{t('costSavings.comparison.slocTotal')}</span>
               </div>
             </div>
 
             <div className="flex flex-col md:flex-row w-full mb-16">
               <div className="w-full md:w-[40%] bg-slate-100 p-6 rounded-l-lg border border-slate-200 flex flex-col items-center justify-center text-center mb-2 md:mb-0">
-                <span className="text-xl font-light text-slate-700 mb-1">€3,000</span>
+                <span className="text-xl font-light text-slate-700 mb-1" dir="ltr">€3,000</span>
                 <span className="text-xs font-light text-slate-500">{t('costSavings.comparison.convSoft')}</span>
               </div>
               <div className="w-full md:w-[20%] bg-slate-400 text-white p-6 border-y md:border-y-0 md:border-x border-white flex flex-col items-center justify-center text-center z-10 relative md:-mx-2">
-                <span className="text-lg font-bold mb-1">€11,400</span>
+                <span className="text-lg font-bold mb-1" dir="ltr">€11,400</span>
                 <span className="text-xs font-light text-slate-100">{t('costSavings.comparison.addCostBox')}</span>
               </div>
               <div className="w-full md:w-[40%] bg-white p-6 rounded-r-lg border border-slate-200 flex flex-col items-center justify-center text-center shadow-sm">
-                <span className="text-xl font-light text-slate-700 mb-1">€14,400</span>
+                <span className="text-xl font-light text-slate-700 mb-1" dir="ltr">€14,400</span>
                 <span className="text-xs font-light text-slate-500">{t('costSavings.comparison.slocSoft')}</span>
               </div>
             </div>
 
             <div className="text-center">
               <p className="text-2xl text-slate-600 font-light mb-4">{t('costSavings.comparison.totalSavingsTitle')}</p>
-              <p className="text-[64px] font-bold text-[#8A2BE2] leading-none drop-shadow-sm">€88,600</p>
+              <p className="text-[64px] font-bold text-[#8A2BE2] leading-none drop-shadow-sm" dir="ltr">€88,600</p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* 4. Advantages */}
+      {/* Advantages */}
       <section className="py-24 bg-[#f5f3ff]/60 border-b border-purple-100">
         <div className="container mx-auto px-4 max-w-6xl text-center">
           <FadeIn direction="up">
@@ -253,7 +246,7 @@ export const TerritoryCostSavings: React.FC = () => {
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm border border-slate-100 mb-6">
-                  <Map className="w-10 h-10 text-[#489E46]" strokeWidth={1.5} />
+                  <MapIcon className="w-10 h-10 text-[#489E46]" strokeWidth={1.5} />
                 </div>
                 <h4 className="text-xl font-bold text-slate-800 mb-4">{t('costSavings.advantages.compactTitle')}</h4>
                 <p className="text-slate-600 font-light leading-relaxed">{t('costSavings.advantages.compactDesc')}</p>
@@ -267,17 +260,17 @@ export const TerritoryCostSavings: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. Success Stories */}
+      {/* Success Stories */}
       <section className="py-24 bg-white border-b border-slate-200 text-center">
         <div className="container mx-auto px-4">
           <FadeIn direction="up">
-            <h2 className="text-3xl lg:text-[36px] font-bold text-[#8A2BE2] mb-12">Success stories of our customers</h2>
+            <h2 className="text-3xl lg:text-[36px] font-bold text-[#8A2BE2] mb-12">{t('territoryAdvantages.testimonials.title', 'Success stories of our customers')}</h2>
             <TestimonialSlider t={t} isRTL={isRTL} />
           </FadeIn>
         </div>
       </section>
 
-      {/* 6. Arrange Demo (Dark Purple) */}
+      {/* Arrange Demo */}
       <section className="bg-[#8A2BE2] py-20 text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 max-w-4xl">
           <FadeIn direction="up">
@@ -289,9 +282,9 @@ export const TerritoryCostSavings: React.FC = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-6 mb-10">
-              <span className="text-[#489E46] bg-white px-4 py-1.5 rounded-full text-sm uppercase tracking-wider font-bold">Free</span>
-              <span className="text-[#489E46] bg-white px-4 py-1.5 rounded-full text-sm uppercase tracking-wider font-bold">30-60 min</span>
-              <span className="text-[#489E46] bg-white px-4 py-1.5 rounded-full text-sm uppercase tracking-wider font-bold">Online</span>
+              <span className="text-[#489E46] bg-white px-4 py-1.5 rounded-full text-sm uppercase tracking-wider font-bold">{t('territoryAdvantages.demoCta.f1', 'Free')}</span>
+              <span className="text-[#489E46] bg-white px-4 py-1.5 rounded-full text-sm uppercase tracking-wider font-bold">{t('territoryAdvantages.demoCta.f2', '30-60 min')}</span>
+              <span className="text-[#489E46] bg-white px-4 py-1.5 rounded-full text-sm uppercase tracking-wider font-bold">{t('territoryAdvantages.demoCta.f3', 'Online')}</span>
             </div>
 
             <button className="bg-[#489E46] hover:bg-[#336E2E] text-white px-10 py-4 rounded font-bold transition-colors shadow-lg text-lg">
@@ -301,7 +294,7 @@ export const TerritoryCostSavings: React.FC = () => {
         </div>
       </section>
 
-      {/* 7. License Models / Pricing */}
+      {/* License Models */}
       <section className="py-24 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <FadeIn direction="up">
@@ -338,61 +331,57 @@ export const TerritoryCostSavings: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. Contact Section & Hexagon Team */}
+      {/* Contact Section & Hexagon Team */}
       <section className="bg-[#f8fafc] py-24 text-center">
          <div className="container mx-auto px-4 max-w-7xl">
-            {/* Header */}
-            <h2 className="text-4xl font-bold text-[#8A2BE2] mb-4">{t('contact.title', 'Contact us!')}</h2>
-            <h3 className="text-xl text-[#489E46] font-medium">How can we help you?</h3>
+            <h2 className="text-4xl font-bold text-[#8A2BE2] mb-4">{t('contactPage.hero.title', 'Contact us!')}</h2>
+            <h3 className="text-xl text-[#489E46] font-medium">{t('contactPage.hero.subtitle', 'How can we help you?')}</h3>
             <div className="mt-8 text-[15px] text-slate-500 font-light flex items-center justify-center gap-2">
-               <MonitorSmartphone className="w-4 h-4 text-[#489E46]" /> Available by phone from Mon-Fri, 9-17h CET
+               <MonitorSmartphone className="w-4 h-4 text-[#489E46]" /> {t('contactPage.hero.availability')}
             </div>
 
-            {/* Contact Blocks */}
             <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto mt-16 mb-20">
                <div className="flex-1 bg-[#f5f3ff]/50 p-10 rounded-xl shadow-sm border border-purple-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">I am already a user and need</h3>
-                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">Support</h4>
+                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">{t('contactPage.support.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">{t('contactPage.support.title')}</h4>
                   <button className="bg-[#8A2BE2] text-white px-8 py-3.5 rounded hover:bg-[#6b21a8] transition-colors mb-10 text-[15px] font-medium">
-                    To the HelpCenter
+                    {t('contactPage.support.btn')}
                   </button>
-                  <div className="text-left flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] items-start w-full max-w-xs mx-auto">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> US: +1 646-974-60-50</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> EU: +43 1 2531516-50</div>
+                  <div className={`text-left flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] w-full max-w-xs mx-auto ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#489E46]"/> KSA: +966 55 818 8632</div>
                      <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#489E46]"/> support@s-locator.com</div>
                   </div>
                </div>
                <div className="flex-1 bg-[#f5f3ff]/50 p-10 rounded-xl shadow-sm border border-purple-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">I am interested and would like</h3>
-                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">Buying advice</h4>
-                  <div className="text-left flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] items-start w-full max-w-xs mx-auto mt-2">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> US: +1 646-974-6040</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> EU: +43 1 2531516-40</div>
-                     <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#489E46]"/> sales@s-locator.com</div>
+                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">{t('contactPage.sales.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">{t('contactPage.sales.title')}</h4>
+                  <div className={`text-left flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] w-full max-w-xs mx-auto mt-2 ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#489E46]"/> Canada: +1 514-814-5180</div>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#489E46]"/> KSA: +966 55 818 8632</div>
+                     <a href="/contact" className="text-[#a0a0a0] cursor-pointer hover:text-[#8A2BE2] ml-8 mb-2 transition-colors">{t('common.showMore')}</a>
+                     <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#489E46]"/> sales@s-locator.com</div>
                   </div>
                </div>
             </div>
 
-        
             <div className="pt-16 border-t border-slate-200">
-              <h3 className="text-3xl font-bold text-[#8A2BE2] mb-16">We look forward to our conversation</h3>
-              <div className="flex flex-wrap justify-center max-w-5xl mx-auto px-4 gap-y-2 md:gap-y-0 pb-16">
+              <h3 className="text-3xl font-bold text-[#8A2BE2] mb-16">{t('contactPage.team.title', 'We look forward to our conversation')}</h3>
+              <div className="flex flex-wrap justify-center max-w-5xl mx-auto px-4 gap-y-2 md:gap-y-0 pb-16" dir="ltr">
                 {teamMembers.map((member, idx) => (
                   <div key={idx} className="relative w-[110px] h-[125px] md:w-[130px] md:h-[150px] mx-1 md:mx-2 mb-[-20px] md:mb-[-30px] group">
-                    
                     <div 
                       className="w-full h-full bg-[#f5f3ff] transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center overflow-hidden border-[3px] border-white shadow-sm"
                       style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
                     >
                       <img 
-                        src={member.img || 'https://via.placeholder.com/150?text=LinkedIn+Image'} 
+                        src={member.img || 'https://via.placeholder.com/150/f5f3ff/8A2BE2?text=S-Loc'} 
                         alt={member.name} 
-                        className="w-full h-full object-cover" 
-                        onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/150?text=LinkedIn+Image' }} 
+                        className="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:mix-blend-normal group-hover:opacity-100 transition-all" 
+                        onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/150/f5f3ff/8A2BE2?text=User' }} 
                       />
                     </div>
 
-                    <div className={`absolute -top-16 left-1/2 -translate-x-1/2 bg-white text-slate-800 px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-[100] flex flex-col items-center border border-slate-100 pointer-events-none group-hover:pointer-events-auto ${isRTL ? 'text-right' : 'text-left'}`}>
+                    <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-white text-slate-800 px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-[100] flex flex-col items-center border border-slate-100 pointer-events-none group-hover:pointer-events-auto">
                        <span className="font-bold text-[14px] text-slate-700">{member.name}</span>
                        <div className="flex items-center gap-3 mt-1">
                           <span className="text-[11px] text-slate-400 font-medium tracking-wide">{member.lang}</span>
@@ -404,7 +393,6 @@ export const TerritoryCostSavings: React.FC = () => {
                        </div>
                        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white transform rotate-45 border-b border-r border-slate-100"></div>
                     </div>
-
                   </div>
                 ))}
               </div>

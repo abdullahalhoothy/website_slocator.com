@@ -4,7 +4,7 @@ import { FileSpreadsheet, Cloud, LayoutDashboard, Database, AppWindow, Code, Net
 import { FadeIn } from '../components/animations/FadeIn';
 
 export const Integrations: React.FC = () => {
-  const { t, i18n } = useTranslation('landing');
+  const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
   useEffect(() => {
@@ -192,31 +192,31 @@ export const Integrations: React.FC = () => {
       {/* 5. Contact Section */}
       <section className="bg-[#f8fafc] py-24 text-center">
          <div className="container mx-auto px-4 max-w-7xl">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('contact.title', 'Contact us!')}</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">{t('contactPage.hero.title')}</h2>
             <div className="mt-6 text-[15px] text-slate-500 font-light flex items-center justify-center gap-2">
-               <MonitorSmartphone className="w-4 h-4 text-[#8A2BE2]" /> Available by phone from Mon-Fri, 9-17h CET
+               <MonitorSmartphone className="w-4 h-4 text-[#8A2BE2]" /> {t('contactPage.hero.availability')}
             </div>
 
-            <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto mt-16">
+            <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto mt-16 mb-8">
                <div className="flex-1 bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-slate-500 mb-2">I am already a user and need</h3>
-                  <h4 className="text-[32px] font-bold text-slate-800 mb-8">Support</h4>
+                  <h3 className="text-[17px] font-medium text-slate-500 mb-2">{t('contactPage.support.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-slate-800 mb-8">{t('contactPage.support.title')}</h4>
                   <button className="bg-[#8A2BE2] text-white px-8 py-3.5 rounded hover:bg-[#6b21a8] transition-colors mb-10 text-[15px] font-bold shadow-sm">
-                    To the HelpCenter
+                    {t('contactPage.support.btn')}
                   </button>
-                  <div className="text-left flex flex-col gap-4 text-slate-700 font-medium text-[15px] items-start w-full max-w-xs mx-auto">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#8A2BE2]"/> US: +1 646-974-60-50</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#8A2BE2]"/> EU: +43 1 2531516-50</div>
+                  <div className="flex flex-col gap-4 text-slate-700 font-medium text-[15px] items-start w-full max-w-xs mx-auto">
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#8A2BE2]"/> KSA: +966 55 818 8632</div>
                      <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#8A2BE2]"/> support@s-locator.com</div>
                   </div>
                </div>
                <div className="flex-1 bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-slate-500 mb-2">I am interested and would like</h3>
-                  <h4 className="text-[32px] font-bold text-slate-800 mb-8">Buying advice</h4>
-                  <div className="text-left flex flex-col gap-4 text-slate-700 font-medium text-[15px] items-start w-full max-w-xs mx-auto mt-2">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#8A2BE2]"/> US: +1 646-974-6040</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#8A2BE2]"/> EU: +43 1 2531516-40</div>
-                     <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#8A2BE2]"/> sales@s-locator.com</div>
+                  <h3 className="text-[17px] font-medium text-slate-500 mb-2">{t('contactPage.sales.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-slate-800 mb-8">{t('contactPage.sales.title')}</h4>
+                  <div className="flex flex-col gap-4 text-slate-700 font-medium text-[15px] items-start w-full max-w-xs mx-auto mt-2">
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#8A2BE2]"/> Canada: +1 514-814-5180</div>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#8A2BE2]"/> KSA: +966 55 818 8632</div>
+                     <a href="/contact" className="text-[#a0a0a0] cursor-pointer hover:text-[#8A2BE2] ml-8 mb-2 transition-colors">{t('common.showMore')}</a>
+                     <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#8A2BE2]"/> sales@s-locator.com</div>
                   </div>
                </div>
             </div>

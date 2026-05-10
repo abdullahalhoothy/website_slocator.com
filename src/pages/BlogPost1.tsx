@@ -35,18 +35,18 @@ export const BlogPost1: React.FC = () => {
   const relatedArticles = [
     {
       img: 'https://cdn.portatour.com/blog/wp-content/uploads/change-management-624x478.jpg',
-      category: 'Field Sales',
-      title: "The 5 best sales apps for your field sales team in 2026"
+      category: t('blogPost1.relatedArticles.a1.category'),
+      title: t('blogPost1.relatedArticles.a1.title')
     },
     {
       img: 'https://cdn.portatour.com/blog/wp-content/uploads/crm-blog.jpg',
-      category: 'Field Sales',
-      title: "S-Locator® – The mobile route planner with CRM system for large and small companies"
+      category: t('blogPost1.relatedArticles.a2.category'),
+      title: t('blogPost1.relatedArticles.a2.title')
     },
     {
       img: 'https://cdn.portatour.com/blog/wp-content/uploads/tourenplanung-im-wandel-der-zeit.jpg',
-      category: 'Field Sales',
-      title: "Field sales force, territory planning and route planning through the ages"
+      category: t('blogPost1.relatedArticles.a3.category'),
+      title: t('blogPost1.relatedArticles.a3.title')
     }
   ];
 
@@ -58,15 +58,15 @@ export const BlogPost1: React.FC = () => {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <FadeIn direction="up">
             <Link to="/blog" className="inline-block bg-[#f5f3ff] text-[#8A2BE2] px-4 py-1.5 text-sm font-bold rounded-full mb-6 hover:bg-[#8A2BE2] hover:text-white transition-colors">
-               Field Sales
+               {t('blogPost1.category')}
             </Link>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-8 leading-tight tracking-tight">
-              Successful sales reporting in the field with S-Locator®
+              {t('blogPost1.title')}
             </h1>
             <div className="text-slate-500 font-medium flex items-center justify-center gap-4 text-sm">
-               <span>Published: Jan 22, 2026</span>
+               <span>{t('blogPost1.meta.published')}</span>
                <span>•</span>
-               <span>5 min read</span>
+               <span>{t('blogPost1.meta.readTime')}</span>
             </div>
           </FadeIn>
         </div>
@@ -93,32 +93,32 @@ export const BlogPost1: React.FC = () => {
             <FadeIn direction="up" delay={200}>
                <div className="prose prose-lg md:prose-xl prose-slate max-w-none text-slate-600 leading-relaxed font-light">
                   <p className="mb-6">
-                    In field sales, customer contact is not the only factor that determines success. Meaningful sales reporting is just as important, because systematically recording and evaluating your activities, results, and potential allows you to manage sales processes in a targeted manner, make optimal use of resources, and make better decisions.
+                    {t('blogPost1.content.p1')}
                   </p>
                   <p className="mb-12">
-                    Unfortunately, reporting often fails in practice due to a lack of transparency, time-consuming recording methods, and scattered data sources. In this article, we show you how modern sales reporting works and how <strong className="text-slate-800 font-bold">S-Locator®</strong> supports the field sales force in this process.
+                    {t('blogPost1.content.p2')} <strong className="text-slate-800 font-bold">S-Locator®</strong>.
                   </p>
 
-                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">Why sales reporting is so crucial in field sales</h2>
+                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">{t('blogPost1.content.h2_1')}</h2>
                   <p className="mb-6">
-                    Professional sales reporting provides insight into the performance of teams, individual employees, and entire regions within your sales territory at the touch of a button. A well-managed reporting system answers questions such as:
+                    {t('blogPost1.content.p3')}
                   </p>
-                  <ul className="list-none space-y-3 mb-10">
-                     <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-[#489E46] shrink-0" /> <span className="pt-0.5">Which customers were visited and when?</span></li>
-                     <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-[#489E46] shrink-0" /> <span className="pt-0.5">What deals and sales were achieved?</span></li>
-                     <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-[#489E46] shrink-0" /> <span className="pt-0.5">What was discussed?</span></li>
+                  <ul className="list-none space-y-3 mb-10 p-0 m-0">
+                     <li className="flex items-start gap-3 p-0"><CheckCircle2 className="w-6 h-6 text-[#489E46] shrink-0" /> <span className="pt-0.5">{t('blogPost1.content.l1_1')}</span></li>
+                     <li className="flex items-start gap-3 p-0"><CheckCircle2 className="w-6 h-6 text-[#489E46] shrink-0" /> <span className="pt-0.5">{t('blogPost1.content.l1_2')}</span></li>
+                     <li className="flex items-start gap-3 p-0"><CheckCircle2 className="w-6 h-6 text-[#489E46] shrink-0" /> <span className="pt-0.5">{t('blogPost1.content.l1_3')}</span></li>
                   </ul>
                   <p className="mb-12">
-                    Without structured sales reporting, this transparency is lacking. This often leads to inaccurate forecasting, inefficient use of resources, and missed opportunities. Field staff, on the other hand, need a reporting tool that doesn't slow them down but supports them, and that is fast, mobile, and automated.
+                    {t('blogPost1.content.p4')}
                   </p>
 
-                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">What are typical challenges in sales reporting?</h2>
-                  <p className="mb-6">Sales reporting is often an unpopular duty, especially in the field. The reasons for this are:</p>
-                  <ul className="list-disc list-inside space-y-4 mb-12 pl-4 marker:text-[#8A2BE2]">
-                     <li><strong className="text-slate-800 font-bold">Manual data entry:</strong> Call reports are manually transferred to a CRM system after appointments. This work takes time and motivation.</li>
-                     <li><strong className="text-slate-800 font-bold">Isolated solutions:</strong> Data is scattered across Excel spreadsheets, notes, or various tools. There is no overall picture or complete solution.</li>
-                     <li><strong className="text-slate-800 font-bold">Lack of real-time information:</strong> Decisions are based on outdated figures.</li>
-                     <li><strong className="text-slate-800 font-bold">Confusing reports:</strong> Data is collected but not translated into meaningful key figures.</li>
+                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">{t('blogPost1.content.h2_2')}</h2>
+                  <p className="mb-6">{t('blogPost1.content.p5')}</p>
+                  <ul className={`list-disc list-outside space-y-4 mb-12 marker:text-[#8A2BE2] ${isRTL ? 'pr-6' : 'pl-6'}`}>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l2_1_title')}</strong> {t('blogPost1.content.l2_1_desc')}</li>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l2_2_title')}</strong> {t('blogPost1.content.l2_2_desc')}</li>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l2_3_title')}</strong> {t('blogPost1.content.l2_3_desc')}</li>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l2_4_title')}</strong> {t('blogPost1.content.l2_4_desc')}</li>
                   </ul>
 
                   {/* Mid-Article Image */}
@@ -130,34 +130,34 @@ export const BlogPost1: React.FC = () => {
                      />
                   </div>
 
-                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">How does sales reporting with S-Locator® reduce the workload?</h2>
+                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">{t('blogPost1.content.h2_3')}</h2>
                   <p className="mb-6">
-                    S-Locator® is much more than just intelligent route planning. The route planning software provides field teams with integrated sales reporting that takes place on the mobile device immediately after each customer visit.
+                    {t('blogPost1.content.p6')}
                   </p>
-                  <p className="mb-6 font-bold text-slate-800">The most important advantages at a glance:</p>
-                  <ul className="list-disc list-inside space-y-4 mb-12 pl-4 marker:text-[#489E46]">
-                     <li><strong className="text-slate-800 font-bold">Timely recording:</strong> Every customer interaction is documented in full immediately after the sales appointment.</li>
-                     <li><strong className="text-slate-800 font-bold">Clear dashboards:</strong> S-Locator® prepares data in such a way that managers can immediately identify trends.</li>
-                     <li><strong className="text-slate-800 font-bold">Integration:</strong> S-Locator® integrates seamlessly with Salesforce, Microsoft Dynamics, and other systems.</li>
-                     <li><strong className="text-slate-800 font-bold">Real-time information:</strong> Sales management and field staff have up-to-date figures at their fingertips at all times.</li>
+                  <p className="mb-6 font-bold text-slate-800">{t('blogPost1.content.p7')}</p>
+                  <ul className={`list-disc list-outside space-y-4 mb-12 marker:text-[#489E46] ${isRTL ? 'pr-6' : 'pl-6'}`}>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l3_1_title')}</strong> {t('blogPost1.content.l3_1_desc')}</li>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l3_2_title')}</strong> {t('blogPost1.content.l3_2_desc')}</li>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l3_3_title')}</strong> {t('blogPost1.content.l3_3_desc')}</li>
+                     <li><strong className="text-slate-800 font-bold">{t('blogPost1.content.l3_4_title')}</strong> {t('blogPost1.content.l3_4_desc')}</li>
                   </ul>
 
-                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">Practical example: Transparency and efficiency in one step</h2>
+                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">{t('blogPost1.content.h2_4')}</h2>
                   <p className="mb-8">
-                    A medium-sized pharmaceutical company uses S-Locator® for the automatic route planning of its 30 sales representatives. Previously, visit reports were maintained in Excel and only evaluated at the end of the month, which meant a lot of manual work with outdated data. Today, field staff use S-Locator® to log every appointment immediately.
+                    {t('blogPost1.content.p8')}
                   </p>
 
                   {/* Mid-Article CTA Box */}
                   <div className="bg-[#f5f3ff] border border-[#8A2BE2]/20 rounded-2xl p-8 my-12 text-center shadow-sm">
-                     <h3 className="text-2xl font-bold text-slate-800 mb-4">Smart sales reporting with S-Locator®</h3>
+                     <h3 className="text-2xl font-bold text-slate-800 mb-4">{t('blogPost1.content.ctaBoxTitle')}</h3>
                      <a href="https://s-locator.northernacs.com/" className="inline-block bg-[#8A2BE2] hover:bg-[#6b21a8] text-white px-8 py-3.5 rounded-lg font-bold transition-colors shadow-md text-lg">
-                        Try it now!
+                       {t('blogPost1.content.ctaBoxBtn')}
                      </a>
                   </div>
 
-                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">Conclusion: Professional reporting made easy</h2>
+                  <h2 className="text-3xl font-bold text-slate-800 mt-12 mb-6">{t('blogPost1.content.h2_5')}</h2>
                   <p className="mb-6">
-                    Sales reporting in the field doesn't have to be complicated. By focusing on automation, integration, and user-friendly evaluations, you can save time and gain valuable insights. S-Locator® takes most of the administrative work off your team's hands and delivers reporting that managers love.
+                    {t('blogPost1.content.p9')}
                   </p>
                </div>
             </FadeIn>
@@ -170,11 +170,9 @@ export const BlogPost1: React.FC = () => {
             <h4 className="text-xl font-bold text-slate-800 mb-6">{t('blogPost.share.title')}</h4>
             <div className="flex flex-wrap items-center justify-center gap-4">
                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-6 py-2.5 rounded-full hover:border-[#0a66c2] hover:text-[#0a66c2] transition-colors font-medium shadow-sm">
-                  {/* ✅ استخدام الأيقونة الجديدة للينكدإن هنا */}
                   <LinkedinIcon className="w-4 h-4" /> {t('blogPost.share.linkedin')}
                </a>
                <a href={`http://www.facebook.com/sharer.php?u=${window.location.href}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-6 py-2.5 rounded-full hover:border-[#1877f2] hover:text-[#1877f2] transition-colors font-medium shadow-sm">
-                  {/* ✅ استخدام الأيقونة الجديدة لفيسبوك هنا */}
                   <FacebookIcon className="w-4 h-4" /> {t('blogPost.share.facebook')}
                </a>
                <button onClick={handleCopy} className="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-6 py-2.5 rounded-full hover:border-[#8A2BE2] hover:text-[#8A2BE2] transition-colors font-medium shadow-sm relative">

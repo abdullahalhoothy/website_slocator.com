@@ -6,20 +6,19 @@ import {
 } from 'lucide-react';
 
 export const Services: React.FC = () => {
-  const { t, i18n } = useTranslation('landing');
+  const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // دالة للتمرير السلس للقسم المطلوب
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80; // مسافة تعويضية للهيدر الثابت
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      const yOffset = -80; 
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
@@ -28,157 +27,157 @@ export const Services: React.FC = () => {
     {
       id: 'datacheck',
       icon: Database,
-      title: t('services.grid.datacheck', 'Data Check'),
-      shortDesc: t('services.grid.datacheckDesc', "Ensuring your data's compatibility"),
-      fullDesc: 'In this online workshop, we jointly analyze the data you export from your CRM/ERP system. We provide hints and suggestions for improvement to ensure compatibility with S-Locator and overall completeness for effective route planning.',
+      title: t('services.grid.datacheck', 'فحص البيانات'),
+      shortDesc: t('services.grid.datacheckDesc', 'ضمان توافق بياناتك'),
+      fullDesc: t('services.desc.datacheck', 'في ورشة العمل هذه عبر الإنترنت، نقوم معًا بتحليل البيانات التي تقوم بتصديرها من نظام CRM/ERP الخاص بك. نقدم تلميحات واقتراحات للتحسين لضمان التوافق مع S-Locator والاكتمال العام لتخطيط مسار فعال.'),
       leftCol: [
-        { label: t('services.labels.target', 'Target audience'), text: 'IT/CRM management and field service sales management' },
-        { label: t('services.labels.topics', 'Topics'), text: 'Analysis of the exported files, review and editing of your workflow definitions (e.g. adapt SQL query), answers to your questions about S-Locator data formats.' },
-        { label: 'Data Check', text: 'Availability of necessary fields, availability of recommended fields, unique field names, address quality, number of records, encoding and escaping, format and value ranges, unnecessary data fragments' },
-        { label: t('services.labels.participation', 'Participation'), text: 'Via online meeting' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Approx. 1 hour' },
+        { label: t('services.labels.target', 'الجمهور المستهدف'), text: t('services.datacheck.target', 'إدارة IT/CRM وإدارة مبيعات الخدمة الميدانية') },
+        { label: t('services.labels.topics', 'المواضيع'), text: t('services.datacheck.topics', 'تحليل الملفات المصدرة، مراجعة وتحرير تعريفات سير العمل الخاصة بك، الإجابة على أسئلتك حول تنسيقات بيانات S-Locator.') },
+        { label: t('services.grid.datacheck', 'فحص البيانات'), text: t('services.datacheck.list', 'توفر الحقول الضرورية، توفر الحقول الموصى بها، أسماء الحقول الفريدة، جودة العنوان، عدد السجلات، التشفير والهروب، النطاقات والقيم، أجزاء البيانات غير الضرورية') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.datacheck.participation', 'عبر اجتماع عبر الإنترنت') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.datacheck.duration', 'حوالي ساعة واحدة') },
       ],
       rightCol: [
-        { label: t('services.labels.prepare', 'Preliminary work by you'), text: 'Configure a repeatable export workflow in your CRM/ERP system. This should export all relevant customer and user data to CSV or Excel files. Send us this data in advance.' },
-        { label: t('services.labels.exclusive', 'Exclusive'), text: 'The workshop is held exclusively and individually for you.' },
-        { label: t('services.labels.procedure', 'Procedure'), text: 'After ordering and setting the appointment, you will receive a link to the online meeting. During the workshop, we call you or you dial into a conference call if participants are in more than one location.' },
+        { label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'), text: t('services.datacheck.prepare', 'قم بتكوين سير عمل تصدير قابل للتكرار في نظام CRM/ERP الخاص بك. يجب أن يصدر هذا جميع بيانات العملاء والمستخدمين ذات الصلة إلى ملفات CSV أو Excel. أرسل لنا هذه البيانات مسبقًا.') },
+        { label: t('services.labels.exclusive', 'حصرية'), text: t('services.datacheck.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.') },
+        { label: t('services.labels.procedure', 'الإجراءات'), text: t('services.datacheck.procedure', 'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت. خلال ورشة العمل، نتصل بك أو تتصل بمكالمة جماعية إذا كان المشاركون في أكثر من موقع.') },
       ]
     },
     {
       id: 'setupworkshop',
       icon: Settings,
-      title: t('services.grid.setup', 'Setup Workshop'),
-      shortDesc: t('services.grid.setupDesc', 'Getting you up and running with S-Locator'),
-      fullDesc: 'In this two-part online workshop, you will first prepare your CRM/ERP data for import and define the general parameters, then we\'ll help you configure S-Locator and populate it with your customer data.',
+      title: t('services.grid.setup', 'ورشة الإعداد'),
+      shortDesc: t('services.grid.setupDesc', 'تجهيز وبدء العمل مع S-Locator'),
+      fullDesc: t('services.desc.setup', 'في ورشة العمل هذه المكونة من جزأين عبر الإنترنت، ستقوم أولاً بإعداد بيانات CRM/ERP الخاصة بك للاستيراد وتحديد المعلمات العامة، ثم سنساعدك في تكوين S-Locator وملئه ببيانات عملائك.'),
       leftCol: [
-        { label: t('services.labels.target', 'Target audience'), text: 'Outside sales director and IT administrators' },
-        { label: 'Topics Part 1 - Preparation', text: 'Analysing exported data, reviewing and editing your workflow definition, Q&A session about S-Locator data formats, and preliminary discussion of Part 2 of the Setup workshop - approx. 1 hour.' },
-        { label: 'Topics Part 2 - Implementation', text: 'User management, preparing and quality checking customer data, defining your visit strategy, setting your route-planning parameters, software configuration, additional fields for customers and visit reports, data import and export, test, and preliminary discussion of user training - approx. 2 hours.' },
-        { label: t('services.labels.participation', 'Participation'), text: 'Via online meeting' },
-        { label: t('services.labels.prerequisite', 'Prerequisite'), text: 'S-Locator user licenses purchased in the online shop.' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Approx. 3 hours' },
+        { label: t('services.labels.target', 'الجمهور المستهدف'), text: t('services.setup.target', 'مدير المبيعات الخارجية ومسؤولو تكنولوجيا المعلومات') },
+        { label: t('services.setup.topics1Label', 'المواضيع الجزء 1 - التحضير'), text: t('services.setup.topics1', 'تحليل البيانات المصدرة، مراجعة وتحرير تعريف سير العمل الخاص بك، جلسة أسئلة وأجوبة، ومناقشة أولية للجزء 2 - حوالي ساعة واحدة.') },
+        { label: t('services.setup.topics2Label', 'المواضيع الجزء 2 - التنفيذ'), text: t('services.setup.topics2', 'إدارة المستخدمين، إعداد والتحقق من جودة بيانات العملاء، تحديد استراتيجية الزيارة الخاصة بك، تعيين معلمات تخطيط المسار، تكوين البرنامج، حقول إضافية للعملاء وتقارير الزيارة - حوالي ساعتين.') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.setup.participation', 'عبر اجتماع عبر الإنترنت') },
+        { label: t('services.labels.prerequisite', 'المتطلبات الأساسية'), text: t('services.setup.prerequisite', 'تراخيص مستخدم S-Locator المشتراة من المتجر عبر الإنترنت.') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.setup.duration', 'حوالي 3 ساعات') },
       ],
       rightCol: [
-        { label: t('services.labels.prepare', 'How to prepare'), text: 'Prepare all relevant customer and user data as an Excel or CSV file. Required: customer name, full address and unique ID/reference number, plus unique employee (i.e. sales rep) ID/reference number. Export the current data from your CRM/ERP system if you have one.' },
-        { label: t('services.labels.exclusive', 'Exclusive'), text: 'The workshop is held exclusively and individually for you.' },
-        { label: t('services.labels.procedure', 'Procedure'), text: 'After ordering and setting the appointment, you will receive a link to the online meeting. During the workshop, we call you or you dial into a conference call if participants are in more than one location.' },
-        { label: 'Optional topics', text: 'API interface for export/import, Dynamics CRM setup, Salesforce setup' },
+        { label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'), text: t('services.setup.prepare', 'قم بإعداد جميع بيانات العملاء والمستخدمين ذات الصلة كملف Excel أو CSV. مطلوب: اسم العميل، العنوان الكامل ورقم المرجع الفريد، بالإضافة إلى رقم المرجع الفريد للموظف.') },
+        { label: t('services.labels.exclusive', 'حصرية'), text: t('services.setup.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.') },
+        { label: t('services.labels.procedure', 'الإجراءات'), text: t('services.setup.procedure', 'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت. خلال ورشة العمل، نتصل بك أو تتصل بمكالمة جماعية.') },
+        { label: t('services.setup.optionalLabel', 'مواضيع اختيارية'), text: t('services.setup.optional', 'واجهة برمجة التطبيقات للاستيراد/التصدير، إعداد Dynamics CRM، إعداد Salesforce') },
       ]
     },
     {
       id: 'usertraining',
       icon: Users,
-      title: t('services.grid.training', 'User Training'),
-      shortDesc: t('services.grid.trainingDesc', 'Learning daily usage of S-Locator'),
-      fullDesc: 'During the online user training, your field reps learn how to use S-Locator effectively every day for route and appointment-planning and call reporting.',
+      title: t('services.grid.training', 'تدريب المستخدمين'),
+      shortDesc: t('services.grid.trainingDesc', 'تعلم الاستخدام اليومي للنظام'),
+      fullDesc: t('services.desc.training', 'خلال تدريب المستخدمين عبر الإنترنت، يتعلم مندوبوك الميدانيون كيفية استخدام S-Locator بفعالية كل يوم لتخطيط المسارات والمواعيد والإبلاغ عن المكالمات.'),
       leftCol: [
-        { label: t('services.labels.target', 'Target audience'), text: 'Field reps, IT-support team, field & sales management' },
-        { label: t('services.labels.topics', 'Topics'), text: 'Logging in, user interface, route planning, planning parameters, appointments, working through a day\'s route, call reporting, customer management, statistics, data synchronization, options...' },
-        { label: t('services.labels.participation', 'Participation'), text: 'Via online meeting. Connection is possible from multiple locations, with a maximum of 25 participants.' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Approx. 2 hours' },
-        { label: 'Optional', text: 'Video recording for internal use' },
+        { label: t('services.labels.target', 'الجمهور المستهدف'), text: t('services.training.target', 'المندوبون الميدانيون، فريق دعم تكنولوجيا المعلومات، الإدارة الميدانية وإدارة المبيعات') },
+        { label: t('services.labels.topics', 'المواضيع'), text: t('services.training.topics', 'تسجيل الدخول، واجهة المستخدم، تخطيط المسار، معلمات التخطيط، المواعيد، العمل من خلال مسار اليوم، الإبلاغ عن المكالمات، إدارة العملاء، الإحصائيات، مزامنة البيانات.') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.training.participation', 'عبر اجتماع عبر الإنترنت. الاتصال ممكن من مواقع متعددة، بحد أقصى 25 مشاركًا.') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.training.duration', 'حوالي ساعتين') },
+        { label: t('services.training.optionalLabel', 'اختياري'), text: t('services.training.optional', 'تسجيل فيديو للاستخدام الداخلي') },
       ],
       rightCol: [
-        { label: t('services.labels.prerequisite', 'Prerequisite'), text: 'S-Locator user licenses purchased in the online shop, users created and customer data already imported. We recommend previous participation in a setup workshop.' },
-        { label: t('services.labels.exclusive', 'Exclusive'), text: 'The user-training is presented exclusively and individually for you.' },
-        { label: t('services.labels.procedure', 'Procedure'), text: 'After ordering and setting the appointment, you will receive a link to the online meeting. For the training session, we call you or you call into a teleconference, if participants are in more than one location.' },
+        { label: t('services.labels.prerequisite', 'المتطلبات الأساسية'), text: t('services.training.prerequisite', 'تراخيص مستخدم S-Locator، وإنشاء المستخدمين وبيانات العملاء المستوردة بالفعل. نوصي بالمشاركة السابقة في ورشة عمل الإعداد.') },
+        { label: t('services.labels.exclusive', 'حصرية'), text: t('services.training.exclusive', 'يتم تقديم تدريب المستخدمين حصريًا وبشكل فردي لك.') },
+        { label: t('services.labels.procedure', 'الإجراءات'), text: t('services.training.procedure', 'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.') },
       ]
     },
     {
       id: 'qasession',
       icon: MessageCircleQuestion,
-      title: t('services.grid.qa', 'Q&A Session'),
-      shortDesc: t('services.grid.qaDesc', 'Answering your open questions'),
-      fullDesc: 'In one or more Q&A sessions, the field reps get the answers to their questions. Additional usability tips for S-Locator are also provided.',
+      title: t('services.grid.qa', 'جلسة الأسئلة والأجوبة'),
+      shortDesc: t('services.grid.qaDesc', 'الإجابة على أسئلتك المفتوحة'),
+      fullDesc: t('services.desc.qa', 'في جلسة واحدة أو أكثر، يحصل المندوبون الميدانيون على إجابات لأسئلتهم. يتم توفير نصائح إضافية حول سهولة استخدام S-Locator.'),
       leftCol: [
-        { label: 'Time', text: 'First session approx. 1 to 2 weeks after the start of the S-Locator project.' },
-        { label: t('services.labels.target', 'Target audience'), text: 'Field reps, IT-support team, field & sales management' },
-        { label: t('services.labels.participation', 'Participation'), text: 'By conference call' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Approx. 1-2 hours per session' },
+        { label: t('services.qa.timeLabel', 'الوقت'), text: t('services.qa.time', 'الجلسة الأولى حوالي أسبوع إلى أسبوعين بعد بدء مشروع S-Locator.') },
+        { label: t('services.labels.target', 'الجمهور المستهدف'), text: t('services.qa.target', 'المندوبون الميدانيون، فريق دعم تكنولوجيا المعلومات، الإدارة الميدانية وإدارة المبيعات') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.qa.participation', 'عن طريق مكالمة جماعية') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.qa.duration', 'حوالي 1-2 ساعة لكل جلسة') },
       ],
       rightCol: [
-        { label: t('services.labels.topics', 'Topics'), text: 'Any issues and questions will be discussed and resolved. Based on the feedback, the configuration is continuously improved and thus refined for other users. In the spirit of "do good and talk about it", positive observations will also be discussed: How has everyday work been made easier? How has planning been simplified? What tips can I give my colleagues?' },
+        { label: t('services.labels.topics', 'المواضيع'), text: t('services.qa.topics', 'سيتم مناقشة وحل أي مشاكل وأسئلة. بناءً على الملاحظات، يتم تحسين التكوين باستمرار. سيتم مناقشة الملاحظات الإيجابية أيضًا لتبادل النصائح.') },
       ]
     },
     {
       id: 'starterpack',
       icon: Rocket,
-      title: t('services.grid.starter', 'Starter package'),
-      shortDesc: t('services.grid.starterDesc', 'Quick start for up to 9 users'),
-      fullDesc: 'This three-part workshop designed for 2–9 people will get your field sales team up and running quickly and effectively.',
+      title: t('services.grid.starter', 'الباقة الابتدائية'),
+      shortDesc: t('services.grid.starterDesc', 'بداية سريعة لما يصل إلى 9 مستخدمين'),
+      fullDesc: t('services.desc.starter', 'ورشة العمل هذه المكونة من ثلاثة أجزاء والمصممة لـ 2-9 أشخاص ستجعل فريق المبيعات الميداني الخاص بك يعمل بسرعة وفعالية.'),
       leftCol: [
-        { label: 'Target audience, parts 1+2', text: 'Field Sales management and IT/CRM management' },
-        { label: 'Topics in part 1 – Setup preparation', text: 'Analysing exported data, reviewing and editing your workflow definition, Q&A session about S-Locator data formats, and preliminary discussion of Part 2 of the Setup workshop – approx. 1 hour.' },
-        { label: 'Topics in part 2 – Setup implementation', text: 'User management, preparing and quality checking customer data, defining your visit strategy, setting your route-planning parameters, other aspect of software configuration, additional fields for customers and call reports, data import and export, test, and preliminary discussion of user training – approx. 1 hour.' },
-        { label: 'Target audience, part 3', text: 'Sales reps, IT support team, back office sales, sales managers' },
-        { label: 'Topics in part 3', text: 'Logging in, user interface, route planning, planning parameters, appointments, working through a day\'s route, call reporting, customer management – approx. 1 hour.' },
-        { label: t('services.labels.participation', 'Participation'), text: 'Via online meeting' },
-        { label: t('services.labels.prerequisite', 'Prerequisite'), text: 'S-Locator user licenses purchased in the online shop.' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Approx. 3 hours in total' },
+        { label: t('services.starter.target12Label', 'الجمهور المستهدف، الأجزاء 1+2'), text: t('services.starter.target12', 'إدارة المبيعات الميدانية وإدارة IT/CRM') },
+        { label: t('services.starter.topics1Label', 'مواضيع الجزء 1 - التحضير'), text: t('services.starter.topics1', 'تحليل البيانات المصدرة، مراجعة وتحرير تعريف سير العمل الخاص بك، جلسة أسئلة وأجوبة - حوالي ساعة واحدة.') },
+        { label: t('services.starter.topics2Label', 'مواضيع الجزء 2 - التنفيذ'), text: t('services.starter.topics2', 'إدارة المستخدمين، إعداد بيانات العملاء، تحديد استراتيجية الزيارة، معلمات تخطيط المسار، تكوين البرنامج - حوالي ساعة واحدة.') },
+        { label: t('services.starter.target3Label', 'الجمهور المستهدف، الجزء 3'), text: t('services.starter.target3', 'مندوبو المبيعات، فريق دعم تكنولوجيا المعلومات، مديرو المبيعات') },
+        { label: t('services.starter.topics3Label', 'مواضيع الجزء 3'), text: t('services.starter.topics3', 'تسجيل الدخول، واجهة المستخدم، تخطيط المسار، المواعيد، الإبلاغ عن المكالمات، إدارة العملاء - حوالي ساعة واحدة.') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.starter.participation', 'عبر اجتماع عبر الإنترنت') },
+        { label: t('services.labels.prerequisite', 'المتطلبات الأساسية'), text: t('services.starter.prerequisite', 'تراخيص مستخدم S-Locator المشتراة من المتجر عبر الإنترنت.') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.starter.duration', 'حوالي 3 ساعات في المجموع') },
       ],
       rightCol: [
-        { label: t('services.labels.prepare', 'How to prepare'), text: 'Prepare all relevant customer and user data as an Excel or CSV file. Required: customer name, full address and unique ID/reference number, plus unique employee (i.e. sales rep) ID/reference number. Export the current data from your CRM/ERP system if you have one.' },
-        { label: t('services.labels.exclusive', 'Exclusive'), text: 'Exclusive workshops tailored to your specific needs.' },
-        { label: t('services.labels.procedure', 'Procedure'), text: 'After placing your order and agreeing the date, you will receive a link to the online meetings. On the day, we will call you, or you can dial into a conference call if participants are in more than one location.' },
-        { label: 'Optional', text: 'Video recording for internal use' },
+        { label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'), text: t('services.starter.prepare', 'قم بإعداد جميع بيانات العملاء والمستخدمين ذات الصلة كملف Excel أو CSV.') },
+        { label: t('services.labels.exclusive', 'حصرية'), text: t('services.starter.exclusive', 'ورش عمل حصرية مصممة خصيصًا لتلبية احتياجاتك.') },
+        { label: t('services.labels.procedure', 'الإجراءات'), text: t('services.starter.procedure', 'بعد تقديم طلبك والاتفاق على الموعد، ستتلقى رابطًا للاجتماعات عبر الإنترنت.') },
+        { label: t('services.starter.optionalLabel', 'اختياري'), text: t('services.starter.optional', 'تسجيل فيديو للاستخدام الداخلي') },
       ]
     },
     {
       id: 'dataexchange',
       icon: ArrowRightLeft,
-      title: t('services.grid.data', 'Data Import-Export Workshop'),
-      shortDesc: t('services.grid.dataDesc', 'Automating data import/export'),
-      fullDesc: 'In this online workshop, we work with you to configure scripts for automatic data import and export. Exporting data from your system and importing data into your system is not part of the workshop. You will also receive tips on automation.',
+      title: t('services.grid.data', 'ورشة استيراد وتصدير البيانات'),
+      shortDesc: t('services.grid.dataDesc', 'أتمتة استيراد/تصدير البيانات'),
+      fullDesc: t('services.desc.data', 'في ورشة العمل هذه عبر الإنترنت، نعمل معك لتكوين نصوص لاستيراد وتصدير البيانات تلقائيًا. ستتلقى أيضًا نصائح حول الأتمتة.'),
       leftCol: [
-        { label: t('services.labels.target', 'Target audience'), text: 'IT/CRM administrators' },
-        { label: t('services.labels.topics', 'Topics'), text: 'Download data exchange scripts, check or set permissions, check or completion of S-Locator configuration and import configuration, configuration of scripts according to your requirements, first-time execution of scripts, tips for automating the data exchange process' },
-        { label: t('services.labels.participation', 'Participation'), text: 'Via online meeting' },
-        { label: t('services.labels.prerequisite', 'Prerequisite'), text: 'S-Locator user licenses purchased in the online shop. We recommend previous participation in a data check and setup workshop.' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Approx. 2 hours' },
+        { label: t('services.labels.target', 'الجمهور المستهدف'), text: t('services.data.target', 'مسؤولو IT/CRM') },
+        { label: t('services.labels.topics', 'المواضيع'), text: t('services.data.topics', 'تنزيل نصوص تبادل البيانات، التحقق من الأذونات، إكمال تكوين S-Locator، إعداد النصوص، التنفيذ لأول مرة، نصائح للأتمتة') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.data.participation', 'عبر اجتماع عبر الإنترنت') },
+        { label: t('services.labels.prerequisite', 'المتطلبات الأساسية'), text: t('services.data.prerequisite', 'تراخيص مستخدم S-Locator. نوصي بالمشاركة السابقة في فحص البيانات وورشة عمل الإعداد.') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.data.duration', 'حوالي ساعتين') },
       ],
       rightCol: [
-        { label: t('services.labels.prepare', 'Preliminary work by you'), text: 'Log in as an administrator on the PC or server on which the data exchange scripts provided by us should be executed. The network configuration (firewall, proxy) must allow access to S-Locator API.' },
-        { label: t('services.labels.exclusive', 'Exclusive'), text: 'The workshop is held exclusively and individually for you.' },
-        { label: t('services.labels.procedure', 'Procedure'), text: 'After ordering and setting the appointment, you will receive a link to the online meeting. During the workshop, we call you or you dial into a conference call if participants are in more than one location.' },
+        { label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'), text: t('services.data.prepare', 'قم بتسجيل الدخول كمسؤول على الكمبيوتر أو الخادم الذي يجب أن تُنفذ عليه نصوص تبادل البيانات.') },
+        { label: t('services.labels.exclusive', 'حصرية'), text: t('services.data.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.') },
+        { label: t('services.labels.procedure', 'الإجراءات'), text: t('services.data.procedure', 'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.') },
       ]
     },
     {
       id: 'apidev',
       icon: Code,
-      title: t('services.grid.api', 'API Developer Workshop'),
-      shortDesc: t('services.grid.apiDesc', 'Basic principles of the S-Locator Anywhere API'),
-      fullDesc: 'In this online workshop we explain the basic concepts of the S-Locator Anywhere API and answer your questions.',
+      title: t('services.grid.api', 'ورشة عمل مطوري API'),
+      shortDesc: t('services.grid.apiDesc', 'المبادئ الأساسية لواجهة S-Locator API'),
+      fullDesc: t('services.desc.api', 'في ورشة العمل هذه عبر الإنترنت نشرح المفاهيم الأساسية لواجهة برمجة تطبيقات S-Locator Anywhere ونجيب على أسئلتك.'),
       leftCol: [
-        { label: t('services.labels.target', 'Target Audience'), text: 'Developers, IT architects' },
-        { label: t('services.labels.topics', 'Topics'), text: 'Explanation of basic concepts, advice for use in your specific use case, presentation of API functions required for this, notes on error handling' },
-        { label: t('services.labels.participation', 'Participation'), text: 'Via online meeting' },
-        { label: 'Languages', text: 'German, English, Arabic' },
-        { label: t('services.labels.prerequisite', 'Prerequisite'), text: 'Active test, partner or purchased license' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Min. 1 hour' },
+        { label: t('services.labels.target', 'الجمهور المستهدف'), text: t('services.api.target', 'المطورون، مهندسو تكنولوجيا المعلومات') },
+        { label: t('services.labels.topics', 'المواضيع'), text: t('services.api.topics', 'شرح المفاهيم الأساسية، نصائح للاستخدام، عرض وظائف API المطلوبة، ملاحظات حول معالجة الأخطاء') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.api.participation', 'عبر اجتماع عبر الإنترنت') },
+        { label: t('services.api.languagesLabel', 'اللغات'), text: t('services.api.languages', 'الألمانية، الإنجليزية، العربية') },
+        { label: t('services.labels.prerequisite', 'المتطلبات الأساسية'), text: t('services.api.prerequisite', 'حساب تجريبي نشط، أو ترخيص شريك أو ترخيص مشترى') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.api.duration', 'ساعة واحدة على الأقل') },
       ],
       rightCol: [
-        { label: t('services.labels.prepare', 'Preliminary work by you'), text: 'Provision of a brief description of the use case and the technology employed to enable us to prepare' },
-        { label: t('services.labels.exclusive', 'Exclusive'), text: 'The workshop is held exclusively and individually for you.' },
-        { label: t('services.labels.procedure', 'Procedure'), text: 'After ordering and setting the appointment, you will receive a link to the online meeting. During the workshop, we call you or you dial into a conference call if participants are in more than one location.' },
+        { label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'), text: t('services.api.prepare', 'توفير وصف موجز لحالة الاستخدام والتكنولوجيا المستخدمة لتمكيننا من التحضير') },
+        { label: t('services.labels.exclusive', 'حصرية'), text: t('services.api.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.') },
+        { label: t('services.labels.procedure', 'الإجراءات'), text: t('services.api.procedure', 'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.') },
       ]
     },
     {
       id: 'territory',
       icon: Map,
-      title: t('services.grid.territory', 'Introduction to territory planning'),
-      shortDesc: t('services.grid.territoryDesc', 'Getting started with S-Locator Territory Optimization'),
-      fullDesc: 'In this online workshop, we will walk you through your first territory optimization and give you tips and pointers on how to make the most of S-Locator Territory Optimization.',
+      title: t('services.grid.territory', 'مقدمة في تخطيط المناطق'),
+      shortDesc: t('services.grid.territoryDesc', 'البدء مع إضافة تحسين المناطق'),
+      fullDesc: t('services.desc.territory', 'في ورشة العمل هذه عبر الإنترنت، سنرشدك خلال أول تحسين لمنطقتك ونعطيك نصائح وإرشادات حول كيفية تحقيق أقصى استفادة من تحسين مناطق S-Locator.'),
       leftCol: [
-        { label: t('services.labels.target', 'Target audience'), text: 'Outside sales director and IT administrators' },
-        { label: 'Contents', text: 'Analyzing the existing situation; manually assigning specific customers; settings for automatic optimization; interpreting the results (including possible adjustments); using the Reallocation feature in S-Locator' },
-        { label: t('services.labels.participation', 'Participation'), text: 'Via online meeting' },
-        { label: t('services.labels.prerequisite', 'Prerequisite'), text: 'S-Locator Anywhere + Territory Optimization user license activated. We recommend previous participation in a data check and setup workshop.' },
-        { label: t('services.labels.duration', 'Duration'), text: 'Approx. 2 hours' },
+        { label: t('services.labels.target', 'الجمهور المستهدف'), text: t('services.territory.target', 'مدير المبيعات الخارجية ومسؤولو تكنولوجيا المعلومات') },
+        { label: t('services.territory.contentsLabel', 'المحتويات'), text: t('services.territory.contents', 'تحليل الوضع الحالي؛ تعيين عملاء محددين يدويًا؛ إعدادات التحسين التلقائي؛ تفسير النتائج؛ استخدام ميزة إعادة التخصيص') },
+        { label: t('services.labels.participation', 'طريقة المشاركة'), text: t('services.territory.participation', 'عبر اجتماع عبر الإنترنت') },
+        { label: t('services.labels.prerequisite', 'المتطلبات الأساسية'), text: t('services.territory.prerequisite', 'ترخيص تحسين المناطق نشط. نوصي بالمشاركة السابقة في ورشة عمل الإعداد.') },
+        { label: t('services.labels.duration', 'المدة الزمنية'), text: t('services.territory.duration', 'حوالي ساعتين') },
       ],
       rightCol: [
-        { label: t('services.labels.prepare', 'How to prepare'), text: 'Give some thought to your territory optimization objective. Do you need to add or remove any field reps? Which of your customers cannot be rescheduled?' },
-        { label: t('services.labels.exclusive', 'Exclusive'), text: 'The workshop is held exclusively and individually for you.' },
-        { label: t('services.labels.procedure', 'Procedure'), text: 'After ordering and setting the appointment, you will receive a link to the online meeting. During the workshop, we call you or you dial into a conference call if participants are in more than one location.' },
+        { label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'), text: t('services.territory.prepare', 'فكر قليلاً في هدف تحسين منطقتك. هل تحتاج إلى إضافة أو إزالة أي مندوبين ميدانيين؟ أي من عملائك لا يمكن إعادة جدولته؟') },
+        { label: t('services.labels.exclusive', 'حصرية'), text: t('services.territory.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.') },
+        { label: t('services.labels.procedure', 'الإجراءات'), text: t('services.territory.procedure', 'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.') },
       ]
     }
   ];
@@ -186,19 +185,17 @@ export const Services: React.FC = () => {
   return (
     <div className={`min-h-screen bg-white font-sans text-slate-800 ${isRTL ? 'text-right' : 'text-left'}`}>
       
-      {/* 1. Header Section */}
       <section className="pt-20 pb-10 text-center">
         <div className="container mx-auto px-4 max-w-5xl">
           <h1 className="text-4xl lg:text-[44px] font-medium text-slate-800 mb-6">
-            {t('services.hero.title', 'Our services')}
+            {t('services.hero.title', 'خدماتنا')}
           </h1>
           <h3 className="text-xl text-slate-600 font-light leading-relaxed max-w-4xl mx-auto">
-            {t('services.hero.subtitle', 'A quick and successful S-Locator rollout – we help you get there. Benefit from the experience we have gained in over 100 successful rollouts each year.')}
+            {t('services.hero.subtitle', 'إطلاق سريع وناجح لنظام S-Locator – نحن نساعدك للوصول إلى هناك. استفد من خبرتنا التي اكتسبناها من خلال أكثر من 100 عملية إطلاق ناجحة كل عام.')}
           </h3>
         </div>
       </section>
 
-      {/* 2. Grid of Services */}
       <section className="pb-16 text-center">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
@@ -219,22 +216,19 @@ export const Services: React.FC = () => {
             ))}
           </div>
           <p className="text-lg text-slate-600 mt-16 font-light">
-            Additionally, read our <a href="#" className="text-[#00609c] hover:underline">12 tips for deploying S-Locator successfully</a> in your company.
+            {t('services.footerText', 'بالإضافة إلى ذلك، اقرأ 12 نصيحة لنشر S-Locator بنجاح في شركتك.')}
           </p>
         </div>
       </section>
 
-      {/* 3. Detailed Sections Map */}
       <section className="bg-white pb-24">
         {SERVICES_DATA.map((service, index) => (
           <div key={service.id} id={service.id}>
-            {/* فاصل خطي رقيق */}
             <hr className={`border-t border-slate-200 ${index % 2 === 0 ? 'bg-slate-50' : 'bg-white'}`} />
             
             <div className={`py-16 ${index % 2 === 0 ? 'bg-slate-50' : 'bg-white'}`}>
               <div className="container mx-auto px-4 max-w-5xl">
                 
-                {/* Section Header */}
                 <h2 className="text-3xl font-medium text-slate-800 mb-6 flex items-center gap-4">
                   <service.icon className="w-9 h-9 text-[#6699b8]" strokeWidth={1.5} />
                   {service.title}
@@ -244,9 +238,7 @@ export const Services: React.FC = () => {
                   {service.fullDesc}
                 </p>
 
-                {/* Details Columns */}
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
-                  {/* Left Column */}
                   <ul className="flex flex-col gap-4">
                     {service.leftCol.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-slate-600 font-light leading-relaxed text-[16px]">
@@ -258,7 +250,6 @@ export const Services: React.FC = () => {
                     ))}
                   </ul>
                   
-                  {/* Right Column */}
                   <ul className="flex flex-col gap-4">
                     {service.rightCol.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-slate-600 font-light leading-relaxed text-[16px]">
@@ -271,10 +262,9 @@ export const Services: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Section CTA */}
                 <div className="mt-12 text-center">
                   <p className="text-[17px] text-slate-600 font-light leading-relaxed">
-                    Order your {service.title} by email to <a href="mailto:sales@s-locator.com" className="text-[#00609c] hover:underline font-medium">sales@s-locator.com</a> containing the desired week(s). We then offer you available appointments to choose from.
+                    {t('services.ctaOrder', 'اطلب')} {service.title} {t('services.ctaEmail', 'عبر إرسال بريد إلكتروني إلى')} <a href="mailto:sales@s-locator.com" className="text-[#00609c] hover:underline font-medium">sales@s-locator.com</a> {t('services.ctaWeek', 'مع تحديد الأسبوع (الأسابيع) المطلوبة. سنقوم بعدها بعرض المواعيد المتاحة لتختار منها.')}
                   </p>
                 </div>
 

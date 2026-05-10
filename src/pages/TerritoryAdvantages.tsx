@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Check, X as XIcon, ChevronDown, ChevronRight, MonitorSmartphone, Phone, Mail, ArrowRight, Target, Users, Smile, Plus, Minus, Zap } from 'lucide-react';
+import { Check, X as XIcon, ChevronDown, ChevronRight, MonitorSmartphone, Phone, Mail, Zap, Plus, Minus } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
 
-const ComparisonRow: React.FC<{ item: any; forceOpen: boolean; t: any }> = ({ item, forceOpen, t }) => {
+// تعريف الأنواع (Interfaces) لتجنب أخطاء ESLint بدلاً من استخدام any
+interface CompItem {
+  feature: string;
+  bad: string;
+  good: string;
+  desc: string;
+}
+
+interface CompCategory {
+  id: string;
+  title: string;
+  items: CompItem[];
+}
+
+const ComparisonRow: React.FC<{ item: CompItem; forceOpen: boolean; t: (k: string, d?: string) => string }> = ({ item, forceOpen, t }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isExpanded = forceOpen || isOpen;
 
@@ -43,7 +57,7 @@ const ComparisonRow: React.FC<{ item: any; forceOpen: boolean; t: any }> = ({ it
   );
 };
 
-const ComparisonSection: React.FC<{ category: any; t: any }> = ({ category, t }) => {
+const ComparisonSection: React.FC<{ category: CompCategory; t: (k: string, d?: string) => string }> = ({ category, t }) => {
   const [showAll, setShowAll] = useState(false);
 
   return (
@@ -93,7 +107,7 @@ const ComparisonSection: React.FC<{ category: any; t: any }> = ({ category, t })
       </div>
 
       <div className="border border-slate-200 shadow-xl rounded-xl overflow-hidden bg-white">
-        {category.items.map((item: any, idx: number) => (
+        {category.items.map((item, idx) => (
           <ComparisonRow key={idx} item={item} forceOpen={showAll} t={t} />
         ))}
       </div>
@@ -101,7 +115,7 @@ const ComparisonSection: React.FC<{ category: any; t: any }> = ({ category, t })
   );
 };
 
-const TestimonialSlider: React.FC<{ t: any; isRTL: boolean }> = ({ t, isRTL }) => {
+const TestimonialSlider: React.FC<{ t: (k: string, d?: string) => string; isRTL: boolean }> = ({ t, isRTL }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [
     {
@@ -132,8 +146,8 @@ const TestimonialSlider: React.FC<{ t: any; isRTL: boolean }> = ({ t, isRTL }) =
               </div>
               <span className="text-[#6b21a8] text-6xl leading-none font-serif font-bold">“</span>
             </div>
-            <div className="w-full md:w-2/3 flex flex-col border-l border-slate-200 pl-8 text-left">
-              <img src={testim.logo} alt="Company Logo" className="h-6 object-contain self-start mb-6 opacity-80 grayscale" onError={(e) => e.currentTarget.style.display = 'none'} />
+            <div className={`w-full md:w-2/3 flex flex-col border-slate-200 ${isRTL ? 'border-r pr-8 text-right' : 'border-l pl-8 text-left'}`}>
+              <img src={testim.logo} alt="Company Logo" className={`h-6 object-contain self-start mb-6 opacity-80 grayscale ${isRTL ? 'ml-auto mr-0' : ''}`} onError={(e) => e.currentTarget.style.display = 'none'} />
               <p className="text-slate-600 font-light text-[16px] leading-relaxed mb-8">{testim.quote}</p>
               <div className="mt-auto flex justify-between items-end">
                 <div>
@@ -163,12 +177,12 @@ const TestimonialSlider: React.FC<{ t: any; isRTL: boolean }> = ({ t, isRTL }) =
   );
 };
 
-const SimpleFaqAccordion: React.FC<{ question: string; answer: React.ReactNode }> = ({ question, answer }) => {
+const SimpleFaqAccordion: React.FC<{ question: string; answer: React.ReactNode; isRTL: boolean }> = ({ question, answer, isRTL }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-slate-200 last:border-0 py-4 bg-white">
-      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between text-left focus:outline-none group px-4">
-        <h3 className="text-[16px] font-medium text-[#6b21a8] group-hover:text-[#581c87] pr-4 leading-snug transition-colors">{question}</h3>
+      <button onClick={() => setIsOpen(!isOpen)} className={`w-full flex items-center justify-between focus:outline-none group px-4 ${isRTL ? 'text-right' : 'text-left'}`}>
+        <h3 className={`text-[16px] font-medium text-[#6b21a8] group-hover:text-[#581c87] leading-snug transition-colors ${isRTL ? 'pl-4' : 'pr-4'}`}>{question}</h3>
         <div className="text-[#10b981] shrink-0 transition-colors">
           {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
         </div>
@@ -181,7 +195,7 @@ const SimpleFaqAccordion: React.FC<{ question: string; answer: React.ReactNode }
 };
 
 export const TerritoryAdvantages: React.FC = () => {
-  const { t, i18n } = useTranslation('landing');
+  const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
   useEffect(() => {
@@ -191,13 +205,12 @@ export const TerritoryAdvantages: React.FC = () => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
+      const y = el.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
-  // قائمة المقارنة
-  const COMPARISON_DATA = [
+  const COMPARISON_DATA: CompCategory[] = [
     { id: 'quality', title: t('territoryAdvantages.comparison.quality.title', 'Accuracy & quality'), items: [
       { feature: t('territoryAdvantages.comparison.quality.items.i1.feature'), bad: t('territoryAdvantages.comparison.quality.items.i1.bad'), good: t('territoryAdvantages.comparison.quality.items.i1.good'), desc: t('territoryAdvantages.comparison.quality.items.i1.desc') },
       { feature: t('territoryAdvantages.comparison.quality.items.i2.feature'), bad: t('territoryAdvantages.comparison.quality.items.i2.bad'), good: t('territoryAdvantages.comparison.quality.items.i2.good'), desc: t('territoryAdvantages.comparison.quality.items.i2.desc') },
@@ -234,35 +247,32 @@ export const TerritoryAdvantages: React.FC = () => {
   return (
     <div className={`min-h-screen bg-white font-sans text-slate-900 selection:bg-[#f3e8ff] selection:text-[#6b21a8] ${isRTL ? 'text-right' : 'text-left'}`}>
       
-      {/* 1. Hero */}
       <section className="bg-white pt-24 pb-20 text-center border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn direction="up">
-            <h1 className="text-4xl lg:text-5xl font-bold text-[#6b21a8] mb-6">{t('territoryAdvantages.hero.title', 'Opt for innovative territory optimization!')}</h1>
-            <h2 className="text-xl font-medium text-slate-800 mb-10">{t('territoryAdvantages.hero.subtitle', 'Conventional territory planning is a thing of the past.')}</h2>
+            <h1 className="text-4xl lg:text-5xl font-bold text-[#6b21a8] mb-6">{t('territoryAdvantages.hero.title')}</h1>
+            <h2 className="text-xl font-medium text-slate-800 mb-10">{t('territoryAdvantages.hero.subtitle')}</h2>
             <a href="/demo" className="inline-block bg-[#6b21a8] text-white px-10 py-4 rounded font-medium hover:bg-[#581c87] transition-all shadow-md">
-              {t('territoryAdvantages.hero.demo', 'Arrange demo')}
+              {t('territoryAdvantages.hero.demo')}
             </a>
           </FadeIn>
         </div>
       </section>
 
-      {/* 2. Main Layout */}
       <section className="py-16 bg-[#f8fafc]">
         <div className="container mx-auto px-4 max-w-7xl flex flex-col lg:flex-row gap-12">
           
-          {/* Sidebar */}
           <div className="w-full lg:w-1/4 hidden lg:block">
             <div className="sticky top-28 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
               <h4 className="text-[#6b21a8] font-bold text-sm uppercase mb-4 tracking-widest border-b border-[#f3e8ff] pb-4">
-                {t('territoryAdvantages.sidebar.title', 'Topics')}
+                {t('territoryAdvantages.sidebar.title')}
               </h4>
               <ul className="flex flex-col gap-4">
                 {COMPARISON_DATA.map((cat) => (
                   <li key={cat.id}>
                     <button 
                       onClick={() => scrollToSection(cat.id)}
-                      className="text-left w-full text-[15px] text-[#10b981] hover:text-[#6b21a8] hover:underline font-medium transition-colors border-b border-slate-50 pb-2"
+                      className={`w-full text-[15px] text-[#10b981] hover:text-[#6b21a8] hover:underline font-medium transition-colors border-b border-slate-50 pb-2 ${isRTL ? 'text-right' : 'text-left'}`}
                     >
                       {cat.title}
                     </button>
@@ -272,7 +282,6 @@ export const TerritoryAdvantages: React.FC = () => {
             </div>
           </div>
 
-          {/* Content */}
           <div className="w-full lg:w-3/4 flex flex-col gap-24">
             {COMPARISON_DATA.map((cat) => (
               <ComparisonSection key={cat.id} category={cat} t={t} />
@@ -281,26 +290,24 @@ export const TerritoryAdvantages: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Info Box */}
       <section className="py-20 border-y border-slate-200 bg-white relative">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <div className="w-16 h-16 mx-auto bg-[#ecfdf5] rounded-full flex items-center justify-center mb-6">
             <Zap className="w-8 h-8 text-[#10b981]" />
           </div>
           <p className="text-slate-600 font-light text-[18px] leading-relaxed max-w-4xl mx-auto">
-            {t('territoryAdvantages.infoBox.p1', 'The difference between run-of-the-mill and high-quality optimization is ')} 
-            <strong className="text-[#6b21a8]">{t('territoryAdvantages.infoBox.s1', 'up to 10%')}</strong>
-            {t('territoryAdvantages.infoBox.p2', '. In other words...')}
-            <strong className="text-[#6b21a8]"> {t('territoryAdvantages.infoBox.s2', '€6,000 per year per field rep')} </strong> 
-            {t('territoryAdvantages.infoBox.p3', ' that you’re leaving on the table... ')}
+            {t('territoryAdvantages.infoBox.p1')} 
+            <strong className="text-[#6b21a8]">{t('territoryAdvantages.infoBox.s1')}</strong>
+            {t('territoryAdvantages.infoBox.p2')}
+            <strong className="text-[#6b21a8]"> {t('territoryAdvantages.infoBox.s2')} </strong> 
+            {t('territoryAdvantages.infoBox.p3')}
             <a href="/territory-optimization/cost-savings" className="text-[#10b981] hover:text-[#6b21a8] hover:underline font-medium transition-colors">
-              {t('territoryAdvantages.infoBox.link', 'With S-Locator Territory Optimization you reduce your distribution costs.')}
+              {t('territoryAdvantages.infoBox.link')}
             </a>
           </p>
         </div>
       </section>
 
-      {/* 4. Optimization Results CTA */}
       <section className="bg-[#f3e8ff] py-20 text-center">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn direction="up">
@@ -313,19 +320,17 @@ export const TerritoryAdvantages: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. FAQs Section */}
       <section className="py-24 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl lg:text-[40px] font-bold text-[#6b21a8] text-center mb-12">{t('territoryAdvantages.faqs.title')}</h2>
           <div className="flex flex-col border-t border-slate-200">
             {[1, 2, 3, 4, 5].map((num) => (
-              <SimpleFaqAccordion key={num} question={t(`territoryAdvantages.faqs.items.q${num}`)} answer={t(`territoryAdvantages.faqs.items.a${num}`)} />
+              <SimpleFaqAccordion key={num} question={t(`territoryAdvantages.faqs.items.q${num}`)} answer={t(`territoryAdvantages.faqs.items.a${num}`)} isRTL={isRTL} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* 6. Testimonials Slider */}
       <section className="py-24 bg-[#f8fafc] border-b border-slate-200 text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl lg:text-[36px] font-bold text-[#6b21a8] mb-4">{t('territoryAdvantages.testimonials.title')}</h2>
@@ -334,7 +339,6 @@ export const TerritoryAdvantages: React.FC = () => {
         </div>
       </section>
 
-      {/* 7. License Models */}
       <section className="py-24 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-[#6b21a8] mb-6">{t('territoryAdvantages.pricing.title')}</h2>
@@ -365,7 +369,6 @@ export const TerritoryAdvantages: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. Demo */}
       <section className="bg-[#6b21a8] py-20 text-center">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl lg:text-[40px] font-bold text-white mb-6">{t('territoryAdvantages.demoCta.title')}</h2>
@@ -381,35 +384,34 @@ export const TerritoryAdvantages: React.FC = () => {
         </div>
       </section>
 
-      {/* 9. Contact */}
       <section className="bg-[#f8fafc] py-24 text-center">
          <div className="container mx-auto px-4 max-w-7xl">
-            <h2 className="text-4xl font-bold text-[#6b21a8] mb-4">{t('contact.title', 'Contact us!')}</h2>
-            <h3 className="text-xl text-[#10b981] font-medium">Our sales and support team will be happy to assist you. Please contact us.</h3>
+            <h2 className="text-4xl font-bold text-[#6b21a8] mb-4">{t('contactPage.hero.title')}</h2>
+            <h3 className="text-xl text-[#10b981] font-medium">{t('contactPage.hero.subtitle')}</h3>
             <div className="mt-8 text-[15px] text-slate-500 font-light flex items-center justify-center gap-2">
-               <MonitorSmartphone className="w-4 h-4 text-[#10b981]" /> Available by phone from Mon-Fri, 9-17h CET
+               <MonitorSmartphone className="w-4 h-4 text-[#10b981]" /> {t('contactPage.hero.availability')}
             </div>
 
             <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto mt-16">
                <div className="flex-1 bg-[#f3e8ff]/50 p-10 rounded-xl shadow-sm border border-purple-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-[#10b981] mb-2">I am already a user and need</h3>
-                  <h4 className="text-[32px] font-bold text-[#6b21a8] mb-8">Support</h4>
+                  <h3 className="text-[17px] font-medium text-[#10b981] mb-2">{t('contactPage.support.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-[#6b21a8] mb-8">{t('contactPage.support.title')}</h4>
                   <button className="bg-[#6b21a8] text-white px-8 py-3.5 rounded hover:bg-[#581c87] transition-colors mb-10 text-[15px] font-medium">
-                    To the HelpCenter
+                    {t('contactPage.support.btn')}
                   </button>
-                  <div className="text-left flex flex-col gap-4 text-[#6b21a8] font-medium text-[15px] items-start w-full max-w-xs mx-auto">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#10b981]"/> US: +1 646-974-60-50</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#10b981]"/> EU: +43 1 2531516-50</div>
+                  <div className={`flex flex-col gap-4 text-[#6b21a8] font-medium text-[15px] w-full max-w-xs mx-auto ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#10b981]"/> KSA: +966 55 818 8632</div>
                      <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#10b981]"/> support@s-locator.com</div>
                   </div>
                </div>
                <div className="flex-1 bg-[#f3e8ff]/50 p-10 rounded-xl shadow-sm border border-purple-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-[#10b981] mb-2">I am interested and would like</h3>
-                  <h4 className="text-[32px] font-bold text-[#6b21a8] mb-8">Buying advice</h4>
-                  <div className="text-left flex flex-col gap-4 text-[#6b21a8] font-medium text-[15px] items-start w-full max-w-xs mx-auto mt-2">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#10b981]"/> US: +1 646-974-6040</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#10b981]"/> EU: +43 1 2531516-40</div>
-                     <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#10b981]"/> sales@s-locator.com</div>
+                  <h3 className="text-[17px] font-medium text-[#10b981] mb-2">{t('contactPage.sales.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-[#6b21a8] mb-8">{t('contactPage.sales.title')}</h4>
+                  <div className={`flex flex-col gap-4 text-[#6b21a8] font-medium text-[15px] w-full max-w-xs mx-auto mt-2 ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#10b981]"/> Canada: +1 514-814-5180</div>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#10b981]"/> KSA: +966 55 818 8632</div>
+                     <a href="/contact" className="text-[#a0a0a0] cursor-pointer hover:text-[#6b21a8] ml-8 mb-2 transition-colors">{t('common.showMore')}</a>
+                     <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#10b981]"/> sales@s-locator.com</div>
                   </div>
                </div>
             </div>

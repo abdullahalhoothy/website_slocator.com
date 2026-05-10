@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MonitorSmartphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { FadeIn } from '../animations/FadeIn';
 
 type HexagonData = {
@@ -114,26 +115,26 @@ export const ContactSection: React.FC = () => {
         
         <FadeIn direction="up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-medium text-slate-800 mb-4">{t('contact.title')}</h2>
-            <p className="text-lg text-slate-500 font-light">{t('contact.subtitle')}</p>
-            <div className="mt-4 text-sm text-slate-400">Available by phone from Mon-Fri, 9-17h KSA</div>
+            <h2 className="text-4xl font-medium text-slate-800 mb-4">{t('contactPage.hero.title', 'Contact')}</h2>
+            <p className="text-lg text-slate-500 font-light">{t('contactPage.hero.subtitle', 'How can we help you?')}</p>
+            <div className="mt-4 text-sm text-slate-400">{t('contactPage.hero.availability', 'Available by phone from Mon-Fri, 9-17h KSA')}</div>
           </div>
         </FadeIn>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-32">
           <FadeIn direction="right">
             <div className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
-              <h3 className="text-xl font-light text-slate-500 mb-1">{t('contact.support')}</h3>
-              <h4 className="text-3xl font-light text-slate-800 mb-8">Support</h4>
+              <h3 className="text-xl font-light text-slate-500 mb-1">{t('contactPage.support.pretitle', 'I am already a user and need')}</h3>
+              <h4 className="text-3xl font-light text-slate-800 mb-8">{t('contactPage.support.title', 'Support')}</h4>
               <button className="bg-[#00609c] text-white px-8 py-3 rounded hover:bg-[#004d7d] transition-colors mb-8">
-                To the HelpCenter
+                {t('contactPage.support.btn', 'To the HelpCenter')}
               </button>
               <div className="flex flex-col gap-4 text-slate-600 font-light text-sm items-start w-full max-w-xs mx-auto">
-                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-slate-400" /> KSA: +966 11 000 0000</div>
+                <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-slate-400" /> KSA: +966 55 818 8632</div>
                 <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-slate-400" /> support@s-locator.com</div>
                 <div className="flex items-start gap-3 mt-4 pt-4 border-t border-slate-100 w-full">
                   <MonitorSmartphone className="w-5 h-5 text-slate-400 mt-1" />
-                  <span className="text-left leading-relaxed">Teamviewer: Remote access for S-Locator Support</span>
+                  <span className="text-left leading-relaxed">{t('contactPage.support.teamviewer', 'Teamviewer: Remote access for S-Locator Support')}</span>
                 </div>
               </div>
             </div>
@@ -141,13 +142,12 @@ export const ContactSection: React.FC = () => {
 
           <FadeIn direction="left" delay={200}>
             <div className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
-              <h3 className="text-xl font-light text-slate-500 mb-1">{t('contact.sales')}</h3>
-              <h4 className="text-3xl font-light text-slate-800 mb-10">Buying advice</h4>
+              <h3 className="text-xl font-light text-slate-500 mb-1">{t('contactPage.sales.pretitle', 'I am interested and would like')}</h3>
+              <h4 className="text-3xl font-light text-slate-800 mb-10">{t('contactPage.sales.title', 'Buying advice')}</h4>
               <div className="flex flex-col gap-4 text-slate-600 font-light text-sm items-start w-full max-w-xs mx-auto">
-                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-slate-400" /> KSA: +966 11 000 0000</div>
-                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-slate-400" /> UAE: +971 4 000 0000</div>
-                <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-slate-400" /> Global: +1 800 000 0000</div>
-                <div className="text-[#00609c] cursor-pointer hover:underline ml-8 mt-2 mb-4">show more</div>
+                <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-slate-400" /> Canada: +1 514-814-5180</div>
+                <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-slate-400" /> KSA: +966 55 818 8632</div>
+                <Link to="/contact" className="text-[#00609c] cursor-pointer hover:underline ml-8 mt-2 mb-4">{t('common.showMore', 'show more')}</Link>
                 <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-slate-400" /> sales@s-locator.com</div>
               </div>
             </div>
@@ -156,7 +156,7 @@ export const ContactSection: React.FC = () => {
 
         <div className="text-center">
           <FadeIn direction="up">
-            <h2 className="text-3xl font-light text-slate-800 mb-16">{t('contact.teamTitle')}</h2>
+            <h2 className="text-3xl font-light text-slate-800 mb-16">{t('contactPage.team.title', 'We look forward to our conversation')}</h2>
           </FadeIn>
           
           <div className="flex flex-col items-center pb-20">

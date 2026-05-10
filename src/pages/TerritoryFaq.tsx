@@ -3,16 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { Plus, Minus, Phone, Mail, MonitorSmartphone } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
 
-const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
+const FaqItem: React.FC<{ question: string; answer: string; isRTL: boolean }> = ({ question, answer, isRTL }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="border-b border-slate-200 py-6 last:border-0 bg-white">
       <button 
         onClick={() => setIsOpen(!isOpen)} 
-        className="w-full flex items-start justify-between text-left focus:outline-none group"
+        className={`w-full flex items-start justify-between focus:outline-none group ${isRTL ? 'text-right' : 'text-left'}`}
       >
-        <h3 className="text-[17px] font-medium text-[#8A2BE2] group-hover:text-[#489E46] pr-6 leading-relaxed transition-colors">
+        <h3 className={`text-[17px] font-medium text-[#8A2BE2] group-hover:text-[#489E46] leading-relaxed transition-colors ${isRTL ? 'pl-6' : 'pr-6'}`}>
           {question}
         </h3>
         <div className="text-[#489E46] shrink-0 mt-1 transition-transform duration-300">
@@ -21,7 +21,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
       </button>
       <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[800px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
         <div 
-          className="text-slate-600 font-light leading-relaxed text-[16px] pr-8"
+          className={`text-slate-600 font-light leading-relaxed text-[16px] ${isRTL ? 'pl-8' : 'pr-8'}`}
           dangerouslySetInnerHTML={{ __html: answer }} 
         />
       </div>
@@ -30,7 +30,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 };
 
 export const TerritoryFaq: React.FC = () => {
-  const { t, i18n } = useTranslation('landing');
+  const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
   useEffect(() => {
@@ -125,7 +125,7 @@ export const TerritoryFaq: React.FC = () => {
                 </h2>
                 <div className="flex flex-col">
                   {category.faqs.map((faq, idx) => (
-                    <FaqItem key={idx} question={faq.q} answer={faq.a} />
+                    <FaqItem key={idx} question={faq.q} answer={faq.a} isRTL={isRTL} />
                   ))}
                 </div>
               </div>
@@ -136,7 +136,6 @@ export const TerritoryFaq: React.FC = () => {
 
       {/* 3. CTA Section */}
       <section className="bg-[#8A2BE2] py-24 text-center relative">
-        {/* Triangle point top */}
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#8A2BE2] transform rotate-45"></div>
         
         <div className="container mx-auto px-4 max-w-4xl relative z-10">
@@ -158,7 +157,6 @@ export const TerritoryFaq: React.FC = () => {
           </FadeIn>
         </div>
 
-        {/* Triangle point bottom */}
         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#8A2BE2] transform rotate-45"></div>
       </section>
 
@@ -167,32 +165,32 @@ export const TerritoryFaq: React.FC = () => {
          <div className="container mx-auto px-4 max-w-7xl">
             <h2 className="text-4xl font-bold text-[#8A2BE2] mb-4">{t('contact.title', 'Contact us!')}</h2>
             <div className="mt-6 text-[15px] text-slate-500 font-light flex items-center justify-center gap-2">
-               <MonitorSmartphone className="w-4 h-4 text-[#489E46]" /> Available by phone from Mon-Fri, 9-17h CET
+               <MonitorSmartphone className="w-4 h-4 text-[#489E46]" /> {t('contactPage.hero.availability')}
             </div>
 
             <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto mt-16 mb-8">
                {/* Support Block */}
                <div className="flex-1 bg-white p-10 rounded-xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">I am already a user and need</h3>
-                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">Support</h4>
+                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">{t('contactPage.support.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">{t('contactPage.support.title')}</h4>
                   <button className="bg-[#8A2BE2] text-white px-8 py-3.5 rounded hover:bg-[#6b21a8] transition-colors mb-10 text-[15px] font-medium">
-                    To the HelpCenter
+                    {t('contactPage.support.btn')}
                   </button>
-                  <div className="text-left flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] items-start w-full max-w-xs mx-auto">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> US: +1 646-974-60-50</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> EU: +43 1 2531516-50</div>
+                  <div className={`flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] w-full max-w-xs mx-auto ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#489E46]"/> KSA: +966 55 818 8632</div>
                      <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#489E46]"/> support@s-locator.com</div>
                   </div>
                </div>
                
                {/* Sales Block */}
                <div className="flex-1 bg-white p-10 rounded-xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
-                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">I am interested and would like</h3>
-                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">Buying advice</h4>
-                  <div className="text-left flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] items-start w-full max-w-xs mx-auto mt-2">
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> US: +1 646-974-6040</div>
-                     <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-[#489E46]"/> EU: +43 1 2531516-40</div>
-                     <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#489E46]"/> sales@s-locator.com</div>
+                  <h3 className="text-[17px] font-medium text-[#489E46] mb-2">{t('contactPage.sales.pretitle')}</h3>
+                  <h4 className="text-[32px] font-bold text-[#8A2BE2] mb-8">{t('contactPage.sales.title')}</h4>
+                  <div className={`flex flex-col gap-4 text-[#8A2BE2] font-medium text-[15px] w-full max-w-xs mx-auto mt-2 ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#489E46]"/> Canada: +1 514-814-5180</div>
+                     <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#489E46]"/> KSA: +966 55 818 8632</div>
+                     <a href="/contact" className="text-[#a0a0a0] cursor-pointer hover:text-[#8A2BE2] ml-8 mb-2 transition-colors">{t('common.showMore')}</a>
+                     <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#489E46]"/> sales@s-locator.com</div>
                   </div>
                </div>
             </div>

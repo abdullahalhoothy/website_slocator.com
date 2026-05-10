@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Phone, Mail, MonitorSmartphone, MonitorUp, Info } from 'lucide-react';
+import { Phone, Mail, MonitorSmartphone, MonitorUp } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
 
 export const Contact: React.FC = () => {
-  const { t, i18n } = useTranslation('landing');
+  const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
   useEffect(() => {
@@ -13,23 +12,23 @@ export const Contact: React.FC = () => {
   }, []);
 
   const teamMembers = [
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" },
-    { name: "", lang: "", li: "", img: "" }
+    { name: "Severin Bolliger", lang: "DE | EN", li: "https://linkedin.com/in/severin-bolliger", img: "https://unavatar.io/linkedin/severin-bolliger" },
+    { name: "Pieter Niemand", lang: "EN | NL", li: "https://linkedin.com/in/pieterniemand", img: "https://unavatar.io/linkedin/pieterniemand" },
+    { name: "Mitchell Glindemann", lang: "DE | EN", li: "https://linkedin.com/in/mitchellglindemann", img: "https://unavatar.io/linkedin/mitchellglindemann" },
+    { name: "Marvin Darmstädter", lang: "DE", li: "https://linkedin.com/in/marvindarmstaedter", img: "https://unavatar.io/linkedin/marvindarmstaedter" },
+    { name: "Bastian Rittgen", lang: "DE | EN", li: "https://linkedin.com/in/bastianrittgen", img: "https://unavatar.io/linkedin/bastianrittgen" },
+    { name: "Alexej Nowototschin", lang: "DE | EN | RU", li: "https://linkedin.com/in/alexejnowototschin", img: "https://unavatar.io/linkedin/alexejnowototschin" },
+    { name: "Magdalena Jovanovic", lang: "DE | EN", li: "https://linkedin.com/in/magdalenajovanovic", img: "https://unavatar.io/linkedin/magdalenajovanovic" },
+    { name: "Thomas Müller", lang: "DE", li: "https://linkedin.com/in/thomasmueller", img: "https://unavatar.io/linkedin/thomasmueller" },
+    { name: "Sarah Schmidt", lang: "EN | FR", li: "https://linkedin.com/in/sarahschmidt", img: "https://unavatar.io/linkedin/sarahschmidt" },
+    { name: "David Smith", lang: "EN", li: "https://linkedin.com/in/davidsmith", img: "https://unavatar.io/linkedin/davidsmith" },
+    { name: "Michael Koch", lang: "DE", li: "https://linkedin.com/in/michaelkoch", img: "https://unavatar.io/linkedin/michaelkoch" },
+    { name: "John Doe", lang: "EN | ES", li: "https://linkedin.com/in/johndoe", img: "https://unavatar.io/linkedin/johndoe" },
+    { name: "Abdullah", lang: "AR | EN", li: "https://linkedin.com/", img: "https://unavatar.io/linkedin/abdullah" },
+    { name: "Jane Smith", lang: "EN", li: "https://linkedin.com/in/janesmith", img: "https://unavatar.io/linkedin/janesmith" },
+    { name: "Omar K.", lang: "AR | EN", li: "https://linkedin.com/in/omark", img: "https://unavatar.io/linkedin/omark" },
+    { name: "Sara M.", lang: "AR | EN", li: "https://linkedin.com/in/saram", img: "https://unavatar.io/linkedin/saram" },
+    { name: "Youssef T.", lang: "AR | FR", li: "https://linkedin.com/in/yousseft", img: "https://unavatar.io/linkedin/yousseft" }
   ];
 
   return (
@@ -57,9 +56,9 @@ export const Contact: React.FC = () => {
          <div className="container mx-auto px-4 max-w-6xl">
             <FadeIn direction="up">
                <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
-                  
-                  {/* Support Box */}
-                  <div className="flex-1 bg-white p-10 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col items-center hover:shadow-md transition-shadow">
+                 
+                 {/* Support Box */}
+                 <div className="flex-1 bg-white p-10 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col items-center hover:shadow-md transition-shadow">
                      <h3 className="text-[17px] font-medium text-slate-500 mb-2">{t('contactPage.support.pretitle', 'I am already a user and need')}</h3>
                      <h4 className="text-[32px] font-bold text-slate-800 mb-8">{t('contactPage.support.title', 'Support')}</h4>
                      <button className="bg-[#8A2BE2] text-white px-10 py-3.5 rounded-lg hover:bg-[#6b21a8] transition-colors mb-12 text-[15px] font-bold shadow-md w-full max-w-[250px]">
@@ -69,44 +68,34 @@ export const Contact: React.FC = () => {
                      <div className="text-left flex flex-col gap-5 text-slate-700 font-medium text-[15px] items-start w-full max-w-xs mx-auto flex-grow">
                         <div className="flex items-center gap-4">
                            <Phone className="w-5 h-5 text-[#8A2BE2] shrink-0"/> 
-                           <div className="flex flex-col">
-                              <span>US: +1 646-974-60-50</span>
-                              <span>EU: +43 1 2531516-50</span>
+                           <div className="flex flex-col" dir="ltr">
+                              <span>KSA: +966 55 818 8632</span>
                            </div>
                         </div>
                         <div className="flex items-center gap-4">
                            <Mail className="w-5 h-5 text-[#8A2BE2] shrink-0"/> 
                            <a href="mailto:support@s-locator.com" className="hover:text-[#8A2BE2] transition-colors">support@s-locator.com</a>
                         </div>
-                        <div className="flex items-start gap-4 mt-4 pt-4 border-t border-slate-100 w-full">
+                        <div className="flex items-start gap-4 mt-4 pt-4 border-t border-slate-100 w-full text-slate-600">
                            <MonitorUp className="w-5 h-5 text-[#8A2BE2] shrink-0 mt-0.5"/> 
-                           <a href="#" className="text-sm text-slate-600 hover:text-[#8A2BE2] transition-colors leading-snug">
+                           <a href="#" className={`text-sm hover:text-[#8A2BE2] transition-colors leading-snug ${isRTL ? 'text-right' : 'text-left'}`}>
                               {t('contactPage.support.teamviewer', 'Teamviewer: Remote access for S-Locator Support')}
                            </a>
                         </div>
-                        <div className="flex items-start gap-4">
-                           <Info className="w-5 h-5 text-[#8A2BE2] shrink-0 mt-0.5"/> 
-                           <a href="#" className="text-sm text-slate-600 hover:text-[#8A2BE2] transition-colors leading-snug">
-                              {t('contactPage.support.howItWorks', 'This is how Support works at S-Locator.')}
-                           </a>
-                        </div>
                      </div>
-                  </div>
+                 </div>
 
-                  {/* Sales Box */}
-                  <div className="flex-1 bg-white p-10 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col items-center hover:shadow-md transition-shadow">
+                 {/* Sales Box */}
+                 <div className="flex-1 bg-white p-10 rounded-2xl shadow-sm border border-slate-200 text-center flex flex-col items-center hover:shadow-md transition-shadow">
                      <h3 className="text-[17px] font-medium text-slate-500 mb-2">{t('contactPage.sales.pretitle', 'I am interested and would like')}</h3>
                      <h4 className="text-[32px] font-bold text-slate-800 mb-8">{t('contactPage.sales.title', 'Buying advice')}</h4>
                      
                      <div className="text-left flex flex-col gap-5 text-slate-700 font-medium text-[15px] items-start w-full max-w-xs mx-auto flex-grow mt-4">
                         <div className="flex items-start gap-4">
                            <Phone className="w-5 h-5 text-[#489E46] shrink-0 mt-1"/> 
-                           <div className="flex flex-col gap-2">
-                              <span>US: +1 646-974-6040</span>
-                              <span>GB: +44 20 3519 2135</span>
-                              <span>AU: +61 3 8592 0520</span>
-                              <span>EU: +43 1 2531516-40</span>
-                              <button className="text-[#489E46] hover:underline text-sm font-bold text-left mt-1">show more</button>
+                           <div className="flex flex-col gap-2" dir="ltr">
+                              <span>Canada: +1 514-814-5180</span>
+                              <span>KSA: +966 55 818 8632</span>
                            </div>
                         </div>
                         <div className="flex items-center gap-4 mt-2">
@@ -114,7 +103,7 @@ export const Contact: React.FC = () => {
                            <a href="mailto:sales@s-locator.com" className="hover:text-[#489E46] transition-colors">sales@s-locator.com</a>
                         </div>
                      </div>
-                  </div>
+                 </div>
 
                </div>
             </FadeIn>
@@ -127,7 +116,7 @@ export const Contact: React.FC = () => {
             <FadeIn direction="up">
                <h3 className="text-3xl font-bold text-slate-800 mb-16">{t('contactPage.team.title', 'We look forward to our conversation')}</h3>
                
-               <div className="flex flex-wrap justify-center max-w-5xl mx-auto px-4 gap-y-2 md:gap-y-0 pb-16">
+               <div className="flex flex-wrap justify-center max-w-5xl mx-auto px-4 gap-y-2 md:gap-y-0 pb-16" dir="ltr">
                   {teamMembers.map((member, idx) => (
                     <div key={idx} className="relative w-[110px] h-[125px] md:w-[130px] md:h-[150px] mx-1 md:mx-2 mb-[-20px] md:mb-[-30px] group">
                       
@@ -136,15 +125,15 @@ export const Contact: React.FC = () => {
                         style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
                       >
                         <img 
-                          src={member.img || 'https://via.placeholder.com/150?text=Empty'} 
-                          alt="Team Member" 
-                          className="w-full h-full object-cover" 
-                          onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/150?text=Empty' }} 
+                          src={member.img || 'https://via.placeholder.com/150/f5f3ff/8A2BE2?text=S-Loc'} 
+                          alt={member.name} 
+                          className="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:mix-blend-normal group-hover:opacity-100 transition-all" 
+                          onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/150/f5f3ff/8A2BE2?text=User' }} 
                         />
                       </div>
 
                       {member.name && (
-                         <div className={`absolute -top-16 left-1/2 -translate-x-1/2 bg-white text-slate-800 px-4 py-2.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-[100] flex flex-col items-center border border-slate-100 pointer-events-none group-hover:pointer-events-auto ${isRTL ? 'text-right' : 'text-left'}`}>
+                         <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-white text-slate-800 px-4 py-2.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-[100] flex flex-col items-center border border-slate-100 pointer-events-none group-hover:pointer-events-auto">
                             <span className="font-bold text-[14px] text-slate-700">{member.name}</span>
                             <div className="flex items-center gap-3 mt-1.5">
                                <span className="text-[11px] text-slate-400 font-bold tracking-wide">{member.lang}</span>
@@ -170,259 +159,3 @@ export const Contact: React.FC = () => {
 };
 
 export default Contact;
-=======
-import React, { useState, useEffect, useRef } from 'react'
-import { useTranslation } from 'react-i18next'
-
-// --- Interfaces ---
-interface FadeInSectionProps {
-  children: React.ReactNode
-  delay?: number
-}
-
-// --- Helper Component: Fade In Animation on Scroll ---
-const FadeInSection: React.FC<FadeInSectionProps> = ({ children, delay = 0 }) => {
-  const [isVisible, setVisible] = useState(false)
-  const domRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting) {
-          setVisible(true)
-          observer.unobserve(domRef.current!)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (domRef.current) observer.observe(domRef.current)
-    return () => observer.disconnect()
-  }, [])
-
-  return (
-    <div
-      ref={domRef}
-      className={`transition-all duration-1000 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  )
-}
-
-// --- Main Contact Page Component ---
-export default function Contact() {
-  const { t, i18n } = useTranslation()
-  const isAr = i18n.language === 'ar'
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
-  // Handle form submission and redirect to default mail client
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    const name = formData.get('name')
-    const email = formData.get('email')
-    const message = formData.get('message')
-
-    const subject = encodeURIComponent(`${t('newContactMsg')} ${name}`)
-    const body = encodeURIComponent(
-      `${t('namePrefix')} ${name}\n${t('emailPrefix')} ${email}\n\n${t('msgPrefix')}\n${message}`,
-    )
-
-    window.location.href = `mailto:admin@s-locator.com?subject=${subject}&body=${body}`
-  }
-
-  return (
-    <div className="w-full bg-white font-sans overflow-hidden" dir={isAr ? 'rtl' : 'ltr'}>
-      {/* 1. HERO BANNER SECTION */}
-      <section className="relative h-[400px] md:h-[450px] flex items-center justify-center bg-[#100324] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/images/banner-1.jpg"
-            alt="Contact Banner"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#100324]/90 to-[#0a2e16]/80"></div>
-        </div>
-
-        <div className="relative z-10 text-center px-4 mt-10">
-          <FadeInSection>
-            <h1 className="text-5xl md:text-[64px] font-extrabold text-white mb-6 drop-shadow-lg tracking-tight">
-              {t('contactHeroTitle')}
-            </h1>
-            <div className="flex items-center justify-center gap-3 text-gray-300 font-bold text-[13px] uppercase tracking-widest">
-              <a href="/" className="hover:text-[#38e54d] transition-colors">
-                {t('Home')}
-              </a>
-              <span className="text-gray-500">/</span>
-              <span className="text-[#38e54d]">{t('Contact')}</span>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
-      {/* 2. CONTACT INFO & FORM SECTION */}
-      <section className="py-24 bg-[#fafbfc]">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row gap-12 lg:gap-16">
-          {/* Left Side: Green Contact Info Cards */}
-          <div
-            className={`w-full lg:w-[40%] flex flex-col justify-center ${
-              isAr ? 'text-right' : 'text-left'
-            }`}
-          >
-            <FadeInSection>
-              <h6 className="text-[13px] font-extrabold text-[#38e54d] mb-2 uppercase tracking-[0.2em]">
-                {t('contactInfo')}
-              </h6>
-              <h2 className="text-[42px] font-black text-[#2b1055] mb-10 leading-none tracking-tight">
-                {t('getInTouch')}
-              </h2>
-
-              <div className="space-y-5 w-full">
-                {/* Green Box 1 - Location */}
-                <div className="bg-[#44e460] p-6 rounded-xl flex items-center gap-6 shadow-[0_10px_30px_rgba(68,228,96,0.2)] hover:-translate-y-1 transition-transform duration-300 cursor-pointer">
-                  <div className="w-[60px] h-[60px] rounded-full border border-[#2b1055]/20 flex items-center justify-center shrink-0 bg-transparent">
-                    <img
-                      src="/assets/images/location-icon.png"
-                      alt="Location"
-                      className="w-8 h-8 opacity-90 mix-blend-multiply"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-1">
-                      {t('location')}
-                    </h4>
-                    <p className="text-[#110222]/80 text-[15px] font-semibold">
-                      {t('locationVal')}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Green Box 2 - Email */}
-                <div className="bg-[#44e460] p-6 rounded-xl flex items-center gap-6 shadow-[0_10px_30px_rgba(68,228,96,0.2)] hover:-translate-y-1 transition-transform duration-300 cursor-pointer">
-                  <div className="w-[60px] h-[60px] rounded-full border border-[#2b1055]/20 flex items-center justify-center shrink-0 bg-transparent">
-                    <img
-                      src="/assets/images/email-icon.png"
-                      alt="Email"
-                      className="w-8 h-8 opacity-90 mix-blend-multiply"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-1">{t('email')}</h4>
-                    <p
-                      className="text-[#110222]/80 text-[15px] font-semibold leading-relaxed"
-                      dir="ltr"
-                    >
-                      support@s-locator.com
-                      <br />
-                      info@s-locator.com
-                    </p>
-                  </div>
-                </div>
-
-                {/* Green Box 3 - Phone */}
-                <div className="bg-[#44e460] p-6 rounded-xl flex items-center gap-6 shadow-[0_10px_30px_rgba(68,228,96,0.2)] hover:-translate-y-1 transition-transform duration-300 cursor-pointer">
-                  <div className="w-[60px] h-[60px] rounded-full border border-[#2b1055]/20 flex items-center justify-center shrink-0 bg-transparent">
-                    <img
-                      src="/assets/images/phone-icon.png"
-                      alt="Phone"
-                      className="w-8 h-8 opacity-90 mix-blend-multiply"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-1">{t('phone')}</h4>
-                    <p
-                      className="text-[#110222]/80 text-[15px] font-semibold leading-relaxed"
-                      dir="ltr"
-                    >
-                      +966 56738077
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </FadeInSection>
-          </div>
-
-          {/* Right Side: Gradient Form Box */}
-          <div className="w-full lg:w-[60%]">
-            <FadeInSection delay={200}>
-              <div className="bg-gradient-to-br from-[#44e460] to-[#8d42e0] p-10 md:p-14 rounded-2xl shadow-[0_20px_50px_rgba(141,66,224,0.25)] flex flex-col justify-center w-full min-h-[550px]">
-                <h6
-                  className={`text-[#110222]/50 text-[12px] font-extrabold mb-2 uppercase tracking-[0.2em] ${
-                    isAr ? 'text-right' : 'text-left'
-                  }`}
-                >
-                  {t('writeToUs')}
-                </h6>
-                <h3
-                  className={`text-[#38e54d] text-[40px] font-black mb-10 uppercase tracking-tight drop-shadow-md leading-none ${
-                    isAr ? 'text-right' : 'text-left'
-                  }`}
-                >
-                  {t('sendMsg')}
-                </h3>
-
-                <form onSubmit={handleContactSubmit} className="space-y-6">
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder={t('placeholderName')}
-                    className={`w-full p-4 rounded-lg bg-white text-gray-800 text-[15px] font-medium focus:outline-none focus:ring-2 focus:ring-[#f06e28] shadow-sm transition-all ${
-                      isAr ? 'text-right' : 'text-left'
-                    }`}
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder={t('placeholderEmail')}
-                    className={`w-full p-4 rounded-lg bg-white text-gray-800 text-[15px] font-medium focus:outline-none focus:ring-2 focus:ring-[#f06e28] shadow-sm transition-all ${
-                      isAr ? 'text-right' : 'text-left'
-                    }`}
-                  />
-                  <textarea
-                    name="message"
-                    rows={6}
-                    required
-                    placeholder={t('placeholderMsg')}
-                    className={`w-full p-4 rounded-lg bg-white text-gray-800 text-[15px] font-medium focus:outline-none focus:ring-2 focus:ring-[#f06e28] resize-none shadow-sm transition-all ${
-                      isAr ? 'text-right' : 'text-left'
-                    }`}
-                  ></textarea>
-
-                  <div className={isAr ? 'text-right' : 'text-left'}>
-                    <button
-                      type="submit"
-                      className="bg-[#f06e28] hover:bg-[#d55e1f] text-white font-extrabold py-4 px-10 rounded-lg text-[16px] transition-transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(240,110,40,0.3)] mt-2 inline-block"
-                    >
-                      {t('sendNow')}
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </FadeInSection>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. GOOGLE MAPS SECTION */}
-      <section className="w-full h-[450px] bg-gray-200">
-        <iframe
-          src="https://maps.google.com/maps?q=saudi%20arabia&t=m&z=6&output=embed&iwloc=near"
-          title="saudi arabia"
-          aria-label="saudi arabia"
-          className="w-full h-full border-0"
-          loading="lazy"
-        ></iframe>
-      </section>
-    </div>
-  )
-}
->>>>>>> upstream/main

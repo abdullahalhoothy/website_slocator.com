@@ -91,7 +91,7 @@ export const MAIN_NAVIGATION: NavItem[] = [
       },
       {
         id: 'roi-calculator',
-        translationKey: 'header.nav.roiCalculator', 
+        translationKey: 'ROI calculator', 
         path: '/roi'
       }
     ]

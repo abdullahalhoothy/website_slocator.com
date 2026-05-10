@@ -1,11 +1,27 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Car, Building2, ShoppingCart, Pill, Monitor, Stethoscope, Factory } from 'lucide-react';
 
 export const Customers: React.FC = () => {
+  const { t, i18n } = useTranslation('landing');
+  const isRTL = i18n.dir() === 'rtl';
+
+  const categories = [
+    { name: t('customersPage.categories.auto', 'Automotive industry'), icon: Car },
+    { name: t('customersPage.categories.building', 'Building materials'), icon: Building2 },
+    { name: t('customersPage.categories.consumer', 'Consumer goods'), icon: ShoppingCart },
+    { name: t('customersPage.categories.cosmetics', 'Cosmetics'), icon: Pill },
+    { name: t('customersPage.categories.electronics', 'Electronic products'), icon: Monitor },
+    { name: t('customersPage.categories.industrial', 'Industrial goods'), icon: Factory },
+    { name: t('customersPage.categories.medical', 'Medical devices'), icon: Stethoscope },
+  ];
+
   return (
-    <section className="py-20 bg-slate-50 border-b border-slate-200">
+    <section className={`py-20 bg-slate-50 border-b border-slate-200 ${isRTL ? 'text-right' : 'text-left'}`}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl text-center">
-        <h2 className="text-3xl lg:text-4xl font-medium text-slate-900 mb-12">Our customers</h2>
+        <h2 className="text-3xl lg:text-4xl font-medium text-slate-900 mb-12">
+          {t('customers.title', 'Our customers')}
+        </h2>
         
         <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 mb-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
           <img src="/assets/images/wuerth-group.webp" alt="Wurth" className="h-10" />
@@ -16,18 +32,10 @@ export const Customers: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-10 max-w-4xl mx-auto">
-          {[
-            { name: 'Automotive industry', icon: Car },
-            { name: 'Building materials', icon: Building2 },
-            { name: 'Consumer goods', icon: ShoppingCart },
-            { name: 'Cosmetics', icon: Pill },
-            { name: 'Electronic products', icon: Monitor },
-            { name: 'Industrial goods', icon: Factory },
-            { name: 'Medical devices', icon: Stethoscope },
-          ].map((cat, idx) => (
+          {categories.map((cat, idx) => (
             <div key={idx} className="flex items-center gap-2 text-sm text-slate-600 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
               <cat.icon className="w-4 h-4 text-purple-600" />
-              {cat.name}
+              <span>{cat.name}</span>
             </div>
           ))}
         </div>
