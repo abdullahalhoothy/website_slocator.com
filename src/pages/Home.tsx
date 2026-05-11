@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { 
-  Maximize2, 
-  X, 
-  Database, 
-  Map, 
-  FileText, 
-  MapPin, 
-  Route as RouteIcon, 
-  TrendingUp, 
-  Network
+import {
+  Maximize2,
+  X,
+  Database,
+  Map,
+  FileText,
+  Route as RouteIcon,
+  TrendingUp,
+  Network,
+  CheckCircle2,
+  ChevronUp,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -88,10 +89,41 @@ export default function Home() {
   const isAr = i18n.language === 'ar'
   const [popupImage, setPopupImage] = useState<string | null>(null)
 
+  const [diagramZoom, setDiagramZoom] = useState(1)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1024) {
+        const calculatedZoom = window.innerWidth / 950
+        setDiagramZoom(Math.min(Math.max(calculatedZoom, 0.4), 1))
+      } else {
+        setDiagramZoom(1)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   useEffect(() => {
     window.scrollTo(0, 0)
     document.title = t('pageTitleHome')
   }, [t])
+
+  const scrollToDetails = (targetId: string) => {
+    const element = document.getElementById(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
+
+  const scrollToDiagram = () => {
+    const element = document.getElementById('main-diagram')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
 
   const englishProjectImages = [
     '/assets/images/S-lOC-USAGES-R3-08.jpg',
@@ -228,7 +260,7 @@ export default function Home() {
     <div
       className="w-full overflow-hidden bg-white"
       dir={isAr ? 'rtl' : 'ltr'}
-      style={{ zoom: '0.9' }} /* هنا طلب عبدالله: تصغير الموقع 10% */
+      style={{ zoom: '0.9' }}
     >
       <style>{`
         @keyframes scroll-marquee {
@@ -250,6 +282,9 @@ export default function Home() {
           background-color: #cbd5e1;
           border-radius: 10px;
         }
+        html {
+          scroll-behavior: smooth;
+        }
       `}</style>
 
       <section className="relative -mt-[100px] pt-[120px] pb-24 lg:-mt-[120px] lg:pt-[160px] lg:pb-32 lg:min-h-[100vh] flex items-center bg-[#f8fafc] overflow-hidden border-b border-gray-100">
@@ -259,20 +294,19 @@ export default function Home() {
 
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
-            <div className={`flex flex-col justify-center items-start text-start ${isAr ? 'lg:pl-10' : 'lg:pr-10'}`}>
-              
-              {/* شريط Powered By بتعديلات عبدالله */}
+            <div
+              className={`flex flex-col justify-center items-start text-start ${isAr ? 'lg:pl-10' : 'lg:pr-10'}`}
+            >
               <div className="mb-8 mt-4">
                 <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-2.5 md:px-10 md:py-4 flex items-center justify-center gap-4 md:gap-8 shadow-lg w-max">
                   <span className="text-[#475569] font-black tracking-widest text-[9px] md:text-[11px] uppercase mt-0.5">
                     {t('poweredBy')}
                   </span>
                   <div className="w-[2px] h-6 md:h-10 bg-gray-300"></div>
-                  <img 
-                    src="/assets/images/cropd_V1.png" 
-                    alt="Northern Analytics" 
-                    className="h-10 md:h-14 lg:h-16 w-auto object-contain" 
+                  <img
+                    src="/assets/images/cropd_V1.png"
+                    alt="Northern Analytics"
+                    className="h-10 md:h-14 lg:h-16 w-auto object-contain"
                   />
                 </div>
               </div>
@@ -280,10 +314,12 @@ export default function Home() {
               <h1 className="text-[#0f172a] text-[50px] md:text-[60px] lg:text-[75px] font-black tracking-tight mb-4 drop-shadow-sm">
                 <span dir="ltr" className="inline-flex items-start">
                   S-Locator
-                  <sup className="text-2xl md:text-3xl lg:text-4xl text-[#38e54d] ml-1 mt-4">&reg;</sup>
+                  <sup className="text-2xl md:text-3xl lg:text-4xl text-[#38e54d] ml-1 mt-4">
+                    &reg;
+                  </sup>
                 </span>
               </h1>
-              
+
               <h2 className="text-[#334155] text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-snug">
                 {t('heroNewSub')}
               </h2>
@@ -291,10 +327,10 @@ export default function Home() {
               <p className="text-[#475569] text-lg md:text-xl leading-relaxed mb-10 max-w-2xl font-medium">
                 {t('heroNewDesc')}
               </p>
-              
+
               <div>
                 <a
-                  href="https://s-locator.northernacs.com/landing?"
+                  href="https://s-locator.northernacs.com/"
                   className="inline-flex items-center justify-center bg-[#9b51e0] hover:bg-[#8645c4] text-white text-lg font-bold py-4 px-12 rounded-full shadow-[0_8px_20px_rgba(155,81,224,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(155,81,224,0.35)] w-full sm:w-auto"
                 >
                   {t('btnGetStartedNow')}
@@ -302,107 +338,377 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative w-full bg-white/80 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-6 lg:p-10 overflow-x-auto hide-scroll">
-              <div className="min-w-[900px] lg:min-w-full w-full flex flex-col items-center relative z-10 py-4">
-                
-                <div className="bg-white border-2 border-[#2b1055] text-[#2b1055] text-lg font-extrabold py-3.5 px-10 rounded-full shadow-md flex items-center gap-2 mb-12 relative z-20">
+            <div
+              id="main-diagram"
+              className="relative w-full bg-white/80 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-6 lg:p-10 overflow-x-auto hide-scroll touch-pan-x md:cursor-grab flex justify-center scroll-mt-24"
+            >
+              <div
+                className="min-w-[800px] w-full max-w-4xl flex flex-col items-center relative z-10 py-4 origin-top-left lg:origin-center"
+                style={{ zoom: diagramZoom }}
+              >
+                <div className="bg-white border-2 border-[#2b1055] text-[#2b1055] text-lg font-extrabold py-3.5 px-10 rounded-full shadow-md flex items-center gap-2 relative z-20">
                   <Network size={24} />
                   {t('nodeSlocator')}
                 </div>
 
-                {/* إصلاح تقطيع الخطوط بجعل السمك 2px وحذف الـ gap */}
-                <div className="flex items-start justify-center w-full relative">
-                  
-                  {/* الخط الأفقي الرئيسي */}
-                  <div className="absolute top-[-48px] left-[16.66%] right-[16.66%] h-[2px] bg-[#cbd5e1] z-0"></div>
+                <div className="w-[2px] h-10 bg-[#cbd5e1] z-0"></div>
 
-                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative px-2 md:px-4">
-                    <div className="absolute top-[-48px] left-1/2 w-[2px] h-[48px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
-                    
-                    <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm w-full max-w-[260px] mb-8 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#00628e]">
-                      <div className="bg-blue-50 text-[#00628e] p-3 rounded-full mb-4">
-                        <Database size={28} />
-                      </div>
-                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">{t('nodeData')}</h3>
-                    </div>
+                <div
+                  className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#00628e] w-full max-w-[320px] cursor-pointer relative z-20"
+                  onClick={() => scrollToDetails('card-data')}
+                >
+                  <div className="bg-blue-50 text-[#00628e] p-3 rounded-full mb-3">
+                    <Database size={28} />
+                  </div>
+                  <h3 className="font-bold text-gray-800 text-lg leading-tight px-1">
+                    {t('trustedDataBank')}
+                  </h3>
+                </div>
 
-                    <div className="relative flex flex-col items-center w-full">
-                      <div className="absolute top-[-32px] left-1/2 w-[2px] h-[32px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
-                      
-                      <div className="bg-white border border-gray-100 p-5 rounded-xl w-full max-w-[280px] shadow-sm z-10 hover:shadow-md transition-shadow">
-                         <div className="grid grid-cols-3 gap-y-6 gap-x-4 items-center justify-items-center">
-                             <img src="/assets/images/general_authority_logo.svg" alt="GASTAT" className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300" title="General Authority for Statistics"/>
-                             <img src="/assets/images/REGA_LOGO.svg" alt="REGA" className="max-h-6 w-full object-contain hover:scale-110 transition-transform duration-300" title="Real Estate General Authority"/>
-                             <img src="/assets/images/hrdf_logo.svg" alt="HRDF" className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300" title="HRDF"/>
-                             <img src="/assets/images/housing_ministry_logo.webp" alt="Housing" className="max-h-7 w-full object-contain hover:scale-110 transition-transform duration-300" title="Ministry of Housing"/>
-                             <img src="/assets/images/sakany_logo.svg" alt="Sakany" className="max-h-5 w-full object-contain hover:scale-110 transition-transform duration-300" title="Sakany"/>
-                             <img src="/assets/images/Ministry_of_Justice_Logo.svg" alt="MOJ" className="max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300" title="Ministry of Justice"/>
-                             <img src="/assets/images/amana_logo.webp" alt="Amana" className="col-span-1 max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300 mt-1" title="Riyadh Municipality"/>
-                             <img src="/assets/images/google.png" alt="google" className="col-span-2 max-h-8 w-full object-contain hover:scale-110 transition-transform duration-300 mt-1" title="Google Data"/>
-                         </div>
+                <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 relative"></div>
+
+                <div className="relative w-[85%] md:w-[75%] h-[2px] z-0 mt-0">
+                  <div className="absolute top-0 left-[16.66%] right-[16.66%] h-[2px] bg-[#cbd5e1]"></div>
+                </div>
+
+                <div className="flex justify-between items-start w-[85%] md:w-[75%] relative z-20 mt-0">
+                  <div className="w-1/3 flex flex-col items-center relative">
+                    <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 mb-0"></div>
+                    <div
+                      className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#38e54d] w-[90%] cursor-pointer h-full"
+                      onClick={() => scrollToDetails('card-platform')}
+                    >
+                      <div className="bg-green-50 text-green-600 p-3 rounded-full mb-3">
+                        <Map size={24} />
                       </div>
+                      <h3 className="font-bold text-gray-800 text-sm md:text-base leading-tight">
+                        {t('nodePlatform')}
+                      </h3>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative px-2 md:px-4">
-                    <div className="absolute top-[-48px] left-1/2 w-[2px] h-[48px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
-                    
-                    <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm w-full max-w-[260px] mb-8 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#38e54d]">
-                      <div className="bg-green-50 text-green-600 p-3 rounded-full mb-4">
-                        <Map size={28} />
+                  <div className="w-1/3 flex flex-col items-center relative">
+                    <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 mb-0"></div>
+                    <div
+                      className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#9b51e0] w-[90%] cursor-pointer h-full"
+                      onClick={() => scrollToDetails('card-report')}
+                    >
+                      <div className="bg-purple-50 text-purple-600 p-3 rounded-full mb-3">
+                        <TrendingUp size={24} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">{t('nodeTerritory')}</h3>
-                    </div>
-
-                    <div className="flex gap-4 w-full justify-center relative">
-                      <div className="absolute top-[-32px] left-[25%] right-[25%] h-[2px] bg-[#cbd5e1] z-0"></div>
-                      <div className="absolute top-[-32px] left-[25%] w-[2px] h-[32px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
-                      <div className="absolute top-[-32px] right-[25%] w-[2px] h-[32px] bg-[#cbd5e1] translate-x-1/2 z-0"></div>
-
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
-                         <MapPin size={22} className="text-[#2b1055]" />
-                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeTerrOpt')}</span>
-                      </div>
-
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
-                         <RouteIcon size={22} className="text-[#38e54d]" />
-                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeRoute')}</span>
-                      </div>
+                      <h3 className="font-bold text-gray-800 text-sm md:text-base leading-tight">
+                        {t('nodeExpReport')}
+                      </h3>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center w-1/3 flex-shrink-0 relative px-2 md:px-4">
-                    <div className="absolute top-[-48px] left-1/2 w-[2px] h-[48px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
-                    
-                    <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm w-full max-w-[260px] mb-8 flex flex-col items-center text-center relative z-10 hover:-translate-y-1 transition-transform border-t-4 border-t-[#9b51e0]">
-                      <div className="bg-purple-50 text-purple-600 p-3 rounded-full mb-4">
-                        <FileText size={28} />
+                  <div className="w-1/3 flex flex-col items-center relative">
+                    <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 mb-0"></div>
+                    <div
+                      className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#f97316] w-[90%] cursor-pointer h-full"
+                      onClick={() => scrollToDetails('card-route')}
+                    >
+                      <div className="bg-orange-50 text-orange-600 p-3 rounded-full mb-3">
+                        <RouteIcon size={24} />
                       </div>
-                      <h3 className="font-bold text-gray-800 text-base mb-2 leading-tight px-1">{t('nodeReport')}</h3>
-                    </div>
-
-                    <div className="flex gap-4 w-full justify-center relative">
-                      <div className="absolute top-[-32px] left-[25%] right-[25%] h-[2px] bg-[#cbd5e1] z-0"></div>
-                      <div className="absolute top-[-32px] left-[25%] w-[2px] h-[32px] bg-[#cbd5e1] -translate-x-1/2 z-0"></div>
-                      <div className="absolute top-[-32px] right-[25%] w-[2px] h-[32px] bg-[#cbd5e1] translate-x-1/2 z-0"></div>
-
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
-                         <TrendingUp size={22} className="text-purple-600" />
-                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeEval')}</span>
-                      </div>
-
-                      <div className="bg-white border border-gray-100 p-4 rounded-xl w-[130px] text-center shadow-sm flex flex-col items-center gap-3 hover:bg-gray-50 transition-colors z-10 relative">
-                         <Map size={22} className="text-purple-600" />
-                         <span className="text-xs text-gray-700 font-bold leading-tight">{t('nodeCity')}</span>
-                      </div>
+                      <h3 className="font-bold text-gray-800 text-sm md:text-base leading-tight">
+                        {t('nodeRoute')}
+                      </h3>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
-
           </div>
+        </div>
+      </section>
+
+      <section
+        id="diagram-details"
+        className="py-24 bg-gradient-to-b from-[#f8fafc] to-white border-b border-gray-100 scroll-mt-20 relative overflow-hidden"
+      >
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#cbd5e1] to-transparent"></div>
+        <div className="absolute -left-40 top-20 w-96 h-96 bg-blue-50 rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
+        <div className="absolute -right-40 bottom-20 w-96 h-96 bg-green-50 rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <FadeInSection>
+            <div className="text-center mb-20">
+              <h6 className="text-[#38e54d] font-extrabold tracking-widest text-sm mb-4 uppercase">
+                {t('coreFeaturesTitle')}
+              </h6>
+              <h2 className="text-[36px] md:text-[46px] font-black text-[#110222] mb-6 leading-tight">
+                {t('coreFeaturesMainHeading')}
+              </h2>
+              <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
+                {t('coreFeaturesDesc')}
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-10">
+              <div
+                id="card-data"
+                className="bg-white scroll-mt-24 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,98,142,0.12)] transition-all duration-300 flex flex-col lg:flex-row items-center gap-10 w-full relative"
+              >
+                <button
+                  onClick={scrollToDiagram}
+                  className={`absolute top-6 ${isAr ? 'left-6' : 'right-6'} w-10 h-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-500 hover:text-[#00628e] rounded-full transition-all duration-300 z-20 shadow-sm hover:shadow`}
+                >
+                  <ChevronUp size={24} />
+                </button>
+                <div className="flex-1 flex flex-col text-start items-start w-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-blue-50 text-[#00628e] p-4 rounded-2xl border border-blue-100 shadow-sm shrink-0">
+                      <Database size={28} />
+                    </div>
+                    <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                      {t('trustedDataBank')}
+                    </h3>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
+                    {t('trustedDataBankDesc')}
+                  </p>
+                  <ul className="space-y-4 w-full flex flex-col items-start">
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#00628e] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('trustedDataFeat1')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#00628e] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('trustedDataFeat2')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#00628e] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('trustedDataFeat3')}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-full lg:w-[35%] flex items-center justify-center bg-gray-50 rounded-2xl p-6 border border-gray-100 shrink-0 h-full min-h-[220px]">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6 items-center justify-items-center opacity-80 mix-blend-multiply w-full">
+                    <img
+                      src="/assets/images/general_authority_logo.svg"
+                      alt="GASTAT"
+                      className="max-h-8 w-full object-contain"
+                    />
+                    <img
+                      src="/assets/images/REGA_LOGO.svg"
+                      alt="REGA"
+                      className="max-h-7 w-full object-contain"
+                    />
+                    <img
+                      src="/assets/images/hrdf_logo.svg"
+                      alt="HRDF"
+                      className="max-h-8 w-full object-contain"
+                    />
+                    <img
+                      src="/assets/images/sakany_logo.svg"
+                      alt="Sakany"
+                      className="max-h-7 w-full object-contain"
+                    />
+                    <img
+                      src="/assets/images/Ministry_of_Justice_Logo.svg"
+                      alt="MOJ"
+                      className="max-h-8 w-full object-contain"
+                    />
+                    <img
+                      src="/assets/images/google.png"
+                      alt="Google"
+                      className="max-h-7 w-full object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-s border-gray-100 pt-8 lg:pt-0 lg:ps-10 shrink-0">
+                  <a
+                    href="https://s-locator.northernacs.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#00628e] text-white hover:bg-[#004e70] shadow-md whitespace-nowrap">
+                      {t('btnStartNow')}
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <div
+                id="card-platform"
+                className="bg-white scroll-mt-24 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(56,229,77,0.15)] transition-all duration-300 flex flex-col lg:flex-row-reverse items-center gap-10 w-full relative"
+              >
+                <button
+                  onClick={scrollToDiagram}
+                  className={`absolute top-6 ${isAr ? 'left-6' : 'right-6'} w-10 h-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-500 hover:text-[#2eaa3f] rounded-full transition-all duration-300 z-20 shadow-sm hover:shadow`}
+                >
+                  <ChevronUp size={24} />
+                </button>
+                <div className="flex-1 flex flex-col text-start items-start w-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-green-50 text-[#2eaa3f] p-4 rounded-2xl border border-green-100 shadow-sm shrink-0">
+                      <Map size={28} />
+                    </div>
+                    <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                      {t('nodePlatform')}
+                    </h3>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
+                    {t('platformDesc')}
+                  </p>
+                  <ul className="space-y-4 w-full flex flex-col items-start">
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#2eaa3f] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('platformFeat1')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#2eaa3f] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('platformFeat2')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#2eaa3f] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('platformFeat3')}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-full lg:w-[35%] flex items-center justify-center bg-green-50/50 rounded-2xl p-6 border border-green-100/50 shrink-0 min-h-[220px] relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#38e54d] to-transparent"></div>
+                  <Map
+                    size={100}
+                    className="text-[#2eaa3f] opacity-80 drop-shadow-sm relative z-10"
+                    strokeWidth={1}
+                  />
+                </div>
+                <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-e border-gray-100 pt-8 lg:pt-0 lg:pe-10 shrink-0">
+                  <a
+                    href="https://s-locator.northernacs.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#38e54d] text-[#110222] hover:bg-[#2eaa3f] shadow-md whitespace-nowrap">
+                      {t('btnStartNow')}
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <div
+                id="card-report"
+                className="bg-white scroll-mt-24 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(155,81,224,0.15)] transition-all duration-300 flex flex-col lg:flex-row items-center gap-10 w-full relative"
+              >
+                <button
+                  onClick={scrollToDiagram}
+                  className={`absolute top-6 ${isAr ? 'left-6' : 'right-6'} w-10 h-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-500 hover:text-[#9b51e0] rounded-full transition-all duration-300 z-20 shadow-sm hover:shadow`}
+                >
+                  <ChevronUp size={24} />
+                </button>
+                <div className="flex-1 flex flex-col text-start items-start w-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-purple-50 text-[#9b51e0] p-4 rounded-2xl border border-purple-100 shadow-sm shrink-0">
+                      <TrendingUp size={28} />
+                    </div>
+                    <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                      {t('nodeExpReport')}
+                    </h3>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
+                    {t('expReportDesc')}
+                  </p>
+                  <ul className="space-y-4 w-full flex flex-col items-start">
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#9b51e0] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('expReportFeat1')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#9b51e0] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('expReportFeat2')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#9b51e0] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('expReportFeat3')}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-full lg:w-[35%] flex items-center justify-center bg-purple-50/50 rounded-2xl p-6 border border-purple-100/50 shrink-0 min-h-[220px] relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#9b51e0] to-transparent"></div>
+                  <TrendingUp
+                    size={100}
+                    className="text-[#9b51e0] opacity-80 drop-shadow-sm relative z-10"
+                    strokeWidth={1}
+                  />
+                </div>
+                <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-s border-gray-100 pt-8 lg:pt-0 lg:ps-10 shrink-0">
+                  <a
+                    href="https://s-locator.northernacs.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#9b51e0] text-white hover:bg-[#8645c4] shadow-md whitespace-nowrap">
+                      {t('btnStartNow')}
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <div
+                id="card-route"
+                className="bg-white scroll-mt-24 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(249,115,22,0.12)] transition-all duration-300 flex flex-col lg:flex-row-reverse items-center gap-10 w-full relative"
+              >
+                <button
+                  onClick={scrollToDiagram}
+                  className={`absolute top-6 ${isAr ? 'left-6' : 'right-6'} w-10 h-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-500 hover:text-[#f97316] rounded-full transition-all duration-300 z-20 shadow-sm hover:shadow`}
+                >
+                  <ChevronUp size={24} />
+                </button>
+                <div className="flex-1 flex flex-col text-start items-start w-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-orange-50 text-[#f97316] p-4 rounded-2xl border border-orange-100 shadow-sm shrink-0">
+                      <RouteIcon size={28} />
+                    </div>
+                    <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                      {t('nodeRoute')}
+                    </h3>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
+                    {t('routePlanningDesc')}
+                  </p>
+                  <ul className="space-y-4 w-full flex flex-col items-start">
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#f97316] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('routePlanningFeat1')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#f97316] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('routePlanningFeat2')}</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                      <CheckCircle2 className="text-[#f97316] w-5 h-5 shrink-0 mt-0.5" />
+                      <span>{t('routePlanningFeat3')}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-full lg:w-[35%] flex items-center justify-center bg-orange-50/50 rounded-2xl p-6 border border-orange-100/50 shrink-0 min-h-[220px] relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#f97316] to-transparent"></div>
+                  <RouteIcon
+                    size={100}
+                    className="text-[#f97316] opacity-80 drop-shadow-sm relative z-10"
+                    strokeWidth={1}
+                  />
+                </div>
+                <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-e border-gray-100 pt-8 lg:pt-0 lg:pe-10 shrink-0">
+                  <a
+                    href="https://s-locator.northernacs.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#f97316] text-white hover:bg-[#ea580c] shadow-md whitespace-nowrap">
+                      {t('btnStartNow')}
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </FadeInSection>
         </div>
       </section>
 
@@ -416,14 +722,22 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
               <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1 h-full">
                 <div className="flex items-center gap-4 mb-10 w-full justify-center">
-                  <img src="/assets/images/icon-10.png" alt="Report" className="w-9 h-9 object-contain drop-shadow-sm" />
+                  <img
+                    src="/assets/images/icon-10.png"
+                    alt="Report"
+                    className="w-9 h-9 object-contain drop-shadow-sm"
+                  />
                   <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold text-center">
                     {t('offerTop10Title')}
                   </h3>
                 </div>
 
                 <div className="relative mx-auto w-full max-w-[320px] mb-10 flex-grow flex items-center justify-center">
-                  <img src="/assets/images/s-locator-app.png" className="w-full h-auto object-contain drop-shadow-xl" alt="App Desktop" />
+                  <img
+                    src="/assets/images/app-screen-1.png"
+                    className="w-full h-auto object-contain drop-shadow-xl"
+                    alt="App Desktop"
+                  />
                 </div>
 
                 <p className="text-gray-500 font-medium text-[15px] leading-relaxed mb-10 text-center">
@@ -431,7 +745,7 @@ export default function Home() {
                 </p>
 
                 <a
-                  href="https://s-locator.northernacs.com/landing?"
+                  href="https://s-locator.northernacs.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-3.5 px-10 rounded-full shadow-md transition-colors w-full sm:w-auto text-center mt-auto"
@@ -442,7 +756,11 @@ export default function Home() {
 
               <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-10 flex flex-col items-center border border-gray-100 transition-transform hover:-translate-y-1 h-full">
                 <div className="flex items-center gap-4 mb-10 w-full justify-center">
-                  <img src="/assets/images/icon-02.png" alt="Planning" className="w-9 h-9 object-contain drop-shadow-sm" />
+                  <img
+                    src="/assets/images/icon-02.png"
+                    alt="Planning"
+                    className="w-9 h-9 object-contain drop-shadow-sm"
+                  />
                   <h3 className="text-[#1e293b] text-[22px] md:text-2xl font-extrabold text-center">
                     {t('offerTerrTitle')}
                   </h3>
@@ -451,15 +769,23 @@ export default function Home() {
                 <div className="relative mx-auto w-full max-w-[320px] h-[204px] mb-10 flex items-end justify-center">
                   <div className="absolute right-0 bottom-2 w-[260px]">
                     <div className="relative z-10 border-[5px] border-[#2c3e50] rounded-t-xl bg-[#2c3e50] h-[155px] overflow-hidden shadow-xl">
-                      <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-left-top" alt="App Desktop" />
+                      <img
+                        src="/assets/images/s-locator-app2.png"
+                        className="w-full h-full object-cover object-left-top"
+                        alt="App Desktop"
+                      />
                     </div>
                     <div className="relative z-20 w-[114%] -ml-[7%] h-3 bg-[#cbd5e1] rounded-b-xl shadow-md border-t border-[#94a3b8] flex justify-center">
-                       <div className="w-16 h-1 bg-[#94a3b8] rounded-b-md"></div>
+                      <div className="w-16 h-1 bg-[#94a3b8] rounded-b-md"></div>
                     </div>
                   </div>
                   <div className="absolute left-2 bottom-0 z-30 w-[75px] h-[150px] border-[4px] border-[#2c3e50] rounded-[1.2rem] bg-[#2c3e50] overflow-hidden shadow-2xl">
                     <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-4 h-[3px] bg-[#0f172a] rounded-full z-40"></div>
-                    <img src="/assets/images/s-locator-app2.png" className="w-full h-full object-cover object-center" alt="App Mobile" />
+                    <img
+                      src="/assets/images/s-locator-app2.png"
+                      className="w-full h-full object-cover object-center"
+                      alt="App Mobile"
+                    />
                   </div>
                 </div>
 
@@ -468,7 +794,9 @@ export default function Home() {
                 </p>
 
                 <a
-                  href="http://localhost:5174"
+                  href="https://s-locator.northernacs.com/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-3.5 px-10 rounded-full shadow-md transition-colors w-full sm:w-auto text-center mt-auto"
                 >
                   {t('offerTerrBtn')}
@@ -532,7 +860,8 @@ export default function Home() {
                 href="/contact"
                 className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-4 px-10 rounded-full flex items-center justify-center w-max gap-2 transition-transform hover:scale-105 shadow-xl shadow-purple-500/20"
               >
-                {t('getStarted')} <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
+                {t('getStarted')}{' '}
+                <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
               </a>
             </div>
           </FadeInSection>
@@ -545,7 +874,7 @@ export default function Home() {
               <h3 className="text-2xl font-extrabold">
                 <AnimatedCounter end={8550} />
               </h3>
-              <p 
+              <p
                 className="text-[10px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('projectsCompletedHtml') }}
               />
@@ -558,7 +887,7 @@ export default function Home() {
               <h3 className="text-xl font-extrabold">
                 <AnimatedCounter end={90} />+
               </h3>
-              <p 
+              <p
                 className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('teamMembersHtml') }}
               />
@@ -575,7 +904,7 @@ export default function Home() {
               <h3 className="text-[30px] font-extrabold">
                 <AnimatedCounter end={3860} />
               </h3>
-              <p 
+              <p
                 className="text-[11px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('satisfiedClientsHtml') }}
               />
@@ -588,7 +917,7 @@ export default function Home() {
               <h3 className="text-2xl font-extrabold">
                 <AnimatedCounter end={180} />+
               </h3>
-              <p 
+              <p
                 className="text-[9px] font-bold text-[#110222]/80 text-center uppercase mt-1"
                 dangerouslySetInnerHTML={{ __html: t('awardsWinHtml') }}
               />
@@ -614,7 +943,7 @@ export default function Home() {
                   <span className="text-3xl font-extrabold">
                     <AnimatedCounter end={30} />+
                   </span>
-                  <span 
+                  <span
                     className="text-[10px] text-center leading-tight font-bold mt-1"
                     dangerouslySetInnerHTML={{ __html: t('yearsExpHtml') }}
                   />
@@ -630,7 +959,9 @@ export default function Home() {
               <h2 className="text-[#38e54d] text-4xl md:text-[54px] font-bold mb-6 leading-[1.1]">
                 {t('compEdgeTitle')}
               </h2>
-              <p className="text-white mb-6 font-semibold text-lg leading-snug">{t('compEdgeSub')}</p>
+              <p className="text-white mb-6 font-semibold text-lg leading-snug">
+                {t('compEdgeSub')}
+              </p>
               <p className="text-gray-300 text-[15px] leading-relaxed mb-10 max-w-lg">
                 {t('compEdgeDesc')}
               </p>
@@ -704,21 +1035,31 @@ export default function Home() {
 
       <section className="py-24 bg-[#fafbfc] border-t border-gray-100">
         <FadeInSection>
-          <div className={`max-w-7xl mx-auto px-4 flex flex-col gap-16 items-center mb-32 ${isAr ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+          <div
+            className={`max-w-7xl mx-auto px-4 flex flex-col gap-16 items-center mb-32 ${isAr ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+          >
             <div className="hidden md:flex flex-col gap-6 relative w-1/3 items-center justify-center">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-[#fff8f5] rounded-full -z-10"></div>
+
               <img
                 src="/assets/images/City-baby-90×50-1-e1741524807594-300x154.png"
                 alt="City Baby"
                 className="w-44 h-44 object-contain bg-white shadow-xl rounded-full p-4 hover:-translate-y-2 transition-transform"
               />
-              <div className="w-32 h-32 bg-white shadow-xl rounded-full flex items-center justify-center font-serif text-3xl text-[#2b1055] italic hover:-translate-y-2 transition-transform">
-                Touch
+
+              <div className="w-32 h-32 bg-white shadow-xl rounded-full flex items-center justify-center overflow-hidden hover:-translate-y-2 transition-transform p-3">
+                <img
+                  src="/assets/images/WhatsApp-Image-2025-01-11-at-5.24.24-PM-r330rq3bxnk1a6wdxen27alusbponc3le7hpgugqcc.jpeg"
+                  alt="Touch Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
 
             <div className="md:w-2/3 pt-4 text-center">
-              <h2 className="text-[32px] md:text-[36px] font-bold text-[#2b1055] mb-6 leading-tight">{t('testTitle')}</h2>
+              <h2 className="text-[32px] md:text-[36px] font-bold text-[#2b1055] mb-6 leading-tight">
+                {t('testTitle')}
+              </h2>
               <p className="text-gray-700 mb-8 text-[15px] md:text-[16px] leading-relaxed font-medium max-w-2xl mx-auto">
                 {t('testDesc')}
               </p>
@@ -778,7 +1119,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">{t('email')}</h4>
+                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">
+                      {t('email')}
+                    </h4>
                     <p className="text-[#110222]/80 text-[15px] font-medium break-all" dir="ltr">
                       marketing@northernacs.com
                     </p>
@@ -798,7 +1141,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">{t('phone')}</h4>
+                    <h4 className="font-extrabold text-[#110222] text-[18px] mb-0.5">
+                      {t('phone')}
+                    </h4>
                     <p className="text-[#110222]/80 text-[15px] font-medium" dir="ltr">
                       +966 56738077
                     </p>
