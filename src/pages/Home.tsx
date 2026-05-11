@@ -734,7 +734,7 @@ export default function Home() {
 
                 <div className="relative mx-auto w-full max-w-[320px] mb-10 flex-grow flex items-center justify-center">
                   <img
-                    src="/assets/images/app-screen-1.png"
+                    src="/assets/images/s-locator-app.png"
                     className="w-full h-auto object-contain drop-shadow-xl"
                     alt="App Desktop"
                   />
