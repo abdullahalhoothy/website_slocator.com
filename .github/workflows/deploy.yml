@@ -30,3 +30,12 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
               -o ServerAliveInterval=30 -o ServerAliveCountMax=4 \
               root@178.105.69.252
+
+      - name: Smoke test
+        run: |
+          set -e
+          for host in s-locator.com www.s-locator.com; do
+            code=$(curl -sk -o /dev/null -w '%{http_code}' --retry 3 --retry-delay 5 --max-time 10 "https://$host/")
+            echo "https://$host/ -> $code"
+            [ "$code" = "200" ] || { echo "Smoke test FAILED for $host"; exit 1; }
+          done
