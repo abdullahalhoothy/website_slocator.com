@@ -4,7 +4,7 @@ import { Phone, Mail, MonitorSmartphone, MonitorUp } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
 
 export const Contact: React.FC = () => {
-  const { t, i18n } = useTranslation('landing'); // تم تحديد الـ namespace هنا
+  const { t, i18n } = useTranslation('landing');
   const isRTL = i18n.dir() === 'rtl';
 
   useEffect(() => {
@@ -99,7 +99,6 @@ export const Contact: React.FC = () => {
                            </div>
                         </div>
                         
-                        {/* استخدام الترجمة بشكل صارم */}
                         <div className={`w-full ${isRTL ? 'text-right pr-9' : 'text-left pl-9'}`}>
                            <a href="/contact" className="text-sm text-[#00609c] hover:underline cursor-pointer">
                               {t('common.showMore', 'Show more')}
@@ -125,38 +124,45 @@ export const Contact: React.FC = () => {
                <h3 className="text-3xl font-bold text-slate-800 mb-16">{t('contactPage.team.title', 'We look forward to our conversation')}</h3>
                
                <div className="flex flex-wrap justify-center max-w-5xl mx-auto px-4 gap-y-2 md:gap-y-0 pb-16" dir="ltr">
-                  {teamMembers.map((member, idx) => (
-                    <div key={idx} className="relative w-[110px] h-[125px] md:w-[130px] md:h-[150px] mx-1 md:mx-2 mb-[-20px] md:mb-[-30px] group">
-                      
-                      <div 
-                        className="w-full h-full bg-[#f5f3ff] transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center overflow-hidden border-[3px] border-white shadow-sm"
-                        style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
-                      >
-                        <img 
-                          src={member.img || 'https://via.placeholder.com/150/f5f3ff/8A2BE2?text=S-Loc'} 
-                          alt={member.name} 
-                          className="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:mix-blend-normal group-hover:opacity-100 transition-all" 
-                          onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/150/f5f3ff/8A2BE2?text=User' }} 
-                        />
+                  {teamMembers.map((member, idx) => {
+                    const fallbackUrl = `https://ui-avatars.com/api/?name=${member.name || 'User'}&background=f5f3ff&color=8A2BE2`;
+                    
+                    return (
+                      <div key={idx} className="relative w-[110px] h-[125px] md:w-[130px] md:h-[150px] mx-1 md:mx-2 mb-[-20px] md:mb-[-30px] group">
+                        
+                        <div 
+                          className="w-full h-full bg-[#f5f3ff] transition-transform duration-300 group-hover:-translate-y-2 flex items-center justify-center overflow-hidden border-[3px] border-white shadow-sm"
+                          style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
+                        >
+                          <img 
+                            src={member.img || fallbackUrl} 
+                            alt={member.name} 
+                            className="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:mix-blend-normal group-hover:opacity-100 transition-all" 
+                            onError={(e) => { 
+                              e.currentTarget.onerror = null; 
+                              e.currentTarget.src = fallbackUrl; 
+                            }} 
+                          />
+                        </div>
+
+                        {member.name && (
+                           <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-white text-slate-800 px-4 py-2.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-[100] flex flex-col items-center border border-slate-100 pointer-events-none group-hover:pointer-events-auto">
+                              <span className="font-bold text-[14px] text-slate-700">{member.name}</span>
+                              <div className="flex items-center gap-3 mt-1.5">
+                                 <span className="text-[11px] text-slate-400 font-bold tracking-wide">{member.lang}</span>
+                                 <a href={member.li || '#'} target="_blank" rel="noopener noreferrer" className="text-[#0a66c2] hover:text-[#004182] transition-colors">
+                                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                   </svg>
+                                 </a>
+                              </div>
+                              <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white transform rotate-45 border-b border-r border-slate-100"></div>
+                           </div>
+                        )}
+
                       </div>
-
-                      {member.name && (
-                         <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-white text-slate-800 px-4 py-2.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-[100] flex flex-col items-center border border-slate-100 pointer-events-none group-hover:pointer-events-auto">
-                            <span className="font-bold text-[14px] text-slate-700">{member.name}</span>
-                            <div className="flex items-center gap-3 mt-1.5">
-                               <span className="text-[11px] text-slate-400 font-bold tracking-wide">{member.lang}</span>
-                               <a href={member.li || '#'} target="_blank" rel="noopener noreferrer" className="text-[#0a66c2] hover:text-[#004182] transition-colors">
-                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                 </svg>
-                               </a>
-                            </div>
-                            <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white transform rotate-45 border-b border-r border-slate-100"></div>
-                         </div>
-                      )}
-
-                    </div>
-                  ))}
+                    );
+                  })}
                </div>
             </FadeIn>
          </div>
