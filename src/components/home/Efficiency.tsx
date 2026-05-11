@@ -15,14 +15,15 @@ export const Efficiency: React.FC = () => {
         <FadeIn direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-[40px] font-medium text-slate-900 mb-4">
-              {t('advantages.title', 'Your advantages with S-Locator')}<sup className="text-lg">®</sup>
+              {t('advantages.title')}
+              <sup className="text-lg">®</sup>
             </h2>
             <p className="text-lg text-slate-500 font-light">
-              {t('advantages.subtitle', 'Field sales force software for automatic route planning and dynamic territory optimization')}
+              {t('advantages.subtitle')}
             </p>
           </div>
           <h3 className="text-2xl font-light text-center text-slate-800 mb-12">
-            {t('advantages.savingsTitle', 'Savings meet efficiency')}
+            {t('advantages.savingsTitle')}
           </h3>
         </FadeIn>
 
@@ -38,12 +39,12 @@ export const Efficiency: React.FC = () => {
                 <div>
                   <img src="/assets/images/miwa-logo.webp" alt="MIWA Logo" className="h-6 mb-4 grayscale opacity-70" />
                   <p className="text-slate-700 italic font-light mb-4 text-lg">
-                    {t('advantages.quote', '"We save between 15 and 18% on mileage per year and a lot of time."')}
+                    {t('advantages.quote')}
                   </p>
                   <div className="text-sm font-medium text-slate-900">Pieter Niemand</div>
                   <div className="text-sm text-slate-500 font-light mb-2">MIWA National Director</div>
                   <a href="#" className="text-sm text-purple-600 hover:underline">
-                    {t('advantages.readMore', 'read more...')}
+                    {t('advantages.readMore')}
                   </a>
                 </div>
               </div>
@@ -54,9 +55,9 @@ export const Efficiency: React.FC = () => {
             <FadeIn direction="up" delay={100}>
               <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm text-center flex flex-col items-center justify-center h-full">
                 <Map className="w-10 h-10 text-purple-600 mb-4" />
-                <div className="font-medium text-slate-800 flex items-center justify-center gap-1 flex-wrap">
+                <div className={`font-medium text-slate-800 flex items-center justify-center gap-1 flex-wrap ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <CountUp end={18} suffix="%" /> 
-                  <span>{t('advantages.fewerKmLabel', 'fewer kilometers')}</span>
+                  <span>{t('advantages.fewerKmLabel')}</span>
                 </div>
               </div>
             </FadeIn>
@@ -64,9 +65,9 @@ export const Efficiency: React.FC = () => {
             <FadeIn direction="up" delay={200}>
               <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm text-center flex flex-col items-center justify-center h-full">
                 <Users className="w-10 h-10 text-[#3bc24d] mb-4" />
-                <div className="font-medium text-slate-800 flex items-center justify-center gap-1 flex-wrap">
+                <div className={`font-medium text-slate-800 flex items-center justify-center gap-1 flex-wrap ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <CountUp end={20} prefix="+" suffix="%" /> 
-                  <span>{t('advantages.moreCallsLabel', 'more customer calls')}</span>
+                  <span>{t('advantages.moreCallsLabel')}</span>
                 </div>
               </div>
             </FadeIn>
@@ -74,9 +75,9 @@ export const Efficiency: React.FC = () => {
             <FadeIn direction="up" delay={300}>
               <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm text-center flex flex-col items-center justify-center h-full">
                 <Clock className="w-10 h-10 text-sky-500 mb-4" />
-                <div className="font-medium text-slate-800 flex items-center justify-center gap-1 flex-wrap">
+                <div className={`font-medium text-slate-800 flex items-center justify-center gap-1 flex-wrap ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <CountUp end={50} suffix="%" /> 
-                  <span>{t('advantages.timeSavedLabel', 'time saved')}</span>
+                  <span>{t('advantages.timeSavedLabel')}</span>
                 </div>
               </div>
             </FadeIn>

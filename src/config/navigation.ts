@@ -97,7 +97,6 @@ export const MAIN_NAVIGATION: NavItem[] = [
     ]
   },
 
-  { id: 'useCases', translationKey: 'header.nav.useCases', path: '/use-cases', hasSubmenu: false },
   { id: 'integrations', translationKey: 'header.nav.integrations', path: '/integrations', hasSubmenu: false },
   { id: 'blog', translationKey: 'header.nav.blog', path: '/blog', hasSubmenu: false },
   { id: 'customers', translationKey: 'header.nav.customers', path: '/customers' },

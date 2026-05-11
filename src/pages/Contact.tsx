@@ -4,7 +4,7 @@ import { Phone, Mail, MonitorSmartphone, MonitorUp } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
 
 export const Contact: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('landing'); // تم تحديد الـ namespace هنا
   const isRTL = i18n.dir() === 'rtl';
 
   useEffect(() => {
@@ -98,6 +98,14 @@ export const Contact: React.FC = () => {
                               <span>KSA: +966 55 818 8632</span>
                            </div>
                         </div>
+                        
+                        {/* استخدام الترجمة بشكل صارم */}
+                        <div className={`w-full ${isRTL ? 'text-right pr-9' : 'text-left pl-9'}`}>
+                           <a href="/contact" className="text-sm text-[#00609c] hover:underline cursor-pointer">
+                              {t('common.showMore', 'Show more')}
+                           </a>
+                        </div>
+                        
                         <div className="flex items-center gap-4 mt-2">
                            <Mail className="w-5 h-5 text-[#489E46] shrink-0"/> 
                            <a href="mailto:sales@s-locator.com" className="hover:text-[#489E46] transition-colors">sales@s-locator.com</a>

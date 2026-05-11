@@ -3,17 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { Car, Building2, ShoppingCart, Pill, Monitor, Stethoscope, Factory } from 'lucide-react';
 
 export const Customers: React.FC = () => {
-  const { t, i18n } = useTranslation('landing');
+  const { t, i18n } = useTranslation();
   const isRTL = i18n.dir() === 'rtl';
 
   const categories = [
-    { name: t('customersPage.categories.auto', 'Automotive industry'), icon: Car },
-    { name: t('customersPage.categories.building', 'Building materials'), icon: Building2 },
-    { name: t('customersPage.categories.consumer', 'Consumer goods'), icon: ShoppingCart },
-    { name: t('customersPage.categories.cosmetics', 'Cosmetics'), icon: Pill },
-    { name: t('customersPage.categories.electronics', 'Electronic products'), icon: Monitor },
-    { name: t('customersPage.categories.industrial', 'Industrial goods'), icon: Factory },
-    { name: t('customersPage.categories.medical', 'Medical devices'), icon: Stethoscope },
+    { name: t('customersPage.categories.auto'), icon: Car },
+    { name: t('customersPage.categories.building'), icon: Building2 },
+    { name: t('customersPage.categories.consumer'), icon: ShoppingCart },
+    { name: t('customersPage.categories.cosmetics'), icon: Pill },
+    { name: t('customersPage.categories.electronics'), icon: Monitor },
+    { name: t('customersPage.categories.industrial'), icon: Factory },
+    { name: t('customersPage.categories.medical'), icon: Stethoscope },
   ];
 
   return (
@@ -34,7 +34,7 @@ export const Customers: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-4 mb-10 max-w-4xl mx-auto">
           {categories.map((cat, idx) => (
             <div key={idx} className="flex items-center gap-2 text-sm text-slate-600 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
-              <cat.icon className="w-4 h-4 text-purple-600" />
+              <cat.icon className="w-4 h-4 text-[#00609c]" />
               <span>{cat.name}</span>
             </div>
           ))}

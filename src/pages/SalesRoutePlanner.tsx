@@ -26,7 +26,7 @@ const FaqAccordion: React.FC<{ question: string; answer: React.ReactNode }> = ({
 };
 
 export const SalesRoutePlanner: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('landing');
   const isRTL = i18n.dir() === 'rtl';
   
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -206,7 +206,7 @@ export const SalesRoutePlanner: React.FC = () => {
                   {[t('srp.integrations.b1', 'Fast and easy manual data import'), t('srp.integrations.b2', 'Out-of-the-box integrations'), t('srp.integrations.b3', 'Automated data synchronisation')].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-slate-600 font-light">
                       <CheckCircle2 className="w-5 h-5 text-[#00609c] shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -346,7 +346,7 @@ export const SalesRoutePlanner: React.FC = () => {
                   <div className="flex items-center gap-3 mt-2"><Mail className="w-5 h-5 text-[#6699b8]" /> support@s-locator.com</div>
                   <div className="flex items-start gap-3 mt-4 pt-4 border-t border-slate-100 w-full text-slate-600">
                     <MonitorSmartphone className="w-5 h-5 text-[#6699b8] mt-1 shrink-0" />
-                    <span className="text-left leading-relaxed">{t('contactPage.support.teamviewer', 'Teamviewer: Remote access for S-Locator Support')}</span>
+                    <span className={`leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>{t('contactPage.support.teamviewer', 'Teamviewer: Remote access for S-Locator Support')}</span>
                   </div>
                 </div>
               </div>
@@ -359,7 +359,9 @@ export const SalesRoutePlanner: React.FC = () => {
                 <div className="flex flex-col gap-4 text-[#00609c] font-light text-[15px] items-start w-full max-w-xs mx-auto mt-2">
                   <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#6699b8]" /> Canada: +1 514-814-5180</div>
                   <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-[#6699b8]" /> KSA: +966 55 818 8632</div>
-                  <a href="/contact" className="text-[#a0a0a0] cursor-pointer hover:text-[#00609c] ml-8 mb-2 transition-colors">{t('common.showMore', 'show more')}</a>
+                  <div className={`w-full ${isRTL ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                     <a href="/contact" className="text-sm text-[#a0a0a0] hover:text-[#00609c] transition-colors">{t('common.showMore', 'Show more')}</a>
+                  </div>
                   <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-[#6699b8]" /> sales@s-locator.com</div>
                 </div>
               </div>

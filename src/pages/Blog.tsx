@@ -9,29 +9,37 @@ export const BLOG_POSTS = [
   {
     id: '1',
     img: 'https://cdn.portatour.com/blog/wp-content/uploads/vertriebsreporting.jpg',
-    category: 'المبيعات الميدانية',
-    title: "إعداد تقارير المبيعات الناجحة في الميدان مع S-Locator®",
+    category: 'Field Sales',
+    categoryKey: 'blogPage.posts.post1.category',
+    title: 'Successful sales reporting in the field with S-Locator®',
+    titleKey: 'blogPage.posts.post1.title',
     image: 'https://cdn.portatour.com/blog/wp-content/uploads/vertriebsreporting.jpg',
   },
   {
     id: '2',
     img: 'https://cdn.portatour.com/blog/wp-content/uploads/change-management-624x478.jpg',
-    category: 'المبيعات الميدانية',
-    title: "أفضل 5 تطبيقات مبيعات لفريق المبيعات الميداني في عام 2026",
+    category: 'Field Sales',
+    categoryKey: 'blogPage.posts.post2.category',
+    title: 'The 5 best sales apps for your field sales team in 2026',
+    titleKey: 'blogPage.posts.post2.title',
     image: 'https://cdn.portatour.com/blog/wp-content/uploads/change-management-624x478.jpg',
   },
   {
     id: '3',
     img: 'https://cdn.portatour.com/blog/wp-content/uploads/crm-blog.jpg',
-    category: 'المبيعات الميدانية',
-    title: "S-Locator® – مخطط المسارات المحمول مع نظام CRM للشركات الكبيرة والصغيرة",
+    category: 'Field Sales',
+    categoryKey: 'blogPage.posts.post3.category',
+    title: 'S-Locator® – The mobile route planner with CRM system for large and small companies',
+    titleKey: 'blogPage.posts.post3.title',
     image: 'https://cdn.portatour.com/blog/wp-content/uploads/crm-blog.jpg',
   },
   {
     id: '4',
     img: 'https://cdn.portatour.com/blog/wp-content/uploads/vertriebsoptimierung-tipps-624x416.jpg',
-    category: 'أفضل الممارسات الإدارية',
-    title: "7 نصائح لتحسين المبيعات في الميدان",
+    category: 'Management Best Practices',
+    categoryKey: 'blogPage.posts.post4.category',
+    title: '7 tips to optimize sales in the field',
+    titleKey: 'blogPage.posts.post4.title',
     image: 'https://cdn.portatour.com/blog/wp-content/uploads/vertriebsoptimierung-tipps-624x416.jpg',
   }
 ];
@@ -63,9 +71,7 @@ export const Blog: React.FC = () => {
   ];
 
   const featuredPost = BLOG_POSTS[0];
-  
   const topPosts = BLOG_POSTS.slice(1, 4);
-
   const morePosts = BLOG_POSTS.slice(4);
 
   return (
@@ -121,10 +127,10 @@ export const Blog: React.FC = () => {
                   </div>
                   <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-[#00609c]">
                      <span className="inline-block bg-white/20 text-white border border-white/30 px-3 py-1 text-sm font-medium rounded w-max mb-6">
-                        {featuredPost.category}
+                        {t(featuredPost.categoryKey, featuredPost.category)}
                      </span>
                      <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-                        {featuredPost.title}
+                        {t(featuredPost.titleKey, featuredPost.title)}
                      </h3>
                   </div>
                </Link>
@@ -143,10 +149,10 @@ export const Blog: React.FC = () => {
                         </div>
                         <div className="p-6 flex flex-col flex-grow">
                            <span className="inline-block bg-[#8A2BE2]/10 text-[#8A2BE2] px-2.5 py-1 text-xs font-bold rounded w-max mb-4">
-                              {post.category}
+                              {t(post.categoryKey, post.category)}
                            </span>
                            <h3 className="text-lg font-bold text-slate-800 leading-snug group-hover:text-[#8A2BE2] transition-colors">
-                              {post.title}
+                              {t(post.titleKey, post.title)}
                            </h3>
                         </div>
                      </Link>
@@ -187,10 +193,10 @@ export const Blog: React.FC = () => {
                         </div>
                         <div className="p-6 flex flex-col flex-grow">
                            <span className="inline-block bg-[#8A2BE2]/10 text-[#8A2BE2] px-2.5 py-1 text-xs font-bold rounded w-max mb-4">
-                              {post.category}
+                              {t(post.categoryKey, post.category)}
                            </span>
                            <h3 className="text-lg font-bold text-slate-800 leading-snug group-hover:text-[#8A2BE2] transition-colors">
-                              {post.title}
+                              {t(post.titleKey, post.title)}
                            </h3>
                         </div>
                      </Link>

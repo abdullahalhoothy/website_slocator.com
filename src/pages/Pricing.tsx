@@ -3,7 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Check, ChevronRight, Phone, Mail, MonitorSmartphone, ChevronDown, Handshake } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
 
-const PRICING_DATA = {
+type ProductType = 'rp' | 'to' | 'rpto';
+type UserTier = 1 | 2 | 10 | 50;
+type Billing = 3 | 12;
+type Price = Record<Billing, number> | 'request';
+
+const PRICING_DATA: Record<ProductType, Partial<Record<UserTier, Price>>> = {
   rp: {
     1: { 3: 89.95, 12: 79.95 },
     2: { 3: 89.95, 12: 79.95 },
@@ -27,9 +32,9 @@ export const Pricing: React.FC = () => {
   const isRTL = i18n.dir() === 'rtl';
 
   // State Management
-  const [product, setProduct] = useState<'rp' | 'to' | 'rpto'>('rp');
-  const [usersTier, setUsersTier] = useState<1 | 2 | 10 | 50>(1);
-  const [billing, setBilling] = useState<3 | 12>(12);
+  const [product, setProduct] = useState<ProductType>('rp');
+  const [usersTier, setUsersTier] = useState<UserTier>(1);
+  const [billing, setBilling] = useState<Billing>(12);
   const [showIntegrations, setShowIntegrations] = useState(false);
   const [integration, setIntegration] = useState('none');
 
@@ -37,18 +42,23 @@ export const Pricing: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleProductChange = (newProduct: 'rp' | 'to' | 'rpto') => {
+  const handleProductChange = (newProduct: ProductType) => {
     setProduct(newProduct);
     if ((newProduct === 'to' || newProduct === 'rpto') && usersTier === 1) {
       setUsersTier(2);
     }
   };
 
-  const currentPrice = PRICING_DATA[product][usersTier as keyof typeof PRICING_DATA['rp']];
-  const displayPrice = currentPrice === 'request' ? 'request' : currentPrice[billing];
+  const currentPrice = PRICING_DATA[product][usersTier];
+  
+  if (!currentPrice) {
+     if (product === 'to' || product === 'rpto') setUsersTier(2);
+  }
+
+  const displayPrice = currentPrice === 'request' ? 'request' : currentPrice?.[billing];
   
   const getSavings = () => {
-    if (currentPrice === 'request') return null;
+    if (!currentPrice || currentPrice === 'request') return null;
     const price3m = currentPrice[3];
     const price12m = currentPrice[12];
     const diff = price3m - price12m;
@@ -70,7 +80,6 @@ export const Pricing: React.FC = () => {
   return (
     <div className={`min-h-screen bg-[#f8fafc] font-sans text-slate-900 selection:bg-[#f5f3ff] selection:text-[#8A2BE2] pb-0 ${isRTL ? 'text-right' : 'text-left'}`}>
       
-      {/* 1. Hero Section */}
       <section className="bg-[#f8fafc] pt-24 pb-12 text-center">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn direction="up">
@@ -84,14 +93,11 @@ export const Pricing: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. Main Configurator Area */}
       <section className="py-8 relative">
         <div className="container mx-auto px-4 max-w-6xl flex flex-col lg:flex-row gap-8 items-start relative">
           
-          {/* LEFT COLUMN: Controls */}
           <div className="w-full lg:w-2/3 flex flex-col gap-6 pb-16">
             
-            {/* A. Product Selection */}
             <div className="flex flex-col gap-4">
               <button 
                 onClick={() => handleProductChange('rp')}
@@ -154,7 +160,6 @@ export const Pricing: React.FC = () => {
               </button>
             </div>
 
-            {/* B. Users Tier Table */}
             <div className="mt-8 bg-white p-6 rounded-xl border border-slate-200 shadow-sm overflow-hidden">
               <h3 className="text-2xl font-light text-slate-800 mb-6">{t('pricingPage.configurator.licenses.title')}</h3>
               
@@ -179,17 +184,17 @@ export const Pricing: React.FC = () => {
                  </div>
 
                  {[
-                   { val: 1, label: '1', disabled: product !== 'rp' },
-                   { val: 2, label: '2-9', disabled: false },
-                   { val: 10, label: '10-49', disabled: false },
-                   { val: 50, label: '50+', disabled: false }
+                   { val: 1 as UserTier, label: '1', disabled: product !== 'rp' },
+                   { val: 2 as UserTier, label: '2-9', disabled: false },
+                   { val: 10 as UserTier, label: '10-49', disabled: false },
+                   { val: 50 as UserTier, label: '50+', disabled: false }
                  ].map((tier) => {
                     const isActive = usersTier === tier.val;
                     return (
                       <button 
                         key={tier.val}
                         disabled={tier.disabled}
-                        onClick={() => setUsersTier(tier.val as 1 | 2 | 10 | 50)}
+                        onClick={() => setUsersTier(tier.val)}
                         className={`flex flex-col w-[16%] shrink-0 items-center gap-4 text-sm font-bold relative transition-all rounded-t-xl ${isActive ? 'bg-[#f5f3ff] border-x-2 border-t-2 border-[#8A2BE2] shadow-sm z-10' : 'hover:bg-slate-50 border-x border-t border-transparent'} ${tier.disabled ? 'opacity-30 cursor-not-allowed' : ''}`}
                       >
                          <div className="h-16 flex flex-col items-center justify-end pb-2 gap-2">
@@ -218,7 +223,6 @@ export const Pricing: React.FC = () => {
               <div className="w-full h-[2px] bg-slate-200 mt-[-2px] relative z-0"></div>
             </div>
 
-            {/* C. Integrations Accordion */}
             <div className="mt-4 bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                <button 
                   onClick={() => setShowIntegrations(!showIntegrations)}
@@ -258,7 +262,6 @@ export const Pricing: React.FC = () => {
                )}
             </div>
 
-            {/* D. Billing Cycle */}
             <div className="mt-8">
                <h3 className="text-2xl font-light text-slate-800 mb-6">{t('pricingPage.configurator.billing.title')}</h3>
                <div className="flex flex-col sm:flex-row gap-6">
@@ -296,11 +299,10 @@ export const Pricing: React.FC = () => {
           </div>
 
           <div className="w-full lg:w-1/3 sticky top-28 bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col z-20">
-             {/* Top Part: Price Display */}
              <div className="p-8 pb-10 flex flex-col items-center text-center">
                 <h3 className={`text-2xl font-light text-slate-600 mb-6 w-full ${isRTL ? 'text-right' : 'text-left'}`}>{t('pricingPage.configurator.stickyBox.title')}</h3>
                 
-                {displayPrice === 'request' ? (
+                {displayPrice === 'request' || !displayPrice ? (
                   <div className="flex flex-col items-center justify-center py-4 text-center">
                      <h4 className="text-3xl font-bold text-[#8A2BE2] mb-4" dir="ltr">50+ licenses</h4>
                      <p className="text-slate-500 mb-8">{t('pricingPage.configurator.stickyBox.contactSales')}</p>
@@ -324,7 +326,6 @@ export const Pricing: React.FC = () => {
                 )}
              </div>
              
-             {/* Bottom Part: ROI Section */}
              <div className={`bg-[#8A2BE2] p-8 text-white flex flex-col ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}>
                 <h4 className="font-bold text-lg mb-1">{t('pricingPage.configurator.stickyBox.worthTitle')}</h4>
                 <p className="text-purple-100 text-sm mb-6 leading-relaxed">{t('pricingPage.configurator.stickyBox.worthDesc')}</p>
@@ -338,7 +339,6 @@ export const Pricing: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. CTA Banner */}
       <section className="bg-[#8A2BE2] py-24 text-center relative overflow-hidden mt-16">
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-[#f8fafc] transform rotate-45"></div>
         <div className="container mx-auto px-4 relative z-10 max-w-4xl">
@@ -362,7 +362,6 @@ export const Pricing: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. FAQs Summary */}
       <section className="py-24 bg-white border-b border-slate-200">
         <div className="container mx-auto px-4 max-w-6xl text-center">
           <FadeIn direction="up">
@@ -378,7 +377,6 @@ export const Pricing: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. Contact Section */}
       <section className="bg-[#f8fafc] py-24 text-center">
          <div className="container mx-auto px-4 max-w-7xl">
             <h2 className="text-4xl font-bold text-[#8A2BE2] mb-4">{t('contact.title', 'Contact us!')}</h2>

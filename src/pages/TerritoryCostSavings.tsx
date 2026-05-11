@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronRight, Phone, Mail, MonitorSmartphone, DollarSign, FileText, Car, Users, Droplet, Building, GraduationCap, Laptop, Search, TrendingUp, PiggyBank, Map as MapIcon, Zap } from 'lucide-react';
+import { ChevronRight, Phone, Mail, MonitorSmartphone, DollarSign, FileText, Car, Users, Droplet, Building, GraduationCap, Laptop, Search, TrendingUp, PiggyBank, Map as MapIcon } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
+import type { TFunction } from 'i18next';
 
 const CostItem: React.FC<{ icon: React.ReactNode; amount: string; label: string }> = ({ icon, amount, label }) => (
   <div className="flex flex-col items-center text-center p-4">
@@ -13,7 +14,7 @@ const CostItem: React.FC<{ icon: React.ReactNode; amount: string; label: string 
   </div>
 );
 
-const TestimonialSlider: React.FC<{ t: any; isRTL: boolean }> = ({ t, isRTL }) => {
+const TestimonialSlider: React.FC<{ t: TFunction; isRTL: boolean }> = ({ t, isRTL }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [
     {

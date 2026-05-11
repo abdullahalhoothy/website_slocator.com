@@ -78,7 +78,8 @@ const Hexagon = ({ data }: { data: HexagonData }) => {
 };
 
 export const ContactSection: React.FC = () => {
-  const { t } = useTranslation('landing');
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.dir() === 'rtl';
 
   const rows = [
     [
@@ -122,32 +123,34 @@ export const ContactSection: React.FC = () => {
         </FadeIn>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-32">
-          <FadeIn direction="right">
+          <FadeIn direction={isRTL ? "left" : "right"}>
             <div className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
               <h3 className="text-xl font-light text-slate-500 mb-1">{t('contactPage.support.pretitle', 'I am already a user and need')}</h3>
               <h4 className="text-3xl font-light text-slate-800 mb-8">{t('contactPage.support.title', 'Support')}</h4>
               <button className="bg-[#00609c] text-white px-8 py-3 rounded hover:bg-[#004d7d] transition-colors mb-8">
                 {t('contactPage.support.btn', 'To the HelpCenter')}
               </button>
-              <div className="flex flex-col gap-4 text-slate-600 font-light text-sm items-start w-full max-w-xs mx-auto">
+              <div className={`flex flex-col gap-4 text-slate-600 font-light text-sm w-full max-w-xs mx-auto ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
                 <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-slate-400" /> KSA: +966 55 818 8632</div>
                 <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-slate-400" /> support@s-locator.com</div>
                 <div className="flex items-start gap-3 mt-4 pt-4 border-t border-slate-100 w-full">
                   <MonitorSmartphone className="w-5 h-5 text-slate-400 mt-1" />
-                  <span className="text-left leading-relaxed">{t('contactPage.support.teamviewer', 'Teamviewer: Remote access for S-Locator Support')}</span>
+                  <span className={`leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>{t('contactPage.support.teamviewer', 'Teamviewer: Remote access for S-Locator Support')}</span>
                 </div>
               </div>
             </div>
           </FadeIn>
 
-          <FadeIn direction="left" delay={200}>
+          <FadeIn direction={isRTL ? "right" : "left"} delay={200}>
             <div className="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 text-center flex flex-col items-center">
               <h3 className="text-xl font-light text-slate-500 mb-1">{t('contactPage.sales.pretitle', 'I am interested and would like')}</h3>
               <h4 className="text-3xl font-light text-slate-800 mb-10">{t('contactPage.sales.title', 'Buying advice')}</h4>
-              <div className="flex flex-col gap-4 text-slate-600 font-light text-sm items-start w-full max-w-xs mx-auto">
+              <div className={`flex flex-col gap-4 text-slate-600 font-light text-sm w-full max-w-xs mx-auto ${isRTL ? 'items-start text-right' : 'items-start text-left'}`}>
                 <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-slate-400" /> Canada: +1 514-814-5180</div>
                 <div className="flex items-center gap-3" dir="ltr"><Phone className="w-5 h-5 text-slate-400" /> KSA: +966 55 818 8632</div>
-                <Link to="/contact" className="text-[#00609c] cursor-pointer hover:underline ml-8 mt-2 mb-4">{t('common.showMore', 'show more')}</Link>
+                <Link to="/contact" className={`text-[#00609c] cursor-pointer hover:underline mt-2 mb-4 ${isRTL ? 'mr-8' : 'ml-8'}`}>
+                  {t('common.showMore', 'show more')}
+                </Link>
                 <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-slate-400" /> sales@s-locator.com</div>
               </div>
             </div>

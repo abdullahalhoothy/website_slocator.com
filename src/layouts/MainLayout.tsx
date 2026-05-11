@@ -1,18 +1,16 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { Header } from '../components/layout/Header';
 
-const MainLayout: React.FC = () => {
+export const MainLayout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <div className="min-h-screen bg-slate-50 flex flex-col">
+      <Header />
       <main className="flex-grow">
-        <Outlet /> {/* هنا سيتم عرض محتوى كل صفحة */}
+        <Outlet />
       </main>
-      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Check, X as XIcon, ChevronDown, ChevronRight, MonitorSmartphone, Phone, Mail, Zap, Plus, Minus } from 'lucide-react';
 import { FadeIn } from '../components/animations/FadeIn';
+import type { TFunction } from 'i18next';
 
-// تعريف الأنواع (Interfaces) لتجنب أخطاء ESLint بدلاً من استخدام any
 interface CompItem {
   feature: string;
   bad: string;
@@ -17,7 +17,7 @@ interface CompCategory {
   items: CompItem[];
 }
 
-const ComparisonRow: React.FC<{ item: CompItem; forceOpen: boolean; t: (k: string, d?: string) => string }> = ({ item, forceOpen, t }) => {
+const ComparisonRow: React.FC<{ item: CompItem; forceOpen: boolean; t: TFunction }> = ({ item, forceOpen, t }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isExpanded = forceOpen || isOpen;
 
@@ -57,7 +57,7 @@ const ComparisonRow: React.FC<{ item: CompItem; forceOpen: boolean; t: (k: strin
   );
 };
 
-const ComparisonSection: React.FC<{ category: CompCategory; t: (k: string, d?: string) => string }> = ({ category, t }) => {
+const ComparisonSection: React.FC<{ category: CompCategory; t: TFunction }> = ({ category, t }) => {
   const [showAll, setShowAll] = useState(false);
 
   return (
@@ -115,7 +115,7 @@ const ComparisonSection: React.FC<{ category: CompCategory; t: (k: string, d?: s
   );
 };
 
-const TestimonialSlider: React.FC<{ t: (k: string, d?: string) => string; isRTL: boolean }> = ({ t, isRTL }) => {
+const TestimonialSlider: React.FC<{ t: TFunction; isRTL: boolean }> = ({ t, isRTL }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [
     {

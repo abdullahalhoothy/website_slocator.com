@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, User } from 'lucide-react';
 import { MAIN_NAVIGATION } from '../../config/navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import type { TFunction } from 'i18next';
 
 // Define a proper interface for subItem instead of using 'any'
 interface SubMenuItemProps {
@@ -14,8 +15,8 @@ interface SubMenuItemProps {
   icon?: string;
 }
 
-// Ensure the component accepts the defined interface
-const SubMenuItem = ({ subItem, t }: { subItem: SubMenuItemProps; t: (k: string, d?: string) => string }) => (
+// Ensure the component accepts the defined interface and uses TFunction
+const SubMenuItem = ({ subItem, t }: { subItem: SubMenuItemProps; t: TFunction }) => (
   <li className={subItem.isHeading ? "mb-2 mt-1 first:mt-0" : ""}>
     {subItem.isHeading ? (
       <div className="flex items-center gap-2 pb-3 mb-1 border-b border-slate-100">
@@ -34,7 +35,7 @@ const SubMenuItem = ({ subItem, t }: { subItem: SubMenuItemProps; t: (k: string,
 );
 
 export const Header: React.FC = () => {
-  const { t, i18n } = useTranslation(); // Note: Changed to use default namespace or ensure 'landing' is correct in your setup
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const isRTL = i18n.dir() === 'rtl';
 
@@ -122,6 +123,38 @@ export const Header: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu - Added to fix the mobile menu issue */}
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-200 shadow-lg px-4 py-6 flex flex-col gap-6 z-50">
+          <nav className="flex flex-col gap-3">
+            {MAIN_NAVIGATION.map((item) => (
+              <Link 
+                key={item.id} 
+                to={item.path} 
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-[16px] font-medium text-slate-700 pb-3 border-b border-slate-50 ${isRTL ? 'text-right' : 'text-left'}`}
+              >
+                {t(item.translationKey)}
+              </Link>
+            ))}
+            <Link to="/services" onClick={() => setIsMenuOpen(false)} className={`text-[16px] font-medium text-slate-700 pb-3 border-b border-slate-50 ${isRTL ? 'text-right' : 'text-left'}`}>
+              {t('header.nav.services', 'Services')}
+            </Link>
+          </nav>
+          <div className="flex flex-col gap-4 mt-2">
+            <div className={`self-start ${isRTL ? 'ml-auto mr-0' : ''}`}>
+              <LanguageSwitcher />
+            </div>
+            <a href="https://s-locator.northernacs.com/" className="text-center font-medium text-slate-600 border border-slate-300 py-3 rounded-lg hover:border-[#00609c] hover:text-[#00609c] transition-all">
+              {t('header.login', 'Login')}
+            </a>
+            <a href="https://s-locator.northernacs.com/" className="text-center font-medium bg-[#00609c] text-white py-3 rounded-lg hover:bg-[#004d7d] transition-all shadow-sm">
+              {t('header.startNow', 'Start now')}
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
