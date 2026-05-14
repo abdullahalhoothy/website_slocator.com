@@ -4,7 +4,6 @@ import {
   X,
   Database,
   Map,
-  FileText,
   Route as RouteIcon,
   TrendingUp,
   Network,
