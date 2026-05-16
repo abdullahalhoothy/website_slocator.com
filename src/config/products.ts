@@ -1,10 +1,10 @@
 export interface ProductCardConfig {
-  id: string;
-  translationKey: string;
-  imagePath: string;
-  ctaPath: string;
-  moreDetailsPath: string;
-  theme: 'blue' | 'indigo';
+  id: string
+  translationKey: string
+  imagePath: string
+  ctaPath: string
+  moreDetailsPath: string
+  theme: 'blue' | 'indigo'
 }
 
 export const PRODUCTS_CONFIG: ProductCardConfig[] = [
@@ -24,4 +24,4 @@ export const PRODUCTS_CONFIG: ProductCardConfig[] = [
     moreDetailsPath: '/territory-optimization',
     theme: 'indigo',
   },
-];
+]
