@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Car, Building2, ShoppingCart, Pill, Monitor, Stethoscope, Factory } from 'lucide-react'
 
 export const Customers: React.FC = () => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation('landing')
   const isRTL = i18n.dir() === 'rtl'
 
   const categories = [

@@ -1,17 +1,7 @@
 export interface NavItem {
   id: string
   translationKey: string
-  path: string
-  hasSubmenu?: boolean
-  isHeading?: boolean
-  icon?: string
-  submenu?: NavItem[]
-}
-
-export interface NavItem {
-  id: string
-  translationKey: string
-  path: string
+  path?: string
   hasSubmenu?: boolean
   isHeading?: boolean
   icon?: string
@@ -22,13 +12,11 @@ export const MAIN_NAVIGATION: NavItem[] = [
   {
     id: 'products',
     translationKey: 'header.nav.products',
-    path: '#',
     hasSubmenu: true,
     submenu: [
       {
         id: 'heading-route-planner',
         translationKey: 'header.nav.headingRoutePlanner',
-        path: '#',
         isHeading: true,
         icon: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238A2BE2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21'/%3E%3Cline x1='9' y1='3' x2='9' y2='18'/%3E%3Cline x1='15' y1='6' x2='15' y2='21'/%3E%3C/svg%3E",
       },
@@ -44,14 +32,13 @@ export const MAIN_NAVIGATION: NavItem[] = [
       },
       {
         id: 'faq-route-planner',
-        translationKey: 'FAQ',
+        translationKey: 'header.nav.faq',
         path: '/route-planner/faq',
       },
 
       {
         id: 'heading-territory-optimization',
         translationKey: 'header.nav.headingTerritoryOpt',
-        path: '#',
         isHeading: true,
         icon: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23489E46' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'/%3E%3Cpolyline points='2 17 12 22 22 17'/%3E%3Cpolyline points='2 12 12 17 22 12'/%3E%3C/svg%3E",
       },
@@ -81,7 +68,6 @@ export const MAIN_NAVIGATION: NavItem[] = [
   {
     id: 'pricing',
     translationKey: 'header.nav.pricing',
-    path: '#',
     hasSubmenu: true,
     submenu: [
       {
@@ -91,7 +77,7 @@ export const MAIN_NAVIGATION: NavItem[] = [
       },
       {
         id: 'roi-calculator',
-        translationKey: 'ROI calculator',
+        translationKey: 'header.nav.roiCalculator',
         path: '/roi',
       },
     ],

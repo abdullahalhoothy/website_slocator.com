@@ -10,7 +10,7 @@ import type { TFunction } from 'i18next'
 interface SubMenuItemProps {
   id: string
   translationKey: string
-  path: string
+  path?: string
   isHeading?: boolean
   icon?: string
 }
@@ -27,7 +27,7 @@ const SubMenuItem = ({ subItem, t }: { subItem: SubMenuItemProps; t: TFunction }
       </div>
     ) : (
       <Link
-        to={subItem.path}
+        to={subItem.path ?? '/'}
         className="block py-2.5 text-[14.5px] text-[#74a1bb] hover:text-[#00609c] hover:font-medium transition-colors"
       >
         {t(subItem.translationKey)}
@@ -39,6 +39,7 @@ const SubMenuItem = ({ subItem, t }: { subItem: SubMenuItemProps; t: TFunction }
 export const Header: React.FC = () => {
   const { t, i18n } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const [openSubmenuId, setOpenSubmenuId] = useState<string | null>(null)
   const isRTL = i18n.dir() === 'rtl'
 
   return (
@@ -84,51 +85,78 @@ export const Header: React.FC = () => {
             {/* Main Navigation */}
             <nav>
               <ul className="flex items-center gap-8">
-                {MAIN_NAVIGATION.map(item => (
-                  <li key={item.id} className="group relative">
-                    <Link
-                      to={item.path}
-                      className="flex items-center gap-1 text-[15px] font-medium text-slate-600 group-hover:text-[#00609c] transition-colors py-2"
+                {MAIN_NAVIGATION.map(item => {
+                  const isOpen = openSubmenuId === item.id
+                  const labelClasses =
+                    'flex items-center gap-1 text-[15px] font-medium text-slate-600 group-hover:text-[#00609c] focus-visible:text-[#00609c] focus-visible:outline-none transition-colors py-2'
+                  return (
+                    <li
+                      key={item.id}
+                      className="group relative"
+                      onMouseEnter={() => item.hasSubmenu && setOpenSubmenuId(item.id)}
+                      onMouseLeave={() => item.hasSubmenu && setOpenSubmenuId(null)}
                     >
-                      {t(item.translationKey)}
-                      {item.hasSubmenu && (
-                        <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#00609c] transition-transform duration-300 group-hover:rotate-180" />
+                      {item.hasSubmenu ? (
+                        <button
+                          type="button"
+                          aria-haspopup="menu"
+                          aria-expanded={isOpen}
+                          onClick={() => setOpenSubmenuId(isOpen ? null : item.id)}
+                          onKeyDown={e => {
+                            if (e.key === 'Escape') setOpenSubmenuId(null)
+                          }}
+                          className={labelClasses}
+                        >
+                          {t(item.translationKey)}
+                          <ChevronDown
+                            className={`w-3.5 h-3.5 text-slate-400 group-hover:text-[#00609c] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                          />
+                        </button>
+                      ) : (
+                        <Link to={item.path ?? '/'} className={labelClasses}>
+                          {t(item.translationKey)}
+                        </Link>
                       )}
-                    </Link>
 
-                    {/* Mega Menu Dropdown */}
-                    {item.hasSubmenu && item.submenu && (
-                      <div
-                        className={`absolute top-full ${isRTL ? 'right-0' : 'left-0'} pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 translate-y-2 group-hover:translate-y-0`}
-                      >
-                        <div className="bg-white border border-slate-100 shadow-xl rounded-xl p-5 flex">
-                          {item.id === 'products' ? (
-                            <div className="flex gap-8">
-                              <ul className="flex flex-col w-[260px]">
-                                {item.submenu.slice(0, 4).map((subItem: SubMenuItemProps) => (
+                      {/* Mega Menu Dropdown */}
+                      {item.hasSubmenu && item.submenu && (
+                        <div
+                          role="menu"
+                          className={`absolute top-full ${isRTL ? 'right-0' : 'left-0'} pt-2 transition-all duration-300 z-50 ${
+                            isOpen
+                              ? 'opacity-100 visible translate-y-0'
+                              : 'opacity-0 invisible translate-y-2'
+                          } group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0`}
+                        >
+                          <div className="bg-white border border-slate-100 shadow-xl rounded-xl p-5 flex">
+                            {item.id === 'products' ? (
+                              <div className="flex gap-8">
+                                <ul className="flex flex-col w-[260px]">
+                                  {item.submenu.slice(0, 4).map((subItem: SubMenuItemProps) => (
+                                    <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
+                                  ))}
+                                </ul>
+                                <ul
+                                  className={`flex flex-col w-[260px] border-slate-100 ${isRTL ? 'border-r pr-8' : 'border-l pl-8'}`}
+                                >
+                                  {item.submenu.slice(4).map((subItem: SubMenuItemProps) => (
+                                    <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
+                                  ))}
+                                </ul>
+                              </div>
+                            ) : (
+                              <ul className="flex flex-col w-[240px]">
+                                {item.submenu.map((subItem: SubMenuItemProps) => (
                                   <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
                                 ))}
                               </ul>
-                              <ul
-                                className={`flex flex-col w-[260px] border-slate-100 ${isRTL ? 'border-r pr-8' : 'border-l pl-8'}`}
-                              >
-                                {item.submenu.slice(4).map((subItem: SubMenuItemProps) => (
-                                  <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
-                                ))}
-                              </ul>
-                            </div>
-                          ) : (
-                            <ul className="flex flex-col w-[240px]">
-                              {item.submenu.map((subItem: SubMenuItemProps) => (
-                                <SubMenuItem key={subItem.id} subItem={subItem} t={t} />
-                              ))}
-                            </ul>
-                          )}
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </li>
-                ))}
+                      )}
+                    </li>
+                  )
+                })}
               </ul>
             </nav>
           </div>
@@ -146,16 +174,42 @@ export const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-200 shadow-lg px-4 py-6 flex flex-col gap-6 z-50">
           <nav className="flex flex-col gap-3">
-            {MAIN_NAVIGATION.map(item => (
-              <Link
-                key={item.id}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`text-[16px] font-medium text-slate-700 pb-3 border-b border-slate-50 ${isRTL ? 'text-right' : 'text-left'}`}
-              >
-                {t(item.translationKey)}
-              </Link>
-            ))}
+            {MAIN_NAVIGATION.map(item =>
+              item.hasSubmenu ? (
+                <div
+                  key={item.id}
+                  className={`text-[16px] font-semibold text-slate-700 pb-3 border-b border-slate-50 ${isRTL ? 'text-right' : 'text-left'}`}
+                >
+                  {t(item.translationKey)}
+                  {item.submenu && (
+                    <ul className="mt-2 flex flex-col gap-2 font-normal text-[14.5px]">
+                      {item.submenu
+                        .filter(sub => !sub.isHeading && sub.path)
+                        .map(sub => (
+                          <li key={sub.id}>
+                            <Link
+                              to={sub.path!}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="text-slate-600 hover:text-[#00609c]"
+                            >
+                              {t(sub.translationKey)}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.id}
+                  to={item.path ?? '/'}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`text-[16px] font-medium text-slate-700 pb-3 border-b border-slate-50 ${isRTL ? 'text-right' : 'text-left'}`}
+                >
+                  {t(item.translationKey)}
+                </Link>
+              ),
+            )}
             <Link
               to="/services"
               onClick={() => setIsMenuOpen(false)}

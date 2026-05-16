@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as LinkIcon, CheckCircle2 } from 'lucide-react'
 import { FadeIn } from '../components/animations/FadeIn'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
   <svg
@@ -30,6 +30,12 @@ export const BlogPost1: React.FC = () => {
   const { t, i18n } = useTranslation('landing')
   const isRTL = i18n.dir() === 'rtl'
   const [copied, setCopied] = useState(false)
+  const location = useLocation()
+
+  const shareUrl = () =>
+    typeof window === 'undefined'
+      ? location.pathname
+      : window.location.origin + location.pathname + location.search
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -37,7 +43,7 @@ export const BlogPost1: React.FC = () => {
 
   const handleCopy = (e: React.MouseEvent) => {
     e.preventDefault()
-    navigator.clipboard.writeText(window.location.href)
+    navigator.clipboard.writeText(shareUrl())
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -220,6 +226,8 @@ export const BlogPost1: React.FC = () => {
                 </h3>
                 <a
                   href="https://s-locator.northernacs.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-[#8A2BE2] hover:bg-[#6b21a8] text-white px-8 py-3.5 rounded-lg font-bold transition-colors shadow-md text-lg"
                 >
                   {t('blogPost1.content.ctaBoxBtn')}
@@ -241,7 +249,7 @@ export const BlogPost1: React.FC = () => {
           <h4 className="text-xl font-bold text-slate-800 mb-6">{t('blogPost.share.title')}</h4>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl())}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-6 py-2.5 rounded-full hover:border-[#0a66c2] hover:text-[#0a66c2] transition-colors font-medium shadow-sm"
@@ -249,7 +257,7 @@ export const BlogPost1: React.FC = () => {
               <LinkedinIcon className="w-4 h-4" /> {t('blogPost.share.linkedin')}
             </a>
             <a
-              href={`http://www.facebook.com/sharer.php?u=${window.location.href}`}
+              href={`http://www.facebook.com/sharer.php?u=${encodeURIComponent(shareUrl())}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-6 py-2.5 rounded-full hover:border-[#1877f2] hover:text-[#1877f2] transition-colors font-medium shadow-sm"

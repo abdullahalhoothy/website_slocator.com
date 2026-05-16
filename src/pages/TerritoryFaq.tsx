@@ -30,8 +30,14 @@ const FaqItem: React.FC<{ question: string; answer: string; isRTL: boolean }> = 
       >
         <div
           className={`text-slate-600 font-light leading-relaxed text-[16px] ${isRTL ? 'pl-8' : 'pr-8'}`}
-          dangerouslySetInnerHTML={{ __html: answer }}
-        />
+        >
+          {answer.split(/<br\s*\/?>/i).map((part, i, arr) => (
+            <React.Fragment key={i}>
+              {part}
+              {i < arr.length - 1 && <br />}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Header } from './components/layout/Header'
+import { Footer } from './components/layout/Footer'
 import LandingPage from './pages/LandingPage'
 import SalesRoutePlanner from './pages/SalesRoutePlanner'
 import Services from './pages/Services'
@@ -75,6 +76,7 @@ const App: React.FC = () => {
             />
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   )

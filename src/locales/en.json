@@ -20,7 +20,9 @@
       "headingTerritoryOpt": "S-Locator Territory Optimization",
       "toAdvantages": "Advantages",
       "toCostSavings": "Cost Savings",
-      "faqTerritoryOpt": "FAQ"
+      "faqTerritoryOpt": "FAQ",
+      "faq": "FAQ",
+      "roiCalculator": "ROI calculator"
     }
   },
   "hero": {
@@ -584,7 +586,6 @@
       "general": "General",
       "industries": "Industries",
       "security": "Security",
-      "access": "Access",
       "test": "Trial & Demo",
       "purchase": "Purchasing",
       "integrations": "Integrations"
@@ -628,20 +629,6 @@
         }
       },
       "security": {
-        "q1": {
-          "q": "Is there an offline version of S-Locator?",
-          "a": "S-Locator is an online-web-application with support for offline data storage. In situations without internet connection, your most important data is readily available offline in your browser."
-        },
-        "q2": {
-          "q": "Is S-Locator available 24/7?",
-          "a": "S-Locator is designed for high availability: Multiple redundant high performance servers with automatic load balancing, 24/7-Monitoring with automatic alarm, and redundant fiber connectivity."
-        },
-        "q3": {
-          "q": "Where is the login? How do I get my access link?",
-          "a": "If you already have a trial or a paid account, you can use the login button in the top right corner. If you are an employee, you receive your access link from your administrator."
-        }
-      },
-      "access": {
         "q1": {
           "q": "Is there an offline version of S-Locator?",
           "a": "S-Locator is an online-web-application with support for offline data storage. In situations without internet connection, your most important data is readily available offline in your browser."

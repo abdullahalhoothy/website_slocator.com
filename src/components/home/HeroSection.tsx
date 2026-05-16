@@ -16,6 +16,7 @@ export const HeroSection: React.FC = () => {
             <div className="relative w-full max-w-[480px]">
               <img
                 src="/assets/images/saudie man.png"
+                alt={t('hero.heroImageAlt', 'Field sales representative using S-Locator')}
                 className="w-full h-auto object-contain relative z-10"
               />
 

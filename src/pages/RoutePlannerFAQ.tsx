@@ -160,39 +160,6 @@ export const RoutePlannerFAQ: React.FC = () => {
       ],
     },
     {
-      categoryId: 'access',
-      title: t('routePlannerFaq.categories.access', 'Access'),
-      questions: [
-        {
-          q: t(
-            'routePlannerFaq.questions.access.q1.q',
-            'Is there an offline version of S-Locator?',
-          ),
-          a: t(
-            'routePlannerFaq.questions.access.q1.a',
-            'S-Locator is an online-web-application with support for offline data storage. In situations without internet connection, your most important data is readily available offline in your browser.',
-          ),
-        },
-        {
-          q: t('routePlannerFaq.questions.access.q2.q', 'Is S-Locator available 24/7?'),
-          a: t(
-            'routePlannerFaq.questions.access.q2.a',
-            'S-Locator is designed for high availability: Multiple redundant high performance servers with automatic load balancing, 24/7-Monitoring with automatic alarm, and redundant fiber connectivity.',
-          ),
-        },
-        {
-          q: t(
-            'routePlannerFaq.questions.access.q3.q',
-            'Where is the login? How do I get my access link?',
-          ),
-          a: t(
-            'routePlannerFaq.questions.access.q3.a',
-            'If you already have a trial or a paid account, you can use the login button in the top right corner. If you are an employee, you receive your access link from your administrator.',
-          ),
-        },
-      ],
-    },
-    {
       categoryId: 'test',
       title: t('routePlannerFaq.categories.test', 'Test and demo'),
       questions: [

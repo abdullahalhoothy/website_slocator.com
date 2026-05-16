@@ -33,57 +33,63 @@ export const Services: React.FC = () => {
     {
       id: 'datacheck',
       icon: Database,
-      title: t('services.grid.datacheck', 'فحص البيانات'),
-      shortDesc: t('services.grid.datacheckDesc', 'ضمان توافق بياناتك'),
+      title: t('services.grid.datacheck', 'Data Check'),
+      shortDesc: t('services.grid.datacheckDesc', 'Ensure your data is compatible'),
       fullDesc: t(
         'services.desc.datacheck',
-        'في ورشة العمل هذه عبر الإنترنت، نقوم معًا بتحليل البيانات التي تقوم بتصديرها من نظام CRM/ERP الخاص بك. نقدم تلميحات واقتراحات للتحسين لضمان التوافق مع S-Locator والاكتمال العام لتخطيط مسار فعال.',
+        'In this online workshop, we analyze together the data you export from your CRM/ERP system. We provide hints and suggestions for improvement to ensure compatibility with S-Locator and overall completeness for efficient route planning.',
       ),
       leftCol: [
         {
-          label: t('services.labels.target', 'الجمهور المستهدف'),
-          text: t('services.datacheck.target', 'إدارة IT/CRM وإدارة مبيعات الخدمة الميدانية'),
+          label: t('services.labels.target', 'Target Audience'),
+          text: t(
+            'services.datacheck.target',
+            'IT/CRM management and field service sales management',
+          ),
         },
         {
-          label: t('services.labels.topics', 'المواضيع'),
+          label: t('services.labels.topics', 'Topics'),
           text: t(
             'services.datacheck.topics',
-            'تحليل الملفات المصدرة، مراجعة وتحرير تعريفات سير العمل الخاصة بك، الإجابة على أسئلتك حول تنسيقات بيانات S-Locator.',
+            'Analyzing exported files, reviewing and editing your workflow definitions, answering your questions about S-Locator data formats.',
           ),
         },
         {
-          label: t('services.grid.datacheck', 'فحص البيانات'),
+          label: t('services.grid.datacheck', 'Data Check'),
           text: t(
             'services.datacheck.list',
-            'توفر الحقول الضرورية، توفر الحقول الموصى بها، أسماء الحقول الفريدة، جودة العنوان، عدد السجلات، التشفير والهروب، النطاقات والقيم، أجزاء البيانات غير الضرورية',
+            'Availability of required fields, availability of recommended fields, unique field names, address quality, record count, encoding and escaping, ranges and values, unnecessary data fragments',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
-          text: t('services.datacheck.participation', 'عبر اجتماع عبر الإنترنت'),
+          label: t('services.labels.participation', 'Participation method'),
+          text: t('services.datacheck.participation', 'Via online meeting'),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.datacheck.duration', 'حوالي ساعة واحدة'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.datacheck.duration', 'Approximately one hour'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'),
+          label: t('services.labels.prepare', 'Preparation / Preliminary work'),
           text: t(
             'services.datacheck.prepare',
-            'قم بتكوين سير عمل تصدير قابل للتكرار في نظام CRM/ERP الخاص بك. يجب أن يصدر هذا جميع بيانات العملاء والمستخدمين ذات الصلة إلى ملفات CSV أو Excel. أرسل لنا هذه البيانات مسبقًا.',
+            'Set up a repeatable export workflow in your CRM/ERP system. It should export all relevant customer and user data to CSV or Excel files. Send us this data in advance.',
           ),
         },
         {
-          label: t('services.labels.exclusive', 'حصرية'),
-          text: t('services.datacheck.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.'),
+          label: t('services.labels.exclusive', 'Exclusive'),
+          text: t(
+            'services.datacheck.exclusive',
+            'The workshop is held exclusively and individually for you.',
+          ),
         },
         {
-          label: t('services.labels.procedure', 'الإجراءات'),
+          label: t('services.labels.procedure', 'Procedure'),
           text: t(
             'services.datacheck.procedure',
-            'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت. خلال ورشة العمل، نتصل بك أو تتصل بمكالمة جماعية إذا كان المشاركون في أكثر من موقع.',
+            'After ordering and scheduling, you will receive a link to the online meeting. During the workshop we call you, or you join via group call if participants are at more than one location.',
           ),
         },
       ],
@@ -91,71 +97,74 @@ export const Services: React.FC = () => {
     {
       id: 'setupworkshop',
       icon: Settings,
-      title: t('services.grid.setup', 'ورشة الإعداد'),
-      shortDesc: t('services.grid.setupDesc', 'تجهيز وبدء العمل مع S-Locator'),
+      title: t('services.grid.setup', 'Setup Workshop'),
+      shortDesc: t('services.grid.setupDesc', 'Get ready and start working with S-Locator'),
       fullDesc: t(
         'services.desc.setup',
-        'في ورشة العمل هذه المكونة من جزأين عبر الإنترنت، ستقوم أولاً بإعداد بيانات CRM/ERP الخاصة بك للاستيراد وتحديد المعلمات العامة، ثم سنساعدك في تكوين S-Locator وملئه ببيانات عملائك.',
+        'In this two-part online workshop, you will first prepare your CRM/ERP data for import and set general parameters, then we will help you configure S-Locator and populate it with your customer data.',
       ),
       leftCol: [
         {
-          label: t('services.labels.target', 'الجمهور المستهدف'),
-          text: t('services.setup.target', 'مدير المبيعات الخارجية ومسؤولو تكنولوجيا المعلومات'),
+          label: t('services.labels.target', 'Target Audience'),
+          text: t('services.setup.target', 'Outside sales managers and IT administrators'),
         },
         {
-          label: t('services.setup.topics1Label', 'المواضيع الجزء 1 - التحضير'),
+          label: t('services.setup.topics1Label', 'Topics Part 1 — Preparation'),
           text: t(
             'services.setup.topics1',
-            'تحليل البيانات المصدرة، مراجعة وتحرير تعريف سير العمل الخاص بك، جلسة أسئلة وأجوبة، ومناقشة أولية للجزء 2 - حوالي ساعة واحدة.',
+            'Analyzing the exported data, reviewing and editing your workflow definition, Q&A session, and a preliminary discussion of Part 2 — approximately one hour.',
           ),
         },
         {
-          label: t('services.setup.topics2Label', 'المواضيع الجزء 2 - التنفيذ'),
+          label: t('services.setup.topics2Label', 'Topics Part 2 — Implementation'),
           text: t(
             'services.setup.topics2',
-            'إدارة المستخدمين، إعداد والتحقق من جودة بيانات العملاء، تحديد استراتيجية الزيارة الخاصة بك، تعيين معلمات تخطيط المسار، تكوين البرنامج، حقول إضافية للعملاء وتقارير الزيارة - حوالي ساعتين.',
+            'User management, setup and quality check of customer data, defining your visit strategy, setting route-planning parameters, software configuration, additional customer and visit-report fields — approximately two hours.',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
-          text: t('services.setup.participation', 'عبر اجتماع عبر الإنترنت'),
+          label: t('services.labels.participation', 'Participation method'),
+          text: t('services.setup.participation', 'Via online meeting'),
         },
         {
-          label: t('services.labels.prerequisite', 'المتطلبات الأساسية'),
+          label: t('services.labels.prerequisite', 'Prerequisites'),
           text: t(
             'services.setup.prerequisite',
-            'تراخيص مستخدم S-Locator المشتراة من المتجر عبر الإنترنت.',
+            'S-Locator user licenses purchased from the online store.',
           ),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.setup.duration', 'حوالي 3 ساعات'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.setup.duration', 'Approximately 3 hours'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'),
+          label: t('services.labels.prepare', 'Preparation / Preliminary work'),
           text: t(
             'services.setup.prepare',
-            'قم بإعداد جميع بيانات العملاء والمستخدمين ذات الصلة كملف Excel أو CSV. مطلوب: اسم العميل، العنوان الكامل ورقم المرجع الفريد، بالإضافة إلى رقم المرجع الفريد للموظف.',
+            'Prepare all relevant customer and user data as an Excel or CSV file. Required: customer name, full address and unique reference number, as well as a unique reference number for each employee.',
           ),
         },
         {
-          label: t('services.labels.exclusive', 'حصرية'),
-          text: t('services.setup.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.'),
+          label: t('services.labels.exclusive', 'Exclusive'),
+          text: t(
+            'services.setup.exclusive',
+            'The workshop is held exclusively and individually for you.',
+          ),
         },
         {
-          label: t('services.labels.procedure', 'الإجراءات'),
+          label: t('services.labels.procedure', 'Procedure'),
           text: t(
             'services.setup.procedure',
-            'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت. خلال ورشة العمل، نتصل بك أو تتصل بمكالمة جماعية.',
+            'After ordering and scheduling, you will receive a link to the online meeting. During the workshop we call you, or you join via group call.',
           ),
         },
         {
-          label: t('services.setup.optionalLabel', 'مواضيع اختيارية'),
+          label: t('services.setup.optionalLabel', 'Optional Topics'),
           text: t(
             'services.setup.optional',
-            'واجهة برمجة التطبيقات للاستيراد/التصدير، إعداد Dynamics CRM، إعداد Salesforce',
+            'Import/export API, Dynamics CRM setup, Salesforce setup',
           ),
         },
       ],
@@ -163,63 +172,63 @@ export const Services: React.FC = () => {
     {
       id: 'usertraining',
       icon: Users,
-      title: t('services.grid.training', 'تدريب المستخدمين'),
-      shortDesc: t('services.grid.trainingDesc', 'تعلم الاستخدام اليومي للنظام'),
+      title: t('services.grid.training', 'User Training'),
+      shortDesc: t('services.grid.trainingDesc', 'Learn daily use of the system'),
       fullDesc: t(
         'services.desc.training',
-        'خلال تدريب المستخدمين عبر الإنترنت، يتعلم مندوبوك الميدانيون كيفية استخدام S-Locator بفعالية كل يوم لتخطيط المسارات والمواعيد والإبلاغ عن المكالمات.',
+        'During the online user training, your field reps learn how to use S-Locator effectively every day for route planning, appointments, and call reporting.',
       ),
       leftCol: [
         {
-          label: t('services.labels.target', 'الجمهور المستهدف'),
+          label: t('services.labels.target', 'Target Audience'),
           text: t(
             'services.training.target',
-            'المندوبون الميدانيون، فريق دعم تكنولوجيا المعلومات، الإدارة الميدانية وإدارة المبيعات',
+            'Field reps, IT support team, field management and sales management',
           ),
         },
         {
-          label: t('services.labels.topics', 'المواضيع'),
+          label: t('services.labels.topics', 'Topics'),
           text: t(
             'services.training.topics',
-            'تسجيل الدخول، واجهة المستخدم، تخطيط المسار، معلمات التخطيط، المواعيد، العمل من خلال مسار اليوم، الإبلاغ عن المكالمات، إدارة العملاء، الإحصائيات، مزامنة البيانات.',
+            'Login, user interface, route planning, planning parameters, appointments, working through the day’s route, call reporting, customer management, statistics, data synchronization.',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
+          label: t('services.labels.participation', 'Participation method'),
           text: t(
             'services.training.participation',
-            'عبر اجتماع عبر الإنترنت. الاتصال ممكن من مواقع متعددة، بحد أقصى 25 مشاركًا.',
+            'Via online meeting. Connection possible from multiple locations, up to 25 participants.',
           ),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.training.duration', 'حوالي ساعتين'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.training.duration', 'Approximately two hours'),
         },
         {
-          label: t('services.training.optionalLabel', 'اختياري'),
-          text: t('services.training.optional', 'تسجيل فيديو للاستخدام الداخلي'),
+          label: t('services.training.optionalLabel', 'Optional'),
+          text: t('services.training.optional', 'Video recording for internal use'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.prerequisite', 'المتطلبات الأساسية'),
+          label: t('services.labels.prerequisite', 'Prerequisites'),
           text: t(
             'services.training.prerequisite',
-            'تراخيص مستخدم S-Locator، وإنشاء المستخدمين وبيانات العملاء المستوردة بالفعل. نوصي بالمشاركة السابقة في ورشة عمل الإعداد.',
+            'S-Locator user licenses, with users created and customer data already imported. We recommend prior participation in the Setup Workshop.',
           ),
         },
         {
-          label: t('services.labels.exclusive', 'حصرية'),
+          label: t('services.labels.exclusive', 'Exclusive'),
           text: t(
             'services.training.exclusive',
-            'يتم تقديم تدريب المستخدمين حصريًا وبشكل فردي لك.',
+            'User training is delivered exclusively and individually for you.',
           ),
         },
         {
-          label: t('services.labels.procedure', 'الإجراءات'),
+          label: t('services.labels.procedure', 'Procedure'),
           text: t(
             'services.training.procedure',
-            'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.',
+            'After ordering and scheduling, you will receive a link to the online meeting.',
           ),
         },
       ],
@@ -227,42 +236,42 @@ export const Services: React.FC = () => {
     {
       id: 'qasession',
       icon: MessageCircleQuestion,
-      title: t('services.grid.qa', 'جلسة الأسئلة والأجوبة'),
-      shortDesc: t('services.grid.qaDesc', 'الإجابة على أسئلتك المفتوحة'),
+      title: t('services.grid.qa', 'Q&A Session'),
+      shortDesc: t('services.grid.qaDesc', 'Answering your open questions'),
       fullDesc: t(
         'services.desc.qa',
-        'في جلسة واحدة أو أكثر، يحصل المندوبون الميدانيون على إجابات لأسئلتهم. يتم توفير نصائح إضافية حول سهولة استخدام S-Locator.',
+        'In one or more sessions, field reps get answers to their questions. Additional tips on the ease of use of S-Locator are provided.',
       ),
       leftCol: [
         {
-          label: t('services.qa.timeLabel', 'الوقت'),
+          label: t('services.qa.timeLabel', 'Timing'),
           text: t(
             'services.qa.time',
-            'الجلسة الأولى حوالي أسبوع إلى أسبوعين بعد بدء مشروع S-Locator.',
+            'The first session takes place about one to two weeks after the S-Locator project begins.',
           ),
         },
         {
-          label: t('services.labels.target', 'الجمهور المستهدف'),
+          label: t('services.labels.target', 'Target Audience'),
           text: t(
             'services.qa.target',
-            'المندوبون الميدانيون، فريق دعم تكنولوجيا المعلومات، الإدارة الميدانية وإدارة المبيعات',
+            'Field reps, IT support team, field management and sales management',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
-          text: t('services.qa.participation', 'عن طريق مكالمة جماعية'),
+          label: t('services.labels.participation', 'Participation method'),
+          text: t('services.qa.participation', 'Via group call'),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.qa.duration', 'حوالي 1-2 ساعة لكل جلسة'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.qa.duration', 'Approximately 1–2 hours per session'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.topics', 'المواضيع'),
+          label: t('services.labels.topics', 'Topics'),
           text: t(
             'services.qa.topics',
-            'سيتم مناقشة وحل أي مشاكل وأسئلة. بناءً على الملاحظات، يتم تحسين التكوين باستمرار. سيتم مناقشة الملاحظات الإيجابية أيضًا لتبادل النصائح.',
+            'Any problems and questions will be discussed and resolved. Based on the feedback, the configuration is continuously improved. Positive feedback will also be discussed to share tips.',
           ),
         },
       ],
@@ -270,140 +279,140 @@ export const Services: React.FC = () => {
     {
       id: 'starterpack',
       icon: Rocket,
-      title: t('services.grid.starter', 'الباقة الابتدائية'),
-      shortDesc: t('services.grid.starterDesc', 'بداية سريعة لما يصل إلى 9 مستخدمين'),
+      title: t('services.grid.starter', 'Starter Pack'),
+      shortDesc: t('services.grid.starterDesc', 'Quick start for up to 9 users'),
       fullDesc: t(
         'services.desc.starter',
-        'ورشة العمل هذه المكونة من ثلاثة أجزاء والمصممة لـ 2-9 أشخاص ستجعل فريق المبيعات الميداني الخاص بك يعمل بسرعة وفعالية.',
+        'This three-part workshop, designed for 2–9 people, will get your field sales team up and running quickly and effectively.',
       ),
       leftCol: [
         {
-          label: t('services.starter.target12Label', 'الجمهور المستهدف، الأجزاء 1+2'),
-          text: t('services.starter.target12', 'إدارة المبيعات الميدانية وإدارة IT/CRM'),
+          label: t('services.starter.target12Label', 'Target audience, Parts 1+2'),
+          text: t('services.starter.target12', 'Field sales management and IT/CRM management'),
         },
         {
-          label: t('services.starter.topics1Label', 'مواضيع الجزء 1 - التحضير'),
+          label: t('services.starter.topics1Label', 'Part 1 topics — Preparation'),
           text: t(
             'services.starter.topics1',
-            'تحليل البيانات المصدرة، مراجعة وتحرير تعريف سير العمل الخاص بك، جلسة أسئلة وأجوبة - حوالي ساعة واحدة.',
+            'Analyzing the exported data, reviewing and editing your workflow definition, Q&A session — approximately one hour.',
           ),
         },
         {
-          label: t('services.starter.topics2Label', 'مواضيع الجزء 2 - التنفيذ'),
+          label: t('services.starter.topics2Label', 'Part 2 topics — Implementation'),
           text: t(
             'services.starter.topics2',
-            'إدارة المستخدمين، إعداد بيانات العملاء، تحديد استراتيجية الزيارة، معلمات تخطيط المسار، تكوين البرنامج - حوالي ساعة واحدة.',
+            'User management, customer data setup, defining the visit strategy, route-planning parameters, software configuration — approximately one hour.',
           ),
         },
         {
-          label: t('services.starter.target3Label', 'الجمهور المستهدف، الجزء 3'),
-          text: t(
-            'services.starter.target3',
-            'مندوبو المبيعات، فريق دعم تكنولوجيا المعلومات، مديرو المبيعات',
-          ),
+          label: t('services.starter.target3Label', 'Target audience, Part 3'),
+          text: t('services.starter.target3', 'Sales reps, IT support team, sales managers'),
         },
         {
-          label: t('services.starter.topics3Label', 'مواضيع الجزء 3'),
+          label: t('services.starter.topics3Label', 'Part 3 topics'),
           text: t(
             'services.starter.topics3',
-            'تسجيل الدخول، واجهة المستخدم، تخطيط المسار، المواعيد، الإبلاغ عن المكالمات، إدارة العملاء - حوالي ساعة واحدة.',
+            'Login, user interface, route planning, appointments, call reporting, customer management — approximately one hour.',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
-          text: t('services.starter.participation', 'عبر اجتماع عبر الإنترنت'),
+          label: t('services.labels.participation', 'Participation method'),
+          text: t('services.starter.participation', 'Via online meeting'),
         },
         {
-          label: t('services.labels.prerequisite', 'المتطلبات الأساسية'),
+          label: t('services.labels.prerequisite', 'Prerequisites'),
           text: t(
             'services.starter.prerequisite',
-            'تراخيص مستخدم S-Locator المشتراة من المتجر عبر الإنترنت.',
+            'S-Locator user licenses purchased from the online store.',
           ),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.starter.duration', 'حوالي 3 ساعات في المجموع'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.starter.duration', 'Approximately 3 hours in total'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'),
+          label: t('services.labels.prepare', 'Preparation / Preliminary work'),
           text: t(
             'services.starter.prepare',
-            'قم بإعداد جميع بيانات العملاء والمستخدمين ذات الصلة كملف Excel أو CSV.',
+            'Prepare all relevant customer and user data as an Excel or CSV file.',
           ),
         },
         {
-          label: t('services.labels.exclusive', 'حصرية'),
-          text: t('services.starter.exclusive', 'ورش عمل حصرية مصممة خصيصًا لتلبية احتياجاتك.'),
+          label: t('services.labels.exclusive', 'Exclusive'),
+          text: t('services.starter.exclusive', 'Exclusive workshops tailored to your needs.'),
         },
         {
-          label: t('services.labels.procedure', 'الإجراءات'),
+          label: t('services.labels.procedure', 'Procedure'),
           text: t(
             'services.starter.procedure',
-            'بعد تقديم طلبك والاتفاق على الموعد، ستتلقى رابطًا للاجتماعات عبر الإنترنت.',
+            'After placing your order and agreeing on the date, you will receive a link to the online meetings.',
           ),
         },
         {
-          label: t('services.starter.optionalLabel', 'اختياري'),
-          text: t('services.starter.optional', 'تسجيل فيديو للاستخدام الداخلي'),
+          label: t('services.starter.optionalLabel', 'Optional'),
+          text: t('services.starter.optional', 'Video recording for internal use'),
         },
       ],
     },
     {
       id: 'dataexchange',
       icon: ArrowRightLeft,
-      title: t('services.grid.data', 'ورشة استيراد وتصدير البيانات'),
-      shortDesc: t('services.grid.dataDesc', 'أتمتة استيراد/تصدير البيانات'),
+      title: t('services.grid.data', 'Data Import & Export Workshop'),
+      shortDesc: t('services.grid.dataDesc', 'Automate data import/export'),
       fullDesc: t(
         'services.desc.data',
-        'في ورشة العمل هذه عبر الإنترنت، نعمل معك لتكوين نصوص لاستيراد وتصدير البيانات تلقائيًا. ستتلقى أيضًا نصائح حول الأتمتة.',
+        'In this online workshop, we work with you to configure scripts that import and export data automatically. You also get tips on automation.',
       ),
       leftCol: [
         {
-          label: t('services.labels.target', 'الجمهور المستهدف'),
-          text: t('services.data.target', 'مسؤولو IT/CRM'),
+          label: t('services.labels.target', 'Target Audience'),
+          text: t('services.data.target', 'IT/CRM administrators'),
         },
         {
-          label: t('services.labels.topics', 'المواضيع'),
+          label: t('services.labels.topics', 'Topics'),
           text: t(
             'services.data.topics',
-            'تنزيل نصوص تبادل البيانات، التحقق من الأذونات، إكمال تكوين S-Locator، إعداد النصوص، التنفيذ لأول مرة، نصائح للأتمتة',
+            'Downloading data-exchange scripts, checking permissions, completing S-Locator configuration, setting up the scripts, first-time execution, automation tips',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
-          text: t('services.data.participation', 'عبر اجتماع عبر الإنترنت'),
+          label: t('services.labels.participation', 'Participation method'),
+          text: t('services.data.participation', 'Via online meeting'),
         },
         {
-          label: t('services.labels.prerequisite', 'المتطلبات الأساسية'),
+          label: t('services.labels.prerequisite', 'Prerequisites'),
           text: t(
             'services.data.prerequisite',
-            'تراخيص مستخدم S-Locator. نوصي بالمشاركة السابقة في فحص البيانات وورشة عمل الإعداد.',
+            'S-Locator user licenses. We recommend prior participation in the Data Check and Setup workshops.',
           ),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.data.duration', 'حوالي ساعتين'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.data.duration', 'Approximately two hours'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'),
+          label: t('services.labels.prepare', 'Preparation / Preliminary work'),
           text: t(
             'services.data.prepare',
-            'قم بتسجيل الدخول كمسؤول على الكمبيوتر أو الخادم الذي يجب أن تُنفذ عليه نصوص تبادل البيانات.',
+            'Log in as administrator on the computer or server where the data-exchange scripts should be executed.',
           ),
         },
         {
-          label: t('services.labels.exclusive', 'حصرية'),
-          text: t('services.data.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.'),
+          label: t('services.labels.exclusive', 'Exclusive'),
+          text: t(
+            'services.data.exclusive',
+            'The workshop is held exclusively and individually for you.',
+          ),
         },
         {
-          label: t('services.labels.procedure', 'الإجراءات'),
+          label: t('services.labels.procedure', 'Procedure'),
           text: t(
             'services.data.procedure',
-            'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.',
+            'After ordering and scheduling, you will receive a link to the online meeting.',
           ),
         },
       ],
@@ -411,58 +420,64 @@ export const Services: React.FC = () => {
     {
       id: 'apidev',
       icon: Code,
-      title: t('services.grid.api', 'ورشة عمل مطوري API'),
-      shortDesc: t('services.grid.apiDesc', 'المبادئ الأساسية لواجهة S-Locator API'),
+      title: t('services.grid.api', 'API Developer Workshop'),
+      shortDesc: t('services.grid.apiDesc', 'Fundamentals of the S-Locator API'),
       fullDesc: t(
         'services.desc.api',
-        'في ورشة العمل هذه عبر الإنترنت نشرح المفاهيم الأساسية لواجهة برمجة تطبيقات S-Locator Anywhere ونجيب على أسئلتك.',
+        'In this online workshop we explain the core concepts of the S-Locator Anywhere API and answer your questions.',
       ),
       leftCol: [
         {
-          label: t('services.labels.target', 'الجمهور المستهدف'),
-          text: t('services.api.target', 'المطورون، مهندسو تكنولوجيا المعلومات'),
+          label: t('services.labels.target', 'Target Audience'),
+          text: t('services.api.target', 'Developers, IT engineers'),
         },
         {
-          label: t('services.labels.topics', 'المواضيع'),
+          label: t('services.labels.topics', 'Topics'),
           text: t(
             'services.api.topics',
-            'شرح المفاهيم الأساسية، نصائح للاستخدام، عرض وظائف API المطلوبة، ملاحظات حول معالجة الأخطاء',
+            'Explanation of core concepts, usage tips, walkthrough of the required API functions, notes on error handling',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
-          text: t('services.api.participation', 'عبر اجتماع عبر الإنترنت'),
+          label: t('services.labels.participation', 'Participation method'),
+          text: t('services.api.participation', 'Via online meeting'),
         },
         {
-          label: t('services.api.languagesLabel', 'اللغات'),
-          text: t('services.api.languages', 'الألمانية، الإنجليزية، العربية'),
+          label: t('services.api.languagesLabel', 'Languages'),
+          text: t('services.api.languages', 'German, English, Arabic'),
         },
         {
-          label: t('services.labels.prerequisite', 'المتطلبات الأساسية'),
-          text: t('services.api.prerequisite', 'حساب تجريبي نشط، أو ترخيص شريك أو ترخيص مشترى'),
+          label: t('services.labels.prerequisite', 'Prerequisites'),
+          text: t(
+            'services.api.prerequisite',
+            'An active trial account, a partner license, or a purchased license',
+          ),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.api.duration', 'ساعة واحدة على الأقل'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.api.duration', 'At least one hour'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'),
+          label: t('services.labels.prepare', 'Preparation / Preliminary work'),
           text: t(
             'services.api.prepare',
-            'توفير وصف موجز لحالة الاستخدام والتكنولوجيا المستخدمة لتمكيننا من التحضير',
+            'Provide a brief description of your use case and the technology used so that we can prepare',
           ),
         },
         {
-          label: t('services.labels.exclusive', 'حصرية'),
-          text: t('services.api.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.'),
+          label: t('services.labels.exclusive', 'Exclusive'),
+          text: t(
+            'services.api.exclusive',
+            'The workshop is held exclusively and individually for you.',
+          ),
         },
         {
-          label: t('services.labels.procedure', 'الإجراءات'),
+          label: t('services.labels.procedure', 'Procedure'),
           text: t(
             'services.api.procedure',
-            'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.',
+            'After ordering and scheduling, you will receive a link to the online meeting.',
           ),
         },
       ],
@@ -470,60 +485,63 @@ export const Services: React.FC = () => {
     {
       id: 'territory',
       icon: Map,
-      title: t('services.grid.territory', 'مقدمة في تخطيط المناطق'),
-      shortDesc: t('services.grid.territoryDesc', 'البدء مع إضافة تحسين المناطق'),
+      title: t('services.grid.territory', 'Introduction to Territory Planning'),
+      shortDesc: t(
+        'services.grid.territoryDesc',
+        'Get started with the territory optimization add-on',
+      ),
       fullDesc: t(
         'services.desc.territory',
-        'في ورشة العمل هذه عبر الإنترنت، سنرشدك خلال أول تحسين لمنطقتك ونعطيك نصائح وإرشادات حول كيفية تحقيق أقصى استفادة من تحسين مناطق S-Locator.',
+        'In this online workshop, we guide you through your first territory optimization and give you tips and guidelines on how to get the most out of S-Locator territory optimization.',
       ),
       leftCol: [
         {
-          label: t('services.labels.target', 'الجمهور المستهدف'),
-          text: t(
-            'services.territory.target',
-            'مدير المبيعات الخارجية ومسؤولو تكنولوجيا المعلومات',
-          ),
+          label: t('services.labels.target', 'Target Audience'),
+          text: t('services.territory.target', 'Outside sales managers and IT administrators'),
         },
         {
-          label: t('services.territory.contentsLabel', 'المحتويات'),
+          label: t('services.territory.contentsLabel', 'Contents'),
           text: t(
             'services.territory.contents',
-            'تحليل الوضع الحالي؛ تعيين عملاء محددين يدويًا؛ إعدادات التحسين التلقائي؛ تفسير النتائج؛ استخدام ميزة إعادة التخصيص',
+            'Analyzing the current situation; manually assigning specific customers; automatic optimization settings; interpreting the results; using the reassignment feature',
           ),
         },
         {
-          label: t('services.labels.participation', 'طريقة المشاركة'),
-          text: t('services.territory.participation', 'عبر اجتماع عبر الإنترنت'),
+          label: t('services.labels.participation', 'Participation method'),
+          text: t('services.territory.participation', 'Via online meeting'),
         },
         {
-          label: t('services.labels.prerequisite', 'المتطلبات الأساسية'),
+          label: t('services.labels.prerequisite', 'Prerequisites'),
           text: t(
             'services.territory.prerequisite',
-            'ترخيص تحسين المناطق نشط. نوصي بالمشاركة السابقة في ورشة عمل الإعداد.',
+            'An active Territory Optimization license. We recommend prior participation in the Setup Workshop.',
           ),
         },
         {
-          label: t('services.labels.duration', 'المدة الزمنية'),
-          text: t('services.territory.duration', 'حوالي ساعتين'),
+          label: t('services.labels.duration', 'Duration'),
+          text: t('services.territory.duration', 'Approximately two hours'),
         },
       ],
       rightCol: [
         {
-          label: t('services.labels.prepare', 'التحضير / العمل التمهيدي'),
+          label: t('services.labels.prepare', 'Preparation / Preliminary work'),
           text: t(
             'services.territory.prepare',
-            'فكر قليلاً في هدف تحسين منطقتك. هل تحتاج إلى إضافة أو إزالة أي مندوبين ميدانيين؟ أي من عملائك لا يمكن إعادة جدولته؟',
+            'Spend a little time thinking about the goal of your territory optimization. Do you need to add or remove any field reps? Which of your customers cannot be rescheduled?',
           ),
         },
         {
-          label: t('services.labels.exclusive', 'حصرية'),
-          text: t('services.territory.exclusive', 'تُعقد ورشة العمل حصريًا وبشكل فردي لك.'),
+          label: t('services.labels.exclusive', 'Exclusive'),
+          text: t(
+            'services.territory.exclusive',
+            'The workshop is held exclusively and individually for you.',
+          ),
         },
         {
-          label: t('services.labels.procedure', 'الإجراءات'),
+          label: t('services.labels.procedure', 'Procedure'),
           text: t(
             'services.territory.procedure',
-            'بعد الطلب وتحديد الموعد، ستتلقى رابطًا للاجتماع عبر الإنترنت.',
+            'After ordering and scheduling, you will receive a link to the online meeting.',
           ),
         },
       ],
@@ -537,12 +555,12 @@ export const Services: React.FC = () => {
       <section className="pt-20 pb-10 text-center">
         <div className="container mx-auto px-4 max-w-5xl">
           <h1 className="text-4xl lg:text-[44px] font-medium text-slate-800 mb-6">
-            {t('services.hero.title', 'خدماتنا')}
+            {t('services.hero.title', 'Our Services')}
           </h1>
           <h3 className="text-xl text-slate-600 font-light leading-relaxed max-w-4xl mx-auto">
             {t(
               'services.hero.subtitle',
-              'إطلاق سريع وناجح لنظام S-Locator – نحن نساعدك للوصول إلى هناك. استفد من خبرتنا التي اكتسبناها من خلال أكثر من 100 عملية إطلاق ناجحة كل عام.',
+              'A fast, successful S-Locator launch — we help you get there. Benefit from our experience gained through more than 100 successful rollouts every year.',
             )}
           </h3>
         </div>
@@ -574,7 +592,7 @@ export const Services: React.FC = () => {
           <p className="text-lg text-slate-600 mt-16 font-light">
             {t(
               'services.footerText',
-              'بالإضافة إلى ذلك، اقرأ 12 نصيحة لنشر S-Locator بنجاح في شركتك.',
+              'In addition, read 12 tips for rolling out S-Locator successfully in your company.',
             )}
           </p>
         </div>
@@ -632,8 +650,8 @@ export const Services: React.FC = () => {
 
                 <div className="mt-12 text-center">
                   <p className="text-[17px] text-slate-600 font-light leading-relaxed">
-                    {t('services.ctaOrder', 'اطلب')} {service.title}{' '}
-                    {t('services.ctaEmail', 'عبر إرسال بريد إلكتروني إلى')}{' '}
+                    {t('services.ctaOrder', 'Order')} {service.title}{' '}
+                    {t('services.ctaEmail', 'by sending an email to')}{' '}
                     <a
                       href="mailto:sales@s-locator.com"
                       className="text-[#00609c] hover:underline font-medium"
@@ -642,7 +660,7 @@ export const Services: React.FC = () => {
                     </a>{' '}
                     {t(
                       'services.ctaWeek',
-                      'مع تحديد الأسبوع (الأسابيع) المطلوبة. سنقوم بعدها بعرض المواعيد المتاحة لتختار منها.',
+                      'specifying the week(s) you would like. We will then offer you the available dates to choose from.',
                     )}
                   </p>
                 </div>
