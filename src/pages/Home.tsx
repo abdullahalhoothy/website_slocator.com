@@ -9,6 +9,8 @@ import {
   Network,
   CheckCircle2,
   ChevronUp,
+  MapPin,
+  FileText,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
@@ -88,21 +90,30 @@ export default function Home() {
   const isAr = i18n.language === 'ar'
   const [popupImage, setPopupImage] = useState<string | null>(null)
 
-  const [diagramZoom, setDiagramZoom] = useState(1)
+  const diagramContainerRef = useRef<HTMLDivElement>(null)
+  const [diagramScale, setDiagramScale] = useState(1)
+  const baseDiagramWidth = 1100
+  const baseDiagramHeight = 520
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1024) {
-        const calculatedZoom = window.innerWidth / 950
-        setDiagramZoom(Math.min(Math.max(calculatedZoom, 0.4), 1))
-      } else {
-        setDiagramZoom(1)
+    const observer = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        const containerWidth = entry.contentRect.width
+        const padding = 40
+
+        if (containerWidth < baseDiagramWidth + padding) {
+          setDiagramScale((containerWidth - padding) / baseDiagramWidth)
+        } else {
+          setDiagramScale(1)
+        }
       }
+    })
+
+    if (diagramContainerRef.current) {
+      observer.observe(diagramContainerRef.current)
     }
 
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
@@ -256,11 +267,7 @@ export default function Home() {
   }
 
   return (
-    <div
-      className="w-full overflow-hidden bg-white"
-      dir={isAr ? 'rtl' : 'ltr'}
-      style={{ zoom: '0.9' }}
-    >
+    <div className="w-full overflow-hidden bg-white" dir={isAr ? 'rtl' : 'ltr'}>
       <style>{`
         @keyframes scroll-marquee {
           0% { transform: translateX(0); }
@@ -274,13 +281,6 @@ export default function Home() {
         .animate-marquee:hover {
           animation-play-state: paused;
         }
-        .hide-scroll::-webkit-scrollbar {
-          height: 6px;
-        }
-        .hide-scroll::-webkit-scrollbar-thumb {
-          background-color: #cbd5e1;
-          border-radius: 10px;
-        }
         html {
           scroll-behavior: smooth;
         }
@@ -291,12 +291,12 @@ export default function Home() {
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-br from-[#e0f2fe] to-[#eff6ff] blur-[100px] opacity-80 pointer-events-none"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-tr from-[#dcfce7] to-[#f0fdf4] blur-[100px] opacity-80 pointer-events-none"></div>
 
-        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-stretch">
             <div
-              className={`flex flex-col justify-center items-start text-start ${isAr ? 'lg:pl-10' : 'lg:pr-10'}`}
+              className={`flex flex-col justify-center items-start text-start mt-4 lg:mt-0 py-10 w-full lg:w-[35%] shrink-0 ${isAr ? 'lg:pl-8' : 'lg:pr-8'}`}
             >
-              <div className="mb-8 mt-4">
+              <div className="mb-8">
                 <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-2.5 md:px-10 md:py-4 flex items-center justify-center gap-4 md:gap-8 shadow-lg w-max">
                   <span className="text-[#475569] font-black tracking-widest text-[9px] md:text-[11px] uppercase mt-0.5">
                     {t('poweredBy')}
@@ -305,114 +305,190 @@ export default function Home() {
                   <img
                     src="/assets/images/cropd_V1.png"
                     alt="Northern Analytics"
-                    className="h-10 md:h-14 lg:h-16 w-auto object-contain"
+                    className="h-10 md:h-14 w-auto object-contain"
                   />
                 </div>
               </div>
 
-              <h1 className="text-[#0f172a] text-[50px] md:text-[60px] lg:text-[75px] font-black tracking-tight mb-4 drop-shadow-sm">
+              <h1 className="text-[#0f172a] text-[40px] md:text-[50px] lg:text-[65px] font-black tracking-tight mb-4 drop-shadow-sm leading-none">
                 <span dir="ltr" className="inline-flex items-start">
                   S-Locator
-                  <sup className="text-2xl md:text-3xl lg:text-4xl text-[#38e54d] ml-1 mt-4">
+                  <sup className="text-xl md:text-2xl lg:text-3xl text-[#38e54d] ml-1 mt-3">
                     &reg;
                   </sup>
                 </span>
               </h1>
 
-              <h2 className="text-[#334155] text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-snug">
+              <h2 className="text-[#334155] text-xl md:text-2xl lg:text-3xl font-bold mb-6 leading-snug">
                 {t('heroNewSub')}
               </h2>
 
-              <p className="text-[#475569] text-lg md:text-xl leading-relaxed mb-10 max-w-2xl font-medium">
+              <p className="text-[#475569] text-base md:text-lg leading-relaxed mb-10 max-w-xl font-medium">
                 {t('heroNewDesc')}
               </p>
 
               <div>
                 <a
                   href="https://s-locator.northernacs.com/"
-                  className="inline-flex items-center justify-center bg-[#9b51e0] hover:bg-[#8645c4] text-white text-lg font-bold py-4 px-12 rounded-full shadow-[0_8px_20px_rgba(155,81,224,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(155,81,224,0.35)] w-full sm:w-auto"
+                  className="inline-flex items-center justify-center bg-[#9b51e0] hover:bg-[#8645c4] text-white text-base md:text-lg font-bold py-4 px-10 rounded-full shadow-[0_8px_20px_rgba(155,81,224,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(155,81,224,0.35)] w-full sm:w-auto"
                 >
                   {t('btnGetStartedNow')}
                 </a>
               </div>
             </div>
 
+            {/* الجزء الأيمن: المخطط الشجري بدون خلفية بيضاء */}
             <div
               id="main-diagram"
-              className="relative w-full bg-white/80 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-6 lg:p-10 overflow-x-auto hide-scroll touch-pan-x md:cursor-grab flex justify-center scroll-mt-24"
+              ref={diagramContainerRef}
+              className="relative w-full lg:w-[65%] h-full min-h-[500px] lg:min-h-[600px] flex justify-center items-center scroll-mt-24 overflow-hidden"
             >
               <div
-                className="min-w-[800px] w-full max-w-4xl flex flex-col items-center relative z-10 py-4 origin-top-left lg:origin-center"
-                style={{ zoom: diagramZoom }}
+                className="relative transition-all duration-100 ease-out flex justify-center"
+                style={{ height: `${baseDiagramHeight * diagramScale}px`, width: '100%' }}
               >
-                <div className="bg-white border-2 border-[#2b1055] text-[#2b1055] text-lg font-extrabold py-3.5 px-10 rounded-full shadow-md flex items-center gap-2 relative z-20">
-                  <Network size={24} />
-                  {t('nodeSlocator')}
-                </div>
-
-                <div className="w-[2px] h-10 bg-[#cbd5e1] z-0"></div>
-
                 <div
-                  className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#00628e] w-full max-w-[320px] cursor-pointer relative z-20"
-                  onClick={() => scrollToDetails('card-data')}
+                  className="absolute top-0 flex flex-col items-center origin-top transition-transform duration-100 ease-out"
+                  style={{
+                    width: `${baseDiagramWidth}px`,
+                    transform: `scale(${diagramScale})`,
+                  }}
                 >
-                  <div className="bg-blue-50 text-[#00628e] p-3 rounded-full mb-3">
-                    <Database size={28} />
+                  <div className="bg-white border-2 border-[#2b1055] text-[#2b1055] text-2xl font-extrabold py-4 px-12 rounded-full shadow-md flex items-center gap-3 relative z-20">
+                    <Network size={28} />
+                    S-Locator Core
                   </div>
-                  <h3 className="font-bold text-gray-800 text-lg leading-tight px-1">
-                    {t('trustedDataBank')}
-                  </h3>
-                </div>
 
-                <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 relative"></div>
+                  <div className="w-[2px] h-10 bg-[#cbd5e1] z-0"></div>
 
-                <div className="relative w-[85%] md:w-[75%] h-[2px] z-0 mt-0">
-                  <div className="absolute top-0 left-[16.66%] right-[16.66%] h-[2px] bg-[#cbd5e1]"></div>
-                </div>
+                  <div className="relative w-full h-[2px] z-0">
+                    <div className="absolute top-0 left-[165px] right-[165px] h-[2px] bg-[#cbd5e1]"></div>
+                  </div>
 
-                <div className="flex justify-between items-start w-[85%] md:w-[75%] relative z-20 mt-0">
-                  <div className="w-1/3 flex flex-col items-center relative">
-                    <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 mb-0"></div>
-                    <div
-                      className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#38e54d] w-[90%] cursor-pointer h-full"
-                      onClick={() => scrollToDetails('card-platform')}
-                    >
-                      <div className="bg-green-50 text-green-600 p-3 rounded-full mb-3">
-                        <Map size={24} />
+                  <div className="flex justify-between items-start w-full relative z-20 mt-0">
+                    <div className="w-[330px] shrink-0 flex flex-col items-center relative">
+                      <div className="w-[2px] h-10 bg-[#cbd5e1] z-0"></div>
+                      <div
+                        className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center justify-center text-center border-t-4 border-t-[#00628e] w-[310px] h-[140px] cursor-pointer hover:-translate-y-2 transition-transform"
+                        onClick={() => scrollToDetails('card-data')}
+                      >
+                        <div className="bg-blue-50 text-[#00628e] p-3 rounded-full mb-3">
+                          <Database size={30} />
+                        </div>
+                        <h3 className="font-bold text-gray-800 text-[16px] leading-tight px-1">
+                          Trust Data & Intelligence Service
+                        </h3>
                       </div>
-                      <h3 className="font-bold text-gray-800 text-sm md:text-base leading-tight">
-                        {t('nodePlatform')}
-                      </h3>
+
+                      <div className="w-[2px] h-[72px] bg-[#cbd5e1] z-0"></div>
+                      <div className="bg-white border border-gray-100 p-4 rounded-xl shadow-sm w-[310px] flex justify-center items-center h-[120px]">
+                        <div className="grid grid-cols-3 gap-5 opacity-80 mix-blend-multiply w-full justify-items-center items-center">
+                          <img
+                            src="/assets/images/general_authority_logo.svg"
+                            className="max-h-7"
+                            alt="GASTAT"
+                          />
+                          <img src="/assets/images/REGA_LOGO.svg" className="max-h-6" alt="REGA" />
+                          <img src="/assets/images/hrdf_logo.svg" className="max-h-7" alt="HRDF" />
+                          <img
+                            src="/assets/images/sakany_logo.svg"
+                            className="max-h-6"
+                            alt="Sakany"
+                          />
+                          <img
+                            src="/assets/images/Ministry_of_Justice_Logo.svg"
+                            className="max-h-7"
+                            alt="MOJ"
+                          />
+                          <img src="/assets/images/google.png" className="max-h-6" alt="Google" />
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="w-1/3 flex flex-col items-center relative">
-                    <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 mb-0"></div>
-                    <div
-                      className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#9b51e0] w-[90%] cursor-pointer h-full"
-                      onClick={() => scrollToDetails('card-report')}
-                    >
-                      <div className="bg-purple-50 text-purple-600 p-3 rounded-full mb-3">
-                        <TrendingUp size={24} />
+                    <div className="w-[330px] shrink-0 flex flex-col items-center relative">
+                      <div className="w-[2px] h-10 bg-[#cbd5e1] z-0"></div>
+                      <div
+                        className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center justify-center text-center border-t-4 border-t-[#38e54d] w-[310px] h-[140px] cursor-pointer hover:-translate-y-2 transition-transform"
+                        onClick={() => scrollToDetails('card-platform')}
+                      >
+                        <div className="bg-green-50 text-[#2eaa3f] p-3 rounded-full mb-3">
+                          <Map size={30} />
+                        </div>
+                        <h3 className="font-bold text-gray-800 text-[16px] leading-tight px-1">
+                          Territory Optimization & Routing
+                        </h3>
                       </div>
-                      <h3 className="font-bold text-gray-800 text-sm md:text-base leading-tight">
-                        {t('nodeExpReport')}
-                      </h3>
+
+                      <div className="w-[2px] h-[30px] bg-[#cbd5e1] z-0"></div>
+                      <div className="relative w-[165px] h-[2px] z-0 bg-[#cbd5e1]"></div>
+
+                      <div className="flex justify-between w-[310px] mt-0">
+                        <div className="w-[145px] shrink-0 flex flex-col items-center">
+                          <div className="w-[2px] h-[40px] bg-[#cbd5e1] z-0"></div>
+                          <div className="bg-white border border-gray-100 p-3 rounded-xl shadow-sm flex flex-col items-center justify-center text-center w-full h-[120px] transition-transform hover:-translate-y-2">
+                            <MapPin size={28} className="text-[#2eaa3f] mb-3" />
+                            <span className="text-[14px] font-bold text-gray-700 leading-tight">
+                              Territory
+                              <br />
+                              Optimization
+                            </span>
+                          </div>
+                        </div>
+                        <div className="w-[145px] shrink-0 flex flex-col items-center">
+                          <div className="w-[2px] h-[40px] bg-[#cbd5e1] z-0"></div>
+                          <div className="bg-white border border-gray-100 p-3 rounded-xl shadow-sm flex flex-col items-center justify-center text-center w-full h-[120px] transition-transform hover:-translate-y-2">
+                            <RouteIcon size={28} className="text-[#2eaa3f] mb-3" />
+                            <span className="text-[14px] font-bold text-gray-700 leading-tight">
+                              Route
+                              <br />
+                              Planning
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="w-1/3 flex flex-col items-center relative">
-                    <div className="w-[2px] h-10 bg-[#cbd5e1] z-0 mb-0"></div>
-                    <div
-                      className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center text-center hover:-translate-y-1 transition-transform border-t-4 border-t-[#f97316] w-[90%] cursor-pointer h-full"
-                      onClick={() => scrollToDetails('card-route')}
-                    >
-                      <div className="bg-orange-50 text-orange-600 p-3 rounded-full mb-3">
-                        <RouteIcon size={24} />
+                    <div className="w-[330px] shrink-0 flex flex-col items-center relative">
+                      <div className="w-[2px] h-10 bg-[#cbd5e1] z-0"></div>
+                      <div
+                        className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm flex flex-col items-center justify-center text-center border-t-4 border-t-[#9b51e0] w-[310px] h-[140px] cursor-pointer hover:-translate-y-2 transition-transform"
+                        onClick={() => scrollToDetails('card-report')}
+                      >
+                        <div className="bg-purple-50 text-[#9b51e0] p-3 rounded-full mb-3">
+                          <FileText size={30} />
+                        </div>
+                        <h3 className="font-bold text-gray-800 text-[16px] leading-tight px-1">
+                          Physical Expansion Report
+                        </h3>
                       </div>
-                      <h3 className="font-bold text-gray-800 text-sm md:text-base leading-tight">
-                        {t('nodeRoute')}
-                      </h3>
+
+                      <div className="w-[2px] h-[30px] bg-[#cbd5e1] z-0"></div>
+                      <div className="relative w-[165px] h-[2px] z-0 bg-[#cbd5e1]"></div>
+
+                      <div className="flex justify-between w-[310px] mt-0">
+                        <div className="w-[145px] shrink-0 flex flex-col items-center">
+                          <div className="w-[2px] h-[40px] bg-[#cbd5e1] z-0"></div>
+                          <div className="bg-white border border-gray-100 p-3 rounded-xl shadow-sm flex flex-col items-center justify-center text-center w-full h-[120px] transition-transform hover:-translate-y-2">
+                            <TrendingUp size={28} className="text-[#9b51e0] mb-3" />
+                            <span className="text-[14px] font-bold text-gray-700 leading-tight">
+                              Evaluate
+                              <br />
+                              Current Location
+                            </span>
+                          </div>
+                        </div>
+                        <div className="w-[145px] shrink-0 flex flex-col items-center">
+                          <div className="w-[2px] h-[40px] bg-[#cbd5e1] z-0"></div>
+                          <div className="bg-white border border-gray-100 p-3 rounded-xl shadow-sm flex flex-col items-center justify-center text-center w-full h-[120px] transition-transform hover:-translate-y-2">
+                            <FileText size={28} className="text-[#9b51e0] mb-3" />
+                            <span className="text-[14px] font-bold text-gray-700 leading-tight">
+                              Full City
+                              <br />
+                              Expansion Report
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
