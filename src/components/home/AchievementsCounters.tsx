@@ -25,7 +25,8 @@ export const AchievementsCounters: React.FC = () => {
               to="/contact"
               className="bg-[#9b51e0] hover:bg-[#8645c4] text-white font-bold py-4 px-10 rounded-full flex items-center justify-center w-max gap-2 transition-transform hover:scale-105 shadow-xl shadow-purple-500/20"
             >
-              {t('home.getStarted')} <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
+              {t('home.getStarted')}{' '}
+              <span className="mx-1 text-xl font-light">{isAr ? '←' : '→'}</span>
             </Link>
           </div>
         </FadeIn>
@@ -60,7 +61,11 @@ export const AchievementsCounters: React.FC = () => {
           <div
             className={`absolute bottom-[20%] ${isAr ? 'right-[5%]' : 'left-[5%]'} w-[180px] h-[180px] bg-[#38e54d] rounded-full flex flex-col items-center justify-center text-[#110222] shadow-[0_10px_30px_rgba(56,229,77,0.3)] hover:-translate-y-2 transition-transform z-20`}
           >
-            <img src="/assets/images/satisfied-clients-icon.png" alt="Clients" className="h-10 mb-2" />
+            <img
+              src="/assets/images/satisfied-clients-icon.png"
+              alt="Clients"
+              className="h-10 mb-2"
+            />
             <h3 className="text-[30px] font-extrabold">
               <AnimatedCounter end={3860} />
             </h3>

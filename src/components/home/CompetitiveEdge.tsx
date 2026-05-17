@@ -42,8 +42,12 @@ export const CompetitiveEdge: React.FC = () => {
             <h2 className="text-[#38e54d] text-4xl md:text-[54px] font-bold mb-6 leading-[1.1]">
               {t('home.compEdgeTitle')}
             </h2>
-            <p className="text-white mb-6 font-semibold text-lg leading-snug">{t('home.compEdgeSub')}</p>
-            <p className="text-gray-300 text-[15px] leading-relaxed mb-10 max-w-lg">{t('home.compEdgeDesc')}</p>
+            <p className="text-white mb-6 font-semibold text-lg leading-snug">
+              {t('home.compEdgeSub')}
+            </p>
+            <p className="text-gray-300 text-[15px] leading-relaxed mb-10 max-w-lg">
+              {t('home.compEdgeDesc')}
+            </p>
           </div>
         </div>
       </FadeIn>

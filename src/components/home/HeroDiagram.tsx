@@ -1,6 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Database, Map, Network, MapPin, Route as RouteIcon, TrendingUp, FileText } from 'lucide-react'
+import {
+  Database,
+  Map,
+  Network,
+  MapPin,
+  Route as RouteIcon,
+  TrendingUp,
+  FileText,
+} from 'lucide-react'
 
 const BASE_DIAGRAM_WIDTH = 1100
 const BASE_DIAGRAM_HEIGHT = 520
@@ -133,11 +141,23 @@ export const HeroDiagram: React.FC = () => {
                     <div className="w-[2px] h-[72px] bg-[#cbd5e1] z-0"></div>
                     <div className="bg-white border border-gray-100 p-4 rounded-xl shadow-sm w-[310px] flex justify-center items-center h-[120px]">
                       <div className="grid grid-cols-3 gap-5 opacity-80 mix-blend-multiply w-full justify-items-center items-center">
-                        <img src="/assets/images/general_authority_logo.svg" className="max-h-7" alt="GASTAT" />
+                        <img
+                          src="/assets/images/general_authority_logo.svg"
+                          className="max-h-7"
+                          alt="GASTAT"
+                        />
                         <img src="/assets/images/REGA_LOGO.svg" className="max-h-6" alt="REGA" />
                         <img src="/assets/images/hrdf_logo.svg" className="max-h-7" alt="HRDF" />
-                        <img src="/assets/images/sakany_logo.svg" className="max-h-6" alt="Sakany" />
-                        <img src="/assets/images/Ministry_of_Justice_Logo.svg" className="max-h-7" alt="MOJ" />
+                        <img
+                          src="/assets/images/sakany_logo.svg"
+                          className="max-h-6"
+                          alt="Sakany"
+                        />
+                        <img
+                          src="/assets/images/Ministry_of_Justice_Logo.svg"
+                          className="max-h-7"
+                          alt="MOJ"
+                        />
                         <img src="/assets/images/google.png" className="max-h-6" alt="Google" />
                       </div>
                     </div>

@@ -26,9 +26,15 @@ export const IndustriesGrid: React.FC = () => {
             <FadeIn key={index} direction="up" delay={index * 150}>
               <div className="bg-white rounded-xl p-8 flex flex-col items-center text-center cursor-pointer transition-all duration-300 hover:bg-[#38e54d] group shadow-xl h-full">
                 <div className="h-[90px] w-[90px] rounded-full bg-[#fff4ef] flex items-center justify-center mb-6 group-hover:bg-white transition-colors">
-                  <img src={industry.img} alt={t(`home.${industry.titleKey}`)} className="w-[45px] h-[45px] object-contain" />
+                  <img
+                    src={industry.img}
+                    alt={t(`home.${industry.titleKey}`)}
+                    className="w-[45px] h-[45px] object-contain"
+                  />
                 </div>
-                <h4 className="text-[#2b1055] font-extrabold text-[17px] mb-3">{t(`home.${industry.titleKey}`)}</h4>
+                <h4 className="text-[#2b1055] font-extrabold text-[17px] mb-3">
+                  {t(`home.${industry.titleKey}`)}
+                </h4>
                 <p className="text-gray-600 text-xs leading-relaxed group-hover:text-[#110222] font-semibold transition-colors">
                   {t(`home.${industry.descKey}`)}
                 </p>

@@ -1,6 +1,13 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Database, Map, TrendingUp, Route as RouteIcon, CheckCircle2, ChevronUp } from 'lucide-react'
+import {
+  Database,
+  Map,
+  TrendingUp,
+  Route as RouteIcon,
+  CheckCircle2,
+  ChevronUp,
+} from 'lucide-react'
 
 import { FadeIn } from '../animations/FadeIn'
 
@@ -55,14 +62,23 @@ export const CoreDetailCards: React.FC = () => {
                   <div className="bg-blue-50 text-[#00628e] p-4 rounded-2xl border border-blue-100 shadow-sm shrink-0">
                     <Database size={28} />
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">{t('home.trustedDataBank')}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                    {t('home.trustedDataBank')}
+                  </h3>
                 </div>
                 <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
                   {t('home.trustedDataBankDesc')}
                 </p>
                 <ul className="space-y-4 w-full flex flex-col items-start">
-                  {[t('home.trustedDataFeat1'), t('home.trustedDataFeat2'), t('home.trustedDataFeat3')].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                  {[
+                    t('home.trustedDataFeat1'),
+                    t('home.trustedDataFeat2'),
+                    t('home.trustedDataFeat3'),
+                  ].map((feat, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full"
+                    >
                       <CheckCircle2 className="text-[#00628e] w-5 h-5 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
@@ -71,16 +87,45 @@ export const CoreDetailCards: React.FC = () => {
               </div>
               <div className="w-full lg:w-[35%] flex items-center justify-center bg-gray-50 rounded-2xl p-6 border border-gray-100 shrink-0 h-full min-h-[220px]">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6 items-center justify-items-center opacity-80 mix-blend-multiply w-full">
-                  <img src="/assets/images/general_authority_logo.svg" alt="GASTAT" className="max-h-8 w-full object-contain" />
-                  <img src="/assets/images/REGA_LOGO.svg" alt="REGA" className="max-h-7 w-full object-contain" />
-                  <img src="/assets/images/hrdf_logo.svg" alt="HRDF" className="max-h-8 w-full object-contain" />
-                  <img src="/assets/images/sakany_logo.svg" alt="Sakany" className="max-h-7 w-full object-contain" />
-                  <img src="/assets/images/Ministry_of_Justice_Logo.svg" alt="MOJ" className="max-h-8 w-full object-contain" />
-                  <img src="/assets/images/google.png" alt="Google" className="max-h-7 w-full object-contain" />
+                  <img
+                    src="/assets/images/general_authority_logo.svg"
+                    alt="GASTAT"
+                    className="max-h-8 w-full object-contain"
+                  />
+                  <img
+                    src="/assets/images/REGA_LOGO.svg"
+                    alt="REGA"
+                    className="max-h-7 w-full object-contain"
+                  />
+                  <img
+                    src="/assets/images/hrdf_logo.svg"
+                    alt="HRDF"
+                    className="max-h-8 w-full object-contain"
+                  />
+                  <img
+                    src="/assets/images/sakany_logo.svg"
+                    alt="Sakany"
+                    className="max-h-7 w-full object-contain"
+                  />
+                  <img
+                    src="/assets/images/Ministry_of_Justice_Logo.svg"
+                    alt="MOJ"
+                    className="max-h-8 w-full object-contain"
+                  />
+                  <img
+                    src="/assets/images/google.png"
+                    alt="Google"
+                    className="max-h-7 w-full object-contain"
+                  />
                 </div>
               </div>
               <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-s border-gray-100 pt-8 lg:pt-0 lg:ps-10 shrink-0">
-                <a href="https://s-locator.northernacs.com/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <a
+                  href="https://s-locator.northernacs.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <button
                     type="button"
                     className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#00628e] text-white hover:bg-[#004e70] shadow-md whitespace-nowrap"
@@ -108,26 +153,42 @@ export const CoreDetailCards: React.FC = () => {
                   <div className="bg-green-50 text-[#2eaa3f] p-4 rounded-2xl border border-green-100 shadow-sm shrink-0">
                     <Map size={28} />
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">{t('home.nodePlatform')}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                    {t('home.nodePlatform')}
+                  </h3>
                 </div>
                 <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
                   {t('home.platformDesc')}
                 </p>
                 <ul className="space-y-4 w-full flex flex-col items-start">
-                  {[t('home.platformFeat1'), t('home.platformFeat2'), t('home.platformFeat3')].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
-                      <CheckCircle2 className="text-[#2eaa3f] w-5 h-5 shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
+                  {[t('home.platformFeat1'), t('home.platformFeat2'), t('home.platformFeat3')].map(
+                    (feat, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full"
+                      >
+                        <CheckCircle2 className="text-[#2eaa3f] w-5 h-5 shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </li>
+                    ),
+                  )}
                 </ul>
               </div>
               <div className="w-full lg:w-[35%] flex items-center justify-center bg-green-50/50 rounded-2xl p-6 border border-green-100/50 shrink-0 min-h-[220px] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#38e54d] to-transparent"></div>
-                <Map size={100} className="text-[#2eaa3f] opacity-80 drop-shadow-sm relative z-10" strokeWidth={1} />
+                <Map
+                  size={100}
+                  className="text-[#2eaa3f] opacity-80 drop-shadow-sm relative z-10"
+                  strokeWidth={1}
+                />
               </div>
               <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-e border-gray-100 pt-8 lg:pt-0 lg:pe-10 shrink-0">
-                <a href="https://s-locator.northernacs.com/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <a
+                  href="https://s-locator.northernacs.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <button
                     type="button"
                     className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#38e54d] text-[#110222] hover:bg-[#2eaa3f] shadow-md whitespace-nowrap"
@@ -155,14 +216,23 @@ export const CoreDetailCards: React.FC = () => {
                   <div className="bg-purple-50 text-[#9b51e0] p-4 rounded-2xl border border-purple-100 shadow-sm shrink-0">
                     <TrendingUp size={28} />
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">{t('home.nodeExpReport')}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                    {t('home.nodeExpReport')}
+                  </h3>
                 </div>
                 <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
                   {t('home.expReportDesc')}
                 </p>
                 <ul className="space-y-4 w-full flex flex-col items-start">
-                  {[t('home.expReportFeat1'), t('home.expReportFeat2'), t('home.expReportFeat3')].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                  {[
+                    t('home.expReportFeat1'),
+                    t('home.expReportFeat2'),
+                    t('home.expReportFeat3'),
+                  ].map((feat, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full"
+                    >
                       <CheckCircle2 className="text-[#9b51e0] w-5 h-5 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
@@ -171,10 +241,19 @@ export const CoreDetailCards: React.FC = () => {
               </div>
               <div className="w-full lg:w-[35%] flex items-center justify-center bg-purple-50/50 rounded-2xl p-6 border border-purple-100/50 shrink-0 min-h-[220px] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#9b51e0] to-transparent"></div>
-                <TrendingUp size={100} className="text-[#9b51e0] opacity-80 drop-shadow-sm relative z-10" strokeWidth={1} />
+                <TrendingUp
+                  size={100}
+                  className="text-[#9b51e0] opacity-80 drop-shadow-sm relative z-10"
+                  strokeWidth={1}
+                />
               </div>
               <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-s border-gray-100 pt-8 lg:pt-0 lg:ps-10 shrink-0">
-                <a href="https://s-locator.northernacs.com/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <a
+                  href="https://s-locator.northernacs.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <button
                     type="button"
                     className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#9b51e0] text-white hover:bg-[#8645c4] shadow-md whitespace-nowrap"
@@ -202,14 +281,23 @@ export const CoreDetailCards: React.FC = () => {
                   <div className="bg-orange-50 text-[#f97316] p-4 rounded-2xl border border-orange-100 shadow-sm shrink-0">
                     <RouteIcon size={28} />
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">{t('home.nodeRoute')}</h3>
+                  <h3 className="text-2xl lg:text-3xl font-black text-[#1e293b] pr-10">
+                    {t('home.nodeRoute')}
+                  </h3>
                 </div>
                 <p className="text-gray-500 leading-relaxed font-medium mb-8 text-[15px] max-w-2xl">
                   {t('home.routePlanningDesc')}
                 </p>
                 <ul className="space-y-4 w-full flex flex-col items-start">
-                  {[t('home.routePlanningFeat1'), t('home.routePlanningFeat2'), t('home.routePlanningFeat3')].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full">
+                  {[
+                    t('home.routePlanningFeat1'),
+                    t('home.routePlanningFeat2'),
+                    t('home.routePlanningFeat3'),
+                  ].map((feat, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-[#334155] font-semibold text-[15px] text-start w-full"
+                    >
                       <CheckCircle2 className="text-[#f97316] w-5 h-5 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
@@ -218,10 +306,19 @@ export const CoreDetailCards: React.FC = () => {
               </div>
               <div className="w-full lg:w-[35%] flex items-center justify-center bg-orange-50/50 rounded-2xl p-6 border border-orange-100/50 shrink-0 min-h-[220px] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#f97316] to-transparent"></div>
-                <RouteIcon size={100} className="text-[#f97316] opacity-80 drop-shadow-sm relative z-10" strokeWidth={1} />
+                <RouteIcon
+                  size={100}
+                  className="text-[#f97316] opacity-80 drop-shadow-sm relative z-10"
+                  strokeWidth={1}
+                />
               </div>
               <div className="w-full lg:w-auto flex items-center justify-center border-t lg:border-t-0 lg:border-e border-gray-100 pt-8 lg:pt-0 lg:pe-10 shrink-0">
-                <a href="https://s-locator.northernacs.com/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <a
+                  href="https://s-locator.northernacs.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <button
                     type="button"
                     className="w-full lg:w-max px-10 py-4 rounded-xl font-bold transition-colors bg-[#f97316] text-white hover:bg-[#ea580c] shadow-md whitespace-nowrap"
