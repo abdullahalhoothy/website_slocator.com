@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
+import Home from './pages/Home'
 import TerritoryPlanning from './pages/TerritoryPlanning'
 import SalesRoutePlanner from './pages/SalesRoutePlanner'
 import Services from './pages/Services'
@@ -25,7 +26,7 @@ const App: React.FC = () => {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<TerritoryPlanning />} />
+            <Route path="/" element={<Home />} />
             <Route path="/sales-route-planner" element={<SalesRoutePlanner />} />
             <Route path="/services" element={<Services />} />
             <Route path="/features" element={<Features />} />
