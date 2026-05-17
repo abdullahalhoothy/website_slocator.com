@@ -17,11 +17,11 @@ export const PRODUCTS_CONFIG: ProductCardConfig[] = [
     theme: 'blue',
   },
   {
-    id: 'territory-optimization',
+    id: 'territory-planning',
     translationKey: 'products.territoryOptimization',
     imagePath: '/assets/images/territory-optimization-thumb.webp',
-    ctaPath: '/territory-optimization/demo',
-    moreDetailsPath: '/territory-optimization',
+    ctaPath: '/territory-planning/demo',
+    moreDetailsPath: '/territory-planning',
     theme: 'indigo',
   },
 ]

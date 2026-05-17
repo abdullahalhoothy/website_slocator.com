@@ -37,30 +37,30 @@ export const MAIN_NAVIGATION: NavItem[] = [
       },
 
       {
-        id: 'heading-territory-optimization',
+        id: 'heading-territory-planning',
         translationKey: 'header.nav.headingTerritoryOpt',
         isHeading: true,
         icon: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23489E46' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 2 7 12 12 22 7 12 2'/%3E%3Cpolyline points='2 17 12 22 22 17'/%3E%3Cpolyline points='2 12 12 17 22 12'/%3E%3C/svg%3E",
       },
       {
-        id: 'territory-optimization',
+        id: 'territory-planning',
         translationKey: 'header.nav.territoryOptimization',
-        path: '/territory-optimization',
+        path: '/territory-planning',
       },
       {
         id: 'to-advantages',
         translationKey: 'header.nav.toAdvantages',
-        path: '/territory-optimization/comparison',
+        path: '/territory-planning/comparison',
       },
       {
         id: 'to-cost-savings',
         translationKey: 'header.nav.toCostSavings',
-        path: '/territory-optimization/cost-savings',
+        path: '/territory-planning/cost-savings',
       },
       {
-        id: 'faq-territory-optimization',
+        id: 'faq-territory-planning',
         translationKey: 'header.nav.faqTerritoryOpt',
-        path: '/territory-optimization/faq',
+        path: '/territory-planning/faq',
       },
     ],
   },
