@@ -14,10 +14,12 @@ i18n.use(initReactI18next).init({
     en: {
       translation: enTranslations,
       landing: enTranslations,
+      home: enTranslations,
     },
     ar: {
       translation: arTranslations,
       landing: arTranslations,
+      home: arTranslations,
     },
   },
   lng: savedLanguage,
