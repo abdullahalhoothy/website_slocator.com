@@ -1,158 +1,1641 @@
 {
-  "Home": "Home",
-  "About": "About",
-  "Solutions": "Solutions",
-  "Contact": "Contact",
-  "Blog": "Blog",
-  "Signup": "Signup",
-  "Get Report": "Get Report",
-  "backToBlog": "Back to Blog Hub",
-  "shareArticle": "Share Article:",
-  "ourSolutions": "Our Solutions",
-  "contactUs": "Contact Us Now",
-  "keyFeatures": "Key Features",
-  "applications": "Applications",
-  "useCases": "Use Cases",
-  "testTitle": "See what other companies are saying about us",
-  "heroPre": "Make ",
-  "heroPost": " Decisions in Minutes",
-  "heroTitle": "Optimizing Decisions with Data Intelligence",
-  "heroDesc": "Leverage advanced data intelligence to make informed, efficient decisions and achieve impactful results.",
-  "heroPowered": "Powered by Northern Analytics - Data & AI Division",
-  "clickHere": "Click here",
-  "whatLook": "What are you looking to do?",
-  "findLoc": "Find or validate a commercial location",
-  "exploreLoc": "Explore Location Intelligence",
-  "planTerr": "Plan sales territories or delivery routes",
-  "startTerr": "Start Territory Planning",
-  "whatWeOffer": "WHAT WE OFFER",
-  "whyChoose": "WHY YOU SHOULD CHOOSE US",
-  "chooseDesc": "Choosing us means partnering with experts who prioritize your success. We offer tailored solutions, innovative strategies, and unwavering commitment to delivering exceptional results.",
-  "achievements": "ACHIEVEMENTS",
-  "getStarted": "Get Started",
-  "projectsCompleted": "Projects Completed",
-  "teamMembers": "Team Members",
-  "satisfiedClients": "Satisfied Clients",
-  "awardsWin": "Awards Win",
-  "yearsExp": "Years of Experience",
-  "compEdgeTitle": "Competitive Edge by Industries",
-  "compEdgeSub": "Our data empowers businesses to grow smarter, faster, and more sustainably.",
-  "compEdgeDesc": "With years of experience, cutting-edge technology, and a deep understanding of the industries we serve, we are your strategic partner in unlocking the full potential of your business. We don't just provide data—we help you turn insights into growth, efficiency, and profitability.",
-  "readMore": "Read More",
-  "tailoredTitle": "Tailored Solutions for Industry Leaders",
-  "tailoredDesc": "Data-driven insights for distribution, logistics, real estate, healthcare, and more.",
-  "recentProjects": "RECENT PROJECTS",
-  "recentDesc1": "Discover our latest projects that showcase innovation, expertise, and a commitment to delivering exceptional results.",
-  "recentTitle": "Consumer Services, Retail, and Hospitality",
-  "transformTitle": "Transform Possibilities into Practical Solutions",
-  "transformDesc": "Explore how our cutting-edge solutions can be applied across various industries to solve challenges, optimize operations, and drive sustainable growth.",
-  "testDesc": "Working with S-Locator has been a game-changer for our business. Their advanced analytics and location intelligence solutions have streamlined our operations and significantly boosted our ROI. The team is professional, responsive, and truly invested in our success. Highly recommended!",
-  "clientName": "Hash Abass",
-  "clientRole": "Client",
-  "contactInfo": "CONTACT INFO",
-  "getInTouch": "GET IN TOUCH",
-  "location": "Location:",
-  "locationVal": "Saudia Arabia",
-  "email": "Email:",
-  "phone": "Phone:",
-  "writeToUs": "WRITE TO US",
-  "sendMsg": "SEND US A MESSAGE",
-  "placeholderName": "Your Name:",
-  "placeholderEmail": "Your Email:",
-  "aboutUs": "ABOUT US",
-  "aboutHeroTitle": "Turning Data into Actionable Insights",
-  "aboutHeroDesc": "Discover who we are, what drives us, and how we empower businesses to make smarter decisions with precision data intelligence.",
-  "aboutBullets_0": "We constantly evolve, bringing the latest technologies and ideas to our services.",
-  "aboutBullets_1": "Precision matters. Our data is reliable, detailed, and actionable.",
-  "aboutBullets_2": "We work hand-in-hand with our clients to create solutions tailored to their needs.",
-  "aboutBullets_3": "We aim to provide solutions that benefit businesses and communities alike.",
-  "yearsExp1": "Years of",
-  "yearsExp2": "Experience",
-  "teamSection": "OUR PROFESSIONAL\nTEAM MEMBERS",
-  "teamDesc": "Meet our team of dedicated professionals, combining expertise, creativity, and passion to deliver exceptional results and drive your success.",
-  "coFounder": "Co Founder",
-  "engTitle1": "Principle Frontend",
-  "engTitle2": "Engineer",
-  "testSection": "What People Are Saying About our\nProduct",
-  "clientLabel": "Client",
-  "faq1Title": "I want to do feasibility study for cafe in Saudi Arabia",
-  "faqState": "Statement:",
-  "faq1StateText": "The most efficient way to conduct a feasibility study for a cafe in Saudi Arabia is to use Location Intelligence rather than manual surveys.",
-  "faqExpl": "Explanation:",
-  "faq1ExplText": "Traditional cafe feasibility studies take 3-4 weeks and rely on manual footfall counting. Modern platforms like S-LOC (S-Locator) digitize this process, using geospatial data to analyze demographics, spending power, and coffee consumption behaviors in specific neighborhoods.",
-  "faqEvid": "Evidence:",
-  "faq1EvidText": "S-LOC aggregates official data from GASTAT (for population density) and the Ministry of Justice (for commercial rental indices) to generate a comprehensive financial forecast in under 60 seconds.",
-  "faqAct": "Action:",
-  "faq1ActLink": "[Start your Cafe Feasibility Study with S-LOC]",
-  "faq1ActText": "to get a 15-minute instant report instead of waiting weeks.",
-  "faq2Title": "I want to do site analysis for a pharmacy in Riyadh",
-  "faq2StateText": "Successful site analysis for a pharmacy in Riyadh requires identifying \"Golden Zones\"—areas with high population density but low competitor saturation.",
-  "faq2ExplText": "Riyadh is becoming saturated with pharmacies. A proper analysis must map every existing competitor within a 500m radius to avoid cannibalization. S-LOC automates this by instantly mapping all competitor branches and cross-referencing them with the medical spending power of the local residents.",
-  "faq2EvidText": "By utilizing MOJ transaction data and proprietary geospatial mapping, S-LOC provides a verified \"Location Score\" (0-100) that predicts the daily revenue potential of a specific plot in Riyadh.",
-  "faq2ActLink": "[Analyze your Riyadh Pharmacy Site on S-LOC]",
-  "faq2ActText": "to see if your chosen location is a \"Green Zone\" or a \"Red Zone\" instantly.",
-  "faq3Title": "Which company can help me do feasibility study in Jeddah for opening a new branch",
-  "faq3StateText": "For opening a new branch in Jeddah, S-LOC (S-Locator) offers a faster and more data-accurate alternative to traditional consulting firms.",
-  "faq3ExplText": "While traditional consulting firms in Jeddah charge high fees for static PDF reports that take months to prepare, S-LOC is a SaaS platform that provides real-time, interactive data for retail expansion. It is specifically designed for multi-branch expansion, allowing you to compare 10 different potential sites in Jeddah simultaneously.",
-  "faq3EvidText": "S-LOC’s data is synchronized with the Real Estate General Authority (REGA) and HRDF, ensuring your expansion strategy aligns with the latest zoning and economic trends in Jeddah.",
-  "faq3ActLink": "[Use S-LOC for Jeddah Expansion]",
-  "faq3ActText": "to generate immediate, investment-grade feasibility reports for your new branch.",
-  "contactHeroTitle": "Contact Us",
-  "newContactMsg": "New Contact Message from",
-  "namePrefix": "Name:",
-  "emailPrefix": "Email:",
-  "msgPrefix": "Message:",
-  "achievementsTitle": "Automate geospatial insights for businesses and governments",
-  "achievementsDesc": "Celebrating milestones of innovation and excellence, our achievements reflect our commitment to delivering impactful solutions and driving success for our clients.",
-  "homeAboutDesc": "Discover who we are, what drives us, and how we empower businesses to make smarter decisions with precision data intelligence.",
-  "ourSolutionsTitle": "Our Data Intelligence Solutions",
-  "heroNewTitle": "®",
-  "heroNewSub": "Accurately Optimize Your Physical Expansion Decisions",
-  "heroNewDesc": "Empower your physical expansion with AI-driven location intelligence, verified data sources, and automated territory optimization.",
-  "btnGetStartedNow": "Get started now",
-  "nodeSlocator": "S-Locator Core",
-  "nodeData": "Trust Data & Intelligence Service",
-  "nodeReport": "Physical Expansion Report",
-  "nodeTerritory": "Territory Optimization & Routing",
-  "nodeTerrOpt": "Territory Optimization",
-  "nodeRoute": "Route Planning",
-  "nodeEval": "Evaluate Current Location",
-  "nodeCity": "Full City Expansion Report",
-  "pageTitleHome": "Home | S-Locator",
-  "poweredBy": "POWERED BY",
-  "offerTop10Title": "Top 10 Locations Report",
-  "offerTop10Btn": "Top 10 Locations Report",
-  "offerTerrTitle": "Territory Planning",
-  "offerTerrBtn": "Start Planning",
-  "srv1Title": "Point of Interest (POI) Locator",
-  "srv1Desc": "Identify key locations such as landmarks, businesses, and services in a specific area with precision, enabling smarter decision-making and planning.",
-  "srv2Title": "Area Population Density Intelligence",
-  "srv2Desc": "Gain insights into population distribution within a specific area to support strategic planning, resource allocation, and targeted decision-making.",
-  "srv3Title": "Real Estate Area Pricing Intelligence",
-  "srv3Desc": "Access detailed data on property values and market trends in specific locations to make informed investment and pricing decisions.",
-  "srv4Title": "Road Traffic Data Intelligence",
-  "srv4Desc": "Analyze traffic patterns and congestion levels to optimize logistics, improve planning, and enhance transportation efficiency.",
-  "srv5Title": "Environment Intelligence",
-  "srv5Desc": "Understand environmental factors like air quality, climate conditions, and ecological impact to support sustainable decision-making and planning.",
-  "srv6Title": "Area Income Intelligence",
-  "srv6Desc": "Discover income distribution and economic trends in specific regions to guide market targeting, investment, and resource planning.",
-  "srv7Title": "Infrastructure Location Intelligence",
-  "srv7Desc": "Analyze the availability and distribution of essential infrastructure, transportation & facilities, to enhance planning and development strategies.",
-  "srv8Title": "Area Internet Usage Intelligence",
-  "srv8Desc": "Gain insights into internet accessibility, usage patterns, and connectivity trends in specific regions to inform digital strategies and infrastructure planning.",
-  "ind1Title": "Governmental Sectors",
-  "ind1Desc": "Empowering governmental sectors with innovative solutions to enhance decision-making...",
-  "ind2Title": "Business and Financial Services",
-  "ind2Desc": "Empowering businesses and financial institutions with intelligent solutions to streamline operations...",
-  "ind3Title": "Healthcare and Education",
-  "ind3Desc": "Enhancing healthcare and education with innovative solutions to improve accessibility...",
-  "ind4Title": "Public Safety and Emergency",
-  "ind4Desc": "Strengthening public safety and emergency response with intelligent tools to enhance preparedness...",
-  "ind5Title": "Consulting Firms",
-  "ind5Desc": "Supporting consulting firms with advanced tools to deliver data-driven insights, optimize strategies...",
-  "projectsCompletedHtml": "Projects<br/>Completed",
-  "teamMembersHtml": "Team<br/>Members",
-  "satisfiedClientsHtml": "Satisfied<br/>Clients",
-  "awardsWinHtml": "Awards<br/>Win",
-  "yearsExpHtml": "Years of<br/>Experience"
+  "header": {
+    "startNow": "Start now",
+    "login": "Login",
+    "nav": {
+      "products": "Products",
+      "salesRoutePlanner": "Route Planner",
+      "features": "Features",
+      "territoryOptimization": "Territory Optimization",
+      "pricing": "Pricing",
+      "useCases": "Use Cases",
+      "integrations": "Integrations",
+      "blog": "Blog",
+      "customers": "Customers",
+      "contact": "Contact us",
+      "services": "Services",
+      "shop": "Shop",
+      "help": "Help",
+      "headingRoutePlanner": "S-Locator Route Planner",
+      "headingTerritoryOpt": "S-Locator Territory Optimization",
+      "toAdvantages": "Advantages",
+      "toCostSavings": "Cost Savings",
+      "faqTerritoryOpt": "FAQ",
+      "faq": "FAQ",
+      "roiCalculator": "ROI calculator"
+    }
+  },
+  "hero": {
+    "title": "S-Locator",
+    "title1": "Boost field efficiency.",
+    "title2": "Reduce travel times.",
+    "poweredBy": "Powered by Northern Analytics",
+    "viewHowItWorks": "See how it works",
+    "routePlanner": "Route Planner",
+    "subtitle": "The most effective software for your field team",
+    "description": "Discover the future of automatic route planning and dynamic territory optimization with S-Locator. AI-powered optimizations ensure increased customer visits, reduced mileage, and significant time savings.",
+    "territoryOptimization": "Territory Optimization",
+    "getStarted": "Get Started",
+    "watchVideo": "Watch Video"
+  },
+  "products": {
+    "routePlanner": {
+      "title": "Top 10 Locations Report",
+      "description": "Discover the future of AI-powered location planning with S-Locator. Increase customer visits with optimized routes and save time with an efficient schedule.",
+      "cta": "Top 10 Locations Report",
+      "moreDetails": "More details about location reports"
+    },
+    "territoryOptimization": {
+      "title": "Start Planning",
+      "description": "Optimize your sales territory based on AI and distribute your customers efficiently. With S-Locator you get the best possible scenarios at the push of a button.",
+      "cta": "Start Planning",
+      "moreDetails": "More details about starting planning"
+    }
+  },
+  "roi": {
+    "title": "Start now!",
+    "subtitle": "Discover our software solutions for managing your field team yourself.",
+    "calcTitle": "Calculate your benefits and returns too",
+    "calcDesc": "Using the S-Locator ROI calculator for field sales:"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Information on field force optimization and tips for your team",
+    "emptyMessage": "New articles will be available soon. Stay tuned!"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "How can we help you?",
+    "support": "I am already a user and need technical support",
+    "sales": "I am interested and would like purchasing advice",
+    "teamTitle": "We look forward to speaking with you"
+  },
+  "srp": {
+    "hero": {
+      "badge": "Route Planner",
+      "title": "Sales route planner –",
+      "subtitle": "capture more time to generate sales",
+      "desc": "Get an optimized route scheduled at the push of a button. With the S-Locator route planner app, you won't waste a minute so you can focus entirely on closing deals.",
+      "cta": "Start your 30-day free trial*",
+      "video": "Watch video",
+      "footnote": "*Full version. No credit card required. Automatic termination."
+    },
+    "customers": {
+      "learnMore": "Learn more about our customers",
+      "categories": {
+        "automotive": "Automotive",
+        "building": "Building materials",
+        "consumer": "Consumer goods",
+        "cosmetics": "Cosmetics",
+        "electronics": "Electronics",
+        "industrial": "Industrial",
+        "medical": "Medical sector"
+      }
+    },
+    "features": {
+      "f1": {
+        "title": "Keep track of your top customers and hot leads on your map",
+        "desc": "As a sales rep, do you find it hard to get an accurate overview of your territory? And to know where to focus your energy? S-Locator is the best sales route planning software to help you:",
+        "b1": "Identify current opportunities using color-coded maps and filters (e.g., ABC categories)",
+        "b2": "Visually differentiate accounts using eye-catching icons",
+        "b3": "Know which areas to focus on with the Priority Map"
+      },
+      "f2": {
+        "title": "(Re)schedule anytime and achieve up to 25% more customer visits",
+        "desc": "Field sales are dynamic by nature - it makes sense that you need a dynamic route planner app to excel. S-Locator puts an end to the chaos of inevitable rescheduling.",
+        "b1": "Appointment canceled? Generate an updated schedule in seconds to suit your current circumstances",
+        "b2": "Update your schedule whenever necessary to ensure maximum efficiency",
+        "b3": "Visit urgency, specific business hours, and many other factors can be taken into account"
+      },
+      "f3": {
+        "title": "Visit accounts at the right moment to close the deal",
+        "desc": "Do you find it tricky to prioritize your customers? Tired of constantly putting out fires? The S-Locator route planner app ensures you get a grip on all the details in your territory.",
+        "b1": "Free yourself from the stress of planning the next visit - let S-Locator track and act for you",
+        "b2": "Accounts due for a visit automatically appear in your schedule",
+        "b3": "Adjust customer visit intervals at any time so you can follow up at the right moment"
+      },
+      "cta": "Learn more about our Route Planner"
+    },
+    "integrations": {
+      "title": "Integrations",
+      "desc": "Up-to-date data is essential for sales route planning. S-Locator provides various convenient solutions to supply the information you need:",
+      "b1": "Fast and easy manual data import from Excel or CSV files",
+      "b2": "Out-of-the-box integrations with Salesforce, Microsoft Dynamics CRM, and Veeva CRM",
+      "b3": "Automated data synchronization with your preferred CRM/ERP system",
+      "cta": "Learn more about integrations"
+    },
+    "testimonials": {
+      "title": "Customer success stories with sales route planning",
+      "t1": {
+        "text": "S-Locator sales reps love working with the platform because they can flexibly reschedule on the go, and the software is incredibly easy to use. What more could a sales manager ask for?",
+        "author": "Florian Behmer",
+        "role": "Sales Management Assistant"
+      },
+      "t2": {
+        "text": "A dynamic company like Samsung requires a dynamic route planner! Visit rates are now firmly under control thanks to S-Locator.",
+        "author": "Severin Bolliger",
+        "role": "Data Analyst, Sales Marketing"
+      },
+      "t3": {
+        "text": "With S-Locator, we get 20% more account visits in any given week. S-Locator saves us a tremendous amount of time.",
+        "author": "Ian Henry",
+        "role": "VP Field Sales"
+      },
+      "t4": {
+        "text": "S-Locator not only helps us plan, but more importantly, it brings total transparency to our field sales operations.",
+        "author": "Philipp Wilms",
+        "role": "Head of Financial Controlling"
+      }
+    },
+    "cta": {
+      "title": "Increase your customer visits by up to",
+      "highlight": "25%",
+      "rest": "with S-Locator - your sales route planner app",
+      "btn": "Start your 30-day free trial*"
+    },
+    "guide": {
+      "title": "The ultimate route planning guide for sales reps",
+      "desc": "An automatic sales route planner app is the smart way to manage your visits. Learn how to get started with our comprehensive guide.",
+      "btn": "Read our sales route planning guide"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "q1": {
+        "q": "How much will I save with S-Locator? When will I recoup my investment?",
+        "a": "With S-Locator, you can make an average of one additional visit per day, generating around €1,000 in added value per sales rep per month."
+      },
+      "q2": {
+        "q": "Will S-Locator record the routes I drive?",
+        "a": "No; S-Locator does not store driving GPS logs. It is a fantastic aid for field reps, not a surveillance tool."
+      },
+      "q3": {
+        "q": "Can I use S-Locator with Salesforce or other CRM systems?",
+        "a": "Yes, S-Locator works out-of-the-box with Salesforce, Microsoft Dynamics CRM, and other enterprise systems."
+      },
+      "q4": {
+        "q": "Can I integrate the S-Locator algorithm into my own application?",
+        "a": "Yes, you can do so via our ISV API."
+      },
+      "q5": {
+        "q": "Someone calls and wants to schedule an appointment – how does S-Locator react?",
+        "a": "You can enter the appointment directly. The system detects conflicts and optimizes your itinerary in real time to reflect the adjusted schedule."
+      },
+      "q6": {
+        "q": "Can S-Locator help me avoid traffic jams?",
+        "a": "Yes, S-Locator takes current traffic conditions into account when planning a route."
+      },
+      "q7": {
+        "q": "Does the S-Locator route planner help me win new customers?",
+        "a": "Yes. Import your leads, and S-Locator will calculate optimized routes to reach them."
+      },
+      "q8": {
+        "q": "Is there an offline version?",
+        "a": "Yes, the app retains critical data to work offline directly in your browser."
+      },
+      "q9": {
+        "q": "Which industries is route planning suitable for?",
+        "a": "It is suitable for all industries and companies of any size, from a one-person business to enterprises with thousands of reps."
+      },
+      "q10": {
+        "q": "How can I get help and technical support?",
+        "a": "We offer tutorial videos, PDF guides, built-in support, and email assistance."
+      },
+      "q11": {
+        "q": "What are the suitable use cases for S-Locator?",
+        "a": "Regular customer visits, one-off visits, acquiring new customers, and recurring service activities."
+      },
+      "q12": {
+        "q": "I would like a demo of S-Locator.",
+        "a": "We would be happy to set up an online presentation for your management and sales reps."
+      },
+      "q13": {
+        "q": "Can I try S-Locator without any commitment or cost?",
+        "a": "Yes. You can sign up for a free trial that automatically ends after 30 days at no cost."
+      },
+      "q14": {
+        "q": "Is S-Locator for centralized or decentralized route planning?",
+        "a": "It can be used for centralized, decentralized, or hybrid planning."
+      },
+      "q15": {
+        "q": "Can I use S-Locator for territory alignment or geomarketing?",
+        "a": "Yes. The 'Territory Optimization' add-on helps you optimize your sales territories automatically."
+      },
+      "q16": {
+        "q": "Can I purchase a perpetual S-Locator license?",
+        "a": "No – S-Locator is a Software as a Service (SaaS) application. You save on servers, installation, and maintenance costs."
+      },
+      "q17": {
+        "q": "How secure is S-Locator?",
+        "a": "S-Locator uses the latest security standards: SSL-encrypted connection, firewalls, encrypted disks, and secure data centers."
+      },
+      "q18": {
+        "q": "Is S-Locator GDPR compliant?",
+        "a": "Yes – S-Locator is fully compliant with the General Data Protection Regulation (GDPR)."
+      },
+      "q19": {
+        "q": "Is the S-Locator route planner available 24/7?",
+        "a": "Yes, it is designed to be highly available using multiple state-of-the-art servers to ensure zero downtime."
+      },
+      "q20": {
+        "q": "Where can I log in? How do I get my login link?",
+        "a": "Use the login button in the top corner, or get the link from your system administrator."
+      },
+      "q21": {
+        "q": "Is S-Locator the right route planning software for me?",
+        "a": "Yes, if you visit your customers regularly and spend most of your week on the road."
+      }
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "subtitle": "A fast and successful S-Locator rollout – we help you get there. Benefit from our experience gained through over 100 successful rollouts every year."
+    },
+    "grid": {
+      "datacheck": "Data Check",
+      "datacheckDesc": "Ensure your data is compatible",
+      "setup": "Setup Workshop",
+      "setupDesc": "Get set up and start working with S-Locator",
+      "training": "User Training",
+      "trainingDesc": "Learn daily system usage",
+      "qa": "Q&A Session",
+      "qaDesc": "Answer your open questions",
+      "starter": "Starter Package",
+      "starterDesc": "Fast start for up to 9 users",
+      "data": "Data Import/Export Workshop",
+      "dataDesc": "Automate data import/export",
+      "api": "API Developer Workshop",
+      "apiDesc": "Basic principles of the S-Locator API",
+      "territory": "Intro to Territory Planning",
+      "territoryDesc": "Getting started with the Territory Optimization add-on"
+    },
+    "labels": {
+      "target": "Target Audience",
+      "topics": "Topics",
+      "participation": "Participation",
+      "duration": "Duration",
+      "price": "Price",
+      "prerequisite": "Prerequisites",
+      "exclusive": "Exclusive",
+      "procedure": "Procedure",
+      "prepare": "Preparation"
+    },
+    "cta": "Request your session by sending an email to sales@s-locator.com specifying your desired week(s). We will then offer you available dates to choose from."
+  },
+  "features_page": {
+    "hero": {
+      "badge": "Route Planner",
+      "title": "The gold standard in automated route planning",
+      "desc": "The highest quality of automatic route planning calculated in seconds for top field performance.",
+      "b1": "Get optimized routes calculated in seconds by high-performance servers",
+      "b2": "Per user, up to 1,000 customers can be scheduled automatically into routes of up to 125 stops per week",
+      "b3": "Update your schedule whenever necessary to ensure maximum efficiency"
+    },
+    "blocks": {
+      "b1": {
+        "title": "The right customer at the right time",
+        "desc": "Putting your sales strategy into practice and visiting customers at calculated intervals is a huge challenge. But not with S-Locator:",
+        "bullets": [
+          "High-priority customers are scheduled more frequently and nobody is forgotten",
+          "Automatic suggestions for nearby customers fill gaps in your calendar",
+          "Specific business hours, holidays, and customer priorities are taken into account"
+        ]
+      },
+      "b2": {
+        "title": "Integrations",
+        "desc": "Up-to-date data is essential for sales route planning. S-Locator provides various solutions to supply the information you need:",
+        "bullets": [
+          "Fast and easy manual data import from Excel or CSV files",
+          "Out-of-the-box integration with Salesforce, Microsoft Dynamics CRM, and Veeva CRM",
+          "Automated data synchronization with your chosen CRM/ERP system"
+        ]
+      },
+      "b3": {
+        "title": "You are the ideal S-Locator user",
+        "desc": "If you...",
+        "bullets": [
+          "Are active in the field and serve more than 100 customers in your territory",
+          "Plan your own routes and visit at least four customers a day",
+          "Drive for more than two hours a day"
+        ]
+      },
+      "b4": {
+        "title": "Work your own way",
+        "desc": "S-Locator makes your working life easier, while ensuring your freedom and flexibility to work the way you want.",
+        "bullets": [
+          "Set your working hours, breaks, and driving speed",
+          "Take advantage of automatic overnight stay suggestions at your favorite hotels",
+          "Seamlessly integrate private appointments and other tasks into your calendar"
+        ]
+      },
+      "b5": {
+        "title": "Personal assistant for quick schedule updates",
+        "desc": "Unexpected changes can happen at any time throughout the day. S-Locator solves this immediately:",
+        "bullets": [
+          "Sudden cancellation? S-Locator automatically suggests available and nearby customers ready for a visit",
+          "Customer doesn't have time for you today? No problem with push-button automatic rescheduling",
+          "S-Locator ensures enough time between appointments so you are always on time"
+        ]
+      },
+      "b6": {
+        "title": "Customer insights on the map",
+        "desc": "Do you want to know where your ABC customers are located to fully understand the dimensions of your territory? Get an overview with the S-Locator map:",
+        "bullets": [
+          "See all your customers on the map",
+          "Color-code your customer maps according to priority, ABC rating, or other categories",
+          "Display available nearby customers for a quick visit when you have free time"
+        ]
+      },
+      "b7": {
+        "title": "Fully connected on the go",
+        "desc": "Need the latest customer information at your fingertips but tired of carrying your laptop around?",
+        "bullets": [
+          "S-Locator is available on all mobile devices",
+          "Your device becomes your personal sales route planner",
+          "Automatic data synchronization with CRM/ERP is possible"
+        ]
+      },
+      "b8": {
+        "title": "Simple reports and smart analytics",
+        "desc": "Unable to see the big picture because your reports lack structure? S-Locator will make things easier:",
+        "bullets": [
+          "Document customer visits on your mobile device immediately after each stop",
+          "Gather concise information with custom reports",
+          "Analyze your work with automatic daily and weekly statistics"
+        ]
+      },
+      "b9": {
+        "title": "Technical Requirements",
+        "desc": "S-Locator is a web application with simple technical requirements and easy usability:",
+        "bullets": [
+          "No installation needed",
+          "Runs on iOS, Android, Windows, macOS, and Linux",
+          "Modern browsers are supported",
+          "Offline mode available"
+        ]
+      },
+      "b10": {
+        "title": "Get the summary as a PDF for your boss",
+        "desc": "Download the S-Locator brochure. A single document containing all important facts.",
+        "bullets": [
+          "Only one document",
+          "All important facts about route planning with S-Locator",
+          "Ideal for distributing to executives"
+        ]
+      }
+    },
+    "infographic": {
+      "title": "How route planning with S-Locator works"
+    },
+    "listTitle": "Detailed feature list",
+    "faq": {
+      "title": "Frequently Asked Questions"
+    },
+    "cta": {
+      "title": "Start exploring automatic route optimization features today",
+      "desc": "Upload your addresses, calculate your first schedule, and start driving on your optimized sales routes.",
+      "btn": "Start your 30-day free trial",
+      "note": "Full version. No credit card required. Automatic termination."
+    },
+    "downloadBtn": "Download Brochure",
+    "checklist": {
+      "c1": {
+        "title": "Route Optimization",
+        "i1": "Smart multi-optimization",
+        "i2": "Reduce driving distance",
+        "i3": "Expand calls/visits",
+        "i4": "Automatic customer selection",
+        "i5": "Manual customer selection",
+        "i6": "Optimized visit schedule",
+        "i7": "Optimized call/visit frequency",
+        "i8": "Fast calculation",
+        "i9": "Long-term planning",
+        "i10": "Multiple stops per week",
+        "i11": "Optimization anytime",
+        "i12": "Live traffic",
+        "i13": "Overnight routes",
+        "i14": "Daily view",
+        "i15": "Weekly view",
+        "i16": "Drag and drop calendar",
+        "i17": "Monthly view",
+        "i18": "Map view",
+        "i19": "Driving time and distance",
+        "i20": "Include new leads",
+        "i21": "Reminders",
+        "i22": "Scheduled appointments",
+        "i23": "Flexible appointments",
+        "i24": "Full-day and multi-day appointments",
+        "i25": "Overnight appointments",
+        "i26": "Recurring appointments",
+        "i27": "Appointment suggestions",
+        "i28": "Phone calls",
+        "i29": "Specific locations",
+        "i30": "Business hours",
+        "i31": "Preferred call times",
+        "i32": "Accounts on vacation",
+        "i33": "Call duration",
+        "i34": "Launch navigation software",
+        "i35": "Route export",
+        "i36": "iCal sharing"
+      },
+      "c2": {
+        "title": "Personal Settings",
+        "i1": "Home location",
+        "i2": "Working hours",
+        "i3": "Lunch break",
+        "i4": "Driving speed",
+        "i5": "Days off",
+        "i6": "Favorite hotels"
+      },
+      "c3": {
+        "title": "Maps and Overview",
+        "i1": "Route display",
+        "i2": "Current traffic",
+        "i3": "All customers on map",
+        "i4": "Lasso selection",
+        "i5": "Filter",
+        "i6": "Different coloring",
+        "i7": "Individual customer icons",
+        "i8": "Current location",
+        "i9": "Nearby customers",
+        "i10": "Automatic geocoding",
+        "i11": "Map license included",
+        "i12": "Map updates included"
+      },
+      "c4": {
+        "title": "Rich Customer Management",
+        "i1": "Maximum customers",
+        "i2": "Import wizard",
+        "i3": "From Excel (XLS, XLSX)",
+        "i4": "From OpenDocument (ODS)",
+        "i5": "From text files (CSV, TXT)",
+        "i6": "Update wizard",
+        "i7": "Quick search",
+        "i8": "Alphabetical index",
+        "i9": "Advanced search",
+        "i10": "Sort and filter",
+        "i11": "Mass edit",
+        "i12": "Map view",
+        "i13": "Create new customers",
+        "i14": "Automatic geocoding",
+        "i15": "Standard fields",
+        "i16": "Call interval/frequency",
+        "i17": "Call duration",
+        "i18": "Last call/visit date",
+        "i19": "Call/visit history",
+        "i20": "Upcoming appointments",
+        "i21": "Call/visit notes",
+        "i22": "Custom fields",
+        "i23": "Export",
+        "i24": "Transfer to other users"
+      },
+      "c5": {
+        "title": "Smart Territory Optimization",
+        "i1": "Reduce",
+        "i2": "Driving time & distance",
+        "i3": "CO2 emissions",
+        "i4": "Fast calculation",
+        "i5": "Initial situation analysis",
+        "i6": "Manual constraints",
+        "i7": "7-level prioritization model",
+        "i8": "Balanced sales force workload",
+        "i9": "Impact assessment before execution",
+        "i10": "Clear visualization",
+        "i11": "Optimization results immediately applicable",
+        "i12": "Exportable optimization results",
+        "i13": "Post-optimization adjustment options"
+      },
+      "c6": {
+        "title": "Availability and Languages",
+        "i1": "Languages",
+        "i2": "English",
+        "i3": "German",
+        "i4": "French",
+        "i5": "Spanish",
+        "i6": "Portuguese",
+        "i7": "Italian",
+        "i8": "Regions",
+        "i9": "Europe",
+        "i10": "North America",
+        "i11": "Central America",
+        "i12": "South America",
+        "i13": "Australia & New Zealand",
+        "i14": "South Africa"
+      },
+      "c7": {
+        "title": "Get Started Quickly",
+        "i1": "Free trial",
+        "i2": "Account in 5 minutes",
+        "i3": "No credit card required",
+        "i4": "Fast data import",
+        "i5": "Try with demo data",
+        "i6": "Easy to use"
+      },
+      "c8": {
+        "title": "Quality and Security",
+        "i1": "Offline mode",
+        "i2": "High-performance servers",
+        "i3": "High availability",
+        "i4": "SSL encrypted connection",
+        "i5": "Encrypted data storage",
+        "i6": "Server location Vienna/Europe",
+        "i7": "Secure data center",
+        "i8": "Private servers",
+        "i9": "No installation required",
+        "i10": "Automatic updates"
+      },
+      "c9": {
+        "title": "S-Locator® for Microsoft Dynamics CRM",
+        "i1": "Installation in 15 mins",
+        "i2": "Supported versions",
+        "i3": "Dynamics CRM 2016",
+        "i4": "Dynamics CRM 365",
+        "i5": "On Premise",
+        "i6": "On Demand",
+        "i7": "Account linkage",
+        "i8": "Contact linkage",
+        "i9": "Lead linkage",
+        "i10": "Appointment linkage",
+        "i11": "Uses existing data",
+        "i12": "Sync anywhere"
+      },
+      "c10": {
+        "title": "S-Locator® API",
+        "i1": "Sync your CRM/ERP",
+        "i2": "HTTPS interface",
+        "i3": "Command line connection",
+        "i4": "Script connection",
+        "i5": "Program code connection",
+        "i6": "Direct browser connection",
+        "i7": "SSL encrypted data transfer",
+        "i8": "Ready to run",
+        "i9": "Import and export",
+        "i10": "Users",
+        "i11": "Customers",
+        "i12": "Appointments",
+        "i13": "Call reports"
+      }
+    }
+  },
+  "routePlannerFaq": {
+    "hero": {
+      "title": "Frequently Asked Questions about S-Locator Route Planner",
+      "subtitle": "Find the answer to your question"
+    },
+    "categories": {
+      "general": "General",
+      "industries": "Industries",
+      "security": "Security",
+      "test": "Trial & Demo",
+      "purchase": "Purchasing",
+      "integrations": "Integrations"
+    },
+    "cta": {
+      "title": "Many questions are best answered in practice - try S-Locator for free for 30 days.",
+      "btn": "Try 30 days for free now*",
+      "note": "*Full version. No credit card required. Automatic termination."
+    },
+    "questions": {
+      "general": {
+        "q1": {
+          "q": "Is S-Locator for centralized or decentralized route planning?",
+          "a": "S-Locator can be used for centralized, decentralized and combined route planning. Decentralized planning means that the field reps plan their routes themselves using S-Locator. Centralized planning is when back-office staff uses S-Locator to plan routes for the field rep team."
+        },
+        "q2": {
+          "q": "Can S-Locator help me avoid traffic jams?",
+          "a": "Yes, if desired, S-Locator takes the current traffic situation into account when planning the route. For the next trip, priority is then given to those customers who can be reached on roads free of traffic jams."
+        },
+        "q3": {
+          "q": "Does S-Locator Route Planner also support me in integrating new customers?",
+          "a": "Yes – import your new customers into the CRM system of your choice and S-Locator will calculate optimized route plans to visit new customers in addition to your existing customers in a mileage-efficient manner."
+        },
+        "q4": {
+          "q": "What are the benefits of territory optimization and route planning from a single source?",
+          "a": "With S-Locator Territory Optimization + Route Planner, you will experience a level of field sales efficiency you never thought possible. We combine the power of the best route-planning solution on the market with next-generation dynamic territory optimization."
+        },
+        "q5": {
+          "q": "Will S-Locator Route Planner record the routes I drive?",
+          "a": "No; S-Locator Route Planner does not store GPS records of drives. S-Locator is not a surveillance tool. Instead, it is a great help for field reps to visit more customers and drive fewer miles."
+        }
+      },
+      "industries": {
+        "q1": {
+          "q": "For which industries is route planning suitable?",
+          "a": "S-Locator Route Planner is suitable for any size of business: From a one-person company to large corporations with 1,000+ field staff across all varied industries (Pharmaceutical, medical, FMCG, etc)."
+        },
+        "q2": {
+          "q": "Which use cases is S-Locator suitable for?",
+          "a": "S-Locator is used for route planning in field sales with regular client calls, one-time visits as part of a product launch, pricing and inventory control in outlets, mystery shopping, new customer acquisition, and recurring service activities."
+        }
+      },
+      "security": {
+        "q1": {
+          "q": "Is there an offline version of S-Locator?",
+          "a": "S-Locator is an online-web-application with support for offline data storage. In situations without internet connection, your most important data is readily available offline in your browser."
+        },
+        "q2": {
+          "q": "Is S-Locator available 24/7?",
+          "a": "S-Locator is designed for high availability: Multiple redundant high performance servers with automatic load balancing, 24/7-Monitoring with automatic alarm, and redundant fiber connectivity."
+        },
+        "q3": {
+          "q": "Where is the login? How do I get my access link?",
+          "a": "If you already have a trial or a paid account, you can use the login button in the top right corner. If you are an employee, you receive your access link from your administrator."
+        }
+      },
+      "test": {
+        "q1": {
+          "q": "I'd like to get a demonstration of S-Locator Route Planner.",
+          "a": "Would you like to present the sales route planning software S-Locator to your company? We are happy to prepare an online presentation for your management, sales management, and IT management."
+        },
+        "q2": {
+          "q": "Is S-Locator the best route planning software for me?",
+          "a": "S-Locator is the best route planning software for you, if you are visiting your customers on a regular basis and spending most of your week on the road."
+        },
+        "q3": {
+          "q": "How do I get help and support for S-Locator?",
+          "a": "When receiving your account data you also get access to tutorial videos and PDF manuals. Within the application you will find online help. Additionally, our support team is happy to help you via email."
+        },
+        "q4": {
+          "q": "Can I try S-Locator without obligation or cost?",
+          "a": "Yes. Sign up for a free trial of S-Locator Anywhere, a web-version without further requirements. The trial license will automatically expire after 30 days and is limited to one user."
+        }
+      },
+      "purchase": {
+        "q1": {
+          "q": "Can I buy a perpetual S-Locator license?",
+          "a": "No – S-Locator is a “software as a service” application. You subscribe to S-Locator as a service and save yourself costs for server hardware, software, installation, maintenance and operation."
+        },
+        "q2": {
+          "q": "How much do I save with S-Locator? How soon does it pay off?",
+          "a": "You currently spend an average of 50€ per customer visit, all expenses considered. With S-Locator, one additional visit per day is possible, meaning 20 additional visits per month. This generates added value equivalent to 1000€ per field rep and per month."
+        }
+      },
+      "integrations": {
+        "q1": {
+          "q": "Can I integrate the S-Locator route planning algorithm into my own field rep app?",
+          "a": "Yes, you can! Check out our RESTful JSON S-Locator ISV API."
+        },
+        "q2": {
+          "q": "Can I use S-Locator Route Planner with Salesforce, Dynamics CRM or other CRM/ERP systems?",
+          "a": "Yes, S-Locator Route Planner works with Salesforce, Microsoft Dynamics CRM, Siebel CRM, Sugar CRM and other CRM/ERP systems."
+        },
+        "q3": {
+          "q": "Can S-Locator be connected to my CRM?",
+          "a": "Yes! S-Locator integrates with popular CRM systems like Salesforce or Microsoft Dynamics or imports data via CSV/Excel. This means that customer master data, visit histories and sales targets are always up-to-date."
+        }
+      }
+    }
+  },
+  "territoryOpt": {
+    "hero": {
+      "title": "Innovative territory optimization for your field sales team",
+      "subtitle": "The future of sales force optimization is dynamic planning",
+      "desc": "Easy to use, powerful in execution, and impressive results. Convince yourself today with the S-Locator territory optimization software.",
+      "demo": "Book a demo",
+      "video": "Watch video"
+    },
+    "useCases": {
+      "title": "Use cases for dynamic territory optimization",
+      "faqQ": "What is territory optimization in field sales?",
+      "faqA": "Territory optimization in field sales refers to the process of reviewing and adjusting existing sales territories based on predefined criteria. The goal is to avoid overloading or underutilizing your field sales team, thereby improving customer satisfaction and significantly reducing driving times.",
+      "tabs": {
+        "t1": "Employee resignation",
+        "t2": "Change in working hours",
+        "t3": "Long-term absence",
+        "t4": "Seasonal optimization need",
+        "t5": "Changing customer landscape",
+        "t6": "Entering new markets"
+      },
+      "content": {
+        "t1": "At the push of a button, you can effortlessly distribute the departing employee's customers to the territories of other employees.",
+        "t2": "Employee A wants to work 20 hours instead of 30 per week: Decide as a team and with S-Locator where routes can be reduced and who can take over customers.",
+        "t3": "Mitigate the impact of maternity leave, long holidays, or sick leave by fairly distributing customers among the rest of the team.",
+        "t4": "How do we distribute customers to ensure all A-level customers are visited at least once in Q4? Visualize your planning ideas in a flash.",
+        "t5": "Efficiently integrate your new customers and optimize your territories in seconds when the priorities of your existing customers change.",
+        "t6": "Are you planning to enter a new market and need to expand your sales team? S-Locator automatically determines the right number and locations for new hires."
+      }
+    },
+    "switcher": {
+      "mainTitle": "This is how easy territory optimization is with S-Locator",
+      "mainDesc": "Start from your current situation, and S-Locator guides you step by step to the optimal result in a few moments.",
+      "s1": {
+        "title": "Your current situation",
+        "desc": "Visualize your field reps' customers on the map and display all relevant information in the detailed view.",
+        "tab1": "Map",
+        "tab2": "Detailed View",
+        "tab3": "Time required per customer"
+      },
+      "s2": {
+        "title": "Your optimization settings",
+        "desc": "In the following steps, you can optionally make manual adjustments or optimization settings for each field rep.",
+        "tab1": "Manual Adjustments",
+        "tab2": "Optimization Settings"
+      },
+      "s3": {
+        "title": "Your optimization result",
+        "desc": "In a few moments, S-Locator calculates the optimization result. Visualize it on the map or in the detailed view.",
+        "tab1": "Map",
+        "tab2": "Detailed View"
+      },
+      "s4": {
+        "title": "7 levels of prioritization",
+        "desc": "With multiple prioritization levels, you can choose between the lowest overall travel time or a balanced workload.",
+        "tab1": "Low Overall Travel Time",
+        "tab2": "Balanced Workload"
+      }
+    },
+    "saas": {
+      "title": "Test different scenarios in seconds",
+      "boxTitle": "Advantages of SaaS",
+      "b1": "Ready to start immediately",
+      "b2": "On any device via browser",
+      "b3": "Saves internal time",
+      "p1": "Thanks to the power of the S-Locator cloud, you can test different scenarios in seconds - with no installation or updates required. This allows you to easily share optimization suggestions with your team.",
+      "p2": "In the results, we show how much different territories have degraded or improved. Keep in mind that even seemingly small optimization potentials of 1-2% have a massive impact on your sales success.",
+      "p3": "With sales force costs of around $10 million per year, a 1% improvement thanks to S-Locator can save you up to $100,000 in sales costs annually."
+    },
+    "demoCta": {
+      "title": "Arrange an individual demo",
+      "desc": "Our team would be happy to show you the territory optimization features of S-Locator - specially tailored to your requirements.",
+      "f1": "Free",
+      "f2": "30-60 mins",
+      "f3": "Online",
+      "btn": "Book a demo"
+    },
+    "pricing": {
+      "title": "S-Locator Territory Optimization License Models",
+      "desc": "If you have a team of two or more field reps, S-Locator is the right solution for you. Choose between two different billing periods designed to meet your needs.",
+      "m3": "3 Months",
+      "m3Desc": "Ideal for short-term projects or quick responses to unexpected changes.",
+      "m12": "12 Months",
+      "m12Desc": "Perfect for continuous optimization and sales growth, responding flexibly to market changes.",
+      "btn": "To the Shop"
+    },
+    "footerCta": {
+      "title": "Territory optimization and route planning from a single source",
+      "desc": "The future of sales optimization is dynamic territory planning integrated with state-of-the-art route planning. S-Locator therefore supports you with automatic route planning to boost your field sales performance.",
+      "btn": "To S-Locator Route Planner"
+    }
+  },
+  "territoryAdvantages": {
+    "hero": {
+      "title": "Choose innovative territory optimization!",
+      "subtitle": "Traditional territory planning is a thing of the past. S-Locator territory optimization is the future.",
+      "desc": "This comparison speaks for itself.",
+      "demo": "Book a demo"
+    },
+    "sidebar": {
+      "title": "Topics"
+    },
+    "table": {
+      "conventional": "Traditional Territory Planning",
+      "slocator": "S-Locator Territory Optimization",
+      "hideDetails": "Hide Details",
+      "showDetails": "Show Details",
+      "whyImportant": "Why is this important?"
+    },
+    "comparison": {
+      "quality": {
+        "title": "Accuracy and Quality",
+        "items": {
+          "i1": {
+            "feature": "Customer Geocoding",
+            "bad": "Manual, slow and/or ZIP code accuracy only",
+            "good": "Automatic, fast, and precise to street number",
+            "desc": "Territory planning software needs to know the exact location of customers on the map to ensure accurate planning. Inaccuracies from ZIP code-based tools can easily add 15 minutes of extra travel time per customer. S-Locator converts addresses into geocoordinates automatically at no extra cost."
+          },
+          "i2": {
+            "feature": "Distance Calculations",
+            "bad": "Straight-line, estimated travel time",
+            "good": "Real routes and travel times",
+            "desc": "The actual road network significantly impacts travel times. Using straight-line distances makes results prone to error. S-Locator always uses real routes, taking historical driving speeds into account to deliver highly accurate results."
+          },
+          "i3": {
+            "feature": "Customer Call Intervals",
+            "bad": "Ignored",
+            "good": "Considered individually",
+            "desc": "Visit intervals heavily impact travel time. If you visit a customer weekly instead of monthly, the time spent in the car adds up. S-Locator considers these to group compatible intervals together."
+          },
+          "i4": {
+            "feature": "Customer Business Hours",
+            "bad": "Ignored",
+            "good": "Considered individually",
+            "desc": "Customers with very restrictive business hours (like doctors' offices) affect travel times. S-Locator handles these constraints efficiently."
+          },
+          "i5": {
+            "feature": "Call/Visit Duration",
+            "bad": "Ignored",
+            "good": "Considered individually",
+            "desc": "Visit duration heavily impacts the number of possible visits per day. S-Locator takes the visit duration of each customer into account."
+          },
+          "i6": {
+            "feature": "Field Rep Working Hours",
+            "bad": "Ignored",
+            "good": "Considered individually",
+            "desc": "The shorter the working hours, the greater the negative impact of distant customers. When optimizing your territory, S-Locator considers working hours per day."
+          },
+          "i7": {
+            "feature": "Overnight Stays for Reps",
+            "bad": "Ignored",
+            "good": "Considered individually",
+            "desc": "In large geographical areas, overnight stays can significantly impact travel time. S-Locator allows you to configure different overnight stay settings for each rep."
+          },
+          "i8": {
+            "feature": "Planning Algorithm",
+            "bad": "No route understanding",
+            "good": "Daily route simulation",
+            "desc": "Reps make their visits via daily routes. S-Locator takes everything into account by simulating daily routes very precisely."
+          },
+          "i9": {
+            "feature": "Call Rate for Visits",
+            "bad": "Ignored",
+            "good": "Considered",
+            "desc": "During visits, there is no guarantee the customer will actually meet the rep. With S-Locator, you can configure the call rate to get realistic results."
+          },
+          "i10": {
+            "feature": "Map Updates",
+            "bad": "Yearly",
+            "good": "Quarterly",
+            "desc": "The road network changes by up to 15% annually. In S-Locator, we update road maps quarterly automatically and at no extra charge."
+          }
+        }
+      },
+      "provision": {
+        "title": "Availability",
+        "items": {
+          "i1": {
+            "feature": "Deployment and Installation Effort",
+            "bad": "High due to local installation",
+            "good": "Low thanks to SaaS",
+            "desc": "Local installation makes you dependent on the IT department. S-Locator requires no installation - all you need is a web browser."
+          },
+          "i2": {
+            "feature": "Supported Devices",
+            "bad": "Windows PC only",
+            "good": "Windows PC, Mac, iPad, Android",
+            "desc": "Traditional software is limited to Windows. You can access S-Locator and all its features from any device with a modern web browser."
+          },
+          "i3": {
+            "feature": "Speed",
+            "bad": "Limited by PC hardware",
+            "good": "High speed thanks to SaaS",
+            "desc": "We use advanced, high-performance servers in S-Locator with computing power up to 50 times that of an average desktop PC."
+          },
+          "i4": {
+            "feature": "Memory Consumption",
+            "bad": "High due to maps",
+            "good": "None, thanks to SaaS",
+            "desc": "Data is stored centrally on our cloud servers, so you don't need local storage space or room for maps."
+          },
+          "i5": {
+            "feature": "Updates",
+            "bad": "High effort due to local installation",
+            "good": "Automatic, require no manual work",
+            "desc": "In S-Locator, our cloud servers are updated automatically and transparently several times a year without any intervention from you."
+          }
+        }
+      },
+      "userFriendliness": {
+        "title": "Ease of Use",
+        "items": {
+          "i1": {
+            "feature": "Software Purpose",
+            "bad": "Broad range of distracting applications",
+            "good": "Dedicated to sales territory optimization",
+            "desc": "S-Locator is fully dedicated to sales territory optimization, making it intuitive and free from distractions and unnecessary functions."
+          },
+          "i2": {
+            "feature": "User Interface Complexity",
+            "bad": "Overwhelming number of buttons and menus",
+            "good": "Simple step-by-step wizard",
+            "desc": "S-Locator takes the form of an intuitive wizard that displays only the features needed for each step, rather than complex interfaces."
+          },
+          "i3": {
+            "feature": "Target Users",
+            "bad": "Trained experts only",
+            "good": "Anyone with field sales responsibilities",
+            "desc": "We made S-Locator extremely easy to learn, so anyone responsible for field sales can benefit from it without extensive training."
+          },
+          "i4": {
+            "feature": "Input Error Tolerance",
+            "bad": "Low to none",
+            "good": "Medium to high",
+            "desc": "S-Locator attempts to find the most effective solutions, or provides clear, helpful feedback if a request cannot be met due to conflicting settings."
+          },
+          "i5": {
+            "feature": "Sharing Optimizations",
+            "bad": "Manual work",
+            "good": "Built into the software",
+            "desc": "A few clicks are enough to share results with other users within the app itself for discussion and approval."
+          }
+        }
+      },
+      "optimization": {
+        "title": "Optimization Capabilities",
+        "items": {
+          "i1": {
+            "feature": "Reduce Travel Time and Distance",
+            "bad": "Limited",
+            "good": "Fully supported",
+            "desc": "Field rep time is expensive. S-Locator optimization is based on route simulation using actual roads to realistically reduce distances."
+          },
+          "i2": {
+            "feature": "Workload Balancing",
+            "bad": "Limited",
+            "good": "Fully supported",
+            "desc": "Overwork causes frustration and underwork wastes resources. S-Locator calculates workloads realistically, offering up to 7 different optimization proposals."
+          },
+          "i3": {
+            "feature": "Increase Number of Customer Calls",
+            "bad": "Limited",
+            "good": "Fully supported",
+            "desc": "Frequent visits increase sales. Every additional visit you gain through better optimization translates to higher profits."
+          }
+        }
+      }
+    },
+    "infoBox": {
+      "p1": "The difference between regular and high-quality optimization is up to ",
+      "s1": "10%",
+      "p2": ". In other words, reps spend 10% more time in the car than necessary, meaning fewer customer visits. Assuming a rep costs €60,000 a year, a 1% efficiency gain saves €600. At 10%, the savings amount to ",
+      "s2": "€6,000 per year per rep",
+      "p3": " lost due to traditional software. ",
+      "link": "With S-Locator territory optimization, you will reduce distribution costs."
+    },
+    "resultsCta": {
+      "title": "Optimization results in minutes.",
+      "desc": "This is how easy territory optimization is with S-Locator",
+      "btn": "More about S-Locator Territory Optimization"
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions about Dynamic Territory Optimization",
+      "items": {
+        "q1": "What are the benefits of territory optimization and route planning from a single source?",
+        "a1": "In many cases, traditional providers offer either one or the other, so you need two different applications. S-Locator combines the power of the best route planning solution with the next generation of dynamic territory optimization.",
+        "q2": "Unlike traditional software, S-Locator supports multiple planners. Where is the advantage in that?",
+        "a2": "With S-Locator, the old idea that only one person can plan is a thing of the past. Our solution allows regional managers to optimize their own territories - a huge advantage when a quick response is needed.",
+        "q3": "Why are common methods like straight-line distances and cluster analysis costly disadvantages?",
+        "a3": "Unrealistic assumptions: Territory optimization using straight lines produces inefficient routes because it ignores real-world factors like traffic conditions and actual roads.",
+        "q4": "Why should a territory optimization solution be dynamic?",
+        "a4": "S-Locator gives you the power of the cloud (SaaS), which provides significant advantages: you can forget about installation, updates, and relying on your IT department.",
+        "q5": "Does territory optimization force me to reallocate my sales territories?",
+        "a5": "In the old, static approach, this was the case. But S-Locator allows you to analyze criteria and choose to reduce visit intervals if you cannot or do not want to reassign a customer to another rep."
+      }
+    },
+    "testimonials": {
+      "title": "What our customers say",
+      "desc": "Easy to use app, powerful execution, impressive results.",
+      "readMore": "Read more..."
+    },
+    "pricing": {
+      "title": "S-Locator Territory Optimization License Models",
+      "desc": "If you have a team of two or more field reps, S-Locator is the right solution for you. Choose between two different billing periods designed to meet your needs.",
+      "m3": "Months",
+      "m3Desc": "Ideal for short-term projects or quick responses to unexpected changes.",
+      "m12": "Months",
+      "m12Desc": "Perfect for continuous optimization and sales growth, responding flexibly to market changes.",
+      "btn": "To the Shop",
+      "popular": "Most Popular"
+    },
+    "demoCta": {
+      "title": "Arrange an individual demo",
+      "desc": "Our team would be happy to show you the territory optimization features of S-Locator - specially tailored to your requirements.",
+      "f1": "Free",
+      "f2": "30-60 mins",
+      "f3": "Online",
+      "btn": "Book a demo"
+    },
+    "footerCta": {
+      "title": "Territory optimization and route planning from a single source",
+      "desc": "The future of sales optimization is dynamic territory planning integrated with state-of-the-art route planning. S-Locator therefore supports you with automatic route planning to boost your field sales performance.",
+      "btn": "To S-Locator Route Planner"
+    }
+  },
+  "costSavings": {
+    "hero": {
+      "title": "Save money with S-Locator Territory Optimization",
+      "p1": "In times of skilled labor shortages, S-Locator territory optimization allows you to compensate for staff losses without having to fill vacancies. Sounds too good to be true? Let us show you how.",
+      "p2": "S-Locator's unique algorithm leads to efficiency gains of up to 3% compared to traditional software. For example, you can achieve the same efficiency with 29 employees as you would with 30.",
+      "scenarioText": "In a hypothetical scenario with",
+      "reps": "30 sales reps",
+      "achieveText": "you will achieve",
+      "savings": "savings of €88,600",
+      "p3": "Fewer reps, more efficiency. Reduce your labor costs without sacrificing quality."
+    },
+    "breakdown": {
+      "title": "Your field service costs:",
+      "desc": "You employ 30 sales reps, thus incurring annual costs of €3,000,000. The total costs of approximately €100,000 per rep annually consist of the following:",
+      "salary": "Salary",
+      "taxes": "Taxes & Fees",
+      "car": "Car",
+      "team": "Team Leader",
+      "fuel": "Fuel",
+      "hotel": "Hotel Costs",
+      "training": "Training",
+      "it": "IT/Phone/Software",
+      "hr": "HR/Recruiting"
+    },
+    "comparison": {
+      "convTitle": "Traditional Territory Planning",
+      "slocTitle": "S-Locator Territory Optimization",
+      "convTotal": "Annual Sales Team Costs",
+      "savingsBox": "Savings",
+      "slocTotal": "Annual Sales Team Costs",
+      "convSoft": "Annual Software Costs",
+      "addCostBox": "Additional Costs",
+      "slocSoft": "Annual Software Costs",
+      "totalSavingsTitle": "Your Total Savings with S-Locator Territory Optimization"
+    },
+    "advantages": {
+      "title": "Your Advantages at a Glance",
+      "effTitle": "Greater Efficiency",
+      "effDesc": "For example, you can achieve the same efficiency with 29 reps instead of 30 without sacrificing quality.",
+      "costTitle": "Lower Labor Costs",
+      "costDesc": "Savings from vacant positions and reduced recruitment costs. Invaluable in times of labor shortages.",
+      "compactTitle": "Compact Territories",
+      "compactDesc": "Reduced travel routes and more efficient planning thanks to our innovative algorithm.",
+      "footer": "Using S-Locator territory optimization, you not only save time and effort at the end of the day, but you save money too."
+    }
+  },
+  "territoryFaq": {
+    "hero": {
+      "title": "Frequently Asked Questions about S-Locator Territory Optimization",
+      "subtitle": "Find the answer to your question"
+    },
+    "categories": {
+      "general": {
+        "title": "General",
+        "q1": "What are the benefits of territory optimization and route planning from a single source?",
+        "a1": "In many cases, traditional providers offer either one or the other, so you need two different applications. This has major drawbacks: the sales team is forced to learn two apps, and constantly transferring data between them is frustrating. <br><br>With S-Locator, you get field sales efficiency you never imagined because the two systems are seamlessly integrated.",
+        "q2": "Can I use S-Locator for territory planning?",
+        "a2": "Yes, S-Locator supports you in planning and automatically optimizing your sales territories. This not only saves you extra miles but also ensures a balanced workload for your team.",
+        "q3": "Unlike traditional planning, S-Locator accommodates multiple planners. Where is the advantage in that?",
+        "a3": "With S-Locator, the old idea that only one person can plan is a thing of the past. Our solution allows regional managers to optimize their own territories for rapid response.",
+        "q4": "Why are common methods like straight-line distances costly disadvantages?",
+        "a4": "Because they are based on unrealistic assumptions (ignoring traffic and topography) and ignore individual customer needs, resulting in inefficient routes and higher costs."
+      },
+      "industries": {
+        "title": "Industries",
+        "q1": "What use cases is S-Locator suitable for?",
+        "a1": "It is used for schedule optimization and sales territory alignment. It is suited for field sales teams wanting to organize their territories efficiently and minimize driving times.",
+        "q2": "Which industries is S-Locator suitable for?",
+        "a2": "Objectively speaking, territory optimization is essential for any company with an active field sales force, including pharmaceuticals, consumer goods, automotive, and more."
+      },
+      "security": {
+        "title": "Security",
+        "q1": "How secure is S-Locator?",
+        "a1": "S-Locator uses the most advanced security standards: connection is encrypted, access requires authentication, and data is stored on encrypted disks in protected servers.",
+        "q2": "Is S-Locator GDPR compliant?",
+        "a2": "Yes – S-Locator is fully compliant with GDPR data protection guidelines."
+      },
+      "access": {
+        "title": "Access",
+        "q1": "Is S-Locator available 24/7?",
+        "a1": "Yes, S-Locator is designed for high availability using multiple high-performance servers with automatic load balancing.",
+        "q2": "Where is the login? How do I get my details?",
+        "a2": "If you have an account or a trial period, you will receive your personal access link via email. The link works on computers, phones, and tablets."
+      },
+      "test": {
+        "title": "Trial & Demo",
+        "q1": "How do I get help and support?",
+        "a1": "Our support team is happy to assist you via email. Inside the app, you will find online help and tutorial videos.",
+        "q2": "I would like a demo of S-Locator.",
+        "a2": "We would be happy to set up an online presentation for your management and sales team. Contact us today to schedule an appointment.",
+        "q3": "Is S-Locator the best territory planning software for me?",
+        "a3": "Yes, it is the best if you regularly want to adjust or plan new sales territories while ensuring efficiency, fairness, and reduced sales costs."
+      },
+      "purchase": {
+        "title": "Purchasing",
+        "q1": "Can I buy a perpetual (lifetime) license?",
+        "a1": "No – S-Locator is a 'Software as a Service' (SaaS) application. You subscribe to it as a service, which saves you hardware, installation, and maintenance costs."
+      },
+      "integrations": {
+        "title": "Integrations",
+        "q1": "Can I use S-Locator with other CRM/ERP systems?",
+        "a1": "Yes, S-Locator integrates seamlessly with popular CRM systems like Salesforce and Microsoft Dynamics, and supports data import via CSV/Excel."
+      }
+    },
+    "cta": {
+      "title": "Many questions are answered in practice – try S-Locator free for 30 days.",
+      "btn": "Test 30 days for free now*",
+      "note": "*Full version. No credit card required. Automatic termination."
+    }
+  },
+  "pricingPage": {
+    "hero": {
+      "title": "Pricing",
+      "subtitle": "Choose from our products"
+    },
+    "configurator": {
+      "products": {
+        "rp": "Route Planner",
+        "to": "Territory Optimization",
+        "rpto": "Route Planner + Territory Optimization",
+        "min1": "Minimum persons: 1",
+        "min2": "Minimum persons: 2"
+      },
+      "licenses": {
+        "title": "Enter Number of Licenses",
+        "persons": "Persons",
+        "savings": "Savings",
+        "perMonth": "(per license/month)",
+        "features": {
+          "rp": "Route Planning",
+          "to": "Territory Optimization",
+          "import": "Excel/CSV Import",
+          "api": "API Data Import/Export",
+          "groups": "User Groups (Restricted Permissions)",
+          "integrations": "Additional Integrations"
+        },
+        "yes": "Yes",
+        "no": "No",
+        "onRequest": "On request",
+        "save": "Save"
+      },
+      "featuresList": {
+        "title": "Feature List",
+        "admin": "Free Administrator Account"
+      },
+      "integrations": {
+        "title": "Choose Integration",
+        "api": "S-Locator API",
+        "salesforce": "Salesforce",
+        "dynamics": "Dynamics",
+        "veeva": "Veeva",
+        "none": "No Integration",
+        "min2": "Minimum licenses: 2",
+        "min10": "Minimum licenses: 10",
+        "min50": "Minimum licenses: 50",
+        "link": "Which integration is right for me?"
+      },
+      "billing": {
+        "title": "Choose Billing Cycle",
+        "m3": "3 Months",
+        "m12": "12 Months",
+        "note": "The billing cycle corresponds to the contract period. Billing is in advance."
+      },
+      "stickyBox": {
+        "title": "Price",
+        "perPerson": "Per person per month",
+        "billed": "(Billed annually)",
+        "vat": "Excluding VAT",
+        "worthTitle": "Is this price worth it?",
+        "worthDesc": "Discover your benefits with S-Locator",
+        "roiBtn": "ROI Calculator",
+        "contactSales": "Contact our sales team for an exclusive offer.",
+        "requestBtn": "Request Now"
+      }
+    },
+    "cta": {
+      "title": "Ready to take your sales route to the next level?",
+      "desc": "Try it for free today and see how S-Locator can revolutionize your route planning.",
+      "btnTrial": "Start your 30-day free trial",
+      "btnBuy": "Buy Now",
+      "note": "Full version. No credit card required. Automatic termination."
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions"
+    }
+  },
+  "roiCalculator": {
+    "hero": {
+      "title": "Return on Investment (ROI) Calculator for Field Sales"
+    },
+    "form": {
+      "calcFor": "Calculate for:",
+      "rp": "Route Planner",
+      "to": "Territory Optimization",
+      "industry": "Industry",
+      "selectIndustry": "Select Industry",
+      "fieldSales": "Field Sales Force",
+      "persons": "Persons",
+      "distance": "Distance (km)",
+      "perYear": "Annually",
+      "planningHours": "Planning Hours (hrs)",
+      "perWeek": "Weekly",
+      "salary": "Gross Salary (€)",
+      "turnover": "Sales Volume (€)",
+      "workHours": "Work Hours (hrs)",
+      "advanced": {
+        "vehCost": "Vehicle Costs (€)",
+        "perKm": "Per km",
+        "empFactor": "Employer Cost Factor",
+        "timeToRev": "Time to Revenue",
+        "months": "Months",
+        "distSaved": "Distance Savings From",
+        "edit": "Edit",
+        "reset": "Reset"
+      }
+    },
+    "results": {
+      "initial": "Your Initial Situation",
+      "advantage": "Your Advantage with S-Locator",
+      "vehCosts": "Vehicle Costs",
+      "planCosts": "Planning Costs",
+      "salesPot": "Sales Potential",
+      "moreDetails": "More Details",
+      "fewerDetails": "Fewer Details",
+      "annualVeh": "Annual Vehicle Costs",
+      "kmSaved": "Kilometers Saved",
+      "annualPlan": "Annual Planning Costs",
+      "timeSaved": "Time Saved in the Field",
+      "annualSales": "Annual Sales Potential"
+    },
+    "summary": {
+      "additionalSales": "Additional Sales Potential",
+      "desc1": "The annual expenses for S-Locator plus one-time project start-up costs are covered by vehicle cost savings alone.",
+      "desc2": "In most cases, vacant territories can be redistributed and optimized through territory optimization and route planning. Replacement is not always necessary, but visit quality is maintained or increased.",
+      "breakEven": "You see a positive return on investment. You can break even in",
+      "months": "months.",
+      "schedule": "Schedule now",
+      "disclaimer": "* The figures provided are average values from multiple and diverse client projects. Your actual distances may vary."
+    },
+    "cta": {
+      "title": "Your success starts here.",
+      "desc": "Take the first step towards more efficient routes, optimized territories, more customer calls, and measurable ROI with S-Locator.",
+      "btn": "Start Now"
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions"
+    }
+  },
+  "integrationsPage": {
+    "hero": {
+      "title": "Integrations",
+      "subtitle": "S-Locator within your ecosystem",
+      "desc": "The S-Locator route planning app offers manual data import and can also be connected to your CRM/ERP system. S-Locator makes it easy to use the data required to plan your route."
+    },
+    "tabs": {
+      "manual": {
+        "title": "Manual Import (Excel/CSV)",
+        "items": [
+          "All you need for route optimization is an Excel, CSV, or ODS file containing your customer data.",
+          "Use our sample spreadsheet which includes import instructions.",
+          "Read our article on data preparation for automatic route planning and learn how to perfectly prepare your data for import.",
+          "This tutorial video shows you every step: creating a trial account, importing customers, and calculating the first route."
+        ],
+        "btn": "Start your 30-day free trial"
+      },
+      "salesforce": {
+        "title": "S-Locator Connector for Salesforce",
+        "items": [
+          "Import accounts, appointments, and users into S-Locator. Optionally, contacts or leads can also be imported.",
+          "Plan optimized routes for your existing customers and appointments in Salesforce.",
+          "Automatically export call and visit reports back to Salesforce.",
+          "The connector is installed within our cloud server infrastructure and communicates via API.",
+          "The Connector app is installed inside Salesforce to support the authentication process."
+        ],
+        "btn": "Find out more about the Salesforce connector"
+      },
+      "dynamics": {
+        "title": "Dynamics CRM Sales",
+        "items": [
+          "Integrate the S-Locator route planning solution into your Microsoft Dynamics CRM versions.",
+          "Your companies, contacts, and appointments sync with S-Locator, and changes are transferred back to Dynamics.",
+          "Field reps plan their routes and document their visits in the S-Locator app on any device.",
+          "S-Locator is integrated as a managed solution with a few clicks by the administrator.",
+          "Are you a system integrator for Microsoft Dynamics CRM? Let's talk!"
+        ],
+        "btn": "Find out more about S-Locator for Dynamics"
+      },
+      "veeva": {
+        "title": "Veeva CRM",
+        "items": [
+          "The S-Locator connector for Veeva CRM is an out-of-the-box software installed as a managed solution in your organization.",
+          "Accounts, best visit times, and saved appointments are considered when calculating the optimized schedule.",
+          "Pharma sales reps use the optimized schedule to visit more customers with fewer miles.",
+          "You benefit from an AI-powered S-Locator calendar that helps you keep track of your customers."
+        ],
+        "btn": "Contact us"
+      },
+      "other": {
+        "title": "Other CRM/ERP Systems",
+        "items": [
+          "No matter what CRM/ERP system you use - if it can export and import Excel or CSV files, you can sync your data with S-Locator.",
+          "For regular automated import and export, all you need to do is configure our API PowerShell scripts.",
+          "After successful completion of the setup workshop, we will be happy to assist you with integrating the system into your infrastructure.",
+          "API connection is included in every company account starting from 2 licenses."
+        ],
+        "btn": "Contact us"
+      },
+      "api": {
+        "title": "S-Locator API",
+        "items": [
+          "S-Locator has an HTTPS API for automated data import and export.",
+          "Calls are made directly from your system's development environment or programming language.",
+          "Find documentation in our API guide and get hands-on training from our API support team.",
+          "API access is available in every company account."
+        ],
+        "btn": "Find out more about the API"
+      },
+      "isv": {
+        "title": "ISV API",
+        "items": [
+          "Do you have or are you developing an application for field sales, marketing, or service?",
+          "Integrate S-Locator intelligence directly into your app - using our RESTful JSON API.",
+          "Offer your customers a new, innovative feature with S-Locator and unlock a new revenue stream.",
+          "Expand your field service app to include dynamic route planning and scheduling."
+        ],
+        "btn": "Find out more about the Vendor API"
+      }
+    },
+    "blog": {
+      "title": "More on this topic",
+      "p1": "Preparing data for automatic route planning: What to do? And what to consider?",
+      "p2": "Sync your data with S-Locator – easily implemented across many interfaces",
+      "p3": "S-Locator route planner is now also available for Microsoft Dynamics CRM – with offline mode"
+    },
+    "cta": {
+      "title": "What are you waiting for? Bring your field sales force into the 21st century!",
+      "btn": "Start your 30-day free trial",
+      "note": "Full version. No credit card required. Automatic termination."
+    }
+  },
+  "customersPage": {
+    "hero": {
+      "title": "Customers",
+      "subtitle": "Success stories with S-Locator",
+      "desc": "More than 1,500 companies in over 20 countries have chosen S-Locator since our founding. And new customers are added every day. From small local businesses to large international corporations - S-Locator is suited for organizations of all sizes and used across various industries.",
+      "showMore": "Show more customers"
+    },
+    "categories": {
+      "auto": "Automotive Industry",
+      "building": "Building Materials",
+      "consumer": "Consumer Goods",
+      "cosmetics": "Cosmetics",
+      "electronics": "Electronic Products",
+      "services": "Building Services",
+      "food": "Food & Beverage",
+      "industrial": "Industrial Goods",
+      "medical": "Medical Devices",
+      "pharma": "Pharmaceutical Industry",
+      "wholesale": "Wholesale Trade",
+      "more": "And more"
+    },
+    "cta": {
+      "title": "Join the S-Locator community - and bring your reps into the 21st century.",
+      "btn": "Start your 30-day free trial",
+      "note": "Full version. No credit card required. Automatic termination."
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions"
+    },
+    "stories": {
+      "s1": {
+        "quote": "S-Locator not only helps us plan, but more importantly, it brings total transparency to our field sales operations.",
+        "role": "Head of Financial Controlling"
+      },
+      "s2": {
+        "quote": "With S-Locator, scheduling is no longer part of the job. It just happens automatically.",
+        "role": "Business Intelligence Manager"
+      },
+      "s3": {
+        "quote": "With S-Locator, our reps save 30 to 45 minutes a day on route planning and preparation.",
+        "role": "General Manager"
+      },
+      "s4": {
+        "quote": "A dynamic company like Samsung requires a dynamic route planner! Visit rates are now firmly under control thanks to S-Locator.",
+        "role": "Data Analyst"
+      },
+      "s5": {
+        "quote": "Sales reps love working with S-Locator because they can flexibly reschedule on the go, and the software is incredibly easy to use.",
+        "role": "Sales Management Assistant"
+      },
+      "s6": {
+        "quote": "With S-Locator we get 20% more visits in any given week. It saves us a lot of time.",
+        "role": "VP Field Sales"
+      },
+      "s7": {
+        "quote": "I wouldn't want to be without S-Locator now. The software pays for itself when factoring in the cost of manual work.",
+        "role": "Head of Operations"
+      },
+      "s8": {
+        "quote": "Thanks to S-Locator, we can quickly turn our field sales requirements into reality and get optimized results at the push of a button.",
+        "role": "Senior Sales Operations Manager"
+      },
+      "s9": {
+        "quote": "For us, S-Locator is the ultimate solution because it simply works and perfectly adapts to our everyday working lives.",
+        "role": "Field Sales Team Leader"
+      }
+    },
+    "reviews": {
+      "r1": "The best system sales and marketing management can buy to achieve execution goals, I've been using it for over 6 years.",
+      "r2": "This is an amazing app. It helps us save a lot of time on the road and focus on our customers.",
+      "r3": "Absolutely brilliant. Excellent product that efficiently helps our team meet monthly execution targets.",
+      "r4": "Simply brilliant! Time saving, optimization, efficiency, performance... hassle-free. I highly recommend it.",
+      "r5": "A one-of-a-kind tool. Perfectly adapts to our specific needs, and the support team is always available.",
+      "r6": "Convenient route planning! It takes the stress out of my daily routine."
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Contact us",
+      "subtitle": "How can we help you?",
+      "availability": "Available by phone from Mon-Fri, 9am - 5pm CET"
+    },
+    "support": {
+      "pretitle": "I am already a user and need",
+      "title": "Support",
+      "btn": "To the Help Center",
+      "teamviewer": "Teamviewer: Remote access for S-Locator Support",
+      "howItWorks": "This is how S-Locator support works."
+    },
+    "sales": {
+      "pretitle": "I am interested and would like",
+      "title": "Purchasing Advice"
+    },
+    "team": {
+      "title": "We look forward to our conversation with you"
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "title": "S-Locator Blog",
+      "subtitle": "Route planning insights and tips for your team"
+    },
+    "nav": {
+      "all": "S-Locator Blog",
+      "fieldSales": "Field Sales",
+      "integrations": "Integrations",
+      "management": "Management Best Practices",
+      "news": "S-Locator News",
+      "routePlanning": "Route Planning",
+      "territory": "Territory Optimization"
+    },
+    "search": {
+      "placeholder": "Search...",
+      "btn": "Search"
+    },
+    "subscribe": {
+      "title": "Never miss a single post",
+      "linkedin": "Follow us on LinkedIn",
+      "rss": "RSS Feed"
+    },
+    "cta": {
+      "title": "Stop wasting time and money, increase your sales opportunities.",
+      "btn": "Start your 30-day free trial*",
+      "note": "*Full version. No credit card required. Automatic termination."
+    },
+    "posts": {
+      "post1": {
+        "category": "Field Sales",
+        "title": "Successful sales reporting in the field with S-Locator®"
+      },
+      "post2": {
+        "category": "Field Sales",
+        "title": "The 5 best sales apps for your field sales team in 2026"
+      },
+      "post3": {
+        "category": "Field Sales",
+        "title": "S-Locator® – The mobile route planner with CRM system for large and small companies"
+      },
+      "post4": {
+        "category": "Management Best Practices",
+        "title": "7 tips to optimize sales in the field"
+      }
+    }
+  },
+  "blogPost": {
+    "share": {
+      "title": "Share on social media",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "copy": "Copy Link",
+      "copied": "Link copied!"
+    },
+    "related": {
+      "title": "Related articles"
+    },
+    "cta": {
+      "title": "Stop wasting time and money, increase your sales opportunities.",
+      "btn": "Start your 30-day free trial*",
+      "note": "*Full version. No credit card required. Automatic termination."
+    }
+  },
+  "advantages": {
+    "title": "Your advantages with S-Locator",
+    "subtitle": "Field sales force software for automatic route planning and dynamic territory optimization",
+    "savingsTitle": "Where savings meet efficiency",
+    "timeSavedLabel": "Time saved",
+    "moreCallsLabel": "More customer calls",
+    "fewerKmLabel": "Fewer kilometers",
+    "quote": "\"We save between 15 and 18% on mileage annually and a lot of time.\"",
+    "readMore": "Read more..."
+  },
+  "calculator": {
+    "detailsPerEmployee": "Details per employee:",
+    "grossSalary": "Gross Salary",
+    "visits": "Visits",
+    "planningEffort": "Planning Effort (hours)",
+    "kilometers": "Kilometers (km)",
+    "perMonth": "Per Month",
+    "perDay": "Per Day",
+    "perWeek": "Per Week",
+    "perYear": "Per Year",
+    "calculationFor": "Calculation for:",
+    "numberOfEmployees": "Number of employees",
+    "calculateNow": "Calculate your benefits now"
+  },
+  "customers": {
+    "title": "Our Customers"
+  },
+  "cta": {
+    "getStartedNow": "Get Started Now"
+  },
+  "features": {
+    "betterService": "Better customer service",
+    "betterService1": "Your customers are optimally distributed across your field sales territories",
+    "betterService2": "All customers are scheduled with AI support according to their ABC priorities",
+    "betterService3": "No customer is forgotten",
+    "betterService4": "Your customers' call times and vacations are taken into account",
+    "quickStart": "Quick start",
+    "quickStart1": "Simply open the S-Locator web app on your smartphone, tablet, or computer",
+    "quickStart2": "You use the ready-to-go S-Locator SaaS solution",
+    "quickStart3": "Get started after a short training session, we are happy to help",
+    "simpleConnection": "Simple connection",
+    "simpleConnection1": "Import your customers and appointments at the push of a button",
+    "simpleConnection2": "Works with Microsoft Dynamics CRM, Salesforce, and other CRM/ERP systems",
+    "simpleConnection3": "Become part of a strong network: support companies with integration as a trusted partner and system integrator",
+    "ai1": "S-Locator uses only internally developed AI and no external AI providers",
+    "ai2": "A heuristic algorithm with swarm intelligence generates hundreds of thousands of potential routes iteratively, then selects the best in real time",
+    "ai3": "Powerful recommendations with full control: the algorithm adheres to the rules you set",
+    "ai4": "Maximum data security through internal hosting of optimization algorithms",
+    "api1": "Do you have an app for field sales, marketing, or service?",
+    "api2": "Expand your app with dynamic route planning from S-Locator and unlock a new revenue stream",
+    "api3": "Simply integrate our ISV API via REST+HTTP in your preferred programming language",
+    "security1": "Data protection according to the highest European and international standards",
+    "security2": "ISO 27018 and 27001 certified company",
+    "security3": "Secure data center with real-time AI processing",
+    "test1": {
+      "text": "A colleague got to know his territory in a completely new way through S-Locator. He also rediscovered forgotten customers."
+    },
+    "test2": {
+      "text": "We chose S-Locator, among other things, because it was the most intuitive and easiest to set up."
+    },
+    "test3": {
+      "text": "Integrating S-Locator into our CRM system was a crucial step that simplified our operations and further boosted efficiency."
+    }
+  },
+  "common": {
+    "showMore": "Show More"
+  },
+  "blogPost1": {
+    "category": "Field Sales",
+    "title": "Successful sales reporting in the field with S-Locator®",
+    "meta": {
+      "published": "Published Date: January 22, 2026",
+      "readTime": "5 min read"
+    },
+    "content": {
+      "p1": "In field sales, connecting with customers is not the only factor that determines success. Meaningful sales reporting is just as important, because systematically recording and evaluating your activities, results, and potential allows you to manage sales processes purposefully, optimally utilize resources, and make better decisions.",
+      "p2": "Unfortunately, reporting often fails in practice due to a lack of transparency, time-consuming recording methods, and scattered data sources. In this article, we show you how modern sales reporting works and how S-Locator® supports your field sales team in this process.",
+      "h2_1": "Why sales reporting is so crucial in field sales",
+      "p3": "Professional sales reporting provides insight into the performance of teams, individual employees, and entire regions within your sales territory at the push of a button. A well-managed reporting system answers questions such as:",
+      "l1_1": "Which customers were visited and when?",
+      "l1_2": "What deals and sales were achieved?",
+      "l1_3": "What was discussed?",
+      "p4": "Without structured sales reporting, this transparency is lost. This often leads to inaccurate forecasts, inefficient use of resources, and missed opportunities. Field staff, on the other hand, need a reporting tool that supports rather than slows them down—one that is fast, mobile, and automated.",
+      "h2_2": "What are typical challenges in sales reporting?",
+      "p5": "Sales reporting is often an unpopular task, especially in the field. The reasons for this include:",
+      "l2_1_title": "Manual data entry:",
+      "l2_1_desc": "Call reports are manually transferred to the CRM system after appointments. This work takes time and reduces motivation.",
+      "l2_2_title": "Isolated solutions:",
+      "l2_2_desc": "Data is scattered across Excel spreadsheets, notes, or various tools. There is no overall picture or complete solution.",
+      "l2_3_title": "Lack of real-time information:",
+      "l2_3_desc": "Decisions are based on outdated figures.",
+      "l2_4_title": "Confusing reports:",
+      "l2_4_desc": "Data is collected but not translated into meaningful key metrics.",
+      "h2_3": "How does sales reporting with S-Locator® reduce the workload?",
+      "p6": "S-Locator® is much more than just smart route planning. The route planning software provides field teams with integrated sales reporting performed on the mobile device immediately after each customer visit.",
+      "p7": "The most important advantages at a glance:",
+      "l3_1_title": "Timely recording:",
+      "l3_1_desc": "Every customer interaction is fully documented immediately after the sales appointment.",
+      "l3_2_title": "Clear dashboards:",
+      "l3_2_desc": "S-Locator® prepares data in a way that enables managers to spot trends instantly.",
+      "l3_3_title": "Integration:",
+      "l3_3_desc": "S-Locator® integrates seamlessly with Salesforce, Microsoft Dynamics, and other systems.",
+      "l3_4_title": "Real-time information:",
+      "l3_4_desc": "Sales management and field staff have updated numbers at their fingertips at all times.",
+      "h2_4": "Practical example: Transparency and efficiency in one step",
+      "p8": "A medium-sized pharmaceutical company uses S-Locator® for automatic route planning for its 30 sales representatives. Previously, visit reports were kept in Excel and only evaluated at the end of the month, meaning a lot of manual work with outdated data. Today, field staff use S-Locator® to log every appointment immediately.",
+      "ctaBoxTitle": "Smart sales reporting with S-Locator®",
+      "ctaBoxBtn": "Try it now!",
+      "h2_5": "Conclusion: Professional reporting made easy",
+      "p9": "Sales reporting in the field doesn't have to be complicated. By focusing on automation, integration, and easy-to-use evaluations, you can save time and gain valuable insights. S-Locator® takes most of the administrative work off your team's shoulders and delivers reports that managers love."
+    },
+    "relatedArticles": {
+      "a1": {
+        "category": "Field Sales",
+        "title": "The 5 best sales apps for your field sales team in 2026"
+      },
+      "a2": {
+        "category": "Field Sales",
+        "title": "S-Locator® – The mobile route planner with CRM system for large and small companies"
+      },
+      "a3": {
+        "category": "Field Sales",
+        "title": "Field sales force, territory planning, and route planning through the ages"
+      }
+    }
+  }
 }

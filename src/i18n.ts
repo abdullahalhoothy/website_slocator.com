@@ -6,10 +6,19 @@ import arTranslations from './locales/ar.json'
 
 const savedLanguage = localStorage.getItem('site_lang') || 'ar'
 
+document.documentElement.dir = savedLanguage === 'ar' ? 'rtl' : 'ltr'
+document.documentElement.lang = savedLanguage
+
 i18n.use(initReactI18next).init({
   resources: {
-    en: { translation: enTranslations },
-    ar: { translation: arTranslations },
+    en: {
+      translation: enTranslations,
+      landing: enTranslations,
+    },
+    ar: {
+      translation: arTranslations,
+      landing: arTranslations,
+    },
   },
   lng: savedLanguage,
   fallbackLng: 'ar',
