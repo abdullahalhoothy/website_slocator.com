@@ -2,12 +2,12 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
-import LandingPage from './pages/LandingPage'
+import Home from './pages/Home'
+import TerritoryPlanning from './pages/TerritoryPlanning'
 import SalesRoutePlanner from './pages/SalesRoutePlanner'
 import Services from './pages/Services'
 import Features from './pages/Features'
 import { RoutePlannerFAQ } from './pages/RoutePlannerFAQ'
-import TerritoryOptimization from './pages/TerritoryOptimization'
 import TerritoryAdvantages from './pages/TerritoryAdvantages'
 import { TerritoryCostSavings } from './pages/TerritoryCostSavings'
 import { TerritoryFaq } from './pages/TerritoryFaq'
@@ -26,15 +26,15 @@ const App: React.FC = () => {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Home />} />
             <Route path="/sales-route-planner" element={<SalesRoutePlanner />} />
             <Route path="/services" element={<Services />} />
             <Route path="/features" element={<Features />} />
             <Route path="/route-planner/faq" element={<RoutePlannerFAQ />} />
-            <Route path="/territory-optimization" element={<TerritoryOptimization />} />
-            <Route path="/territory-optimization/comparison" element={<TerritoryAdvantages />} />
-            <Route path="/territory-optimization/cost-savings" element={<TerritoryCostSavings />} />
-            <Route path="/territory-optimization/faq" element={<TerritoryFaq />} />
+            <Route path="/territory-planning" element={<TerritoryPlanning />} />
+            <Route path="/territory-planning/comparison" element={<TerritoryAdvantages />} />
+            <Route path="/territory-planning/cost-savings" element={<TerritoryCostSavings />} />
+            <Route path="/territory-planning/faq" element={<TerritoryFaq />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/roi" element={<RoiCalculator />} />
             <Route path="/return-on-investment/en" element={<RoiCalculator />} />
@@ -52,8 +52,20 @@ const App: React.FC = () => {
             <Route path="/article/:slug" element={<Navigate to="/blog" replace />} />
             <Route path="/solutions/:slug" element={<Navigate to="/services" replace />} />
             <Route
-              path="/territory-planning"
-              element={<Navigate to="/territory-optimization" replace />}
+              path="/territory-optimization"
+              element={<Navigate to="/territory-planning" replace />}
+            />
+            <Route
+              path="/territory-optimization/comparison"
+              element={<Navigate to="/territory-planning/comparison" replace />}
+            />
+            <Route
+              path="/territory-optimization/cost-savings"
+              element={<Navigate to="/territory-planning/cost-savings" replace />}
+            />
+            <Route
+              path="/territory-optimization/faq"
+              element={<Navigate to="/territory-planning/faq" replace />}
             />
 
             <Route

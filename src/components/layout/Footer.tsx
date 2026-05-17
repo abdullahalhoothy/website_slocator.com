@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link to="/territory-optimization" className="hover:text-white">
+              <Link to="/territory-planning" className="hover:text-white">
                 {t('header.nav.territoryOptimization', 'Territory Optimization')}
               </Link>
             </li>

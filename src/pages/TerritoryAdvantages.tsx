@@ -529,7 +529,7 @@ export const TerritoryAdvantages: React.FC = () => {
             <strong className="text-[#6b21a8]"> {t('territoryAdvantages.infoBox.s2')} </strong>
             {t('territoryAdvantages.infoBox.p3')}
             <a
-              href="/territory-optimization/cost-savings"
+              href="/territory-planning/cost-savings"
               className="text-[#10b981] hover:text-[#6b21a8] hover:underline font-medium transition-colors"
             >
               {t('territoryAdvantages.infoBox.link')}
@@ -548,7 +548,7 @@ export const TerritoryAdvantages: React.FC = () => {
               {t('territoryAdvantages.resultsCta.desc')}
             </p>
             <a
-              href="/territory-optimization"
+              href="/territory-planning"
               className="inline-block bg-[#6b21a8] text-white px-8 py-3.5 rounded font-medium hover:bg-[#581c87] transition-all shadow-md"
             >
               {t('territoryAdvantages.resultsCta.btn')}
