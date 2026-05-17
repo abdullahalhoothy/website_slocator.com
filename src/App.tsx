@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
-import LandingPage from './pages/LandingPage'
+import TerritoryPlanning from './pages/TerritoryPlanning'
 import SalesRoutePlanner from './pages/SalesRoutePlanner'
 import Services from './pages/Services'
 import Features from './pages/Features'
@@ -25,12 +25,12 @@ const App: React.FC = () => {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<TerritoryPlanning />} />
             <Route path="/sales-route-planner" element={<SalesRoutePlanner />} />
             <Route path="/services" element={<Services />} />
             <Route path="/features" element={<Features />} />
             <Route path="/route-planner/faq" element={<RoutePlannerFAQ />} />
-            <Route path="/territory-planning" element={<LandingPage />} />
+            <Route path="/territory-planning" element={<TerritoryPlanning />} />
             <Route path="/territory-planning/comparison" element={<TerritoryAdvantages />} />
             <Route path="/territory-planning/cost-savings" element={<TerritoryCostSavings />} />
             <Route path="/territory-planning/faq" element={<TerritoryFaq />} />
